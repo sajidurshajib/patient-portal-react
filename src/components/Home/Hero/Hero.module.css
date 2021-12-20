@@ -1,0 +1,32 @@
+.Hero {
+    padding: 120px 0;
+}
+.Hero > h2 {
+    margin-left: 15vw;
+    margin-top: 0;
+    font-size: 40px;
+    color: var(--dark);
+}
+.Hero > h2 > span {
+    color: var(--primary);
+}
+
+.ButtonGroup {
+    margin-left: 15vw;
+}
+.ButtonGroup a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    background: var(--primary);
+    padding: 10px 20px;
+    border: 2px solid var(--primary);
+}
+.ButtonGroup a:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+}
+.ButtonGroup a:nth-child(2) {
+    border-radius: 0 10px 10px 0;
+    color: var(--primary);
+    background: transparent;
+}
