@@ -1,12 +1,14 @@
+import Detail from './Detail/Detail'
 import Hero from './Hero/Hero'
 import classes from './Home.module.css'
+import Services from './Services/Services'
 
 const Home = () => {
     return (
         <div className={classes.Home}>
             <Hero />
-            <h2>Service</h2>
-            <h2>Footer</h2>
+            <Services />
+            <Detail />
         </div>
     )
 }
