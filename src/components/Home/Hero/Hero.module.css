@@ -1,18 +1,44 @@
 .Hero {
-    padding: 120px 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 50%));
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 1px 50px var(--light);
 }
-.Hero > h2 {
+.Hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--white);
+    opacity: 0.7;
+}
+.left {
+    padding: 120px 0 150px 0;
+    position: relative;
+    z-index: 100;
+}
+.left > h2 {
     margin-left: 15vw;
-    margin-top: 0;
     font-size: 40px;
     color: var(--dark);
 }
-.Hero > h2 > span {
+.left > h2 > span {
     color: var(--primary);
+}
+
+.right > img {
+    position: absolute;
+    right: 15vw;
+    height: 100%;
 }
 
 .ButtonGroup {
     margin-left: 15vw;
+    display: inline-block;
 }
 .ButtonGroup a {
     display: inline-block;
@@ -21,6 +47,8 @@
     background: var(--primary);
     padding: 10px 20px;
     border: 2px solid var(--primary);
+    min-width: 70px;
+    text-align: center;
 }
 .ButtonGroup a:nth-child(1) {
     border-radius: 10px 0 0 10px;
