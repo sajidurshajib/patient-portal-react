@@ -1,0 +1,11 @@
+.Detail {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 50%));
+}
+.imgDiv > div:nth-child(1) {
+}
+
+.imgDiv > div:nth-child(2) {
+    width: 400px;
+    height: 600px;
+}
