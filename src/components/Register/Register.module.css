@@ -1,0 +1,83 @@
+.Register {
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Wrapper {
+    background: var(--white);
+    width: 500px;
+    padding: 40px 60px 40px 60px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    animation: popUp 300ms;
+}
+@keyframes popUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0.9;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.Wrapper > span > svg {
+    color: var(--grey2);
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    cursor: pointer;
+}
+.Wrapper > span > svg:hover {
+    color: var(--primary);
+}
+.Wrapper > h2 {
+    color: var(--primary);
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+.Wrapper > form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    width: 100%;
+    border: none;
+    background: var(--light-grey);
+    border-radius: 4px;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    color: var(--dark-grey);
+    box-sizing: border-box;
+}
+.Wrapper > form > input:focus {
+    outline: 0;
+}
+
+.Wrapper > form > button {
+    display: block;
+    border: none;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+.LoginNow {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+.LoginNow > span {
+    color: var(--primary);
+    cursor: pointer;
+}
