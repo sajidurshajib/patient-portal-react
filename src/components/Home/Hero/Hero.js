@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom'
 import BG from '../../../assets/img/background.jpg'
 import HeroImg from '../../../assets/img/family_healthx.png'
 import classes from './Hero.module.css'
 
-const Hero = () => {
+const Hero = ({ loginModal, registerModal }) => {
     return (
         <div
             className={classes.Hero}
@@ -18,8 +17,8 @@ const Hero = () => {
                     <span>Healthcare</span> Partner
                 </h2>
                 <div className={classes.ButtonGroup}>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <span onClick={() => loginModal(true)}>Login</span>
+                    <span onClick={() => registerModal(true)}>Register</span>
                 </div>
             </div>
             <div className={classes.right}>

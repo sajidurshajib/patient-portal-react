@@ -40,20 +40,20 @@
     margin-left: 15vw;
     display: inline-block;
 }
-.ButtonGroup a {
+.ButtonGroup span {
     display: inline-block;
-    text-decoration: none;
     color: var(--white);
     background: var(--primary);
     padding: 10px 20px;
     border: 2px solid var(--primary);
     min-width: 70px;
     text-align: center;
+    cursor: pointer;
 }
-.ButtonGroup a:nth-child(1) {
+.ButtonGroup span:nth-child(1) {
     border-radius: 10px 0 0 10px;
 }
-.ButtonGroup a:nth-child(2) {
+.ButtonGroup span:nth-child(2) {
     border-radius: 0 10px 10px 0;
     color: var(--primary);
     background: transparent;
