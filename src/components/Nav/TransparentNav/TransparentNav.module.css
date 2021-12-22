@@ -1,0 +1,31 @@
+.TransparentNav {
+    position: absolute;
+    z-index: 500;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15vw;
+}
+.TransparentNav h4 {
+    display: inline-block;
+    padding-top: 0;
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.TransparentNav h4 span {
+    color: var(--primary);
+}
+.TransparentNav ul {
+    list-style-type: none;
+    float: right;
+}
+.TransparentNav ul li {
+    float: left;
+}
+.TransparentNav ul li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 600;
+}
