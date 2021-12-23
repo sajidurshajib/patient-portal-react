@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import Login from '../Login/Login'
 import TransparentNav from '../Nav/TransparentNav/TransparentNav'
-import Register from '../Register/Register'
+import { Login, Register } from '../index'
 import Detail from './Detail/Detail'
 import Hero from './Hero/Hero'
 import classes from './Home.module.css'
