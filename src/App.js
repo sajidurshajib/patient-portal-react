@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Home } from './components/index'
+import { HomePage, ProfilePage } from './pages/index'
 
 const App = () => {
     return (
         <div>
             <Router>
                 <Switch>
-                    <Route path="/" exact={true} component={Home} />
+                    <Route path="/" exact={true} component={HomePage} />
+                    <Route path="/profile" exact={true} component={ProfilePage} />
                 </Switch>
             </Router>
         </div>
