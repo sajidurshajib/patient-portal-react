@@ -1,6 +1,6 @@
 import { faHospital, faMedkit, faUserMd } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import classes from './Serices.module.css'
+import classes from './Services.module.css'
 
 const Services = () => {
     return (
