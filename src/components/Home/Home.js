@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import TransparentNav from '../Nav/TransparentNav/TransparentNav'
+import { TransparentNav } from '../Nav/Nav'
 import { Login, Register } from '../index'
 import Detail from './Detail/Detail'
 import Hero from './Hero/Hero'
