@@ -1,7 +1,3 @@
-import classes from './Nav.module.css'
+import TransparentNav from './TransparentNav/TransparentNav'
 
-const Nav = () => {
-    return <div className={classes.Nav}></div>
-}
-
-export default Nav
+export { TransparentNav }
