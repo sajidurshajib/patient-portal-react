@@ -1,9 +1,15 @@
 import classes from './Profile.module.css'
+import ProfileCard from './ProfileCard/ProfileCard'
 
 const Profile = () => {
     return (
         <div className={classes.Profile}>
-            <h2>Profile</h2>
+            <div className={classes.Wrapper}>
+                <div>
+                    <ProfileCard />
+                </div>
+                <div></div>
+            </div>
         </div>
     )
 }

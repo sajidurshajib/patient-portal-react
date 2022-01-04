@@ -1,0 +1,10 @@
+.ProfileCard {
+    background: var(--white);
+    padding: 50px 0;
+}
+.ProfileCard > div:nth-child(1) {
+    margin: 0 auto;
+}
+.ProfileCard > h2 {
+    text-align: center;
+}
