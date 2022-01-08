@@ -9,15 +9,14 @@ const ProfileCard = () => {
                     background: `url(${proPic})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    width: '160px',
-                    height: '180px',
                     borderRadius: '10px',
                 }}></div>
 
-            <h2>Jhon Doe</h2>
+            <h2>Arifuzzaman Badhon</h2>
             <p>
                 Age: 25 <span>(Male)</span>
             </p>
+            <p>ID: 1075</p>
         </div>
     )
 }

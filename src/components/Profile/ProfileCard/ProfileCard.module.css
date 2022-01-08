@@ -1,10 +1,37 @@
 .ProfileCard {
     background: var(--white);
     padding: 50px 0;
+    border-radius: 10px;
 }
 .ProfileCard > div:nth-child(1) {
     margin: 0 auto;
+    width: 200px;
+    height: 200px;
 }
 .ProfileCard > h2 {
     text-align: center;
+    margin: 15px 0 0 0;
+    color: var(--primary);
+    font-size: 26px;
+}
+.ProfileCard > p {
+    text-align: center;
+    font-weight: 500px;
+    margin: 5px 0 0 0;
+    font-size: 16px;
+}
+.ProfileCard > p > span {
+    color: var(--dark-grey);
+    font-weight: 300;
+}
+.ProfileCard > p:nth-child(4) {
+    font-size: 16px;
+    color: var(--dark-grey);
+    margin: 10px auto;
+    font-weight: 500;
+    background: var(--light);
+    min-width: 80px;
+    max-width: 100px;
+    padding: 5px;
+    border-radius: 5px;
 }
