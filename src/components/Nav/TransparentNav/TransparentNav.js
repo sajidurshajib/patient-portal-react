@@ -4,14 +4,18 @@ import classes from './TransparentNav.module.css'
 const TransparentNav = () => {
     return (
         <div className={classes.TransparentNav}>
-            <h4>
-                My <span>Health</span> Portal
-            </h4>
-            <ul>
-                <li>
-                    <Link to="https://www.healthx.com.bd">HEALTHx</Link>
-                </li>
-            </ul>
+            <div className="container">
+                <h4>
+                    <Link to="/">
+                        My <span>Health</span> Portal
+                    </Link>
+                </h4>
+                <ul>
+                    <li>
+                        <Link to="/profile">HEALTHx</Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     )
 }
