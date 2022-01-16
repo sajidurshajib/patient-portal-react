@@ -4,14 +4,19 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 15vw;
 }
 .TransparentNav h4 {
     display: inline-block;
     padding-top: 0;
+    padding-left: 10px;
     margin-top: 15px;
     font-size: 24px;
     font-weight: 500;
+    color: var(--dark);
+}
+.TransparentNav h4 > a {
+    text-decoration: none;
+    color: var(--dark);
 }
 .TransparentNav h4 span {
     color: var(--primary);
@@ -19,6 +24,7 @@
 .TransparentNav ul {
     list-style-type: none;
     float: right;
+    padding-right: 10px;
 }
 .TransparentNav ul li {
     float: left;
