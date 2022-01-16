@@ -12,9 +12,22 @@ const Prescriptions = () => {
             </div>
             <div className={classes.ListWrapper}>
                 <div>
-                    <FontAwesomeIcon icon={faFileAlt} />
-                    <p>New Record</p>
+                    <p>
+                        <FontAwesomeIcon icon={faFileAlt} /> New Record
+                    </p>
                     <p>15-6-2020</p>
+                </div>
+                <div>
+                    <p>
+                        <FontAwesomeIcon icon={faFileAlt} /> Mid Record
+                    </p>
+                    <p>13-4-2020</p>
+                </div>
+                <div>
+                    <p>
+                        <FontAwesomeIcon icon={faFileAlt} /> Old Record
+                    </p>
+                    <p>11-2-2020</p>
                 </div>
             </div>
         </div>
