@@ -1,85 +1,49 @@
 .Login {
-    position: fixed;
-    z-index: 1000;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+    max-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .Wrapper {
     background: var(--white);
-    width: 400px;
-    padding: 40px 60px 40px 60px;
+    padding: 20px 40px 40px 40px;
+    box-shadow: 0 10px 20px var(--grey);
     border-radius: 4px;
-    box-sizing: border-box;
-    position: relative;
-    animation: popUp 300ms;
-}
-@keyframes popUp {
-    from {
-        transform: scale(0.9);
-        opacity: 0.9;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.Wrapper > span > svg {
-    color: var(--grey2);
-    font-size: 18px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    cursor: pointer;
-}
-.Wrapper > span > svg:hover {
-    color: var(--primary);
+    min-width: 300px;
 }
 .Wrapper > h2 {
-    color: var(--primary);
     text-align: center;
-    margin: 0 0 20px 0;
+    color: var(--primary);
+}
+.Wrapper > h2 > svg {
+    margin: 0 5px 0 0;
 }
 .Wrapper > form > input {
+    display: block;
+    width: 100%;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    display: block;
-    width: 100%;
     border: none;
-    background: var(--light-grey);
-    border-radius: 4px;
-    padding: 10px 10px;
-    margin-bottom: 15px;
-    color: var(--dark-grey);
+    outline: 0;
+    background: var(--light);
+    padding: 7px 20px;
+    margin: 10px 0;
     box-sizing: border-box;
 }
-.Wrapper > form > input:focus {
-    outline: 0;
-}
-
 .Wrapper > form > button {
-    display: block;
-    border: none;
-    background: var(--primary);
     color: var(--white);
-    border-radius: 4px;
-    padding: 10px;
+    background: var(--primary);
+    display: block;
     width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: 0;
+    border-radius: 2px;
+    padding: 7px 20px;
     cursor: pointer;
-}
-.RegisterNow {
-    margin-top: 20px;
-    font-size: 14px;
-    text-align: center;
-}
-.RegisterNow > span {
-    color: var(--primary);
-    cursor: pointer;
+    margin: 10px 0 0 0;
 }
