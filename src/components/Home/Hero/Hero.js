@@ -2,7 +2,7 @@ import BG from '../../../assets/img/background.jpg'
 import HeroImg from '../../../assets/img/family_healthx.png'
 import classes from './Hero.module.css'
 
-const Hero = ({ loginModal, registerModal }) => {
+const Hero = () => {
     return (
         <div
             className={classes.Hero}
@@ -17,8 +17,8 @@ const Hero = ({ loginModal, registerModal }) => {
                     <span>Healthcare</span> Partner
                 </h2>
                 <div className={classes.ButtonGroup}>
-                    <span onClick={() => loginModal(true)}>Login</span>
-                    <span onClick={() => registerModal(true)}>Register</span>
+                    <span>Button 1</span>
+                    <span>Button 2</span>
                 </div>
             </div>
             <div className={classes.right}>
