@@ -1,83 +1,101 @@
 .Register {
-    position: fixed;
-    z-index: 1000;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+    max-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .Wrapper {
     background: var(--white);
-    width: 500px;
-    padding: 40px 60px 40px 60px;
+    padding: 20px 40px 40px 40px;
+    box-shadow: 0 10px 20px var(--grey);
     border-radius: 4px;
-    box-sizing: border-box;
-    position: relative;
-    animation: popUp 300ms;
-}
-@keyframes popUp {
-    from {
-        transform: scale(0.9);
-        opacity: 0.9;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-.Wrapper > span > svg {
-    color: var(--grey2);
-    font-size: 18px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    cursor: pointer;
-}
-.Wrapper > span > svg:hover {
-    color: var(--primary);
+    min-width: 400px;
 }
 .Wrapper > h2 {
-    color: var(--primary);
     text-align: center;
-    margin: 0 0 20px 0;
+    color: var(--primary);
+}
+.Wrapper > h2 > svg {
+    margin: 0 5px 0 0;
 }
 .Wrapper > form > input {
+    display: block;
+    width: 100%;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    border: none;
+    outline: 0;
+    background: var(--light);
+    padding: 7px 20px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    color: var(--grey);
+}
+.Wrapper > form > button {
+    color: var(--white);
+    background: var(--primary);
     display: block;
     width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     border: none;
-    background: var(--light-grey);
-    border-radius: 4px;
-    padding: 10px 10px;
-    margin-bottom: 15px;
-    color: var(--dark-grey);
-    box-sizing: border-box;
+    outline: 0;
+    border-radius: 2px;
+    padding: 7px 20px;
+    cursor: pointer;
+    margin: 10px 0 0 0;
 }
-.Wrapper > form > input:focus {
+.sexWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 50%));
+    gap: 5px;
+}
+.sexWrapper label {
+    display: block;
+    text-align: center;
+    color: var(--grey);
+    font-size: 12px;
+}
+.sexWrapper input {
+    border: none;
+    background: var(--light);
+    padding: 7px 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.sexWrapper input:focus {
     outline: 0;
 }
-
-.Wrapper > form > button {
-    display: block;
+.sexWrapper select {
     border: none;
-    background: var(--primary);
-    color: var(--white);
-    border-radius: 4px;
-    padding: 10px;
+    background: var(--light);
     width: 100%;
+    padding: 7px 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     cursor: pointer;
 }
-.LoginNow {
-    margin-top: 20px;
-    font-size: 14px;
-    text-align: center;
+.sexWrapper select:focus {
+    outline: none;
 }
-.LoginNow > span {
-    color: var(--primary);
-    cursor: pointer;
+.sexWrapper > div:nth-child(2) {
+    position: relative;
+}
+.sexWrapper > div:nth-child(2) > label {
+    position: absolute;
+    top: -30px;
+    left: 15px;
+    color: var(--white);
+    background: var(--dark);
+    padding: 5px 15px;
+    border-radius: 2px;
+    opacity: 0.7;
+    display: none;
+}
+.sexWrapper > div:nth-child(2) > input:hover .sexWrapper > div:nth-child(2) > label {
+    display: block;
 }
