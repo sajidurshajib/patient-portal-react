@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { HomePage, ProfilePage } from './pages/index'
+import { HomePage, ProfilePage, RegisterPage, LoginPage } from './pages/index'
 
 const App = () => {
     return (
@@ -7,7 +7,9 @@ const App = () => {
             <Router>
                 <Switch>
                     <Route path="/" exact={true} component={HomePage} />
-                    <Route path="/profile" exact={true} component={ProfilePage} />
+                    <Route path="/profile" component={ProfilePage} />
+                    <Route path="/register" component={RegisterPage} />
+                    <Route path="/login" component={LoginPage} />
                 </Switch>
             </Router>
         </div>
