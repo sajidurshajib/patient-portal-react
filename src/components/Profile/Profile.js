@@ -1,3 +1,4 @@
+import { Diabetes } from '../Indicators/Indicators'
 import { TransparentNav } from '../Nav/Nav'
 import Information from './Information/Information'
 import Prescriptions from './Prescriptions/Prescriptions'
@@ -16,6 +17,7 @@ const Profile = () => {
                 </div>
                 <div>
                     <Summery />
+                    <Diabetes />
                     <Prescriptions />
                 </div>
             </div>
