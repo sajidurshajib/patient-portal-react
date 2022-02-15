@@ -4,22 +4,74 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.statusMsg {
+    position: absolute;
+    top: 50px;
+    color: var(--white);
+    background: var(--red);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.statusMsg > span {
+    background: red;
+    border-radius: 50px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 0 0 4px;
 }
 .Wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+    gap: 40px;
     background: var(--white);
-    padding: 20px 40px 40px 40px;
+    padding: 0;
     box-shadow: 0 10px 20px var(--grey);
-    border-radius: 4px;
-    min-width: 300px;
+    border-radius: 5px;
+    width: 800px;
+    margin: 0 auto;
 }
-.Wrapper > h2 {
+.left {
+    font-size: 14px;
+    color: var(--white);
+    background: rgb(69, 125, 195, 0.8);
+    border-radius: 5px 0 0 5px;
+    padding: 80px 40px;
+}
+.left p {
+    font-size: 14px;
+    line-height: 24px;
+}
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 50px 80px 0;
+}
+.right > div {
+    width: 100%;
+}
+.right > div > h2 {
     text-align: center;
     color: var(--primary);
+    margin: 0 0 50px 0;
 }
-.Wrapper > h2 > svg {
+.right > div > h2 > svg {
     margin: 0 5px 0 0;
 }
-.Wrapper > form > input {
+.right > div > form > div {
+    position: relative;
+    width: 100%;
+}
+.right > div > form > div > input {
     display: block;
     width: 100%;
     appearance: none;
@@ -27,12 +79,40 @@
     -moz-appearance: none;
     border: none;
     outline: 0;
-    background: var(--light);
-    padding: 7px 20px;
-    margin: 10px 0;
+    padding: 7px 0;
+    margin: 0;
     box-sizing: border-box;
+    color: var(--dark-blue);
+    border-bottom: 3px solid var(--grey2);
+    position: relative;
 }
-.Wrapper > form > button {
+.right > div > form > div > input + label::before {
+    content: '';
+    position: absolute;
+    bottom: 23px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary);
+    transition: 200ms;
+}
+.right > div > form > div > input:focus + label::before {
+    width: 100%;
+}
+.right > div > form > div > input + label span {
+    font-size: 14px;
+    color: var(--grey);
+    position: relative;
+    top: -30px;
+    pointer-events: none;
+    transition: 200ms;
+}
+.right > div > form > div > input:focus + label span,
+.right > div > form > div > input:valid + label span {
+    top: -52px;
+    font-size: 12px;
+}
+.right > div > form > button {
     color: var(--white);
     background: var(--primary);
     display: block;
@@ -46,4 +126,13 @@
     padding: 7px 20px;
     cursor: pointer;
     margin: 10px 0 0 0;
+}
+.linkText {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 20px 0 0 0;
+}
+.linkText a {
+    text-decoration: none;
+    color: var(--primary);
 }
