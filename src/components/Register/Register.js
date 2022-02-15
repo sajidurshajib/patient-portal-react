@@ -1,11 +1,15 @@
 import { faRegistered } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import env from 'react-dotenv'
+import { useHistory } from 'react-router-dom'
+import { Auth } from '../../allContext'
 import BG from '.././../assets/img/background.jpg'
 import classes from './Register.module.css'
 
 const Register = () => {
+    const { stateAuth } = useContext(Auth)
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -16,6 +20,8 @@ const Register = () => {
     const [dob, setDob] = useState('')
 
     const [alert, setAlert] = useState([])
+
+    const history = useHistory()
 
     const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
 
@@ -58,8 +64,8 @@ const Register = () => {
                 body: JSON.stringify({
                     user_id: registrationJson.id,
                     address,
-                    dob,
                     sex,
+                    dob,
                 }),
             })
 
@@ -69,6 +75,13 @@ const Register = () => {
             console.log(patientJson)
         }
     }
+
+    // if already logged in
+    useEffect(() => {
+        if (stateAuth.auth === true) {
+            history.push('/profile')
+        }
+    }, [stateAuth, history])
 
     return (
         <div
