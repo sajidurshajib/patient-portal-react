@@ -3,7 +3,7 @@ import classes from './Diabetes.module.css'
 
 const Diabetes = () => {
     const [toggle, setToggle] = useState(false)
-    console.log(toggle)
+
     return (
         <div className={classes.Diabetes}>
             <div className={classes.header}>
