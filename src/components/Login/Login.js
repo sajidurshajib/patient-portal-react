@@ -6,7 +6,7 @@ import env from 'react-dotenv'
 import { Link, useHistory } from 'react-router-dom'
 import { Auth } from '../../allContext'
 import { statusCheck } from '../../utils/statusCheck'
-import BG from '.././../assets/img/background.jpg'
+import BG from '.././../assets/img/background-doc-table.jpg'
 import classes from './Login.module.css'
 
 const Login = () => {
@@ -17,7 +17,7 @@ const Login = () => {
     const [identifier, setIdentifier] = useState('')
     const [password, setPassword] = useState('')
 
-    const [msg, setMsg] = useState([])
+    const [alert, setAlert] = useState([])
 
     const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
 
@@ -44,7 +44,7 @@ const Login = () => {
                 { sts: 400, msg: 'User email/phone number or Password not correct.' },
                 { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
             ])
-            setMsg([...msg, err.msg])
+            setAlert([...alert, err.msg])
             dispatchAuth({ type: 'remove' })
         } else {
             dispatchAuth({ type: 'token', payload: loginJson.access_token })
@@ -68,9 +68,9 @@ const Login = () => {
             style={{ background: `url(${BG})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
             {
                 <>
-                    {msg.length !== 0 ? (
+                    {alert.length !== 0 ? (
                         <p className={classes.statusMsg}>
-                            {msg[msg.length - 1]} <span onClick={() => setMsg([])}>x</span>
+                            {alert[alert.length - 1]} <span onClick={() => setAlert([])}>x</span>
                         </p>
                     ) : null}
                 </>
