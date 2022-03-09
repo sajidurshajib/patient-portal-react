@@ -1,13 +1,24 @@
-import { faRegistered } from '@fortawesome/free-solid-svg-icons'
+import { faRegistered, faHandSparkles, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
 import env from 'react-dotenv'
 import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
-import BG from '.././../assets/img/background.jpg'
+import districtJson from '../../config/locations/bd-districts.json'
+import divisionJson from '../../config/locations/bd-divisions.json'
+import postcodeJson from '../../config/locations/bd-postcodes.json'
+import upazilaJson from '../../config/locations/bd-upazilas.json'
+import { statusCheck } from '../../utils/statusCheck'
+import BG from '.././../assets/img/background-doc-table.jpg'
 import classes from './Register.module.css'
 
 const Register = () => {
+    const [division, setDivision] = useState(0)
+    const [district, setDistrict] = useState(0)
+    const [upazila, setUpazila] = useState(0)
+    const [postcode, setPostcode] = useState(0)
+
     const { stateAuth } = useContext(Auth)
 
     const [name, setName] = useState('')
@@ -16,7 +27,7 @@ const Register = () => {
     const [password, setPassword] = useState('')
     const [cnfPassword, setCnfPassword] = useState('')
     const [address, setAddress] = useState('')
-    const [sex, setSex] = useState('')
+    const [sex, setSex] = useState('male')
     const [dob, setDob] = useState('')
 
     const [alert, setAlert] = useState([])
@@ -53,7 +64,7 @@ const Register = () => {
 
         let registrationJson = await registrationFetch.json()
 
-        if (!registrationJson.ok) {
+        if (registrationFetch.ok) {
             let patientFetch = await fetch(`${api}/patient`, {
                 headers: {
                     Accept: 'appllication/json',
@@ -69,10 +80,22 @@ const Register = () => {
                 }),
             })
 
-            let patientJson = await patientFetch.json()
-
-            console.log(registrationJson)
-            console.log(patientJson)
+            // let patientJson = await patientFetch.json()
+            if (patientFetch.ok) {
+                history.push('/login')
+            } else {
+                let patErr = statusCheck(patientFetch, [
+                    { sts: 400, msg: 'User email/phone number or Password not correct.' },
+                    { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
+                ])
+                setAlert([...alert, patErr.msg])
+            }
+        } else {
+            let err = statusCheck(registrationFetch, [
+                { sts: 400, msg: 'User email/phone number or Password not correct.' },
+                { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
+            ])
+            setAlert([...alert, err.msg])
         }
     }
 
@@ -87,47 +110,166 @@ const Register = () => {
         <div
             className={classes.Register}
             style={{ background: `url(${BG})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+            {
+                <>
+                    {alert.length !== 0 ? (
+                        <p className={classes.statusMsg}>
+                            {alert[alert.length - 1]} <span onClick={() => setAlert([])}>x</span>
+                        </p>
+                    ) : null}
+                </>
+            }
+
             <div className={classes.Wrapper}>
-                <h2>
-                    <FontAwesomeIcon icon={faRegistered} />
-                    Register
-                </h2>
-                <form onSubmit={submit}>
-                    <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
-                    <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-                    <input
-                        type="text"
-                        placeholder="Phone number [11 digit]"
-                        pattern="[0-9]{11}"
-                        onChange={(e) => setPhone(e.target.value)}
-                    />
-                    <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                    <input
-                        type="password"
-                        placeholder="Confirm password"
-                        onChange={(e) => setCnfPassword(e.target.value)}
-                    />
+                <div className={classes.left}>
+                    <div>
+                        <h2>
+                            <FontAwesomeIcon icon={faRegistered} />
+                            Register
+                        </h2>
+                        <form onSubmit={submit}>
+                            <div>
+                                <input type="text" onChange={(e) => setName(e.target.value)} required />
+                                <label>
+                                    <span>Name</span>
+                                </label>
+                            </div>
+                            <div className={classes.emailPhone}>
+                                <div>
+                                    <input type="email" onChange={(e) => setEmail(e.target.value)} required />
+                                    <label>
+                                        <span>Email</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        pattern="[0-9]{11}"
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        required
+                                    />
+                                    <label>
+                                        <span>Phone number [11 digit]</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="password" onChange={(e) => setPassword(e.target.value)} required />
+                                <label>
+                                    <span>Password</span>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="password" onChange={(e) => setCnfPassword(e.target.value)} required />
+                                <label>
+                                    <span>Confirm password</span>
+                                </label>
+                            </div>
+                            <div className={classes.Address}>
+                                <h3>Address</h3>
 
-                    <input type="text" placeholder="Address" onChange={(e) => setAddress(e.target.value)} />
+                                <div>
+                                    <select value={division} onChange={(e) => setDivision(e.target.value)}>
+                                        <option disabled value={0}>
+                                            select division
+                                        </option>
+                                        {divisionJson.divisions.map((v) => {
+                                            return (
+                                                <option key={v.id} value={v.id} name={v.name}>
+                                                    {v.name}
+                                                </option>
+                                            )
+                                        })}
+                                    </select>
 
-                    <div className={classes.sexWrapper}>
-                        <div>
-                            <select id="sex" onChange={(e) => setSex(e.target.value)}>
-                                <option value="" disabled defaultValue={true}>
-                                    Sex
-                                </option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="dob">Date of birth</label>
-                            <input type="date" id="dob" onChange={(e) => setDob(e.target.value)} />
-                        </div>
+                                    <select value={district} onChange={(e) => setDistrict(e.target.value)}>
+                                        <option disabled value={0}>
+                                            select district
+                                        </option>
+                                        {districtJson.districts
+                                            .filter((item) => item.division_id === String(division))
+                                            .map((v) => (
+                                                <option key={v.id} value={v.id}>
+                                                    {v.name}
+                                                </option>
+                                            ))}
+                                    </select>
+
+                                    <select value={upazila} onChange={(e) => setUpazila(e.target.value)}>
+                                        <option disabled value={0}>
+                                            select upazila
+                                        </option>
+                                        {upazilaJson.upazilas
+                                            .filter((item) => item.district_id === String(district))
+                                            .map((v, i) => (
+                                                <option key={i} value={v.id}>
+                                                    {v.name}
+                                                </option>
+                                            ))}
+                                    </select>
+
+                                    <select value={postcode} onChange={(e) => setPostcode(e.target.value)}>
+                                        <option disabled value={0}>
+                                            select post office
+                                        </option>
+                                        {postcodeJson.postcodes
+                                            .filter((item) => item.district_id === String(district))
+                                            .map((v, i) => (
+                                                <option key={i} value={v.postCode}>
+                                                    {v.postOffice}
+                                                </option>
+                                            ))}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className={classes.sexWrapper}>
+                                <div>
+                                    <label>Sex</label>
+                                    <select value={sex} onChange={(e) => setSex(e.target.value)}>
+                                        <option value="male" defaultValue={true}>
+                                            Male
+                                        </option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                    <span></span>
+                                </div>
+                                <div>
+                                    <label>Date of birth</label>
+                                    <input type="date" onChange={(e) => setDob(e.target.value)} />
+                                </div>
+                            </div>
+
+                            <button>Register</button>
+                        </form>
+
+                        <p className={classes.linkText}>
+                            Already have an account?{' '}
+                            <Link to="/login">
+                                Login <FontAwesomeIcon icon={faArrowRight} />
+                            </Link>
+                        </p>
                     </div>
-
-                    <button>Register</button>
-                </form>
+                </div>
+                <div className={classes.right}>
+                    <div>
+                        <h2>
+                            <FontAwesomeIcon icon={faHandSparkles} /> Welcome to HEALTHx
+                        </h2>
+                        <p>
+                            With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx is aspired
+                            to be the largest digital health platform in Bangladesh providing the digital platform based
+                            Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record) services for the
+                            Patients. With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx
+                            is aspired to be the largest digital health platform in Bangladesh providing the digital
+                            platform based Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record)
+                            services for the Patients. With a mission to ‘Drive the digitalization of healthcare of
+                            Bangladesh, HEALTHx is aspired to be the largest digital health platform in Bangladesh
+                            providing the digital platform based Telehealth. Home healthcare & Cloud based EHR
+                            (Electronic Health Record) services for the Patients.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     )
