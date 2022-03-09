@@ -19,12 +19,12 @@ const Login = () => {
 
     const [alert, setAlert] = useState([])
 
-    const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
+    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
 
     const submit = async (e) => {
         e.preventDefault()
 
-        let loginFetch = await fetch(`${api}/login`, {
+        let loginFetch = await fetch(`${apiV1}/login`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
