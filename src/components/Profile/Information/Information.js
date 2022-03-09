@@ -1,17 +1,27 @@
 import classes from './Information.module.css'
 
-const Information = () => {
+const Information = ({ userDetail, patientDetail }) => {
     return (
         <div className={classes.Information}>
             <h3>Information</h3>
             <p>
-                Blood group <span>A+</span>
+                Height <span> {`${Math.floor(patientDetail.height / 12)}'${patientDetail.height % 12}"`}</span>
             </p>
             <p>
-                Height <span>5'9"</span>
+                Weight <span> {patientDetail.weight} kg </span>
             </p>
             <p>
-                Weight <span>70 kg</span>
+                Marital status <span> {patientDetail.marital_status}</span>
+            </p>
+            <p>
+                Occupation <span> {patientDetail.occupation}</span>
+            </p>
+            <div className={classes.bio}>
+                <p>Bio</p>
+                <p>{patientDetail.bio}</p>
+            </div>
+            <p>
+                NID <span> {userDetail.nid}</span>
             </p>
         </div>
     )

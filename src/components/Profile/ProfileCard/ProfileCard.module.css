@@ -1,6 +1,6 @@
 .ProfileCard {
     background: var(--white);
-    padding: 50px 0;
+    padding: 40px 0;
     border-radius: 10px;
 }
 .ProfileCard > div:nth-child(1) {
@@ -24,14 +24,28 @@
     color: var(--dark-grey);
     font-weight: 300;
 }
+
 .ProfileCard > p:nth-child(4) {
-    font-size: 16px;
-    color: var(--dark-grey);
-    margin: 10px auto;
+    margin: 20px 0 0 0;
+}
+.ProfileCard > p:nth-child(4),
+.ProfileCard > p:nth-child(5) {
+    color: var(--dark-blue);
+    font-size: 14px;
+}
+.ProfileCard > p:nth-child(4) > span,
+.ProfileCard > p:nth-child(5) > span {
+    margin: 0 0 0 5px;
+}
+
+.ProfileCard > p:nth-child(6) {
+    font-size: 14px;
     font-weight: 500;
-    background: var(--light);
-    min-width: 80px;
-    max-width: 100px;
-    padding: 5px;
-    border-radius: 5px;
+    margin: 15px 0 0 0;
+    color: var(--dark-blue);
+}
+.ProfileCard > p:nth-child(6) > span {
+    color: var(--red);
+    font-weight: 500;
+    font-size: 18px;
 }

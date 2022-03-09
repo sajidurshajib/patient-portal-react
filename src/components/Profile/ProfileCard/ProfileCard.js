@@ -1,7 +1,11 @@
+import { useContext } from 'react'
+import { UserInfo } from '../../../allContext'
 import proPic from '../../../assets/img/patient1.jpeg'
 import classes from './ProfileCard.module.css'
 
-const ProfileCard = () => {
+const ProfileCard = ({ userDetail }) => {
+    const { stateUser } = useContext(UserInfo)
+
     return (
         <div className={classes.ProfileCard}>
             <div
@@ -12,11 +16,21 @@ const ProfileCard = () => {
                     borderRadius: '10px',
                 }}></div>
 
-            <h2>Arifuzzaman Badhon</h2>
+            <h2>{stateUser?.info?.name}</h2>
             <p>
-                Age: 25 <span>(Male)</span>
+                {userDetail.dob} <span>({stateUser?.info.sex})</span>
             </p>
-            <p>ID: 1075</p>
+
+            <p>
+                Email: <span>{stateUser?.info.email}</span>
+            </p>
+            <p>
+                Phone: <span>{stateUser?.info.phone}</span>
+            </p>
+
+            <p>
+                Blood group: <span>{userDetail.blood_group}</span>
+            </p>
         </div>
     )
 }

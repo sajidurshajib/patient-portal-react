@@ -3,7 +3,6 @@
     border-radius: 10px;
     padding: 10px 20px;
     margin: 20px 0;
-    min-height: 40%;
 }
 .Information > h3 {
     color: var(--dark-blue);
@@ -12,13 +11,30 @@
     font-size: 14px;
     position: relative;
     font-weight: 500;
+    color: var(--dark-blue);
 }
 
 .Information > p > span {
     position: absolute;
-    left: 100px;
+    left: 110px;
     color: var(--dark-grey);
 }
 .Information > p > span::before {
     content: ': ';
+}
+.Information .bio {
+    color: var(--dark-blue);
+    margin: 0 -10px;
+    border: 2px solid var(--light);
+    padding: 10px;
+    border-radius: 5px;
+}
+.Information .bio > p:nth-child(1) {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+}
+.Information .bio > p:nth-child(2) {
+    margin: 5px 0 0 0;
+    font-size: 12px;
 }
