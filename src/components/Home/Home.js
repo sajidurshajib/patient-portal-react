@@ -1,4 +1,4 @@
-import { TransparentNav } from '../Nav/Nav'
+import { TransparentNav } from '../Nav'
 import Detail from './Detail/Detail'
 import Hero from './Hero/Hero'
 import classes from './Home.module.css'
