@@ -5,12 +5,15 @@ export const statusCheck = (res, list = []) => {
     let reply = { sts: 0, msg: '' }
 
     if (list.length !== 0) {
-        list.forEach((item) => {
+        list.every((item) => {
             if (item.sts === sts) {
                 reply = { ...item }
+                return false
             } else if (item.sts !== sts) {
                 reply = { sts, msg }
+                return true
             }
+            return true
         })
     } else {
         reply = { sts, msg }
