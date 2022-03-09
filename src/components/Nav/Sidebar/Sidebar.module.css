@@ -1,0 +1,94 @@
+.Sidebar {
+    background: var(--white);
+    height: 100vh;
+    width: 20%;
+    position: fixed;
+    box-shadow: 3px 3px 15px var(--light-grey);
+}
+.header {
+    position: relative;
+    padding: 70px 0 20px 0;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    height: 1px;
+    width: 80%;
+    background: var(--light);
+}
+
+.header > a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+.header > a > img {
+    margin: 10px auto;
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.6;
+    transition: 200ms;
+}
+.header > a > h2 {
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+.header a > h2 > span {
+    color: var(--primary);
+}
+
+.header > a:hover > img {
+    transform: scale(0.9);
+}
+
+.Sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+.Sidebar ul > li {
+    border-left: 6px solid var(--white);
+}
+.Sidebar ul > li:hover {
+    border-left: 6px solid var(--light);
+}
+.Sidebar ul > li:hover > a,
+.Sidebar ul > li:hover > span {
+    cursor: pointer;
+    color: var(--dark-blue);
+    background-image: linear-gradient(to right, var(--light), var(--white));
+}
+.Sidebar ul > li.active {
+    border-left: 6px solid var(--primary);
+}
+.Sidebar ul > li.active > a,
+.Sidebar ul > li.active > span {
+    background-image: linear-gradient(to right, var(--light), var(--white));
+}
+.Sidebar ul > li > a,
+.Sidebar ul > li > span {
+    text-decoration: none;
+    display: block;
+    padding: 10px 50px;
+    color: var(--primary);
+}
+.secondUl {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 40px;
+}
+.secondUl::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: var(--light);
+}

@@ -28,19 +28,22 @@
 }
 .TransparentNav ul li {
     float: left;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 25px;
+    transition: 200ms;
+}
+.TransparentNav ul li:hover {
+    transform: scale(1.1);
 }
 .TransparentNav ul li a {
     text-decoration: none;
     color: var(--primary);
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
 }
 .TransparentNav ul li span {
     text-decoration: none;
     color: var(--primary);
     font-size: 14px;
-    line-height: 28px;
     font-weight: 600;
     cursor: pointer;
 }
