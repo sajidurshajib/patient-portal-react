@@ -7,15 +7,18 @@ const ProtectedRoute = ({ component: Component, redirect = '/login', ...rest }) 
     const { stateAuth, dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
 
-    const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
+    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+
+    // stateAuth rerender this component
+    let token = stateAuth.token
 
     useEffect(() => {
         let authFunc = async () => {
-            let authFetch = await fetch(`${api}/me`, {
+            let authFetch = await fetch(`${apiV1}/auth`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${stateAuth.token}`,
+                    Authorization: `Bearer ${token}`,
                 },
                 method: 'GET',
             })
@@ -23,7 +26,7 @@ const ProtectedRoute = ({ component: Component, redirect = '/login', ...rest }) 
             let authJson = await authFetch.json()
 
             if (authFetch.ok) {
-                dispatchAuth({ type: 'auth', payload: stateAuth.token })
+                dispatchAuth({ type: 'auth', payload: token })
                 dispatchUser({ type: 'set', payload: authJson })
             } else {
                 dispatchAuth({ type: 'remove' })
@@ -31,8 +34,13 @@ const ProtectedRoute = ({ component: Component, redirect = '/login', ...rest }) 
             }
         }
         // execute the function
-        authFunc()
-    }, [dispatchUser, api, stateAuth, dispatchAuth])
+        try {
+            authFunc()
+        } catch (e) {
+            dispatchAuth({ type: 'remove' })
+            dispatchUser({ type: 'remove' })
+        }
+    }, [apiV1, dispatchAuth, dispatchUser, token])
 
     return (
         <Route
