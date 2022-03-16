@@ -1,7 +1,6 @@
 .Sidebar {
     background: var(--white);
     height: 100vh;
-    width: 20%;
     position: fixed;
     box-shadow: 3px 3px 15px var(--light-grey);
 }
@@ -53,6 +52,8 @@
 }
 .Sidebar ul > li {
     border-left: 6px solid var(--white);
+    font-size: 14px;
+    font-weight: 500;
 }
 .Sidebar ul > li:hover {
     border-left: 6px solid var(--light);
