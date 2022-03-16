@@ -19,7 +19,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className={classes.Sidebar}>
+        <div className={classes.Sidebar} style={{ width: '20%' }}>
             <div className={classes.header}>
                 <Link to="/">
                     <img src={img} alt="" />
