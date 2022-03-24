@@ -46,7 +46,7 @@ const Register = () => {
             return
         }
 
-        let registrationFetch = await fetch(`${apiV1}/patients/signup`, {
+        let registrationFetch = await fetch(`${apiV1}patients/signup`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
