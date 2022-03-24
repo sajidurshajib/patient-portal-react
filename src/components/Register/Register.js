@@ -66,7 +66,7 @@ const Register = () => {
             }),
         })
 
-        let registrationJson = await registrationFetch.json()
+        // let registrationJson = await registrationFetch.json()
 
         if (registrationFetch.ok) {
             history.push('/login')
