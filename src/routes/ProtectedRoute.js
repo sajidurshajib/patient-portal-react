@@ -14,7 +14,7 @@ const ProtectedRoute = ({ component: Component, redirect = '/login', ...rest }) 
 
     useEffect(() => {
         let authFunc = async () => {
-            let authFetch = await fetch(`${apiV1}/auth`, {
+            let authFetch = await fetch(`${apiV1}/patients/auth`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',

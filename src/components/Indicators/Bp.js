@@ -36,8 +36,8 @@ const Bp = () => {
         })
 
         if (bpFetch.ok) {
-            setHigh(120)
-            setLow(80)
+            setHigh(0)
+            setLow(0)
         }
     }
 
@@ -62,7 +62,7 @@ const Bp = () => {
         try {
             bpFunc()
         } catch (e) {}
-    }, [apiV1, token])
+    }, [apiV1, token, high, low])
 
     let data = {
         labels: [...dataBp.map((elm) => elm.created_at.split('T')[0].slice(0, 7))],

@@ -5,10 +5,15 @@ const Information = ({ userDetail, patientDetail }) => {
         <div className={classes.Information}>
             <h3>Information</h3>
             <p>
-                Height <span> {`${Math.floor(patientDetail.height / 12)}'${patientDetail.height % 12}"`}</span>
+                Height{' '}
+                <span>
+                    {patientDetail.height
+                        ? `${Math.floor(patientDetail.height / 12)}'${patientDetail.height % 12}"`
+                        : ''}
+                </span>
             </p>
             <p>
-                Weight <span> {patientDetail.weight} kg </span>
+                Weight <span> {patientDetail.weight ? `${patientDetail.weight} kg` : ''} </span>
             </p>
             <p>
                 Marital status <span> {patientDetail.marital_status}</span>

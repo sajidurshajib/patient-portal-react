@@ -9,6 +9,7 @@ import districtJson from '../../config/locations/bd-districts.json'
 import divisionJson from '../../config/locations/bd-divisions.json'
 import postcodeJson from '../../config/locations/bd-postcodes.json'
 import upazilaJson from '../../config/locations/bd-upazilas.json'
+import { nameFromDivisionId, nameFromDistrictId, nameFromUpazilaId } from '../../utils/location'
 import { statusCheck } from '../../utils/statusCheck'
 import BG from '.././../assets/img/background-doc-table.jpg'
 import classes from './Register.module.css'
@@ -19,6 +20,8 @@ const Register = () => {
     const [upazila, setUpazila] = useState(0)
     const [postcode, setPostcode] = useState(0)
 
+    console.log(division)
+
     const { stateAuth } = useContext(Auth)
 
     const [name, setName] = useState('')
@@ -26,7 +29,6 @@ const Register = () => {
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const [cnfPassword, setCnfPassword] = useState('')
-    const [address, setAddress] = useState('')
     const [sex, setSex] = useState('male')
     const [dob, setDob] = useState('')
 
@@ -34,7 +36,7 @@ const Register = () => {
 
     const history = useHistory()
 
-    const api = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API : env.REACT_APP_API
+    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
 
     const submit = async (e) => {
         e.preventDefault()
@@ -44,7 +46,7 @@ const Register = () => {
             return
         }
 
-        let registrationFetch = await fetch(`${api}/signup`, {
+        let registrationFetch = await fetch(`${apiV1}/patients/signup`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
@@ -52,50 +54,31 @@ const Register = () => {
             dataType: 'json',
             method: 'POST',
             body: JSON.stringify({
+                name,
                 email,
                 phone,
-                is_active: true,
-                name,
-                password,
                 sex,
-                role: 'patient',
+                password,
+                country: 'Bangladesh',
+                division: nameFromDivisionId(String(division), divisionJson.divisions),
+                district: nameFromDistrictId(String(district), districtJson.districts),
+                sub_district: nameFromUpazilaId(String(upazila), upazilaJson.upazilas),
+                post_code: postcode,
+                dob,
             }),
         })
 
         let registrationJson = await registrationFetch.json()
 
         if (registrationFetch.ok) {
-            let patientFetch = await fetch(`${api}/patient`, {
-                headers: {
-                    Accept: 'appllication/json',
-                    'Content-Type': 'application/json',
-                },
-                dataType: 'json',
-                method: 'POST',
-                body: JSON.stringify({
-                    user_id: registrationJson.id,
-                    address,
-                    sex,
-                    dob,
-                }),
-            })
-
-            // let patientJson = await patientFetch.json()
-            if (patientFetch.ok) {
-                history.push('/login')
-            } else {
-                let patErr = statusCheck(patientFetch, [
-                    { sts: 400, msg: 'User email/phone number or Password not correct.' },
-                    { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
-                ])
-                setAlert([...alert, patErr.msg])
-            }
+            history.push('/login')
         } else {
-            let err = statusCheck(registrationFetch, [
+            let patErr = statusCheck(registrationFetch, [
                 { sts: 400, msg: 'User email/phone number or Password not correct.' },
+                { sts: 404, msg: 'User email/phone number or Password not correct.' },
                 { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
             ])
-            setAlert([...alert, err.msg])
+            setAlert([...alert, patErr.msg])
         }
     }
 
@@ -183,9 +166,7 @@ const Register = () => {
                                     </select>
 
                                     <select value={district} onChange={(e) => setDistrict(e.target.value)}>
-                                        <option disabled value={0}>
-                                            select district
-                                        </option>
+                                        <option value={0}>select district</option>
                                         {districtJson.districts
                                             .filter((item) => item.division_id === String(division))
                                             .map((v) => (
