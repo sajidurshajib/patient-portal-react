@@ -20,8 +20,6 @@ const Register = () => {
     const [upazila, setUpazila] = useState(0)
     const [postcode, setPostcode] = useState(0)
 
-    console.log(division)
-
     const { stateAuth } = useContext(Auth)
 
     const [name, setName] = useState('')
@@ -46,7 +44,7 @@ const Register = () => {
             return
         }
 
-        let registrationFetch = await fetch(`${apiV1}patients/signup`, {
+        let registrationFetch = await fetch(`${apiV1}/patients/signup`, {
             headers: {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
