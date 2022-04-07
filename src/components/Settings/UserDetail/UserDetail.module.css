@@ -1,0 +1,134 @@
+.UserDetail {
+    margin: 20px;
+}
+.UserDetail > h2,
+.UserDetail h3 {
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+}
+
+.msg {
+    padding: 5px 12px;
+    background: var(--red);
+    color: var(--white);
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 14px;
+}
+.msg > span {
+    display: inline-block;
+    background: var(--white);
+    color: var(--red);
+    margin-left: 15px;
+    border-radius: 50px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+.UserDetail form > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 5px 0;
+    position: relative;
+    top: 10px;
+    background: var(--white);
+    padding: 0 2px;
+    display: block;
+}
+.UserDetail form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    outline: 0;
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    padding: 7px 10px;
+    width: 40%;
+}
+.UserDetail form > input:focus {
+    outline: 0;
+}
+.UserDetail form > select {
+    border: 1px solid var(--secondary);
+    padding: 7px 20px;
+    background: var(--white);
+    color: var(--secondary);
+    border-radius: 2px;
+    margin: 10px 0 10px 0;
+    position: relative;
+    width: 250px;
+}
+.UserDetail form > select:focus {
+    outline: 0;
+}
+
+.UserDetail form > button {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 0;
+}
+.UserDetail form > button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
+}
+
+.dob > label,
+.nid > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background: var(--white);
+    padding: 0 2px;
+}
+.bg > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    position: relative;
+    top: 10px;
+    left: 0;
+    background: var(--white);
+    padding: 0 2px;
+    display: block;
+}
+.bg > select {
+    border: 1px solid var(--secondary);
+    padding: 7px 15px;
+    background: var(--white);
+    color: var(--secondary);
+    border-radius: 2px;
+    margin: 10px 0 10px 0;
+    position: relative;
+    width: 100px;
+}
+.bg > select:focus {
+    outline: 0;
+}
+.dob > input,
+.nid > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    outline: 0;
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    padding: 7px 10px;
+}
+.dob > input:focus,
+.nid > input:focus {
+    outline: 0;
+}

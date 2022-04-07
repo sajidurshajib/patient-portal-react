@@ -1,0 +1,58 @@
+.FindDoctors {
+    display: grid;
+    grid-template-columns: minmax(0, 20%) minmax(0, 80%);
+    gap: 20px;
+}
+
+.searchBar {
+    margin: 40px 20px 0 10px;
+    border-radius: 10px;
+    position: relative;
+    z-index: initial;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBar::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    background-image: linear-gradient(to top, var(--dark-blue), transparent);
+    z-index: 100;
+}
+.searchBar > div {
+    position: relative;
+    z-index: 200;
+    width: 50%;
+}
+.searchBar > div > form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid var(--grey2);
+    color: var(--grey);
+    position: relative;
+}
+.searchBar > div > form > input::placeholder {
+    color: var(--grey2);
+}
+.searchBar > div > form > input:focus {
+    outline: 0;
+}
+
+.searchBar > div > form > input + svg {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 18px;
+    color: var(--grey2);
+    cursor: pointer;
+}

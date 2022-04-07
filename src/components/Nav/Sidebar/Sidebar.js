@@ -1,4 +1,11 @@
-import { faCog, faHome, faUser, faSignOutAlt, faCalendarCheck, faNotesMedical } from '@fortawesome/free-solid-svg-icons'
+import {
+    faCog,
+    faHome,
+    faUser,
+    faSignOutAlt,
+    faNotesMedical,
+    faBriefcaseMedical,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
@@ -39,14 +46,14 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faUser} /> Profile
                     </Link>
                 </li>
-                <li className={location.pathname === '/appointment' ? classes.active : ''}>
-                    <Link to="/appointment">
-                        <FontAwesomeIcon icon={faCalendarCheck} /> Appointment
+                <li className={location.pathname === '/doctors' ? classes.active : ''}>
+                    <Link to="/doctors">
+                        <FontAwesomeIcon icon={faBriefcaseMedical} /> Find Doctors
                     </Link>
                 </li>
-                <li className={location.pathname === '/medication' ? classes.active : ''}>
-                    <Link to="/medication">
-                        <FontAwesomeIcon icon={faNotesMedical} /> Medication
+                <li className={location.pathname === '/medicals' ? classes.active : ''}>
+                    <Link to="/medicals">
+                        <FontAwesomeIcon icon={faNotesMedical} /> Medical Reports
                     </Link>
                 </li>
             </ul>

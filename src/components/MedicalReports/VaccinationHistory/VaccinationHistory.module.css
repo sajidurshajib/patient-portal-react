@@ -1,0 +1,41 @@
+.VaccinationHistory {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+}
+.VaccinationHistory h2 {
+    color: var(--dark-blue);
+}
+.head {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 80% 20%;
+}
+.head > p {
+    color: var(--grey);
+}
+.head > p:nth-child(2) {
+    text-align: center;
+}
+
+.ListWrapper > div {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    border-bottom: 1px solid var(--light);
+}
+.ListWrapper > div:last-child {
+    border-bottom: none;
+}
+.ListWrapper > div > p:nth-child(1) > svg {
+    font-size: 22px;
+    margin-right: 10px;
+    line-height: 40px;
+    color: var(--red);
+}
+.ListWrapper > div > p:nth-child(2) {
+    text-align: center;
+    font-size: 12px;
+    line-height: 40px;
+}

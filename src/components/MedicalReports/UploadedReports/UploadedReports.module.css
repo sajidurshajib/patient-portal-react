@@ -1,0 +1,25 @@
+.UploadedReports {
+    background: var(--white);
+    padding: 20px 40px;
+    margin: 0 0 20px 0;
+    border-radius: 10px;
+}
+.UploadedReports > h2 {
+    color: var(--dark-blue);
+    margin-bottom: 40px;
+}
+.files {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 2fr));
+}
+.files > div {
+    text-align: center;
+}
+.files > div > svg {
+    font-size: 60px;
+    color: var(--primary);
+    cursor: pointer;
+}
+.files > div > p {
+    font-size: 12px;
+}

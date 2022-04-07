@@ -1,7 +1,15 @@
 import { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Auth, UserInfo } from './allContext'
-import { HomePage, ProfilePage, RegisterPage, LoginPage } from './pages/index'
+import {
+    HomePage,
+    ProfilePage,
+    FindDoctorsPage,
+    RegisterPage,
+    MedicalPage,
+    LoginPage,
+    SettingsPage,
+} from './pages/index'
 import { authState, authReducer } from './reducer/authReducer'
 import { userState, userReducer } from './reducer/userReducer'
 import ProtectedRoute from './routes/ProtectedRoute'
@@ -19,6 +27,9 @@ const App = () => {
                         <Switch>
                             <Route path="/" exact={true} component={HomePage} />
                             <ProtectedRoute path="/profile" component={ProfilePage} redirect="/" />
+                            <ProtectedRoute path="/doctors" component={FindDoctorsPage} redirect="/" />
+                            <ProtectedRoute path="/medicals" component={MedicalPage} redirect="/" />
+                            <ProtectedRoute path="/settings" component={SettingsPage} redirect="/" />
                             <Route path="/register" component={RegisterPage} />
                             <Route path="/login" component={LoginPage} />
                         </Switch>
