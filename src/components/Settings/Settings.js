@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Sidebar } from '../Nav'
+import ChangePassword from './ChangePassword/ChangePassword'
 import General from './General/General'
 import PatientInfo from './PatientInfo/PatientInfo'
 import classes from './Settings.module.css'
@@ -30,11 +31,17 @@ const Settings = () => {
                             onClick={(e) => setMenu(3)}>
                             Patient information
                         </span>
+                        <span
+                            className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                            onClick={(e) => setMenu(4)}>
+                            Change Password
+                        </span>
                     </div>
                     <div>
                         {menu === 1 ? <General /> : null}
                         {menu === 2 ? <UserDetail /> : null}
                         {menu === 3 ? <PatientInfo /> : null}
+                        {menu === 4 ? <ChangePassword /> : null}
                     </div>
                 </div>
             </div>
