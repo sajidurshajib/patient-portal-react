@@ -5,6 +5,7 @@ import {
     faSignOutAlt,
     faNotesMedical,
     faBriefcaseMedical,
+    faThermometer,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
@@ -54,6 +55,11 @@ const Sidebar = () => {
                 <li className={location.pathname === '/medicals' ? classes.active : ''}>
                     <Link to="/medicals">
                         <FontAwesomeIcon icon={faNotesMedical} /> Medical Reports
+                    </Link>
+                </li>
+                <li className={location.pathname === '/indicators' ? classes.active : ''}>
+                    <Link to="/indicators">
+                        <FontAwesomeIcon icon={faThermometer} /> Indicators
                     </Link>
                 </li>
             </ul>
