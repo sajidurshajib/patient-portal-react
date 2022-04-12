@@ -1,0 +1,41 @@
+.Number {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin: 20px 0;
+    position: relative;
+}
+.header > h3 {
+    color: var(--primary);
+    margin: 5px 5px 10px 5px;
+    position: relative;
+}
+.field input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: 0;
+    background: var(--light);
+    margin: 5px;
+    padding: 10px;
+    min-width: 30px;
+    max-width: 100px;
+    border-radius: 4px;
+}
+.field input + span {
+    font-size: 14px;
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+.field form > button {
+    border: none;
+    outline: 0;
+    color: var(--white);
+    background: var(--primary);
+    margin: 0 0 0 10px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
