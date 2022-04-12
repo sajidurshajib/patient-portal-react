@@ -12,7 +12,7 @@ const Bp = () => {
 
     const [dataBp, setDataBp] = useState([])
 
-    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+    const apiV1 = process.env.REACT_APP_API_V1
 
     let token = stateAuth.token
 
