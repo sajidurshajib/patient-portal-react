@@ -3,5 +3,6 @@
     grid-template-columns: minmax(0, 20%) minmax(0, 80%);
     gap: 20px;
     background: var(--light);
-    height: 100vh;
+    min-height: 100vh;
+    padding-right: 20px;
 }

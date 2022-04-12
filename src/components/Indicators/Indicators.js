@@ -1,5 +1,6 @@
 import { Sidebar } from '../Nav'
 import classes from './Indicators.module.css'
+import { Bp, Pulse, Rbs } from './index.js'
 
 const Indicators = () => {
     return (
@@ -9,6 +10,9 @@ const Indicators = () => {
             </div>
             <div>
                 <h3>Hello Indicators</h3>
+                <Bp />
+                <Rbs />
+                <Pulse />
             </div>
         </div>
     )
