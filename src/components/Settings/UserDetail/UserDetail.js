@@ -13,7 +13,7 @@ const UserDetail = () => {
     const [userDetail, setUserDetail] = useState(null)
     const [msg, setMsg] = useState('')
 
-    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+    const apiV1 = process.env.REACT_APP_API_V1
 
     const token = stateAuth.token
 
