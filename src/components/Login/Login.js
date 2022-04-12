@@ -2,7 +2,6 @@ import { faArrowRight, faHandSparkles, faSignInAlt } from '@fortawesome/free-sol
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
-import env from 'react-dotenv'
 import { Link, useHistory } from 'react-router-dom'
 import { Auth } from '../../allContext'
 import { statusCheck } from '../../utils/statusCheck'
@@ -19,7 +18,7 @@ const Login = () => {
 
     const [alert, setAlert] = useState([])
 
-    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+    const apiV1 = process.env.REACT_APP_API_V1
 
     const submit = async (e) => {
         e.preventDefault()
