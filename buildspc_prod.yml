@@ -6,7 +6,7 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
-      - cp .env.prod .env.production.local
+      - cp .env.production .env.production.local
   build:
     commands:
       - echo Build started on `date`      
