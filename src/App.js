@@ -1,6 +1,7 @@
 import { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Auth, UserInfo } from './allContext'
+import TestPage from './pages/TestPage'
 import {
     HomePage,
     ProfilePage,
@@ -34,6 +35,7 @@ const App = () => {
                             <ProtectedRoute path="/settings" component={SettingsPage} redirect="/" />
                             <Route path="/register" component={RegisterPage} />
                             <Route path="/login" component={LoginPage} />
+                            <Route path="/test" component={TestPage} />
                         </Switch>
                     </Router>
                     {/* Auth and User context end */}
