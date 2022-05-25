@@ -1,0 +1,73 @@
+.changePP > button {
+    background: none;
+    border: none;
+    color: var(--secondary);
+}
+
+.changePP > button {
+    background: none;
+    border: none;
+    color: var(--secondary);
+    position: relative;
+    left: 170px;
+    top: 170px;
+}
+
+.changePP > button:hover {
+    cursor: pointer;
+    color: var(--red);
+}
+
+.imgUploader {
+    position: absolute;
+    background: none;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    padding: 14px 28px;
+    border-radius: 10px;
+    max-width: 600px;
+    min-width: 300px;
+    z-index: 50;
+}
+
+.imgUploader > .uploadForm {
+    width: 500px;
+    height: 400px;
+    background: var(--white);
+    box-shadow: 1px 3px 10px var(--grey2);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.uploadForm h2 {
+    color: var(--dark-blue);
+    display: inline-block;
+    text-align: center;
+}
+
+.uploadForm .Content {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.uploadForm > .Content > .previewImg {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--dark-blue);
+}
+
+.uploadForm button {
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    /* height: 30px;
+    width: 100px; */
+    padding: 5px;
+}
