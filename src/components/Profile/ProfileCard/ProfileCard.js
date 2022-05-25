@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { UserInfo } from '../../../allContext'
 import proPic from '../../../assets/img/patient1.jpeg'
 import classes from './ProfileCard.module.css'
+import ProfileImgUpload from './ProfileImgUpload/ProfileImgUpload'
 
 const ProfileCard = ({ userDetail }) => {
     const { stateUser } = useContext(UserInfo)
@@ -9,14 +10,19 @@ const ProfileCard = ({ userDetail }) => {
     return (
         <div className={classes.ProfileCard}>
             <div
+                className={classes.PP}
                 style={{
                     background: `url(${proPic})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     borderRadius: '10px',
-                }}></div>
+                }}>
+                <>
+                    <ProfileImgUpload />
+                </>
+            </div>
 
-            <h2>{stateUser?.info?.name}</h2>
+            <h2>{stateUser?.info.name}</h2>
             <p>
                 {userDetail.dob} <span>({stateUser?.info.sex})</span>
             </p>
