@@ -39,12 +39,13 @@ const Sidebar = () => {
             <ul>
                 <li className={location.pathname === '/' ? classes.active : ''}>
                     <Link to="/">
-                        <FontAwesomeIcon icon={faHome} /> <span>Home</span>
+                        <FontAwesomeIcon icon={faHome} className={classes.marginIcon1} />
+                        <span className={classes.textMargin1}>Home</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/profile' ? classes.active : ''}>
                     <Link to="/profile">
-                        <FontAwesomeIcon icon={faUser} className={classes.marginIcon1} /> <span>Profile</span>
+                        <FontAwesomeIcon icon={faUser} className={classes.marginIcon2} /> <span>Profile</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/doctors' ? classes.active : ''}>
@@ -54,8 +55,8 @@ const Sidebar = () => {
                 </li>
                 <li className={location.pathname === '/medicals' ? classes.active : ''}>
                     <Link to="/medicals">
-                        <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon2} />
-                        <span>Medical Reports</span>
+                        <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon3} />
+                        <span className={classes.textMargin2}>Medical Reports</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/indicators' ? classes.active : ''}>

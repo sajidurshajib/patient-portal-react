@@ -55,14 +55,6 @@
     font-size: 14px;
     font-weight: 500;
 }
-.marginIcon1 {
-    margin-left: 1px;
-    font-size: 14px;
-}
-.marginIcon2 {
-    margin-left: 2px;
-    font-size: 16px;
-}
 .Sidebar ul > li > a > span {
     margin-left: 10px;
 }
@@ -107,6 +99,23 @@
     height: 1px;
     background: var(--light);
 }
+.marginIcon1 {
+    font-size: 14px;
+}
+.marginIcon2 {
+    margin-left: 1px;
+    font-size: 14px;
+}
+.marginIcon3 {
+    margin-left: 2px;
+    font-size: 16px;
+}
+.textMargin1 {
+    padding-left: 1px;
+}
+.textMargin2 {
+    padding-left: 3px;
+}
 
 @media (max-width: 380px) {
     .Sidebar {
@@ -150,10 +159,13 @@
         display: none;
     }
     .marginIcon1 {
+        font-size: 16px;
+    }
+    .marginIcon2 {
         margin-left: 1px;
         font-size: 18px;
     }
-    .marginIcon2 {
+    .marginIcon3 {
         margin-left: 2px;
         font-size: 18px;
     }
