@@ -6,7 +6,7 @@
 }
 .Wrapper {
     background: var(--light);
-    min-height: 100vh;
+    max-height: 100vh;
 }
 .Wrapper > div {
     min-height: 90vh;
@@ -40,4 +40,30 @@
 .activeNav {
     background: var(--secondary);
     color: var(--white);
+}
+
+@media (max-width: 380px) {
+    .Settings {
+        background: var(--light);
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        gap: 20px;
+    }
+    .Wrapper {
+        background: var(--light);
+        margin-left: 3em;
+        margin-right: -10px;
+        margin-top: -1em;
+    }
+    .Nav {
+        padding: 0px 10px 0 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    .Nav > span {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin: 0 0 0px 0px;
+    }
 }

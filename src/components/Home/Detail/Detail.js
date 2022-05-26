@@ -17,13 +17,13 @@ const Detail = () => {
                     }}></div>
             </div>
             <div>
-                <h2>Your patient portal</h2>
+                <h2>Your Patient Portal</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem repellat aliquam aut facere ullam
                     quia mollitia iste dicta, velit doloribus? Labore rem id a obcaecati. Lorem ipsum dolor sit amet
                     consectetur, adipisicing elit. Non facere nulla. Lorem ipsum dolor sit amet.
                 </p>
-                <h3>Your services</h3>
+                <h3>Your Services</h3>
                 <ul>
                     <li>
                         <FontAwesomeIcon icon={faCheckCircle} /> Save your health data.

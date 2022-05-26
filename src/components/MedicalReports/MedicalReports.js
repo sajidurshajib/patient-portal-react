@@ -10,7 +10,7 @@ const MedicalReports = () => {
             <div>
                 <Sidebar />
             </div>
-            <div>
+            <div className={classes.prescriptionsContainer}>
                 <Prescriptions />
                 <UploadedReports />
                 <VaccinationHistory />

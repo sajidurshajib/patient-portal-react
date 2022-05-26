@@ -6,6 +6,12 @@
     border-bottom: 1px solid var(--light);
     padding: 10px 0 20px 0;
 }
+
+.doctorPic {
+    width: 160px;
+    height: 160px;
+    border-radius: 160px;
+}
 .name {
     color: var(--primary);
     margin: 10px 0 0 0;
@@ -58,4 +64,50 @@
     height: 40px;
     text-align: center;
     cursor: pointer;
+}
+
+@media (max-width: 380px) {
+    .doctor {
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        margin: 20px auto;
+        width: 100%;
+        border-bottom: 1px solid var(--light);
+        padding: 10px 0 20px 0;
+    }
+    .doctorPic {
+        width: 110px;
+        height: 110px;
+        margin: 0 auto;
+    }
+    .nameContainer {
+        text-align: center;
+    }
+    .name {
+        color: var(--primary);
+        margin: 12px 0 0 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .qualification {
+        color: var(--grey);
+        margin: 0;
+        font-size: 14px;
+    }
+    .speciality {
+        color: var(--dark-blue);
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    .designation {
+        font-size: 14px;
+        margin: 10px 0 0 0;
+    }
+    .currentWorkPlace {
+        font-size: 12px;
+        margin: 4px 0 10px 0;
+        color: var(--secondary);
+        font-weight: 500;
+    }
 }

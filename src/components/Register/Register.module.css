@@ -246,3 +246,43 @@
     font-size: 14px;
     line-height: 24px;
 }
+
+@media (max-width: 380px) {
+    .right {
+        display: none;
+    }
+    .Wrapper {
+        grid-template-columns: 90%;
+        gap: 0px;
+    }
+    .left {
+        margin: 30px 0 60px 32px;
+    }
+    .left > div > h2 {
+        margin: 10px 0 10px 0;
+    }
+    .Address h3 {
+        margin-top: -2px;
+    }
+    .Address > div > select {
+        padding: 10px;
+        background-color: var(--white);
+        border: 2px solid var(--light);
+        border-radius: 2px;
+    }
+    .sexWrapper > div > select {
+        padding: 10px;
+        background-color: var(--white);
+        border: 2px solid var(--light);
+        border-radius: 2px;
+    }
+    .sexWrapper > div > select + span {
+        top: -18%;
+        left: 88%;
+    }
+    .sexWrapper > div > input[type='date'] {
+        font-size: 12px;
+        padding: 8px 2px;
+        background-color: var(--white);
+    }
+}

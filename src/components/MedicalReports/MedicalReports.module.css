@@ -6,3 +6,13 @@
     padding: 0 20px 0 0;
     min-height: 100vh;
 }
+
+@media (max-width: 380px) {
+    .MedicalReports {
+        grid-template-columns: minmax(0, 12%) minmax(0, 88%);
+        padding: 0 12px 0 0;
+    }
+    .MedicalReports .prescriptionsContainer {
+        margin-left: -10px;
+    }
+}

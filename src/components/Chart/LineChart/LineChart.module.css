@@ -1,0 +1,10 @@
+.chartWrapper {
+    height: 250px;
+}
+
+@media (max-width: 380px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 14.8em;
+    }
+}

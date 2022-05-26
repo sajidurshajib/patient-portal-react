@@ -15,8 +15,8 @@ const PersonalHabits = () => {
                 </div>
 
                 <div>
-                    <h4>Zarda/ Betel Leaf</h4>
-                    <label className={classes.switch}>
+                    <h4>Zarda/Betel Leaf</h4>
+                    <label className={`${classes.switch} ${classes.labelAlign}`}>
                         <input type="checkbox" />
                         <span></span>
                     </label>

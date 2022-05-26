@@ -65,7 +65,7 @@ const General = () => {
                 <label htmlFor="phone">Phone</label>
                 <input id="phone" type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
 
-                <select id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
+                <select className={classes.select} id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>

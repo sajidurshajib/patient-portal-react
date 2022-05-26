@@ -158,3 +158,19 @@
     text-decoration: none;
     color: var(--primary);
 }
+
+@media (max-width: 380px) {
+    .left {
+        display: none;
+    }
+    .Wrapper {
+        grid-template-columns: 90%;
+        gap: 0px;
+    }
+    .right {
+        margin: 40px 0 60px 34px;
+    }
+    .right > div > h2 {
+        margin: 0 0 30px 0;
+    }
+}

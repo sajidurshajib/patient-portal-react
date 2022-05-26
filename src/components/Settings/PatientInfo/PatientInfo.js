@@ -56,7 +56,7 @@ const PatientInfo = () => {
 
     return (
         <div className={classes.PatientInfo}>
-            <h2>Patient Personal Information Update</h2>
+            <h2>Personal Information Update</h2>
             {msg.length !== 0 ? (
                 <p className={classes.msg}>
                     {msg}

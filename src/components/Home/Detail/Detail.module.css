@@ -41,3 +41,34 @@
     margin-top: 5px;
     margin-right: 10px;
 }
+
+@media (max-width: 380px) {
+    .Detail {
+        grid-template-columns: repeat(1, minmax(0, 100%));
+    }
+
+    .Detail > div:nth-child(2) h2 {
+        margin: 10px 0px;
+        font-weight: 400;
+        font-size: 22px;
+    }
+
+    .Detail > div > h3 {
+        margin: 10px 0px;
+        font-weight: 400;
+        font-size: 22px;
+        margin-top: 1em;
+    }
+
+    .Detail > div:nth-child(2) p {
+        margin: 0px;
+        text-align: justify;
+        font-size: 14px;
+    }
+    .Detail > div > ul {
+        list-style-type: none;
+        padding: 0 0 0 2px;
+        margin-top: -2px;
+        font-size: 14px;
+    }
+}

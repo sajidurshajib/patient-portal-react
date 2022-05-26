@@ -107,7 +107,7 @@ const UserDetail = () => {
 
                 <h3>Address</h3>
                 <label htmlFor="division">Division</label>
-                <select>
+                <select className={classes.select}>
                     {divisionJson.divisions.map((v, i) => {
                         return (
                             <option key={i} value={v.name} selected={userDetail?.division === v.name}>
@@ -118,7 +118,7 @@ const UserDetail = () => {
                 </select>
 
                 <label htmlFor="district">District</label>
-                <select>
+                <select className={classes.select}>
                     {districtJson.districts.map((v, i) => {
                         return (
                             <option key={i} value={v.name} selected={userDetail?.district === v.name}>
@@ -129,7 +129,7 @@ const UserDetail = () => {
                 </select>
 
                 <label htmlFor="upazila">Upazila</label>
-                <select>
+                <select className={classes.select}>
                     {upazilaJson.upazilas.map((v, i) => {
                         return (
                             <option key={i} value={v.name} selected={userDetail?.sub_district === v.name}>
@@ -140,7 +140,7 @@ const UserDetail = () => {
                 </select>
 
                 <label htmlFor="pcode">Post Office</label>
-                <select>
+                <select className={classes.select}>
                     {postCodeJson.postcodes.map((v, i) => {
                         return (
                             <option key={i} value={v.postCode} selected={userDetail?.post_code === v.postCode}>
