@@ -8,14 +8,14 @@ const ProfileCard = ({ userDetail }) => {
     const { stateUser } = useContext(UserInfo)
     const { stateAuth } = useContext(Auth)
 
-    const [pic, setPic] = useState()
+    const [pic, setPic] = useState({})
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
 
     useEffect(() => {
         let imgInfoFunc = async () => {
-            let imgInfo = await fetch(`${apiV1}/profile-pic`, {
+            let imgInfoFetch = await fetch(`${apiV1}/profile-pic`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -23,15 +23,22 @@ const ProfileCard = ({ userDetail }) => {
                 },
                 method: 'GET',
             })
+            console.log('convert json')
+            let infoJson = await imgInfoFetch.json()
+            console.log('jsoned pre')
+            console.log(infoJson.image_string)
 
-            let infoJson = await imgInfo.json()
-
-            if (imgInfo.ok) {
+            if (imgInfoFetch.ok) {
                 setPic(infoJson.image_string)
+                console.log('pic set')
             }
         }
+        try {
+            imgInfoFunc()
+        } catch (e) {}
     }, [apiV1, token])
 
+    console.log('pic string', pic)
     const picUrl = 'http://127.0.0.1:8000/files/' + pic
 
     return (
