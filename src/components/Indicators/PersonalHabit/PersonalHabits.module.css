@@ -54,7 +54,7 @@
     background: var(--red);
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .PersonalHabits {
         background: var(--white);
         border-radius: 10px;

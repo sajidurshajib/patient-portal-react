@@ -39,7 +39,7 @@
     font-size: 12px;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .Information {
         background: var(--white);
         border-radius: 10px;

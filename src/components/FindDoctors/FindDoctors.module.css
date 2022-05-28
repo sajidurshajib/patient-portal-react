@@ -57,7 +57,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .FindDoctors {
         grid-template-columns: repeat(1, 100%);
         margin: 0 auto;

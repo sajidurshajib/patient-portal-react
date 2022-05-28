@@ -133,7 +133,7 @@
     outline: 0;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .UserDetail {
         margin: 0px;
         margin-bottom: -2em;

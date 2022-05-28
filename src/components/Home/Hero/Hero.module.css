@@ -59,9 +59,10 @@
     background: transparent;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .Hero {
         grid-template-columns: repeat(1, minmax(0, 100%));
+        margin-left: -12px;
     }
     .Hero::before {
         content: '';

@@ -24,7 +24,7 @@
     font-size: 12px;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .UploadedReports {
         background: var(--white);
         padding: 10px 20px 10px 20px;

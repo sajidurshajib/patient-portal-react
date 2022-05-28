@@ -42,7 +42,7 @@
     margin-right: 10px;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .Detail {
         grid-template-columns: repeat(1, minmax(0, 100%));
     }

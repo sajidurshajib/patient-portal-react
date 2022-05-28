@@ -33,7 +33,7 @@
     margin-right: 5px;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .Services {
         grid-template-columns: repeat(1, minmax(0, 100%));
         margin-top: -2em;

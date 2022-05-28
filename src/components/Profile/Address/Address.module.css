@@ -32,7 +32,7 @@
     font-weight: 500;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .Address > h3 {
         color: var(--dark-blue);
         font-size: 1em;

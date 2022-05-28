@@ -104,7 +104,7 @@
     width: 40%;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .PatientInfo {
         margin: 0px;
         margin-bottom: -2em;

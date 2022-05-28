@@ -117,7 +117,7 @@
     padding-left: 3px;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .Sidebar {
         background: var(--white);
         width: 12%;
@@ -150,7 +150,7 @@
     }
     .Sidebar ul > li > a,
     .Sidebar ul > li > span {
-        padding: 8px 5px;
+        padding: 8px 10px;
     }
     .Sidebar ul > li > a > span {
         display: none;
@@ -175,5 +175,12 @@
     .Sidebar ul > li.active {
         border-left: 4px solid var(--primary);
         padding-left: 2px;
+    }
+}
+
+@media (max-width: 390px) {
+    .Sidebar ul > li > a,
+    .Sidebar ul > li > span {
+        padding: 8px 5px;
     }
 }
