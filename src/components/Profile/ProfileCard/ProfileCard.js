@@ -23,14 +23,10 @@ const ProfileCard = ({ userDetail }) => {
                 },
                 method: 'GET',
             })
-            console.log('convert json')
             let infoJson = await imgInfoFetch.json()
-            console.log('jsoned pre')
-            console.log(infoJson.image_string)
 
             if (imgInfoFetch.ok) {
                 setPic(infoJson.image_string)
-                console.log('pic set')
             }
         }
         try {
@@ -38,21 +34,12 @@ const ProfileCard = ({ userDetail }) => {
         } catch (e) {}
     }, [apiV1, token])
 
-    console.log('pic string', pic)
-
     const picUrl = 'http://127.0.0.1:8000/files/' + pic
 
     return (
         <div className={classes.ProfileCard}>
-            <div
-                className={classes.PP}
-                style={{
-                    background: `url(${picUrl})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    borderRadius: '10px',
-                    backgroundRepeat: 'no-repeat',
-                }}>
+            <div className={classes.PP}>
+                <img src={picUrl} className={classes.ProfileImage} alt="" />
                 <>
                     <ProfileImgUpload />
                 </>

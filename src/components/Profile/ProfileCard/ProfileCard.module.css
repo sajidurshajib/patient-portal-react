@@ -50,6 +50,15 @@
     font-size: 18px;
 }
 
+.ProfileImage {
+    object-fit: cover;
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
 @media (max-width: 420px) {
     .ProfileCard {
         background: var(--white);
@@ -83,5 +92,13 @@
         color: var(--red);
         font-weight: 500;
         font-size: 18px;
+    }
+    .ProfileImage {
+        object-fit: cover;
+        height: 120px;
+        width: 120px;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
     }
 }

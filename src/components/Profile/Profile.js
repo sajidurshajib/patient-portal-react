@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../allContext'
 import { PersonalHabits } from '../Indicators'
 import { Sidebar } from '../Nav'
