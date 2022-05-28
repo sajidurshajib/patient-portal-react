@@ -101,7 +101,7 @@ const Summery = () => {
                     <p>
                         Diabetes <span>(Random blood sugar)</span>
                     </p>
-                    <p>{lastRbs.slot_int1}</p>
+                    <p>{lastRbs.slot_flt4}</p>
                     {select === 2 ? <span></span> : null}
                 </div>
                 <div onClick={(e) => setSelect(3)}>
