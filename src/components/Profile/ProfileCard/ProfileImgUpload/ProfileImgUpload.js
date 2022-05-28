@@ -8,6 +8,7 @@ import classes from './ProfileImgUpload.module.css'
 
 const ProfileImgUpload = () => {
     const { stateAuth } = useContext(Auth)
+
     const inputRef = useRef()
     const triggerFileSelectPopup = () => {
         inputRef.current.click()
@@ -16,7 +17,7 @@ const ProfileImgUpload = () => {
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
 
-    const [changeForm, setChangeForm] = useState(false)
+    const [uploadForm, setUploadForm] = useState(false)
 
     const [selectedImg, setSelectedImg] = useState()
     const [preview, setPreview] = useState()
@@ -31,7 +32,7 @@ const ProfileImgUpload = () => {
     }, [])
 
     const popup = () => {
-        setChangeForm(!changeForm)
+        setUploadForm(!uploadForm)
     }
 
     useEffect(() => {
@@ -57,7 +58,7 @@ const ProfileImgUpload = () => {
     const showCroppedImage = useCallback(async () => {
         try {
             const croppedImage = await getCroppedImg(preview, croppedAreaPixels)
-            console.log('donee', { croppedImage })
+            console.log(' cropped done', { croppedImage })
             setCroppedImage(croppedImage)
         } catch (e) {
             console.error(e)
@@ -72,16 +73,22 @@ const ProfileImgUpload = () => {
     // API Fetch
     const upload = async (e) => {
         e.preventDefault()
+        const imgData = new FormData()
+
+        await imgData.append('blob', selectedImg)
+
+        console.log(croppedImage)
 
         let pic = await fetch(`${apiV1}/profile-pic`, {
             headers: {
-                // Accept: 'appllication/json',
-                // 'Content-Type': 'multipart/form-data',
+                Accept: 'appllication/json',
+                'Content-Type': 'multipart/form-data',
+                type: 'image/jpeg',
                 Authorization: `Bearer ${token}`,
             },
             mode: 'no-cors',
             method: 'POST',
-            body: 'multipart/form-data',
+            body: imgData,
         })
     }
 
@@ -93,7 +100,7 @@ const ProfileImgUpload = () => {
                 </button>
             </div>
 
-            {changeForm && (
+            {uploadForm && (
                 <div className={classes.imgUploader}>
                     <h2>Update Image</h2>
                     <div className={classes.uploadForm}>

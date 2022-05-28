@@ -39,6 +39,7 @@ const ProfileCard = ({ userDetail }) => {
     }, [apiV1, token])
 
     console.log('pic string', pic)
+
     const picUrl = 'http://127.0.0.1:8000/files/' + pic
 
     return (
@@ -50,6 +51,7 @@ const ProfileCard = ({ userDetail }) => {
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     borderRadius: '10px',
+                    backgroundRepeat: 'no-repeat',
                 }}>
                 <>
                     <ProfileImgUpload />
