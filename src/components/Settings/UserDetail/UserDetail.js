@@ -17,25 +17,47 @@ const UserDetail = () => {
 
     const token = stateAuth.token
 
-    useEffect(() => {
-        let userDetailFunc = async () => {
-            let userDetailFetch = await fetch(`${apiV1}/user/details`, {
-                headers: {
-                    Accept: 'appllication/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                dataType: 'json',
-                method: 'GET',
-            })
+    //wrong fetch
 
-            if (userDetailFetch.ok) {
-                let ud = await userDetailFetch.json()
-                await setUserDetail(ud)
+    // useEffect(() => {
+    //     let userDetailFunc = async () => {
+    //         let userDetailFetch = await fetch(`${apiV1}/user/details`, {
+    //             headers: {
+    //                 Accept: 'appllication/json',
+    //                 'Content-Type': 'application/json',
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //             dataType: 'json',
+    //             method: 'GET',
+    //         })
+
+    //         if (userDetailFetch.ok) {
+    //             let ud = await userDetailFetch.json()
+    //             await setUserDetail(ud)
+    //         }
+    //     }
+
+    //     userDetailFunc()
+    // }, [token, apiV1])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${apiV1}/user/details/`, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                const data = await response.json()
+                setUserDetail(data)
+            } catch {
+                setUserDetail({})
             }
         }
-
-        userDetailFunc()
+        return fetchData()
     }, [token, apiV1])
 
     const submit = async (e) => {
@@ -52,7 +74,7 @@ const UserDetail = () => {
                 ...userDetail,
             }),
         })
-
+        console.log(userDetail)
         if (udSubmit.ok) {
             setMsg('User details updated')
         } else {
