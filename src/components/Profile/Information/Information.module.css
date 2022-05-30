@@ -25,9 +25,12 @@
 .Information .bio {
     color: var(--dark-blue);
     margin: 0 -10px;
-    border: 2px solid var(--light);
+    border: 1px solid var(--light);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: 3px 3px 15px var(--light-grey);
 }
 .Information .bio > p:nth-child(1) {
     font-size: 16px;

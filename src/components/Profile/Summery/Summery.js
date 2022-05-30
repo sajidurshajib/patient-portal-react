@@ -51,7 +51,7 @@ const Summery = () => {
             let rbsJson = await rbsFetch.json()
 
             if (rbsFetch.ok) {
-                await setLastRbs(rbsJson)
+                setLastRbs(rbsJson)
             }
         }
 
@@ -72,7 +72,7 @@ const Summery = () => {
             let pulseJson = await pulseFetch.json()
 
             if (pulseFetch.ok) {
-                await setLastPulse(pulseJson)
+                setLastPulse(pulseJson)
             }
         }
 

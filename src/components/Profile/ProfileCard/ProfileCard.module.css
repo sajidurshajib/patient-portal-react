@@ -45,12 +45,13 @@
     color: var(--dark-blue);
 }
 .ProfileCard > p:nth-child(6) > span {
-    color: var(--red);
-    font-weight: 500;
-    font-size: 18px;
+    color: var(--green);
+    font-weight: 600;
+    font-size: 1.2em;
 }
 
-.ProfileCard > .PP {
+.ProfileCard .bloodGrp {
+    margin-left: 2px;
 }
 
 .ProfileImage {
@@ -92,16 +93,11 @@
         color: var(--dark-blue);
     }
     .ProfileCard > p:nth-child(6) > span {
-        color: var(--red);
-        font-weight: 500;
-        font-size: 18px;
+        font-size: 14px;
     }
     .ProfileImage {
-        object-fit: cover;
         height: 120px;
         width: 120px;
-        border-radius: 10px;
-        display: block;
         margin: 0 auto;
     }
 }

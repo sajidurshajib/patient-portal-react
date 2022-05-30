@@ -58,7 +58,7 @@ const ProfileCard = ({ userDetail }) => {
             </p>
 
             <p>
-                Blood group: <span>{userDetail.blood_group}</span>
+                Blood group: <span className={classes.bloodGrp}>{userDetail.blood_group}</span>
             </p>
         </div>
     )
