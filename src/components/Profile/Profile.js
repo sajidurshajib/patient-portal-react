@@ -18,6 +18,8 @@ const Profile = () => {
 
     const token = stateAuth.token
 
+    console.log(token)
+
     useEffect(() => {
         let infoFunc = async () => {
             let infoFetch = await fetch(`${apiV1}/user/details`, {
@@ -30,6 +32,7 @@ const Profile = () => {
             })
 
             let infoJson = await infoFetch.json()
+            console.log(infoJson)
 
             if (infoFetch.ok) {
                 setUserDetail(infoJson)
@@ -39,7 +42,9 @@ const Profile = () => {
         try {
             infoFunc()
         } catch (e) {}
+    }, [apiV1, token])
 
+    useEffect(() => {
         let patientFunc = async () => {
             let patientFetch = await fetch(`${apiV1}/patients`, {
                 headers: {

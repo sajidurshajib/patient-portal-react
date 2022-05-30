@@ -34,7 +34,7 @@ const ProfileCard = ({ userDetail }) => {
         } catch (e) {}
     }, [apiV1, token])
 
-    const picUrl = 'http://127.0.0.1:8000/files/' + pic
+    const picUrl = 'http://127.0.0.1:8000/images/profile/' + pic
 
     return (
         <div className={classes.ProfileCard}>
