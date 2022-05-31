@@ -1,0 +1,31 @@
+.Family {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin: 20px 0;
+    display: grid;
+    grid-template-rows: minmax(0, 30%) minmax(0, 70%);
+}
+
+.Family h3 {
+    color: var(--primary);
+    /* margin: 5px 5px 10px 5px; */
+}
+
+.Family > .Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Family > .Header > form button {
+    background: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--primary);
+}
+
+.Family > .Content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
