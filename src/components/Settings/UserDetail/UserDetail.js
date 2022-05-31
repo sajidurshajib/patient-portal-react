@@ -10,7 +10,7 @@ import classes from './UserDetail.module.css'
 const UserDetail = () => {
     const { stateAuth } = useContext(Auth)
 
-    const [userDetail, setUserDetail] = useState(null)
+    const [userDetail, setUserDetail] = useState()
     const [msg, setMsg] = useState('')
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -39,6 +39,8 @@ const UserDetail = () => {
 
     //     userDetailFunc()
     // }, [token, apiV1])
+
+    // Right Fetch
 
     useEffect(() => {
         const fetchData = async () => {
@@ -74,7 +76,9 @@ const UserDetail = () => {
                 ...userDetail,
             }),
         })
+
         console.log(userDetail)
+
         if (udSubmit.ok) {
             setMsg('User details updated')
         } else {
@@ -92,7 +96,7 @@ const UserDetail = () => {
                 </p>
             ) : null}
 
-            <form onSubmit={submit}>
+            <form>
                 <div className={classes.dob}>
                     <label>Date of birth:</label>
                     <input
@@ -128,6 +132,63 @@ const UserDetail = () => {
                 </div>
 
                 <h3>Address</h3>
+                <label htmlFor="division">Division</label>
+                <select
+                    className={classes.select}
+                    value={userDetail?.division !== null ? userDetail?.division : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, division: e.target.value })}>
+                    {divisionJson.divisions.map((v, i) => {
+                        return (
+                            <option key={i} value={v.name}>
+                                {v.name}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                <label htmlFor="district">District</label>
+                <select
+                    className={classes.select}
+                    value={userDetail?.district !== null ? userDetail?.district : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, district: e.target.value })}>
+                    {districtJson.districts.map((v, i) => {
+                        return (
+                            <option key={i} value={v.name}>
+                                {v.name}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                <label htmlFor="upazila">Upazila</label>
+                <select
+                    className={classes.select}
+                    value={userDetail?.sub_district !== null ? userDetail?.sub_district : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, sub_district: e.target.value })}>
+                    {upazilaJson.upazilas.map((v, i) => {
+                        return (
+                            <option key={i} value={v.name}>
+                                {v.name}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                <label htmlFor="pcode">Post Office</label>
+                <select
+                    className={classes.select}
+                    value={userDetail?.post_code !== null ? userDetail?.post_code : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, post_code: e.target.value })}>
+                    {postCodeJson.postcodes.map((v, i) => {
+                        return (
+                            <option key={i} value={v.postCode}>
+                                {v.postOffice}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                {/* <h3>Address</h3>
                 <label htmlFor="division">Division</label>
                 <select className={classes.select}>
                     {divisionJson.divisions.map((v, i) => {
@@ -170,9 +231,8 @@ const UserDetail = () => {
                             </option>
                         )
                     })}
-                </select>
-
-                <button>Update</button>
+                </select> */}
+                <button onClick={submit}>Update</button>
             </form>
         </div>
     )
