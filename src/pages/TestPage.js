@@ -4,14 +4,7 @@ let url =
 const click = async (e) => {
     e.preventDefault()
 
-    const fun = await fetch(url, {
-        headers: {
-            Accept: 'appllication/json',
-            'Content-Type': 'application/json',
-        },
-        dataType: 'json',
-        method: 'GET',
-    })
+    const fun = await fetch(url)
 
     await fun.json()
 }
