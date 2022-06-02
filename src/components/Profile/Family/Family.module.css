@@ -1,10 +1,11 @@
 .Family {
     background: var(--white);
     border-radius: 10px;
-    padding: 20px 40px;
+    padding: 20px;
     margin: 20px 0;
     display: grid;
-    grid-template-rows: minmax(0, 40%) minmax(0, 60%);
+    grid-template-rows: minmax(0, 10%) minmax(0, 30%) minmax(0, 50%);
+    height: 400px;
 }
 
 .Family h3 {
@@ -31,30 +32,122 @@
 
 .Family > .Content {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
 }
 
-.Family > .Header > .optAll {
-    position: absolute;
-    margin-top: -2em;
+.Family > .list {
+    height: 200px;
+}
+.Family > .list > .optAll {
+    position: relative;
+    margin: 20px;
     background: var(--white);
-    width: 40%;
+    width: 70%;
     border-radius: 4px;
     padding: 2px 4px;
-    /* overflow-y: auto; */
-    overflow: hidden;
 }
 
-.Family > .Header > .optAll > .optSelect {
-    box-shadow: 1px 2px 4px var(--light);
+.Family > .list > .optAll > .optSelect {
+    /* box-shadow: 1px 2px 4px var(--light); */
     padding: 10px 6px;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 14px;
+    color: var(--secondary);
+}
+
+.Family > .list > .optAll > .optSelect > div > button {
+    margin-left: 400px;
+    background: var(--light);
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    color: var(--secondary);
+}
+
+.Family > .list > .optAll > .optSelect > div > button:hover {
+    color: var(--green);
     cursor: pointer;
 }
 
-.Family > .Header > .optAll > .optSelect:hover {
+/* .Family > .list > .optAll > .optSelect:hover {
     background-color: var(--secondary);
     color: var(--white);
+} */
+
+.formPopup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: var(--white);
+    /* padding: 14px 28px; */
+    border-radius: 10px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.formPopup > .reqInfo {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 1px 3px 10px var(--grey2);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.reqInfo > h2 {
+    color: var(--dark-blue);
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.reqInfo .Content {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.reqInfo > .Content form > label {
+    color: var(--dark-blue);
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: 10px;
+    right: 130px;
+    background: var(--white);
+    padding: 0 2px;
+}
+.reqInfo > .Content form > input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--secondary);
+    outline: 0;
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    padding: 7px 10px;
+    width: 100%;
+}
+.reqInfo > .Content form > input:focus {
+    outline: 0;
+}
+.reqInfo > .Content form > button {
+    cursor: pointer;
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 2px;
+    margin: 20px 30px;
+}
+.reqInfo > .Content form button:hover {
+    box-shadow: 1px 3px 10px var(--grey2);
 }
