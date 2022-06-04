@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../../allContext'
 import classes from './PatientInfo.module.css'
 
@@ -8,9 +7,7 @@ const PatientInfo = () => {
     const [patientData, setPatientData] = useState('')
 
     const [msg, setMsg] = useState('')
-
     const apiV1 = process.env.REACT_APP_API_V1
-
     const token = stateAuth.token
 
     useEffect(() => {
@@ -29,7 +26,6 @@ const PatientInfo = () => {
                 setPatientData(pdata)
             }
         }
-
         patientFunc()
     }, [token, apiV1])
 

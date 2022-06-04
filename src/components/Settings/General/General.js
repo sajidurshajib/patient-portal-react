@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react'
-import env from 'react-dotenv'
 import { UserInfo, Auth } from '../../../allContext'
 import classes from './General.module.css'
 

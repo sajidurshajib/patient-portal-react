@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../../allContext'
 import districtJson from '../../../config/locations/bd-districts.json'
 import divisionJson from '../../../config/locations/bd-divisions.json'
@@ -10,7 +9,7 @@ import classes from './UserDetail.module.css'
 const UserDetail = () => {
     const { stateAuth } = useContext(Auth)
 
-    const [userDetail, setUserDetail] = useState(null)
+    const [userDetail, setUserDetail] = useState({})
     const [msg, setMsg] = useState('')
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -18,7 +17,6 @@ const UserDetail = () => {
     const token = stateAuth.token
 
     //wrong fetch
-
     // useEffect(() => {
     //     let userDetailFunc = async () => {
     //         let userDetailFetch = await fetch(`${apiV1}/user/details`, {
@@ -33,10 +31,10 @@ const UserDetail = () => {
 
     //         if (userDetailFetch.ok) {
     //             let ud = await userDetailFetch.json()
-    //             await setUserDetail(ud)
+    //             console.log('new', ud)
+    //             setUserDetail(ud)
     //         }
     //     }
-
     //     userDetailFunc()
     // }, [token, apiV1])
 
@@ -74,7 +72,6 @@ const UserDetail = () => {
                 ...userDetail,
             }),
         })
-        console.log(userDetail)
         if (udSubmit.ok) {
             setMsg('User details updated')
         } else {
