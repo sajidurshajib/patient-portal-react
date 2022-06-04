@@ -4,6 +4,7 @@ import { PersonalHabits } from '../Indicators'
 import { Sidebar } from '../Nav'
 import Address from './Address/Address'
 import Events from './Events/Events'
+import Family from './Family/Family'
 import Information from './Information/Information'
 import Prescriptions from './Prescriptions/Prescriptions'
 import classes from './Profile.module.css'
@@ -96,6 +97,7 @@ const Profile = () => {
                     <Summery />
                     <Prescriptions />
                     <PersonalHabits />
+                    <Family />
                 </div>
             </div>
         </div>
