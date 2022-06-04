@@ -4,8 +4,8 @@
     padding: 20px;
     margin: 20px 0;
     display: grid;
-    grid-template-rows: minmax(0, 10%) minmax(0, 30%) minmax(0, 50%);
-    height: 400px;
+    grid-template-rows: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
+    min-height: 400px;
 }
 
 .Family h3 {
@@ -28,10 +28,6 @@
 
 .Family > .Header > form input:focus {
     outline: 0;
-}
-
-.Family > .Content {
-    margin-top: 20px;
 }
 
 .Family > .list {
@@ -151,3 +147,9 @@
 .reqInfo > .Content form button:hover {
     box-shadow: 1px 3px 10px var(--grey2);
 }
+
+/* .Family > .Content {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+} */

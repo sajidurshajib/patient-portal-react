@@ -16,9 +16,9 @@ const Family = () => {
     const [hide, setHide] = useState(false)
 
     const [reqPopup, setReqPopup] = useState(false)
-    const [relationWith, setRelationWith] = useState()
-    const [relationFrom, setRelationFrom] = useState()
-    const [relationTo, setRelationTo] = useState()
+    const [relation_with, setRelationWith] = useState()
+    const [relation_from, setRelationFrom] = useState()
+    const [relation_to, setRelationTo] = useState()
     const [message, setMessage] = useState('hello')
 
     const popup = () => {
@@ -75,13 +75,13 @@ const Family = () => {
                 Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({
-                relationWith,
-                relationFrom,
-                relationTo,
+                relation_with,
+                relation_from,
+                relation_to,
                 message,
             }),
         })
-        console.log(relationWith, relationTo, relationFrom, message)
+        console.log(relation_with, relation_from, relation_to, message)
         if (reqFetch.ok) {
             console.log('submitted')
         } else {
@@ -143,15 +143,15 @@ const Family = () => {
                                                         <input
                                                             id="relationWith"
                                                             type="number"
-                                                            value={relationWith}
-                                                            onChange={(e) => setRelationWith(e.target.value)}
+                                                            value={relation_with}
+                                                            onChange={() => setRelationWith(info.id)}
                                                         />
 
                                                         <label htmlFor="relation_from">Relation From</label>
                                                         <input
                                                             id="relation_from"
                                                             type="text"
-                                                            value={relationFrom}
+                                                            value={relation_from}
                                                             onChange={(e) => setRelationFrom(e.target.value)}
                                                         />
 
@@ -159,7 +159,7 @@ const Family = () => {
                                                         <input
                                                             id="relation_to"
                                                             type="text"
-                                                            value={relationTo}
+                                                            value={relation_to}
                                                             onChange={(e) => setRelationTo(e.target.value)}
                                                         />
 
@@ -184,7 +184,9 @@ const Family = () => {
                 )}
             </div>
             <div className={classes.Content}>
-                <Members />
+                <div>
+                    <Members />
+                </div>
             </div>
         </div>
     )
