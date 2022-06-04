@@ -26,6 +26,8 @@ const ProfileImgUpload = () => {
     const [zoom, setZoom] = useState(1)
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null)
     const [croppedImage, setCroppedImage] = useState(null)
+    const [pro, setpro] = useState('')
+    const [msg, setMsg] = useState([])
 
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels)
@@ -64,7 +66,7 @@ const ProfileImgUpload = () => {
             console.error(e)
             console.log('error Printed!!!')
         }
-    }, [croppedAreaPixels])
+    })
 
     const onClose = useCallback(() => {
         setCroppedImage(null)
@@ -74,22 +76,26 @@ const ProfileImgUpload = () => {
     const upload = async (e) => {
         e.preventDefault()
         const imgData = new FormData()
+        let fp = new File([], 'filename.jpeg', { type: 'image/jpeg' })
+        console.log(fp)
+        imgData.append('file', selectedImg)
 
-        await imgData.append('blob', selectedImg)
-
+        console.log('printing image::::::::::')
         console.log(croppedImage)
+        console.log(imgData)
 
         let pic = await fetch(`${apiV1}/profile-pic`, {
             headers: {
                 Accept: 'appllication/json',
-                'Content-Type': 'multipart/form-data',
                 type: 'image/jpeg',
                 Authorization: `Bearer ${token}`,
             },
-            mode: 'no-cors',
             method: 'POST',
             body: imgData,
         })
+        const pp = await pic.json()
+        setpro(pp.secure_url)
+        setMsg([...msg, 'Picture Uploaded'])
     }
 
     return (
