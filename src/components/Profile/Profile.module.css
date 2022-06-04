@@ -8,6 +8,78 @@
     display: grid;
     grid-template-columns: minmax(0, 30%) minmax(0, 70%);
     gap: 20px;
-    margin: 0 20px 0 0;
+    margin: 0 20px 20px 0;
     padding: 20px 0 0 0;
+}
+
+@media (max-width: 420px) {
+    .Profile {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 96.6%);
+        padding: 0px 0 0 3.68em;
+        margin: 0em;
+    }
+}
+
+@media (max-width: 380px) {
+    .Profile {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 96.6%);
+        padding: 0px 0 0 3.38em;
+        margin: 0em;
+    }
+}
+
+@media (max-width: 360px) {
+    .Profile {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 96.6%);
+        padding: 0px 0 0 3.3em;
+        margin: 0em;
+    }
+}
+
+@media (max-width: 340px) {
+    .Profile {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 96.6%);
+        padding: 0px 0 0 3.1em;
+        margin: 0em;
+    }
+}
+
+@media (max-width: 320px) {
+    .Profile {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 96.6%);
+        padding: 0px 0 0 2.9em;
+        margin: 0em;
+    }
+}
+
+@media (max-width: 300px) {
+    .Profile {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 96.6%);
+        padding: 0px 0 0 2.8em;
+        margin: 0em;
+    }
 }

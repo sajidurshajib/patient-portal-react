@@ -1,0 +1,52 @@
+.chartWrapper {
+    height: 250px;
+}
+
+@media (max-width: 420px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 20em;
+    }
+}
+
+@media (max-width: 390px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 18em;
+    }
+}
+
+@media (max-width: 370px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 16.6em;
+    }
+}
+
+@media (max-width: 350px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 15.6em;
+    }
+}
+
+@media (max-width: 340px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 14.9em;
+    }
+}
+
+@media (max-width: 320px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 14.6em;
+    }
+}
+
+@media (max-width: 300px) {
+    .chartWrapper {
+        height: 10em;
+        max-width: 14em;
+    }
+}

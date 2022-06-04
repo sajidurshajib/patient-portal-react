@@ -8,14 +8,13 @@ import classes from './FindDoctors.module.css'
 const FindDoctors = () => {
     const c = (e) => {
         e.preventDefault()
-        // console.log('Hello')
     }
     return (
         <div className={classes.FindDoctors}>
             <div>
                 <Sidebar />
             </div>
-            <div>
+            <div className={classes.listContainer}>
                 <div
                     className={classes.searchBar}
                     style={{
@@ -26,7 +25,7 @@ const FindDoctors = () => {
                     }}>
                     <div>
                         <form>
-                            <input type="text" placeholder="medicine specialist" />
+                            <input type="text" placeholder="Medicine specialist" />
                             <FontAwesomeIcon icon={faSearch} onClick={(e) => c(e)} />
                         </form>
                     </div>

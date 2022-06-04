@@ -103,3 +103,32 @@
     padding: 7px 10px;
     width: 40%;
 }
+
+@media (max-width: 420px) {
+    .PatientInfo {
+        margin: 0px;
+        margin-bottom: -2em;
+    }
+    .PatientInfo > h2 {
+        font-size: 1em;
+        margin-top: 1em;
+    }
+
+    .PatientInfo h3 {
+        font-size: 0.9em;
+        margin-top: 1.6em;
+    }
+
+    .PatientInfo form > input {
+        width: 80%;
+    }
+    .PatientInfo form > button {
+        padding: 8px 25px;
+        border-radius: 2px;
+        margin: 20px auto 10px auto;
+        font-size: 12px;
+    }
+    .bio > textarea {
+        width: 80%;
+    }
+}

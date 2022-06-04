@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../allContext'
 import { PersonalHabits } from '../Indicators'
 import { Sidebar } from '../Nav'
 import Address from './Address/Address'
+import Events from './Events/Events'
+import Family from './Family/Family'
 import Information from './Information/Information'
 import Prescriptions from './Prescriptions/Prescriptions'
 import classes from './Profile.module.css'
@@ -13,58 +14,74 @@ import Summery from './Summery/Summery'
 const Profile = () => {
     const [userDetail, setUserDetail] = useState({})
     const [patientDetail, setPatientDetail] = useState({})
+    const [lastWeight, setLastWeight] = useState({})
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
-
     const token = stateAuth.token
 
     useEffect(() => {
-        let infoFunc = async () => {
-            let infoFetch = await fetch(`${apiV1}/user/details`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
-
-            let infoJson = await infoFetch.json()
-
-            if (infoFetch.ok) {
-                setUserDetail(infoJson)
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${apiV1}/user/details/`, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                const data = await response.json()
+                setUserDetail(data)
+            } catch {
+                setUserDetail({})
             }
         }
+        return fetchData()
+    }, [token, apiV1])
 
-        try {
-            infoFunc()
-        } catch (e) {}
-
-        let patientFunc = async () => {
-            let patientFetch = await fetch(`${apiV1}/patients`, {
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                method: 'GET',
-            })
-
-            let patientJson = await patientFetch.json()
-            if (patientFetch.ok) {
-                setPatientDetail(patientJson)
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${apiV1}/patients/`, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                const data = await response.json()
+                setPatientDetail(data)
+            } catch {
+                setPatientDetail({})
             }
         }
+        return fetchData()
+    }, [token, apiV1])
 
-        try {
-            patientFunc()
-        } catch (e) {}
-    }, [apiV1, token])
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${apiV1}/patient/indicators/last/weight`, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                const data = await response.json()
+                setLastWeight(data)
+            } catch {
+                setLastWeight({})
+            }
+        }
+        return fetchData()
+    }, [token, apiV1])
 
     return (
         <div className={classes.Profile}>
-            {/* <TransparentNav /> */}
             <div>
                 <Sidebar />
             </div>
@@ -72,13 +89,15 @@ const Profile = () => {
             <div className={classes.Wrapper}>
                 <div>
                     <ProfileCard userDetail={userDetail} />
-                    <Information userDetail={userDetail} patientDetail={patientDetail} />
+                    <Information userDetail={userDetail} patientDetail={patientDetail} lastWeight={lastWeight} />
+                    <Events />
                     <Address userDetail={userDetail} />
-                    <PersonalHabits />
                 </div>
                 <div>
                     <Summery />
                     <Prescriptions />
+                    <PersonalHabits />
+                    <Family />
                 </div>
             </div>
         </div>

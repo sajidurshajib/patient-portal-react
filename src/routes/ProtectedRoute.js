@@ -1,5 +1,4 @@
 import { useContext, useEffect } from 'react'
-import env from 'react-dotenv'
 import { Route, Redirect } from 'react-router-dom'
 import { Auth, UserInfo } from '../allContext'
 
@@ -7,9 +6,8 @@ const ProtectedRoute = ({ component: Component, redirect = '/login', ...rest }) 
     const { stateAuth, dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
 
-    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
+    const apiV1 = process.env.REACT_APP_API_V1
 
-    // stateAuth rerender this component
     let token = stateAuth.token
 
     useEffect(() => {
