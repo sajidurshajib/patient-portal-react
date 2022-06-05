@@ -132,3 +132,41 @@
 .nid > input:focus {
     outline: 0;
 }
+
+@media (max-width: 420px) {
+    .UserDetail {
+        margin: 0px;
+        margin-bottom: -2em;
+    }
+    .UserDetail > h2 {
+        font-size: 1em;
+        margin-top: 1em;
+    }
+    .UserDetail h3 {
+        font-size: 0.9em;
+        margin-top: 1.6em;
+    }
+    .UserDetail form > select {
+        padding: 8px 20px;
+        width: 90%;
+    }
+    .UserDetail form > button {
+        padding: 8px 25px;
+        margin: 6px auto 20px auto;
+        font-size: 12px;
+    }
+    .bg > select {
+        padding: 6px 15px;
+        margin: 10px 0 10px 0;
+        width: 100px;
+    }
+    .select {
+        font-size: 12px;
+    }
+    .dob > input,
+    .nid > input {
+        padding: 6px 10px;
+        width: 80%;
+        font-size: 12px;
+    }
+}

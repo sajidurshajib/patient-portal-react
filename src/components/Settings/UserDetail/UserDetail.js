@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../../allContext'
 import districtJson from '../../../config/locations/bd-districts.json'
 import divisionJson from '../../../config/locations/bd-divisions.json'
@@ -10,32 +9,55 @@ import classes from './UserDetail.module.css'
 const UserDetail = () => {
     const { stateAuth } = useContext(Auth)
 
-    const [userDetail, setUserDetail] = useState(null)
+    const [userDetail, setUserDetail] = useState()
     const [msg, setMsg] = useState('')
 
     const apiV1 = process.env.REACT_APP_API_V1
 
     const token = stateAuth.token
 
-    useEffect(() => {
-        let userDetailFunc = async () => {
-            let userDetailFetch = await fetch(`${apiV1}/user/details`, {
-                headers: {
-                    Accept: 'appllication/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                dataType: 'json',
-                method: 'GET',
-            })
+    //wrong fetch
+    // useEffect(() => {
+    //     let userDetailFunc = async () => {
+    //         let userDetailFetch = await fetch(`${apiV1}/user/details`, {
+    //             headers: {
+    //                 Accept: 'appllication/json',
+    //                 'Content-Type': 'application/json',
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //             dataType: 'json',
+    //             method: 'GET',
+    //         })
 
-            if (userDetailFetch.ok) {
-                let ud = await userDetailFetch.json()
-                await setUserDetail(ud)
+    //         if (userDetailFetch.ok) {
+    //             let ud = await userDetailFetch.json()
+    //             console.log('new', ud)
+    //             setUserDetail(ud)
+    //         }
+    //     }
+    //     userDetailFunc()
+    // }, [token, apiV1])
+
+    // Right Fetch
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${apiV1}/user/details/`, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                const data = await response.json()
+                setUserDetail(data)
+            } catch {
+                setUserDetail({})
             }
         }
-
-        userDetailFunc()
+        return fetchData()
     }, [token, apiV1])
 
     const submit = async (e) => {
@@ -70,7 +92,7 @@ const UserDetail = () => {
                 </p>
             ) : null}
 
-            <form onSubmit={submit}>
+            <form>
                 <div className={classes.dob}>
                     <label>Date of birth:</label>
                     <input
@@ -107,7 +129,64 @@ const UserDetail = () => {
 
                 <h3>Address</h3>
                 <label htmlFor="division">Division</label>
-                <select>
+                <select
+                    className={classes.select}
+                    value={userDetail?.division !== null ? userDetail?.division : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, division: e.target.value })}>
+                    {divisionJson.divisions.map((v, i) => {
+                        return (
+                            <option key={i} value={v.name}>
+                                {v.name}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                <label htmlFor="district">District</label>
+                <select
+                    className={classes.select}
+                    value={userDetail?.district !== null ? userDetail?.district : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, district: e.target.value })}>
+                    {districtJson.districts.map((v, i) => {
+                        return (
+                            <option key={i} value={v.name}>
+                                {v.name}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                <label htmlFor="upazila">Upazila</label>
+                <select
+                    className={classes.select}
+                    value={userDetail?.sub_district !== null ? userDetail?.sub_district : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, sub_district: e.target.value })}>
+                    {upazilaJson.upazilas.map((v, i) => {
+                        return (
+                            <option key={i} value={v.name}>
+                                {v.name}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                <label htmlFor="pcode">Post Office</label>
+                <select
+                    className={classes.select}
+                    value={userDetail?.post_code !== null ? userDetail?.post_code : ''}
+                    onChange={(e) => setUserDetail({ ...userDetail, post_code: e.target.value })}>
+                    {postCodeJson.postcodes.map((v, i) => {
+                        return (
+                            <option key={i} value={v.postCode}>
+                                {v.postOffice}
+                            </option>
+                        )
+                    })}
+                </select>
+
+                {/* <h3>Address</h3>
+                <label htmlFor="division">Division</label>
+                <select className={classes.select}>
                     {divisionJson.divisions.map((v, i) => {
                         return (
                             <option key={i} value={v.name} selected={userDetail?.division === v.name}>
@@ -118,7 +197,7 @@ const UserDetail = () => {
                 </select>
 
                 <label htmlFor="district">District</label>
-                <select>
+                <select className={classes.select}>
                     {districtJson.districts.map((v, i) => {
                         return (
                             <option key={i} value={v.name} selected={userDetail?.district === v.name}>
@@ -129,7 +208,7 @@ const UserDetail = () => {
                 </select>
 
                 <label htmlFor="upazila">Upazila</label>
-                <select>
+                <select className={classes.select}>
                     {upazilaJson.upazilas.map((v, i) => {
                         return (
                             <option key={i} value={v.name} selected={userDetail?.sub_district === v.name}>
@@ -140,7 +219,7 @@ const UserDetail = () => {
                 </select>
 
                 <label htmlFor="pcode">Post Office</label>
-                <select>
+                <select className={classes.select}>
                     {postCodeJson.postcodes.map((v, i) => {
                         return (
                             <option key={i} value={v.postCode} selected={userDetail?.post_code === v.postCode}>
@@ -148,9 +227,8 @@ const UserDetail = () => {
                             </option>
                         )
                     })}
-                </select>
-
-                <button>Update</button>
+                </select> */}
+                <button onClick={submit}>Update</button>
             </form>
         </div>
     )

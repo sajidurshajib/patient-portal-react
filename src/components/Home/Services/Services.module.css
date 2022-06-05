@@ -32,3 +32,17 @@
     font-size: 26px;
     margin-right: 5px;
 }
+
+@media (max-width: 420px) {
+    .Services {
+        grid-template-columns: repeat(1, minmax(0, 100%));
+        margin-top: -2em;
+    }
+    .Services > div {
+        box-shadow: 0 6px 12px var(--light);
+        border-radius: 4px;
+    }
+    .Services > div > p:nth-child(1) {
+        font-size: 16px;
+    }
+}

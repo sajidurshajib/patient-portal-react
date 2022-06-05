@@ -9,17 +9,15 @@ const DoctorList = () => {
             <div className={classes.doctor}>
                 <div>
                     <div
+                        className={classes.doctorPic}
                         style={{
                             backgroundImage: `url(${img1})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
-                            width: '160px',
-                            height: '160px',
-                            borderRadius: '160px',
                             border: '4px solid var(--grey2)',
                         }}></div>
                 </div>
-                <div>
+                <div className={classes.nameContainer}>
                     <p className={classes.name}>Dr. Ashis Sharma</p>
                     <p className={classes.qualification}>MBBS, BCS</p>
                     <p className={classes.speciality}>Neck Sugery</p>
@@ -34,17 +32,15 @@ const DoctorList = () => {
             <div className={classes.doctor}>
                 <div>
                     <div
+                        className={classes.doctorPic}
                         style={{
                             backgroundImage: `url(${img2})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
-                            width: '160px',
-                            height: '160px',
-                            borderRadius: '160px',
                             border: '4px solid var(--grey2)',
                         }}></div>
                 </div>
-                <div>
+                <div className={classes.nameContainer}>
                     <p className={classes.name}>Dr. Farhana Afroze</p>
                     <p className={classes.qualification}>MBBS, PGT, MRTSP</p>
                     <p className={classes.speciality}>Gynaecology & Obstetrics</p>
@@ -59,17 +55,15 @@ const DoctorList = () => {
             <div className={classes.doctor}>
                 <div>
                     <div
+                        className={classes.doctorPic}
                         style={{
                             backgroundImage: `url(${img3})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
-                            width: '160px',
-                            height: '160px',
-                            borderRadius: '160px',
                             border: '4px solid var(--grey2)',
                         }}></div>
                 </div>
-                <div>
+                <div className={classes.nameContainer}>
                     <p className={classes.name}>Dr. Md. Majharul Huq Tanim</p>
                     <p className={classes.qualification}>MBBS, DEM (BIRDEM), MACP (USA)</p>
                     <p className={classes.speciality}>Diabetes & Endocrinology</p>

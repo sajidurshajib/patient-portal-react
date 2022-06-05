@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import env from 'react-dotenv'
 import { useContext, useEffect } from 'react/cjs/react.development'
 import { Auth } from '../../allContext'
 import { LineChart } from '../Chart'
@@ -29,7 +28,7 @@ const Pulse = () => {
             body: JSON.stringify({
                 key: 'rbs',
                 unit: 'mmol/L',
-                slot_int1: rbs,
+                slot_flt4: rbs,
             }),
         })
 
@@ -52,7 +51,7 @@ const Pulse = () => {
             let rbsJson = await rbsFetch.json()
 
             if (rbsFetch.ok) {
-                await setDataRbs(rbsJson)
+                setDataRbs(rbsJson)
             }
         }
 
@@ -66,7 +65,7 @@ const Pulse = () => {
         datasets: [
             {
                 label: 'RBS',
-                data: [...dataRbs.map((elm) => elm.slot_int1)],
+                data: [...dataRbs.map((elm) => elm.slot_flt4)],
                 fill: true,
                 backgroundColor: 'rgba(119, 221, 119,0.2)',
                 borderColor: 'rgba(119, 221, 119,1)',

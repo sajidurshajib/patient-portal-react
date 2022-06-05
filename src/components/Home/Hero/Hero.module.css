@@ -58,3 +58,42 @@
     color: var(--primary);
     background: transparent;
 }
+
+@media (max-width: 420px) {
+    .Hero {
+        grid-template-columns: repeat(1, minmax(0, 100%));
+        margin-left: -12px;
+    }
+    .Hero::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: var(--white);
+        opacity: 0.7;
+    }
+    .left > h2 {
+        font-size: 1em;
+        margin-top: -10px;
+    }
+    .right > img {
+        height: 60%;
+        top: 8.8em;
+        right: 1em;
+    }
+    .ButtonGroup span {
+        padding: 4px 10px;
+        min-width: 40px;
+        font-size: 10px;
+    }
+    .ButtonGroup span:nth-child(1) {
+        border-radius: 10px 0 0 10px;
+    }
+    .ButtonGroup span:nth-child(2) {
+        border-radius: 0 10px 10px 0;
+        color: var(--primary);
+        background: transparent;
+    }
+}

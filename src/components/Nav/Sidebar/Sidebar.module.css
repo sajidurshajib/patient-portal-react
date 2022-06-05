@@ -3,6 +3,7 @@
     height: 100vh;
     position: fixed;
     box-shadow: 3px 3px 15px var(--light-grey);
+    width: 20%;
 }
 .header {
     position: relative;
@@ -17,7 +18,6 @@
     width: 80%;
     background: var(--light);
 }
-
 .header > a {
     text-align: center;
     text-decoration: none;
@@ -54,6 +54,12 @@
     border-left: 6px solid var(--white);
     font-size: 14px;
     font-weight: 500;
+}
+.Sidebar ul > li > a > span {
+    margin-left: 10px;
+}
+.Sidebar ul > li > span > span {
+    margin-left: 10px;
 }
 .Sidebar ul > li:hover {
     border-left: 6px solid var(--light);
@@ -92,4 +98,89 @@
     width: 80%;
     height: 1px;
     background: var(--light);
+}
+.marginIcon1 {
+    font-size: 14px;
+}
+.marginIcon2 {
+    margin-left: 1px;
+    font-size: 14px;
+}
+.marginIcon3 {
+    margin-left: 2px;
+    font-size: 16px;
+}
+.textMargin1 {
+    padding-left: 1px;
+}
+.textMargin2 {
+    padding-left: 3px;
+}
+
+@media (max-width: 420px) {
+    .Sidebar {
+        background: var(--white);
+        width: 12%;
+    }
+
+    .header {
+        position: relative;
+        padding: 70px 0 20px 0;
+    }
+    .header > a > img {
+        margin: 0px auto;
+        width: 20px;
+        height: 20px;
+        margin-top: -3em;
+    }
+    .header::after {
+        content: '';
+        position: absolute;
+        left: 10%;
+        bottom: 2em;
+    }
+    .header > a > h2 {
+        display: none;
+    }
+    .Sidebar ul {
+        margin-top: -1em;
+    }
+    .Sidebar ul > li {
+        font-size: 1em;
+    }
+    .Sidebar ul > li > a,
+    .Sidebar ul > li > span {
+        padding: 8px 10px;
+    }
+    .Sidebar ul > li > a > span {
+        display: none;
+    }
+    .Sidebar .logout {
+        display: none;
+    }
+    .marginIcon1 {
+        font-size: 16px;
+    }
+    .marginIcon2 {
+        margin-left: 1px;
+        font-size: 18px;
+    }
+    .marginIcon3 {
+        margin-left: 2px;
+        font-size: 18px;
+    }
+    .Sidebar ul > li:hover {
+        border-left: 2px solid var(--light);
+    }
+    .Sidebar ul > li.active {
+        border-left: 4px solid var(--primary);
+        padding-left: 2px;
+    }
+}
+
+@media (max-width: 390px) {
+    .Sidebar ul > li > a,
+    .Sidebar ul > li > span {
+        padding: 8px 5px;
+    }
 }

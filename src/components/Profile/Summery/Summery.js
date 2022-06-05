@@ -2,15 +2,13 @@ import { faHeartbeat, faRandom } from '@fortawesome/free-solid-svg-icons'
 import { faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext, useEffect } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../../allContext'
 import { Pulse, Rbs, Bp } from '../../Indicators'
 import classes from './Summery.module.css'
 
 const Summery = () => {
     const { stateAuth } = useContext(Auth)
-    const apiV1 = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_API_V1 : env.REACT_APP_API_V1
-
+    const apiV1 = process.env.REACT_APP_API_V1
     let token = stateAuth.token
 
     const [select, setSelect] = useState(1)
@@ -53,7 +51,7 @@ const Summery = () => {
             let rbsJson = await rbsFetch.json()
 
             if (rbsFetch.ok) {
-                await setLastRbs(rbsJson)
+                setLastRbs(rbsJson)
             }
         }
 
@@ -74,7 +72,7 @@ const Summery = () => {
             let pulseJson = await pulseFetch.json()
 
             if (pulseFetch.ok) {
-                await setLastPulse(pulseJson)
+                setLastPulse(pulseJson)
             }
         }
 
@@ -103,7 +101,7 @@ const Summery = () => {
                     <p>
                         Diabetes <span>(Random blood sugar)</span>
                     </p>
-                    <p>{lastRbs.slot_int1}</p>
+                    <p>{lastRbs.slot_flt4}</p>
                     {select === 2 ? <span></span> : null}
                 </div>
                 <div onClick={(e) => setSelect(3)}>

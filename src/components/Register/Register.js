@@ -130,7 +130,7 @@ const Register = () => {
                                         required
                                     />
                                     <label>
-                                        <span>Phone number [11 digit]</span>
+                                        <span>Mobile [11 digit]</span>
                                     </label>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ const Register = () => {
                                 <div>
                                     <select value={division} onChange={(e) => setDivision(e.target.value)}>
                                         <option disabled value={0}>
-                                            select division
+                                            Select Division
                                         </option>
                                         {divisionJson.divisions.map((v) => {
                                             return (
@@ -164,7 +164,7 @@ const Register = () => {
                                     </select>
 
                                     <select value={district} onChange={(e) => setDistrict(e.target.value)}>
-                                        <option value={0}>select district</option>
+                                        <option value={0}>Select District</option>
                                         {districtJson.districts
                                             .filter((item) => item.division_id === String(division))
                                             .map((v) => (
@@ -176,7 +176,7 @@ const Register = () => {
 
                                     <select value={upazila} onChange={(e) => setUpazila(e.target.value)}>
                                         <option disabled value={0}>
-                                            select upazila
+                                            Select Upazila
                                         </option>
                                         {upazilaJson.upazilas
                                             .filter((item) => item.district_id === String(district))
@@ -189,7 +189,7 @@ const Register = () => {
 
                                     <select value={postcode} onChange={(e) => setPostcode(e.target.value)}>
                                         <option disabled value={0}>
-                                            select post office
+                                            Select Post Office
                                         </option>
                                         {postcodeJson.postcodes
                                             .filter((item) => item.district_id === String(district))

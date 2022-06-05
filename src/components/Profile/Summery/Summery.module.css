@@ -49,7 +49,7 @@
 .Wrapper > div > p:nth-child(3) {
     margin: 5px 0 40px 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
 }
 .Wrapper > div:nth-child(1) > svg {
     color: var(--red);
@@ -65,4 +65,73 @@
     margin: 30px 0 0 0;
     background: var(--white);
     border-radius: 10px;
+}
+
+@media (max-width: 420px) {
+    .Wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .Wrapper > div {
+        background: var(--white);
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 1px 1px 5px var(--grey2);
+        transition: 250ms;
+        position: relative;
+    }
+    .Wrapper > div:hover {
+        box-shadow: 5px 5px 10px var(--grey2);
+    }
+    .Wrapper > div > span:nth-child(4) {
+        padding: 10px;
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -10px;
+        background: var(--white);
+        transform: rotate(45deg);
+        box-shadow: 3px 3px 5px var(--grey2);
+    }
+
+    .Wrapper > div > svg {
+        display: block;
+        margin: 20px auto 20px auto;
+        font-size: 2em;
+    }
+    .Wrapper > div > p {
+        color: var(--dark-blue);
+        font-size: 16px;
+    }
+    .Wrapper > div > p > span {
+        font-weight: 200;
+        font-size: 14px;
+        display: block;
+    }
+    .Wrapper > div > p:nth-child(2) {
+        text-align: center;
+        font-size: 18px;
+        margin: 10px 0;
+        font-weight: 600;
+        margin-top: -12px;
+    }
+    .Wrapper > div > p:nth-child(3) {
+        margin: 5px 0 20px 0;
+        text-align: center;
+        font-size: 16px;
+    }
+    .Wrapper > div:nth-child(1) > svg {
+        color: var(--red);
+    }
+    .Wrapper > div:nth-child(2) > svg {
+        color: var(--green);
+    }
+    .Wrapper > div:nth-child(3) > svg {
+        color: var(--red);
+    }
+
+    .Graph {
+        margin: 30px 0 0 0;
+        background: var(--white);
+        border-radius: 10px;
+    }
 }

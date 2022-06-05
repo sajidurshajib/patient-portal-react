@@ -7,15 +7,6 @@ const Services = () => {
         <div className={classes.Services}>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faHospital} /> E-Chamber
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptate? Lorem ipsum dolor
-                    sit amet.
-                </p>
-            </div>
-            <div>
-                <p>
                     <FontAwesomeIcon icon={faMedkit} /> Medicine Delivery
                 </p>
                 <p>
@@ -26,6 +17,15 @@ const Services = () => {
             <div>
                 <p>
                     <FontAwesomeIcon icon={faUserMd} /> Telemedicine
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptate? Lorem ipsum dolor
+                    sit amet.
+                </p>
+            </div>
+            <div>
+                <p>
+                    <FontAwesomeIcon icon={faHospital} /> Best Service
                 </p>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptate? Lorem ipsum dolor

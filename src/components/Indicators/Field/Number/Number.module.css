@@ -39,3 +39,23 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+@media (max-width: 420px) {
+    .Number {
+        padding: 20px 14px;
+        margin: -20px 0;
+    }
+    .field input {
+        padding: 6px 12px;
+        min-width: 5em;
+        font-size: 12px;
+    }
+    .field input + span {
+        font-size: 12px;
+    }
+
+    .field form > button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

@@ -27,7 +27,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className={classes.Sidebar} style={{ width: '20%' }}>
+        <div className={classes.Sidebar}>
             <div className={classes.header}>
                 <Link to="/">
                     <img src={img} alt="" />
@@ -39,27 +39,29 @@ const Sidebar = () => {
             <ul>
                 <li className={location.pathname === '/' ? classes.active : ''}>
                     <Link to="/">
-                        <FontAwesomeIcon icon={faHome} /> Home
+                        <FontAwesomeIcon icon={faHome} className={classes.marginIcon1} />
+                        <span className={classes.textMargin1}>Home</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/profile' ? classes.active : ''}>
                     <Link to="/profile">
-                        <FontAwesomeIcon icon={faUser} /> Profile
+                        <FontAwesomeIcon icon={faUser} className={classes.marginIcon2} /> <span>Profile</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/doctors' ? classes.active : ''}>
                     <Link to="/doctors">
-                        <FontAwesomeIcon icon={faBriefcaseMedical} /> Find Doctors
+                        <FontAwesomeIcon icon={faBriefcaseMedical} /> <span>Find Doctors</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/medicals' ? classes.active : ''}>
                     <Link to="/medicals">
-                        <FontAwesomeIcon icon={faNotesMedical} /> Medical Reports
+                        <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon3} />
+                        <span className={classes.textMargin2}>Medical Reports</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/indicators' ? classes.active : ''}>
                     <Link to="/indicators">
-                        <FontAwesomeIcon icon={faThermometer} /> Indicators
+                        <FontAwesomeIcon icon={faThermometer} /> <span>Indicators</span>
                     </Link>
                 </li>
             </ul>
@@ -67,12 +69,12 @@ const Sidebar = () => {
             <ul className={classes.secondUl}>
                 <li className={location.pathname === '/settings' ? classes.active : ''}>
                     <Link to="/settings">
-                        <FontAwesomeIcon icon={faCog} /> Settings
+                        <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                     </Link>
                 </li>
                 <li>
                     <span onClick={(e) => logout(e)}>
-                        <FontAwesomeIcon icon={faSignOutAlt} /> Logout
+                        <FontAwesomeIcon icon={faSignOutAlt} /> <span className={classes.logout}>Logout</span>
                     </span>
                 </li>
             </ul>
