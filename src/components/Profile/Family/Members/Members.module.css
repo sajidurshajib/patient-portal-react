@@ -12,29 +12,9 @@
     line-height: 0.5;
 }
 
-.Member > div > span {
+.Member > div > div > span {
     border: 1px solid #fffc7b;
     background: #fffc7b;
     padding: 5px;
     color: var(--dark-blue);
-}
-
-.Member > div button {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: none;
-    background: none;
-    color: var(--primary);
-    position: relative;
-    left: 180px;
-    top: 10px;
-}
-
-.Member > div button:hover {
-    background: var(--light);
-    position: relative;
-    left: 180px;
-    top: 10px;
-    cursor: pointer;
 }

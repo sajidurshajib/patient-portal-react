@@ -83,7 +83,7 @@ const Family = () => {
         })
         console.log(relation_with, relation_from, relation_to, message)
         if (reqFetch.ok) {
-            console.log('submitted')
+            setReqPopup(false)
         } else {
             console.log('error')
         }
@@ -127,7 +127,11 @@ const Family = () => {
                                         {/* <button onClick={() => setHandle(info)}>
                                             <FontAwesomeIcon icon={faUserPlus} />
                                         </button> */}
-                                        <button onClick={popup}>
+                                        <button
+                                            onClick={() => {
+                                                setRelationWith(info.id)
+                                                popup()
+                                            }}>
                                             <FontAwesomeIcon icon={faUserPlus} />
                                         </button>
                                     </div>
@@ -139,13 +143,13 @@ const Family = () => {
                                                 <h2>Send Request to {info.name}</h2>
                                                 <div className={classes.Content}>
                                                     <form onSubmit={familyReq}>
-                                                        <label htmlFor="relationWith">Relation With</label>
+                                                        {/* <label htmlFor="relationWith">Relation With</label>
                                                         <input
                                                             id="relationWith"
                                                             type="number"
                                                             value={relation_with}
                                                             onChange={() => setRelationWith(info.id)}
-                                                        />
+                                                        /> */}
 
                                                         <label htmlFor="relation_from">Relation From</label>
                                                         <input
