@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from 'react'
 import { Auth, UserInfo } from '../../../allContext'
-import proPic from '../../../assets/img/patient1.jpeg'
+// import proPic from '../../../assets/img/patient1.jpeg'
 import classes from './ProfileCard.module.css'
-import ProfileImgUpload from './ProfileImgUpload/ProfileImgUpload'
+import ProfilePictureUpload from './ProfilePictureUpload/ProfilePictureUpload'
 
 const ProfileCard = ({ userDetail }) => {
     const { stateUser } = useContext(UserInfo)
     const { stateAuth } = useContext(Auth)
 
     const [pic, setPic] = useState({})
+    const [msg, setMsg] = useState([])
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
@@ -32,7 +33,7 @@ const ProfileCard = ({ userDetail }) => {
         try {
             imgInfoFunc()
         } catch (e) {}
-    }, [apiV1, token])
+    }, [apiV1, token, msg])
 
     const picUrl = 'http://127.0.0.1:8000/images/profile/' + pic
 
@@ -41,7 +42,7 @@ const ProfileCard = ({ userDetail }) => {
             <div className={classes.PP}>
                 <img src={picUrl} className={classes.ProfileImage} alt="" />
                 <>
-                    <ProfileImgUpload />
+                    <ProfilePictureUpload msg={msg} setMsg={setMsg} />
                 </>
             </div>
 
