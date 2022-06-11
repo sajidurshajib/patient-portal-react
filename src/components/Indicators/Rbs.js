@@ -65,7 +65,7 @@ const Pulse = () => {
         datasets: [
             {
                 label: 'RBS',
-                data: [...dataRbs.map((elm) => elm.slot_flt4)],
+                data: [...dataRbs.map((elm) => elm.slot_flt4).reverse()],
                 fill: true,
                 backgroundColor: 'rgba(119, 221, 119,0.2)',
                 borderColor: 'rgba(119, 221, 119,1)',

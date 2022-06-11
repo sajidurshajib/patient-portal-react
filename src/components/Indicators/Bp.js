@@ -69,7 +69,7 @@ const Bp = () => {
         datasets: [
             {
                 label: 'High',
-                data: [...dataBp.map((elm) => elm.slot_int1)],
+                data: [...dataBp.map((elm) => elm.slot_int1).reverse()],
                 fill: true,
                 backgroundColor: 'rgba(245, 66, 66,0.1)',
                 borderColor: 'rgba(245, 66, 66,1)',
@@ -77,7 +77,7 @@ const Bp = () => {
             },
             {
                 label: 'Low',
-                data: [...dataBp.map((elm) => elm.slot_int2)],
+                data: [...dataBp.map((elm) => elm.slot_int2).reverse()],
                 fill: true,
                 backgroundColor: 'rgba(45, 114, 178,0.2)',
                 borderColor: 'rgba(45, 114, 178,1)',

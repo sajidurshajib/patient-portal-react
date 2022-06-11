@@ -30,7 +30,7 @@ const Summery = () => {
             let bpJson = await bpFetch.json()
 
             if (bpFetch.ok) {
-                await setLastBp(bpJson)
+                setLastBp(bpJson)
             }
         }
 
