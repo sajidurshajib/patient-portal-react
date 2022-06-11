@@ -1,7 +1,6 @@
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
 import { Auth } from '../../../../allContext'
+import AcceptReject from '../AcceptReject/AcceptReject'
 import classes from './Members.module.css'
 
 const Members = () => {
@@ -23,7 +22,6 @@ const Members = () => {
                     },
                 })
                 const fm = await response.json()
-                console.log('Family member:', fm)
 
                 if (response.ok) {
                     setFamilyMember(fm)
@@ -42,12 +40,14 @@ const Members = () => {
             {data.map((member, i) => {
                 return (
                     <div>
-                        <button>
-                            <FontAwesomeIcon icon={faEllipsisH} />
-                        </button>
-                        <h3>{member.relation_with_name}</h3>
-                        <p>{member.relation_to}</p>
-                        <span>{member.relationship_status}</span>
+                        <>
+                            <AcceptReject />
+                        </>
+                        <div>
+                            <h3>{member.relation_with_name}</h3>
+                            <p>{member.relation_to}</p>
+                            <span>{member.relationship_status}</span>
+                        </div>
                     </div>
                 )
             })}

@@ -1,0 +1,126 @@
+.changePP > .button {
+    background: var(--light);
+    border-radius: 50%;
+    border: none;
+    color: var(--secondary);
+    position: relative;
+    bottom: 30px;
+    left: 160px;
+}
+
+.changePP > .button:hover {
+    cursor: pointer;
+    color: var(--red);
+}
+
+.imgUploader {
+    position: absolute;
+    background: var(--white);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    padding: 14px 28px;
+    border-radius: 10px;
+    max-width: 400px;
+    min-width: 300px;
+    z-index: 50;
+    box-shadow: 1px 3px 10px var(--grey2);
+}
+
+.imgUploader h2 {
+    color: var(--dark-blue);
+    text-align: center;
+}
+
+.imgUploader > .Close {
+    cursor: pointer;
+    background: none;
+    border: 1px solid var(--red);
+    border-radius: 40px;
+    color: var(--red);
+    position: absolute;
+    font-weight: 1000;
+    top: 10px;
+    left: 320px;
+}
+
+.imgUploader > .Close:hover {
+    background: var(--red);
+    color: var(--white);
+    transition: 300ms;
+}
+
+.imgUploader > .uploadForm {
+    width: 100%;
+    background: var(--light);
+}
+
+.uploadForm > .SelectedImg {
+    height: 210px;
+}
+
+.uploadForm > .SelectedImg div .PreviewContainer {
+    width: 100%;
+    background: none;
+}
+
+.uploadForm > .SelectedImg div > .PreviewContainer > .ImgPreview {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.uploadForm > .controlBtn {
+    border-top: 1px solid var(--dark-blue);
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controlBtn > button {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.controlBtn > .Select {
+    border: 1px solid var(--secondary);
+    border-radius: 2px;
+    background: none;
+    color: var(--secondary);
+    padding: 5px;
+}
+
+.controlBtn > .Select:hover {
+    border: 1px solid var(--secondary);
+    background: var(--secondary);
+    color: var(--white);
+    transition: 300ms;
+}
+
+.controlBtn > .Select span {
+    margin-left: 5px;
+}
+
+.controlBtn > .Upload {
+    border: 1px solid var(--green);
+    border-radius: 2px;
+    background: none;
+    color: var(--green);
+    padding: 5px;
+}
+
+.controlBtn > .Upload:hover {
+    border: 1px solid var(--green);
+    background: var(--green);
+    color: var(--white);
+    transition: 300ms;
+}
+
+.controlBtn > .Upload span {
+    margin-left: 5px;
+}
