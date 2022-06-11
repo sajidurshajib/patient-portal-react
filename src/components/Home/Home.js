@@ -1,5 +1,7 @@
 import { TransparentNav } from '../Nav'
 import Detail from './Detail/Detail'
+import Faq from './Faq/Faq'
+import Footer from './Footer/Footer'
 import Hero from './Hero/Hero'
 import classes from './Home.module.css'
 import Services from './Services/Services'
@@ -12,6 +14,8 @@ const Home = () => {
             <Hero />
             <Services />
             <Detail />
+            <Faq />
+            <Footer />
         </div>
     )
 }

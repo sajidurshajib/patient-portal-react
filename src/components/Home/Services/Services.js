@@ -25,7 +25,7 @@ const Services = () => {
             </div>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faHospital} /> Best Service
+                    <FontAwesomeIcon icon={faHospital} /> 24x7 Service
                 </p>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptate? Lorem ipsum dolor
