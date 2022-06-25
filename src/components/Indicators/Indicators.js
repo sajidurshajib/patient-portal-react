@@ -9,7 +9,6 @@ const Indicators = () => {
                 <Sidebar />
             </div>
             <div>
-                <h3>Hello Indicators</h3>
                 <Bp />
                 <Rbs />
                 <Pulse />
