@@ -4,7 +4,7 @@ import { useState, useEffect, useContext, useRef } from 'react'
 import { Auth } from '../../../allContext'
 import classes from './ReportUpload.module.css'
 
-const ReportUpload = () => {
+const ReportUpload = ({ msg, setMsg }) => {
     const { stateAuth } = useContext(Auth)
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -16,31 +16,79 @@ const ReportUpload = () => {
     }
 
     const [formPopup, setFormPopup] = useState(false)
-    const [selectedImg, setSelectedImg] = useState()
+    const [selectedFile, setSelectedFile] = useState()
     const [preview, setPreview] = useState()
+    const [option, setOption] = useState()
 
     const popup = () => {
         setFormPopup(!formPopup)
     }
 
     useEffect(() => {
-        if (!selectedImg) {
+        if (!selectedFile) {
             setPreview(undefined)
             return
         }
 
-        const objectUrl = URL.createObjectURL(selectedImg)
+        const objectUrl = URL.createObjectURL(selectedFile)
         setPreview(objectUrl)
 
         return () => URL.revokeObjectURL(objectUrl)
-    }, [selectedImg])
+    }, [selectedFile])
 
-    const onSelectImg = (e) => {
+    const onSelectFile = (e) => {
         if (!e.target.files || e.target.files.length === 0) {
-            setSelectedImg(undefined)
+            setSelectedFile(undefined)
             return
         }
-        setSelectedImg(e.target.files[0])
+        setSelectedFile(e.target.files[0])
+    }
+
+    // API Fetch
+    const uploadImg = async (e) => {
+        e.preventDefault()
+        const imgData = new FormData()
+        imgData.append('file', selectedFile)
+
+        let picUpload = await fetch(`${apiV1}/patient/reports/img`, {
+            headers: {
+                Accept: 'appllication/json',
+                type: 'image/jpeg',
+                Authorization: `Bearer ${token}`,
+            },
+            method: 'POST',
+            body: imgData,
+        })
+
+        const pp = await picUpload.json()
+
+        if (picUpload.ok) {
+            setMsg([...msg, 'Report Uploaded'])
+            setFormPopup(false)
+        }
+    }
+
+    const uploadPdf = async (e) => {
+        e.preventDefault()
+        const pdfData = new FormData()
+        pdfData.append('file', selectedFile)
+
+        let pdfUpload = await fetch(`${apiV1}/patient/reports/pdf`, {
+            headers: {
+                Accept: 'appllication/json',
+                type: 'file/pdf',
+                Authorization: `Bearer ${token}`,
+            },
+            method: 'POST',
+            body: pdfData,
+        })
+
+        const pdf = await pdfUpload.json()
+
+        if (pdfUpload.ok) {
+            setMsg([...msg, 'Report Uploaded'])
+            setFormPopup(false)
+        }
     }
     return (
         <div>
@@ -57,7 +105,7 @@ const ReportUpload = () => {
                         </button>
                         <div className={classes.Input}>
                             <div className={classes.selectedImg}>
-                                {selectedImg && (
+                                {selectedFile && (
                                     <div>
                                         <div className={classes.PreviewContainer}>
                                             <img src={preview} className={classes.ImgPreview} alt="" />
@@ -69,20 +117,31 @@ const ReportUpload = () => {
                                 <div>
                                     <input
                                         type="file"
-                                        onChange={onSelectImg}
+                                        onChange={onSelectFile}
                                         style={{ display: 'none' }}
                                         ref={inputRef}
+                                        required1
                                     />
                                 </div>
-                                <button onClick={triggerFileSelectPopup} className={classes.Select}>
+                                <button
+                                    onClick={(e) => {
+                                        triggerFileSelectPopup()
+                                        setOption(1)
+                                    }}
+                                    className={classes.Select}>
                                     <FontAwesomeIcon icon={faFileUpload} />
-                                    <span> Select File</span>
+                                    <span> Select PDF</span>
                                 </button>
-                                <button onClick={triggerFileSelectPopup} className={classes.Select}>
+                                <button
+                                    onClick={(e) => {
+                                        triggerFileSelectPopup()
+                                        setOption(2)
+                                    }}
+                                    className={classes.Select}>
                                     <FontAwesomeIcon icon={faImage} />
-                                    <span> Select Photo</span>
+                                    <span> Select Image</span>
                                 </button>
-                                <button className={classes.Upload}>
+                                <button className={classes.Upload} onClick={option === 2 ? uploadImg : uploadPdf}>
                                     <FontAwesomeIcon icon={faUpload} />
                                     <span> Upload</span>
                                 </button>
