@@ -1,8 +1,6 @@
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-// import { FilePreviewerThumbnail } from 'react-file-previewer'
 import { Auth } from '../../../allContext'
 import ReportUpload from '../ReportUpload/ReportUpload'
 import classes from './UploadedReports.module.css'
