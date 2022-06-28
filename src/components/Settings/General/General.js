@@ -38,7 +38,7 @@ const General = () => {
         })
 
         if (updateFetch.ok) {
-            setMsg('User info update. Please logout and login again')
+            setMsg('User info updated. Please logout and login again')
         } else {
             setMsg('Something went wrong.')
         }
@@ -46,31 +46,50 @@ const General = () => {
 
     return (
         <div className={classes.General}>
-            <h2>General Update</h2>
-            {msg.length !== 0 ? (
-                <p className={classes.msg}>
-                    {msg}
-                    <span onClick={(e) => setMsg('')}>x</span>
-                </p>
-            ) : null}
-
             <form onSubmit={submit}>
-                <label htmlFor="name">Name</label>
-                <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                <div className={classes.formHeader}>General Information Update</div>
+                <div className={classes.formWrap}>
+                    <div className={classes.formGrid}>
+                        <label>
+                            Full Name
+                            <input
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                minLength={3}
+                                required
+                            />
+                        </label>
+                        <label>
+                            Sex
+                            <select value={sex} onChange={(e) => setSex(e.target.value)}>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                        </label>
+                    </div>
 
-                <label htmlFor="email">Email</label>
-                <input id="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <div className={classes.formGrid}>
+                        <label>
+                            Phone
+                            <input
+                                type="tel"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                maxLength={11}
+                                minLength={11}
+                                required
+                            />
+                        </label>
 
-                <label htmlFor="phone">Phone</label>
-                <input id="phone" type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
-
-                <select className={classes.select} id="sex" value={sex} onChange={(e) => setSex(e.target.value)}>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                <label htmlFor="sex">Sex</label>
-
-                <button>Update</button>
+                        <label>
+                            Email
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                        </label>
+                    </div>
+                </div>
+                <button className={classes.Button}>Update</button>
+                <div className={classes.alertMessage}>{msg && <span>{msg}</span>}</div>
             </form>
         </div>
     )
