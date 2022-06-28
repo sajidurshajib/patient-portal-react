@@ -1,0 +1,114 @@
+.uploadButton button {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+}
+
+.uploadButton button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+.uploadContainer {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 200vh;
+}
+
+.uploadContainer > .uploader {
+    position: relative;
+    top: 10%;
+    left: 40%;
+    width: 25%;
+    height: 420px;
+    padding: 20px;
+    background: var(--white);
+    color: var(--dark-blue);
+    text-align: center;
+    border-radius: 10px;
+}
+.uploader > .Close {
+    cursor: pointer;
+    background: none;
+    border: 1px solid var(--red);
+    border-radius: 50%;
+    color: var(--red);
+    position: absolute;
+    font-weight: 1000;
+    top: 45px;
+    left: 350px;
+}
+
+.uploader > .Close:hover {
+    background: var(--red);
+    color: var(--white);
+}
+
+.uploader > .Input {
+    width: 100%;
+    background: var(--light);
+    margin: 0 auto;
+}
+.uploader > .Input > .selectedImg {
+    height: 270px;
+}
+
+.selectedImg > div > .PreviewContainer {
+    width: 100%;
+    background: none;
+}
+
+.selectedImg > div > .PreviewContainer > .ImgPreview {
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.Input > .Control {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-top: 1px solid var(--dark-blue);
+}
+
+.Input > .Control > .Select {
+    border: 1px solid var(--secondary);
+    background: var(--light);
+    color: var(--secondary);
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.Input > .Control > .Select:hover {
+    cursor: pointer;
+    border: 1px solid var(--secondary);
+    background: var(--secondary);
+    color: var(--white);
+    transition: 300ms;
+}
+
+.Input > .Control > .Upload {
+    border: 1px solid var(--green);
+    background: var(--light);
+    color: var(--green);
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.Input > .Control > .Upload:hover {
+    cursor: pointer;
+    border: 1px solid var(--green);
+    background: var(--green);
+    color: var(--white);
+    transition: 300ms;
+}
