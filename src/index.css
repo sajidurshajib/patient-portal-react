@@ -2,6 +2,7 @@
 :root {
     --primary: #457dc3;
     --secondary: #4885cf;
+    --secondary2: #41add9;
     --dark: #333;
     --dark-blue: #23395d;
     --dark-grey: #555;
@@ -14,6 +15,7 @@
     --red: #ef5455;
     --yellow: #fdfd96;
     --orange: #ff9d5c;
+    --light-low: #f8f8f8;
 }
 * {
     font-family: Poppins;
