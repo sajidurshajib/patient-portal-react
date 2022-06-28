@@ -91,7 +91,7 @@ const Family = () => {
 
     return (
         <div className={classes.Family}>
-            <h3>Family members</h3>
+            <h3>Family Members</h3>
             <div className={classes.Header}>
                 <form>
                     <input

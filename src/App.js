@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Auth, UserInfo } from './allContext'
 import TestPage from './pages/TestPage'
 import {
+    LandingPage,
     HomePage,
     ProfilePage,
     FindDoctorsPage,
@@ -27,7 +28,8 @@ const App = () => {
                     {/* Auth and User context provider  */}
                     <Router>
                         <Switch>
-                            <Route path="/" exact={true} component={HomePage} />
+                            <Route path="/" exact={true} component={LandingPage} />
+                            <ProtectedRoute path="/home" component={HomePage} redirect="/" />
                             <ProtectedRoute path="/profile" component={ProfilePage} redirect="/" />
                             <ProtectedRoute path="/doctors" component={FindDoctorsPage} redirect="/" />
                             <ProtectedRoute path="/medicals" component={MedicalPage} redirect="/" />

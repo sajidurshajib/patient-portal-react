@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useContext, useEffect } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../allContext'
 import { LineChart } from '../Chart'
 import { Number } from './index'
@@ -8,7 +7,7 @@ import { Number } from './index'
 const Pulse = () => {
     const { stateAuth } = useContext(Auth)
 
-    const [pulse, setPulse] = useState(0)
+    const [pulse, setPulse] = useState()
     const [dataPulse, setDataPulse] = useState([])
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -79,7 +78,15 @@ const Pulse = () => {
 
     return (
         <div>
-            <Number title="Pulse" unit="rate per minute" st={pulse} setSt={setPulse} smbt={submit} min={0} max={200}>
+            <Number
+                title="Pulse"
+                unit="rate per minute"
+                place="Input Pulse"
+                st={pulse}
+                setSt={setPulse}
+                smbt={submit}
+                min={0}
+                max={200}>
                 <br />
                 <LineChart data={data} />
                 <br />

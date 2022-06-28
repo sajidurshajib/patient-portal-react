@@ -7,7 +7,7 @@ import { Number } from './index'
 const Pulse = () => {
     const { stateAuth } = useContext(Auth)
 
-    const [rbs, setRbs] = useState(0)
+    const [rbs, setRbs] = useState()
     const [dataRbs, setDataRbs] = useState([])
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -76,7 +76,15 @@ const Pulse = () => {
 
     return (
         <div>
-            <Number title="Diabetes" unit="mmol/L" st={rbs} setSt={setRbs} smbt={submit} min={0} max={40}>
+            <Number
+                title="Diabetes"
+                place="Input RBS"
+                unit="mmol/L"
+                st={rbs}
+                setSt={setRbs}
+                smbt={submit}
+                min={0}
+                max={40}>
                 <br />
                 <LineChart data={data} />
                 <br />

@@ -1,5 +1,4 @@
 import { useContext, useState, useEffect } from 'react'
-import env from 'react-dotenv'
 import { Auth } from '../../allContext'
 import { LineChart } from '../Chart'
 import { DoubleNumber } from './index'
@@ -55,7 +54,7 @@ const Bp = () => {
             let bpJson = await bpFetch.json()
 
             if (bpFetch.ok) {
-                await setDataBp(bpJson)
+                setDataBp(bpJson)
             }
         }
 
@@ -90,8 +89,8 @@ const Bp = () => {
         <div>
             <DoubleNumber
                 title="Blood Presure"
-                place1="High"
-                place2="Low"
+                place1="Input High BP"
+                place2="Input Low BP"
                 st1={high}
                 st2={low}
                 setSt1={setHigh}

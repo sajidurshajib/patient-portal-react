@@ -1,11 +1,10 @@
-import { Home } from '../components/index'
+import React from 'react'
+import { Home } from '../components'
 
-const HomePage = () => {
+export default function HomePage() {
     return (
         <div>
             <Home />
         </div>
     )
 }
-
-export default HomePage

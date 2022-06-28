@@ -37,8 +37,8 @@ const Sidebar = () => {
                 </Link>
             </div>
             <ul>
-                <li className={location.pathname === '/' ? classes.active : ''}>
-                    <Link to="/">
+                <li className={location.pathname === '/home' ? classes.active : ''}>
+                    <Link to="/home">
                         <FontAwesomeIcon icon={faHome} className={classes.marginIcon1} />
                         <span className={classes.textMargin1}>Home</span>
                     </Link>

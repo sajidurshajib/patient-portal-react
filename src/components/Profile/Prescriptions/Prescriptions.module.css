@@ -3,19 +3,22 @@
     border-radius: 10px;
     padding: 20px 40px;
     box-sizing: border-box;
-    margin: 20px 0 20px 0;
 }
+
 .Prescriptions h2 {
     color: var(--dark-blue);
 }
+
 .head {
     display: grid;
     width: 100%;
     grid-template-columns: 80% 20%;
 }
+
 .head > p {
     color: var(--grey);
 }
+
 .head > p:nth-child(2) {
     text-align: center;
 }

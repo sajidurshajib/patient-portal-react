@@ -90,14 +90,14 @@ const Profile = () => {
                 <div>
                     <ProfileCard userDetail={userDetail} />
                     <Information userDetail={userDetail} patientDetail={patientDetail} lastWeight={lastWeight} />
-                    <Events />
+                    {/* <Events /> */}
                     <Address userDetail={userDetail} />
                 </div>
                 <div>
-                    <Summery />
-                    <Prescriptions />
-                    <PersonalHabits />
+                    {/* <Summery /> */}
+                    {/* <Prescriptions /> */}
                     <Family />
+                    <PersonalHabits />
                 </div>
             </div>
         </div>
