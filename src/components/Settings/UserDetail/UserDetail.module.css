@@ -1,172 +1,90 @@
-.UserDetail {
-    margin: 20px;
-}
-.UserDetail > h2,
-.UserDetail h3 {
-    color: var(--dark-blue);
-    margin-bottom: 5px;
+.userDetail {
+    width: 95%;
+    padding: 10px 0px;
+    margin: 20px auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.msg {
-    padding: 5px 12px;
-    background: var(--red);
-    color: var(--white);
-    display: inline-block;
-    border-radius: 2px;
-    font-size: 14px;
-}
-.msg > span {
-    display: inline-block;
-    background: var(--white);
-    color: var(--red);
-    margin-left: 15px;
-    border-radius: 50px;
-    width: 14px;
-    height: 14px;
-    line-height: 14px;
+.userDetail .formWrap .sectionHeader {
+    color: var(--secondary2);
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
     text-align: center;
-    font-size: 12px;
-    cursor: pointer;
-}
-.UserDetail form > label {
-    color: var(--dark-blue);
-    font-size: 12px;
-    margin: 0 0 5px 0;
-    position: relative;
-    top: 10px;
-    background: var(--white);
-    padding: 0 2px;
-    display: block;
-}
-.UserDetail form > input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 1px solid var(--secondary);
-    outline: 0;
-    display: block;
-    margin: 0 0 10px 0;
-    border-radius: 2px;
-    padding: 7px 10px;
-    width: 40%;
-}
-.UserDetail form > input:focus {
-    outline: 0;
-}
-.UserDetail form > select {
-    border: 1px solid var(--secondary);
-    padding: 7px 20px;
-    background: var(--white);
-    color: var(--secondary);
-    border-radius: 2px;
-    margin: 10px 0 10px 0;
-    position: relative;
-    width: 250px;
-}
-.UserDetail form > select:focus {
-    outline: 0;
 }
 
-.UserDetail form > button {
-    cursor: pointer;
-    border: none;
-    background: var(--secondary);
+.userDetail .formWrap .formGrid1 {
+    padding: 30px;
+    background: var(--light-low);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.userDetail .formWrap .formGrid {
+    padding: 30px;
+    background: var(--light-low);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.userDetail label {
+    display: block;
+    font-size: 14px;
+    color: var(--dark-grey);
+    margin-bottom: 14px;
+    font-weight: 450;
+}
+
+.userDetail input,
+.userDetail select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid var(--white);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.35);
+    font-size: 14px;
+    color: var(--dark-grey);
+    background: var(--white);
+    outline: none;
+}
+
+.userDetail input:focus {
+    border: 2px solid var(--grey2);
+}
+
+.userDetail .Button {
+    background-color: var(--secondary2);
+    padding: 10px 20px;
     color: var(--white);
+    font-size: 14px;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    width: 14em;
     display: block;
-    padding: 10px 25px;
-    border-radius: 2px;
-    margin: 20px 0;
-}
-.UserDetail form > button:hover {
-    box-shadow: 1px 3px 10px var(--grey2);
+    margin-top: 1em;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: -10px;
 }
 
-.dob > label,
-.nid > label {
-    color: var(--dark-blue);
-    font-size: 12px;
-    margin: 0 0 10px 0;
-    position: relative;
-    top: 10px;
-    left: 10px;
-    background: var(--white);
-    padding: 0 2px;
-}
-.bg > label {
-    color: var(--dark-blue);
-    font-size: 12px;
-    margin: 0 0 10px 0;
-    position: relative;
-    top: 10px;
-    left: 0;
-    background: var(--white);
-    padding: 0 2px;
-    display: block;
-}
-.bg > select {
-    border: 1px solid var(--secondary);
-    padding: 7px 15px;
-    background: var(--white);
-    color: var(--secondary);
-    border-radius: 2px;
-    margin: 10px 0 10px 0;
-    position: relative;
-    width: 100px;
-}
-.bg > select:focus {
-    outline: 0;
-}
-.dob > input,
-.nid > input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 1px solid var(--secondary);
-    outline: 0;
-    display: block;
-    margin: 0 0 10px 0;
-    border-radius: 2px;
-    padding: 7px 10px;
-}
-.dob > input:focus,
-.nid > input:focus {
-    outline: 0;
-}
-
-@media (max-width: 420px) {
-    .UserDetail {
-        margin: 0px;
-        margin-bottom: -2em;
-    }
-    .UserDetail > h2 {
-        font-size: 1em;
-        margin-top: 1em;
-    }
-    .UserDetail h3 {
-        font-size: 0.9em;
-        margin-top: 1.6em;
-    }
-    .UserDetail form > select {
-        padding: 8px 20px;
-        width: 90%;
-    }
-    .UserDetail form > button {
-        padding: 8px 25px;
-        margin: 6px auto 20px auto;
-        font-size: 12px;
-    }
-    .bg > select {
-        padding: 6px 15px;
-        margin: 10px 0 10px 0;
-        width: 100px;
-    }
-    .select {
-        font-size: 12px;
-    }
-    .dob > input,
-    .nid > input {
-        padding: 6px 10px;
-        width: 80%;
-        font-size: 12px;
-    }
+.alertMessage {
+    text-align: center;
+    color: var(--red);
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 16px;
 }
