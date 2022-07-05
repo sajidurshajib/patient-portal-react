@@ -14,7 +14,7 @@ const DoctorList = () => {
                             backgroundImage: `url(${img1})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
-                            border: '4px solid var(--grey2)',
+                            border: '4px solid var(--light)',
                         }}></div>
                 </div>
                 <div className={classes.nameContainer}>
@@ -37,7 +37,7 @@ const DoctorList = () => {
                             backgroundImage: `url(${img2})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
-                            border: '4px solid var(--grey2)',
+                            border: '4px solid var(--light)',
                         }}></div>
                 </div>
                 <div className={classes.nameContainer}>
@@ -60,7 +60,7 @@ const DoctorList = () => {
                             backgroundImage: `url(${img3})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover',
-                            border: '4px solid var(--grey2)',
+                            border: '4px solid var(--light)',
                         }}></div>
                 </div>
                 <div className={classes.nameContainer}>

@@ -3,13 +3,10 @@ import { Auth } from '../../allContext'
 import { PersonalHabits } from '../Indicators'
 import { Sidebar } from '../Nav'
 import Address from './Address/Address'
-import Events from './Events/Events'
 import Family from './Family/Family'
 import Information from './Information/Information'
-import Prescriptions from './Prescriptions/Prescriptions'
 import classes from './Profile.module.css'
 import ProfileCard from './ProfileCard/ProfileCard'
-import Summery from './Summery/Summery'
 
 const Profile = () => {
     const [userDetail, setUserDetail] = useState({})
@@ -90,12 +87,9 @@ const Profile = () => {
                 <div>
                     <ProfileCard userDetail={userDetail} />
                     <Information userDetail={userDetail} patientDetail={patientDetail} lastWeight={lastWeight} />
-                    {/* <Events /> */}
                     <Address userDetail={userDetail} />
                 </div>
                 <div>
-                    {/* <Summery /> */}
-                    {/* <Prescriptions /> */}
                     <Family />
                     <PersonalHabits />
                 </div>

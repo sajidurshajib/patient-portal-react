@@ -12,6 +12,7 @@ import {
     LoginPage,
     IndicatorsPage,
     SettingsPage,
+    OrderPage,
 } from './pages/index'
 import { authState, authReducer } from './reducer/authReducer'
 import { userState, userReducer } from './reducer/userReducer'
@@ -31,9 +32,10 @@ const App = () => {
                             <Route path="/" exact={true} component={LandingPage} />
                             <ProtectedRoute path="/home" component={HomePage} redirect="/" />
                             <ProtectedRoute path="/profile" component={ProfilePage} redirect="/" />
-                            <ProtectedRoute path="/doctors" component={FindDoctorsPage} redirect="/" />
                             <ProtectedRoute path="/medicals" component={MedicalPage} redirect="/" />
                             <ProtectedRoute path="/indicators" component={IndicatorsPage} redirect="/" />
+                            <ProtectedRoute path="/medicines" component={OrderPage} redirect="/" />
+                            <ProtectedRoute path="/doctors" component={FindDoctorsPage} redirect="/" />
                             <ProtectedRoute path="/settings" component={SettingsPage} redirect="/" />
                             <Route path="/register" component={RegisterPage} />
                             <Route path="/login" component={LoginPage} />

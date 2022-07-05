@@ -4,6 +4,7 @@ import IndicatorsPage from './IndicatorsPage'
 import LandingPage from './LandingPage'
 import LoginPage from './LoginPage'
 import MedicalPage from './MedicalPage'
+import OrderPage from './OrderPage'
 import ProfilePage from './ProfilePage'
 import RegisterPage from './RegisterPage'
 import SettingsPage from './SettingsPage'
@@ -18,4 +19,5 @@ export {
     LoginPage,
     IndicatorsPage,
     SettingsPage,
+    OrderPage,
 }

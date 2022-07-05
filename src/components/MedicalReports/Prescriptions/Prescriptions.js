@@ -1,15 +1,15 @@
-import { faSyringe } from '@fortawesome/free-solid-svg-icons'
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import classes from './VaccinationHistory.module.css'
+import classes from './Prescriptions.module.css'
 
-const VaccinationHistory = () => {
+const Prescriptions = () => {
     return (
         <div className={classes.wrapper}>
-            <p>Vaccine History</p>
+            <p>Prescriptions</p>
             <div className={classes.flexWrapper}>
                 <p>
-                    <FontAwesomeIcon icon={faSyringe} className={classes.icon} />
-                    <span>Vaccine_report.pdf</span>
+                    <FontAwesomeIcon icon={faFileAlt} className={classes.icon} />
+                    <span>Medical_report.pdf</span>
                 </p>
 
                 <p>Detail Info</p>
@@ -18,7 +18,7 @@ const VaccinationHistory = () => {
             </div>
             <div className={classes.flexWrapper}>
                 <p>
-                    <FontAwesomeIcon icon={faSyringe} className={classes.icon} />
+                    <FontAwesomeIcon icon={faFileAlt} className={classes.icon} />
                     <span>Vaccine_report.pdf</span>
                 </p>
 
@@ -33,4 +33,4 @@ const VaccinationHistory = () => {
     )
 }
 
-export default VaccinationHistory
+export default Prescriptions

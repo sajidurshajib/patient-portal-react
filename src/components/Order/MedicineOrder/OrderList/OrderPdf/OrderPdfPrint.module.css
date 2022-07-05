@@ -1,0 +1,80 @@
+.containerPdf {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    background: rgb(0, 0, 0, 0.5);
+}
+
+.formPdf {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80em;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background: var(--light);
+    box-sizing: border-box;
+    box-shadow: 1px 1px var(--light);
+    border-radius: 10px 0px 0px 10px;
+    margin: 0 auto;
+    height: 90%;
+    overflow-y: auto;
+}
+
+.formPdf .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--red);
+    cursor: pointer;
+}
+.formPdf .close:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.body {
+    box-sizing: border-box;
+    background-color: var(--light);
+}
+
+.button {
+    display: block;
+    padding: 10px 20px;
+    margin: 0px auto;
+    border-radius: 2px;
+    border: none;
+    color: var(--white);
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+.buttonClose {
+    padding: 4px 20px;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+}
+
+.buttonClose {
+    background-color: var(--red);
+}
+
+.buttonClose:hover {
+    opacity: 0.8;
+}

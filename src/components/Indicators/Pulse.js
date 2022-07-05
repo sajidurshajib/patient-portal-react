@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useContext, useEffect } from 'react'
 import { Auth } from '../../allContext'
+import { toMonthNameShort } from '../../utils/date'
 import { LineChart } from '../Chart'
 import { Number } from './index'
 
@@ -53,7 +54,7 @@ const Pulse = () => {
             let pulseJson = await pulseFetch.json()
 
             if (pulseFetch.ok) {
-                await setDataPulse(pulseJson)
+                setDataPulse(pulseJson)
             }
         }
 
@@ -63,7 +64,16 @@ const Pulse = () => {
     }, [apiV1, token, pulse])
 
     let data = {
-        labels: [...dataPulse.map((elm) => elm.created_at.split('T')[0].slice(0, 7))],
+        labels: [
+            ...dataPulse
+                .map(
+                    (elm) =>
+                        `${elm.created_at.slice(8, 10)}-${toMonthNameShort(
+                            elm.created_at.slice(6, 7)
+                        )}${elm.created_at.slice(2, 4)}`
+                )
+                .reverse(),
+        ],
         datasets: [
             {
                 label: 'Pulse',

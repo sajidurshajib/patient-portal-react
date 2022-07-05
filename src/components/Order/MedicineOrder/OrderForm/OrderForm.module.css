@@ -1,0 +1,394 @@
+/* collapsible */
+.container {
+    margin: 10px auto;
+    width: 100%;
+}
+
+.container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container .labelMain {
+    display: block;
+    cursor: pointer;
+    padding: 20px 30px;
+    background-color: var(--white);
+    box-shadow: 1px 2px 12px var(--light-grey);
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-grey);
+}
+
+.container .labelMain:hover {
+    background: var(--light-secondary);
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.container .labelMain > span {
+    font-size: 12px;
+    color: var(--grey);
+}
+
+.container input[type='checkbox'] {
+    position: absolute;
+    left: -9999px;
+}
+
+.container input[type='checkbox'] ~ ul {
+    height: 0;
+    transition: transform 0.1s ease-in;
+    transform: scaleY(0);
+}
+
+.container input[type='checkbox']:checked ~ ul {
+    height: 100%;
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.container input[type='checkbox']:checked + label {
+    background-color: var(--secondary);
+    border-bottom: 1px solid var(--white);
+    color: var(--white);
+}
+
+.container .button {
+    background-color: var(--secondary);
+    padding: 10px 20px;
+    color: var(--white);
+    font-size: 16px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    width: 14em;
+    display: block;
+    margin-top: 1em;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.container .button:hover {
+    opacity: 0.8;
+    transition: 200ms;
+}
+
+/* form */
+.innerContainer {
+    width: 98%;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-top: 4px;
+    padding: 20px 10px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.innerMargin {
+    margin-bottom: 2em;
+}
+
+.innerContainer p {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.collab {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 30px;
+    background-color: var(--light-low);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.collab .total {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--green);
+}
+
+.collab label {
+    display: block;
+    font: 14px;
+    color: var(--dark-grey);
+    margin-bottom: 14px;
+    font-weight: 450;
+    margin-top: 10px;
+}
+
+.collab label:hover {
+    background-color: none;
+}
+
+.collab .select {
+    background-color: var(--white);
+    font-size: 14px;
+}
+
+.collab .select option {
+    font-size: 14px;
+}
+
+.collab input[type='text'],
+.collab input[type='email'],
+.collab input[type='number'],
+.collab input[type='password'],
+.collab input[type='date'],
+.collab input[type='datetime-local'],
+.formWrapper input[type='tel'],
+.collab textarea,
+.collab select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid var(--white);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.35);
+    font-size: 14px;
+    color: var(--dark-grey);
+    outline: none;
+    cursor: pointer;
+}
+
+.collab input[type='text']:focus,
+.collab input[type='email']:focus,
+.collab input[type='number']:focus,
+.collab input[type='password']:focus,
+.formWrapper input[type='tel']:focus,
+.collab textarea:focus {
+    border: 2px solid var(--grey2);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.fetchLabel {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: var(--white);
+    box-shadow: 1px 2px 4px var(--light-grey);
+    margin-bottom: 20px;
+}
+
+.fetchLabel p {
+    display: inline;
+    position: relative;
+    visibility: hidden;
+}
+
+.optAll {
+    position: absolute;
+    margin-top: -2em;
+    background-color: var(--light-low);
+    width: 40%;
+    border-radius: 4px;
+    padding: 2px 4px;
+    overflow-y: auto;
+}
+
+.optSelect {
+    box-shadow: 1px 2px 4px var(--light-grey);
+    padding: 10px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.optSelect:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.refMargin {
+    margin-bottom: 3em;
+}
+
+.buttonAdd {
+    margin-top: -10px;
+    float: right;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 16px;
+    background-color: var(--secondary);
+    color: var(--white);
+    font-size: 14px;
+}
+
+.buttonAdd:hover {
+    opacity: 0.8;
+}
+
+.formGrid > label > .tk {
+    color: var(--green);
+}
+
+.innerContainer .submitButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2em;
+    background-color: var(--secondary2);
+    border: none;
+    border-radius: 4px;
+    color: var(--white);
+    padding: 6px 30px;
+    font-size: 14px;
+}
+
+.innerContainer .submitButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+@media (max-width: 420px) {
+    .formGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .wrapper {
+        width: 95%;
+        margin-left: 4px;
+        margin-top: -30px;
+    }
+
+    .wrapper .button {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        padding: 7px 30px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .formWrapper {
+        padding: 30px;
+    }
+
+    .formWrapper .logo {
+        padding: 6px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .formWrapper .form {
+        margin: -16px;
+    }
+
+    .formWrapper .section {
+        margin-top: -6px;
+        font-size: 14px;
+    }
+
+    .icon {
+        font-size: 0.8em;
+        right: 20px;
+        margin-top: -22px;
+    }
+
+    .section .leaf {
+        font-size: 10px;
+        margin-top: -6px;
+        margin-left: 10px;
+    }
+
+    .formWrapper .innerWrap {
+        padding: 6px;
+    }
+
+    .container .labelMain {
+        padding: 14px 30px;
+        font-size: 12px;
+    }
+
+    .innerContainer {
+        padding: 6px 0px;
+    }
+
+    .collab {
+        padding: 12px;
+    }
+
+    .formWrapper label {
+        font-size: 12px;
+    }
+
+    .formWrapper .formMargin {
+        margin-top: -28px;
+    }
+
+    .formGrid label:nth-child(2) {
+        margin-top: -28px;
+    }
+
+    .formWrapper .select {
+        font-size: 10px;
+    }
+
+    .formWrapper .select option {
+        font-size: 10px;
+    }
+
+    .formWrapper input[type='text'],
+    .formWrapper input[type='email'],
+    .formWrapper input[type='number'],
+    .formWrapper input[type='tel'],
+    .formWrapper input[type='password'],
+    .formWrapper input[type='date'],
+    .formWrapper input[type='datetime-local'],
+    .formWrapper textarea,
+    .formWrapper select {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .formWrapper input[type='date'],
+    .formWrapper input[type='datetime-local'] {
+        font-size: 10px;
+    }
+
+    .formWrapper .button {
+        margin-top: 20px;
+        padding: 6px 10px;
+        font-size: 12px;
+        width: 12em;
+    }
+
+    .fetchLabel {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .optAll {
+        margin-top: -6em;
+        width: 82%;
+    }
+
+    .optSelect {
+        font-size: 10px;
+    }
+}

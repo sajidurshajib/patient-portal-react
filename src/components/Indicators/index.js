@@ -6,5 +6,6 @@ import Indicators from './Indicators'
 import PersonalHabits from './PersonalHabit/PersonalHabits'
 import Pulse from './Pulse'
 import Rbs from './Rbs'
+import Weight from './Weight'
 
-export { Indicators, Text, Number, PersonalHabits, Pulse, Rbs, DoubleNumber, Bp }
+export { Indicators, Text, Number, PersonalHabits, Pulse, Rbs, DoubleNumber, Bp, Weight }
