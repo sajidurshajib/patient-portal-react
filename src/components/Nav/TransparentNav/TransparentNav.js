@@ -40,9 +40,9 @@ const TransparentNav = () => {
                 <ul>
                     {logShow === true ? (
                         <>
-                            {location.pathname !== '/profile' ? (
+                            {location.pathname !== '/home' ? (
                                 <li>
-                                    <Link to="/profile">Profile</Link>
+                                    <Link to="/home">Home</Link>
                                 </li>
                             ) : null}
 

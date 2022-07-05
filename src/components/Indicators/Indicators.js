@@ -1,6 +1,6 @@
 import { Sidebar } from '../Nav'
 import classes from './Indicators.module.css'
-import { Bp, Pulse, Rbs } from './index.js'
+import { Bp, Pulse, Rbs, Weight } from './index.js'
 
 const Indicators = () => {
     return (
@@ -8,10 +8,10 @@ const Indicators = () => {
             <div>
                 <Sidebar />
             </div>
-            <div>
-                <h3>Hello Indicators</h3>
+            <div className={classes.grid}>
                 <Bp />
                 <Rbs />
+                <Weight />
                 <Pulse />
             </div>
         </div>

@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { useContext, useEffect } from 'react/cjs/react.development'
 import { Auth } from '../../allContext'
+import { toMonthNameShort } from '../../utils/date'
 import { LineChart } from '../Chart'
 import { Number } from './index'
 
 const Pulse = () => {
     const { stateAuth } = useContext(Auth)
 
-    const [rbs, setRbs] = useState(0)
+    const [rbs, setRbs] = useState()
     const [dataRbs, setDataRbs] = useState([])
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -61,7 +62,16 @@ const Pulse = () => {
     }, [apiV1, token, rbs])
 
     let data = {
-        labels: [...dataRbs.map((elm) => elm.created_at.split('T')[0].slice(0, 7))],
+        labels: [
+            ...dataRbs
+                .map(
+                    (elm) =>
+                        `${elm.created_at.slice(8, 10)}-${toMonthNameShort(
+                            elm.created_at.slice(6, 7)
+                        )}${elm.created_at.slice(2, 4)}`
+                )
+                .reverse(),
+        ],
         datasets: [
             {
                 label: 'RBS',
@@ -76,7 +86,15 @@ const Pulse = () => {
 
     return (
         <div>
-            <Number title="Diabetes" unit="mmol/L" st={rbs} setSt={setRbs} smbt={submit} min={0} max={40}>
+            <Number
+                title="Diabetes"
+                place="Input RBS"
+                unit="mmol/L"
+                st={rbs}
+                setSt={setRbs}
+                smbt={submit}
+                min={0}
+                max={40}>
                 <br />
                 <LineChart data={data} />
                 <br />

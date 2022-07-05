@@ -1,27 +1,128 @@
 .UploadedReports {
     background: var(--white);
-    padding: 20px 40px;
+    padding: 20px 40px 30px 40px;
     margin: 0 0 20px 0;
     border-radius: 10px;
 }
-.UploadedReports > h2 {
-    color: var(--dark-blue);
-    margin-bottom: 40px;
+.UploadedReports > .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
+.UploadedReports > .Header > p {
+    font-size: 1.4em;
+    margin-top: 6px;
+}
+
 .files {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 2fr));
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
 }
+
 .files > div {
     text-align: center;
-}
-.files > div > svg {
-    font-size: 60px;
-    color: var(--primary);
+    box-shadow: 4px 6px 10px var(--light);
+    border: 1px solid var(--light);
+    padding: 20px 10px;
+    border-radius: 10px;
     cursor: pointer;
 }
-.files > div > p {
+
+.files > div:hover {
+    box-shadow: 4px 10px 16px var(--light);
+}
+
+.files > div img {
+    object-fit: cover;
+    height: 8em;
+    width: 8em;
+    border-radius: 2px;
+    transition: 250ms;
+}
+
+.files > div img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
+.files > div p {
+    font-size: 14px;
+    color: var(--dark);
+    letter-spacing: 0.8px;
+}
+
+.files > div p:nth-child(3) {
+    margin-top: -8px;
     font-size: 12px;
+}
+
+.files > div p > span {
+    text-transform: capitalize;
+}
+
+.files > div > a {
+    text-align: center;
+    text-decoration: none;
+}
+.files > div > a > img {
+    width: 4.8em;
+    height: 4.8em;
+}
+
+.files > div > a > p {
+    font-size: 14px;
+    color: var(--dark);
+    letter-spacing: 0.8px;
+}
+
+.files > div > a > p:nth-child(3) {
+    margin-top: -8px;
+    font-size: 12px;
+}
+
+.files .pdf {
+    margin-top: 4em;
+}
+
+.previewContainer {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 120vh;
+}
+
+.previewContainer .Close {
+    position: relative;
+    top: 10px;
+    left: 95%;
+    height: 30px;
+    width: 30px;
+    color: var(--white);
+    background: var(--red);
+    font-size: 18px;
+    border: 1px solid var(--red);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.previewContainer .Close:hover {
+    opacity: 0.9;
+}
+
+.previewContainer > .Preview img {
+    position: relative;
+    top: 5%;
+    left: 20%;
+    width: 60%;
+    height: 100vh;
+    padding: 20px;
+    background: var(--white);
+    color: var(--dark-blue);
 }
 
 @media (max-width: 420px) {

@@ -46,6 +46,7 @@ const Members = () => {
                         <div>
                             <h3>{member.relation_with_name}</h3>
                             <p>{member.relation_to}</p>
+
                             <span>{member.relationship_status}</span>
                         </div>
                     </div>

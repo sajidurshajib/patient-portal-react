@@ -81,22 +81,20 @@ const Family = () => {
                 message,
             }),
         })
-        console.log(relation_with, relation_from, relation_to, message)
         if (reqFetch.ok) {
             setReqPopup(false)
         } else {
-            console.log('error')
         }
     }
 
     return (
         <div className={classes.Family}>
-            <h3>Family members</h3>
+            <h3>Family Members</h3>
             <div className={classes.Header}>
                 <form>
                     <input
                         type="tel"
-                        placeholder="Search by a phone number"
+                        placeholder="Search member by mobile number"
                         value={search.phone}
                         onChange={(e) => handler(e.target.value)}
                     />
@@ -123,10 +121,7 @@ const Family = () => {
                             searchResult.map((info, i) => (
                                 <div className={classes.optSelect} key={i}>
                                     <div>
-                                        {info.name}-{info.id}
-                                        {/* <button onClick={() => setHandle(info)}>
-                                            <FontAwesomeIcon icon={faUserPlus} />
-                                        </button> */}
+                                        {info.name} - {info.phone}
                                         <button
                                             onClick={() => {
                                                 setRelationWith(info.id)

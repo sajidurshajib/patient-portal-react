@@ -51,41 +51,39 @@ const PatientInfo = () => {
     }
 
     return (
-        <div className={classes.PatientInfo}>
-            <h2>Personal Information Update</h2>
-            {msg.length !== 0 ? (
-                <p className={classes.msg}>
-                    {msg}
-                    <span onClick={(e) => setMsg('')}>x</span>
-                </p>
-            ) : null}
-
+        <div className={classes.patientInfo}>
             <form onSubmit={submit}>
-                <label>Occuapation</label>
-                <input
-                    type="text"
-                    value={patientData.occupation}
-                    onChange={(e) => setPatientData({ ...patientData, occupation: e.target.value })}
-                />
-
-                <label>Marital status</label>
-                <input
-                    type="text"
-                    value={patientData.marital_status}
-                    onChange={(e) => setPatientData({ ...patientData, marital_status: e.target.value })}
-                />
-
-                <div className={classes.bio}>
-                    <label>Bio</label>
-                    <textarea
-                        name=""
-                        id=""
-                        rows="6"
-                        value={patientData.bio}
-                        onChange={(e) => setPatientData({ ...patientData, bio: e.target.value })}></textarea>
+                <div className={classes.formHeader}>Patient Info Update</div>
+                <div className={classes.formWrap}>
+                    <label>
+                        Occupation
+                        <input
+                            type="text"
+                            value={patientData.occupation}
+                            onChange={(e) => setPatientData({ ...patientData, occupation: e.target.value })}
+                        />
+                    </label>
+                    <label>
+                        Marital Status
+                        <input
+                            type="text"
+                            value={patientData.marital_status}
+                            onChange={(e) => setPatientData({ ...patientData, marital_status: e.target.value })}
+                        />
+                    </label>
+                    <label>
+                        Bio
+                        <textarea
+                            name=""
+                            id=""
+                            rows="6"
+                            value={patientData.bio}
+                            onChange={(e) => setPatientData({ ...patientData, bio: e.target.value })}></textarea>
+                    </label>
                 </div>
 
-                <button>Submit</button>
+                <button className={classes.Button}>Submit</button>
+                <div className={classes.alertMessage}>{msg && <span>{msg}</span>}</div>
             </form>
         </div>
     )

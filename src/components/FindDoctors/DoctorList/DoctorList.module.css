@@ -3,21 +3,38 @@
     grid-template-columns: minmax(0, 20%) minmax(0, 60%) minmax(0, 20%);
     margin: 20px auto;
     width: 90%;
-    border-bottom: 1px solid var(--light);
     padding: 10px 0 20px 0;
+    background-color: var(--white);
+    padding: 20px 40px;
+    border-radius: 10px;
 }
 
 .doctorPic {
     width: 160px;
     height: 160px;
-    border-radius: 160px;
+    border-radius: 4px;
+    transition: 250ms;
 }
+
+.doctorPic:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 250ms;
+    border-radius: 10px;
+}
+
 .name {
     color: var(--primary);
     margin: 10px 0 0 0;
     font-size: 22px;
     font-weight: 500;
+    cursor: pointer;
 }
+
+.name:hover {
+    opacity: 0.8;
+}
+
 .qualification {
     color: var(--grey);
     margin: 0;
@@ -30,13 +47,17 @@
 }
 .designation {
     font-size: 14px;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
 }
 .currentWorkPlace {
     font-size: 14px;
-    margin: 10px 0 0 0;
+    margin: 2px 0 0 0;
     color: var(--secondary);
     font-weight: 500;
+}
+
+.doctor > div:nth-child(3) {
+    margin-top: 1em;
 }
 
 .doctor > div:nth-child(3) > p {
@@ -52,6 +73,7 @@
     text-align: center;
     box-sizing: border-box;
 }
+
 .doctor > div:nth-child(3) > button {
     font-size: 14px;
     font-weight: 500;
@@ -64,6 +86,11 @@
     height: 40px;
     text-align: center;
     cursor: pointer;
+}
+
+.doctor > div:nth-child(3) > button:hover {
+    opacity: 0.9;
+    transition: 200ms;
 }
 
 @media (max-width: 420px) {

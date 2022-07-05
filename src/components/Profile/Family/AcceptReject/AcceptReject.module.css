@@ -3,21 +3,18 @@
 }
 
 .Dropdown > .DropdownButton {
-    height: 25px;
-    width: 25px;
-    padding: 5px;
     border: none;
-    border-radius: 50%;
     background: none;
     color: var(--primary);
     position: relative;
-    left: 380px;
+    left: 19em;
     top: 10px;
 }
 
 .Dropdown > .DropdownButton:hover {
     background: var(--light);
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .Dropdown > .DropdownContent > {
@@ -34,7 +31,7 @@
 }
 
 .formPopup {
-    position: relative;
+    position: absolute;
     /* top: 50%;
     left: 50%; */
     transform: translate(-50%, -50%);

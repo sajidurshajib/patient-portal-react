@@ -6,6 +6,7 @@ import {
     faNotesMedical,
     faBriefcaseMedical,
     faThermometer,
+    faCapsules,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext } from 'react'
@@ -37,31 +38,39 @@ const Sidebar = () => {
                 </Link>
             </div>
             <ul>
-                <li className={location.pathname === '/' ? classes.active : ''}>
-                    <Link to="/">
+                <li className={location.pathname === '/home' ? classes.active : ''}>
+                    <Link to="/home">
                         <FontAwesomeIcon icon={faHome} className={classes.marginIcon1} />
                         <span className={classes.textMargin1}>Home</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/profile' ? classes.active : ''}>
                     <Link to="/profile">
-                        <FontAwesomeIcon icon={faUser} className={classes.marginIcon2} /> <span>Profile</span>
+                        <FontAwesomeIcon icon={faUser} className={classes.marginIcon2} /> <span>My Profile</span>
+                    </Link>
+                </li>
+
+                <li className={location.pathname === '/medicals' ? classes.active : ''}>
+                    <Link to="/medicals">
+                        <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon3} />
+                        <span className={classes.textMargin2}>Medical Records</span>
+                    </Link>
+                </li>
+                <li className={location.pathname === '/indicators' ? classes.active : ''}>
+                    <Link to="/indicators">
+                        <FontAwesomeIcon icon={faThermometer} />
+                        <span className={classes.textMargin3}>Health Indicators</span>
+                    </Link>
+                </li>
+                <li className={location.pathname === '/medicines' ? classes.active : ''}>
+                    <Link to="/medicines">
+                        <FontAwesomeIcon icon={faCapsules} />
+                        <span>Medicine Order</span>
                     </Link>
                 </li>
                 <li className={location.pathname === '/doctors' ? classes.active : ''}>
                     <Link to="/doctors">
                         <FontAwesomeIcon icon={faBriefcaseMedical} /> <span>Find Doctors</span>
-                    </Link>
-                </li>
-                <li className={location.pathname === '/medicals' ? classes.active : ''}>
-                    <Link to="/medicals">
-                        <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon3} />
-                        <span className={classes.textMargin2}>Medical Reports</span>
-                    </Link>
-                </li>
-                <li className={location.pathname === '/indicators' ? classes.active : ''}>
-                    <Link to="/indicators">
-                        <FontAwesomeIcon icon={faThermometer} /> <span>Indicators</span>
                     </Link>
                 </li>
             </ul>

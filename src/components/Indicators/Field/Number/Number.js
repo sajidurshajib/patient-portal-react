@@ -4,7 +4,7 @@ const Number = (props) => {
     return (
         <div className={classes.Number}>
             <div className={classes.header}>
-                <h3>{props.title}</h3>
+                <h2>{props.title}</h2>
             </div>
             <div className={classes.body}>
                 <div className={classes.field}>
@@ -12,6 +12,7 @@ const Number = (props) => {
                         <input
                             type="number"
                             value={props.st}
+                            placeholder={props.place}
                             onChange={(e) => props.setSt(e.target.value)}
                             min={props.min}
                             max={props.max}

@@ -58,7 +58,7 @@ const Login = () => {
     // if already logged in
     useEffect(() => {
         if (stateAuth.auth === true) {
-            history.push('/profile')
+            history.push('/home')
         }
     }, [stateAuth, history])
 

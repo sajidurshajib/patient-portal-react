@@ -1,6 +1,6 @@
 import { Sidebar } from '../Nav'
-import Prescriptions from '../Profile/Prescriptions/Prescriptions'
 import classes from './MedicalReports.module.css'
+import Prescriptions from './Prescriptions/Prescriptions'
 import UploadedReports from './UploadedReports/UploadedReports'
 import VaccinationHistory from './VaccinationHistory/VaccinationHistory'
 

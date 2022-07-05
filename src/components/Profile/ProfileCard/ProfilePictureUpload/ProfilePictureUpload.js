@@ -99,7 +99,7 @@ const ProfilePictureUpload = ({ msg, setMsg }) => {
                                     onChange={onSelectImg}
                                     style={{ display: 'none' }}
                                     ref={inputRef}
-                                    accept="image/*"
+                                    accept="image/pdf"
                                 />
                             </div>
                             <button onClick={triggerFileSelectPopup} className={classes.Select}>
