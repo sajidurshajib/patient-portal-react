@@ -36,7 +36,7 @@ export default function MedicineOrder() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${apiV1}/service/medicine/${serviceId}?skip=0&limit=100`, {
+                const response = await fetch(`${apiV1}/patients/service/medicines/${serviceId}?skip=0&limit=100`, {
                     method: 'GET',
                     headers: {
                         Accept: 'application/json',

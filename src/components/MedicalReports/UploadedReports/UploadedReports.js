@@ -1,5 +1,3 @@
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext, useEffect } from 'react'
 import { Auth } from '../../../allContext'
 import PDF from '../../../assets/img/social/pdf.png'
@@ -113,9 +111,9 @@ const UploadedReports = () => {
             )}
 
             <div className={classes.files}>
-                <div className={classes.pdf}>
-                    {pdfReport.map((report, index) => {
-                        return (
+                {pdfReport.map((report, index) => {
+                    return (
+                        <div className={classes.pdf}>
                             <a href={reportPdfUrl + report.pdf_string} target="blank">
                                 <img src={PDF} alt="file" />
                                 <p>
@@ -126,9 +124,9 @@ const UploadedReports = () => {
                                     report.created_at.slice(6, 7)
                                 )}-${report.created_at.slice(0, 4)}`}</p>
                             </a>
-                        )
-                    })}
-                </div>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )

@@ -6,7 +6,6 @@ import classes from './OrderList.module.css'
 import { OrderPdfPrint } from './OrderPdf/OrderPdfPrint'
 
 export default function OrderList({ services, medicines, setServiceId }) {
-    console.log('s', medicines)
     const [pdfOpen, setPdfOpen] = useState(false)
     return (
         <div className={classes.wrapper}>
