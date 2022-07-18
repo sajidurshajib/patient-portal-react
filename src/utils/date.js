@@ -16,14 +16,14 @@ export const toMonthNameLong = (monthNumber) => {
     })
 }
 
-function padTo2Digits(num) {
+function twoDigits(num) {
     return num.toString().padStart(2, '0')
 }
 function formatDate(date) {
     return (
-        [date.getFullYear(), padTo2Digits(date.getMonth() + 1), padTo2Digits(date.getDate())].join('-') +
+        [date.getFullYear(), twoDigits(date.getMonth() + 1), twoDigits(date.getDate())].join('-') +
         'T' +
-        [padTo2Digits(date.getHours()), padTo2Digits(date.getMinutes())].join(':')
+        [twoDigits(date.getHours()), twoDigits(date.getMinutes())].join(':')
     )
 }
 
