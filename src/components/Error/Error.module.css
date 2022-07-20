@@ -1,0 +1,44 @@
+.errorWrapper {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: var(--white);
+    height: 100vh;
+}
+
+.errorWrapper img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10em;
+    width: 40%;
+    width: 40%;
+}
+
+.errorWrapper p {
+    display: flex;
+    justify-content: center;
+    color: var(--light-secondary);
+    margin-top: -14px;
+    font-size: 1.4em;
+}
+
+.errorWrapper > div {
+    display: flex;
+    justify-content: center;
+}
+
+.errorWrapper a {
+    margin-top: 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.errorWrapper a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

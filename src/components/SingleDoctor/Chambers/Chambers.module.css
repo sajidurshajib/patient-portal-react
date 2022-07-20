@@ -1,0 +1,38 @@
+.ChamberPage {
+    background: var(--white);
+    border: 1px solid var(--white);
+}
+.Chambers {
+    background: none;
+    border-radius: 2px;
+    margin: 10px 20px 0 0;
+    margin-left: 20px;
+    box-shadow: 5px 5px 5px var(--light);
+}
+.head {
+    display: grid;
+    grid-template-columns: minmax(0, 10%) minmax(0, 25%) minmax(0, 25%) minmax(0, 30%) minmax(0, 10%);
+    color: var(--white);
+    background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 15px;
+}
+.body {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 10%) minmax(0, 25%) minmax(0, 25%) minmax(0, 30%) minmax(0, 10%);
+    padding: 0 15px;
+}
+
+.Chambers > .body:nth-child(odd) {
+    background: var(--light);
+}
+
+.btn > button {
+    border: none;
+    background: none;
+    margin: 0px 5px;
+    border-radius: 2px;
+}
