@@ -121,11 +121,8 @@ export default function OrderForm() {
                                                     required
                                                     className={classes.select}>
                                                     <option value="">Select</option>
-                                                    <option value="cash">Cash</option>
-                                                    <option value="card">Card</option>
+                                                    <option value="cash on delivery">Cash On Delivery</option>
                                                     <option value="bkash">Bkash</option>
-                                                    <option value="rocket">Rocket</option>
-                                                    <option value="nagad">Nagad</option>
                                                 </select>
                                             </label>
                                             <label>
