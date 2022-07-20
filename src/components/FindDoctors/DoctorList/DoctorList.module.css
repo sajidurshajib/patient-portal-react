@@ -1,8 +1,13 @@
+.DoctorList {
+    width: 98%;
+    margin-bottom: 2em;
+}
+
 .doctor {
     display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 60%) minmax(0, 20%);
-    margin: 20px auto;
-    width: 90%;
+    grid-template-columns: minmax(0, 20%) minmax(0, 40%) minmax(0, 20%) minmax(0, 20%);
+    margin: 10px auto;
+    width: 100%;
     padding: 10px 0 20px 0;
     background-color: var(--white);
     padding: 20px 40px;
@@ -10,8 +15,8 @@
 }
 
 .doctorPic {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 4px;
     transition: 250ms;
 }
@@ -23,10 +28,15 @@
     border-radius: 10px;
 }
 
+.nameContainer {
+    margin-left: -2em;
+    margin-top: -4px;
+}
+
 .name {
     color: var(--primary);
     margin: 10px 0 0 0;
-    font-size: 22px;
+    font-size: 1.2em;
     font-weight: 500;
     cursor: pointer;
 }
@@ -38,12 +48,14 @@
 .qualification {
     color: var(--grey);
     margin: 0;
+    font-size: 0.8em;
 }
 .speciality {
     color: var(--dark-blue);
-    font-size: 18px;
+    font-size: 0.9em;
     font-weight: 600;
     margin: 0;
+    text-transform: capitalize;
 }
 .designation {
     font-size: 14px;
@@ -57,10 +69,28 @@
 }
 
 .doctor > div:nth-child(3) {
-    margin-top: 1em;
+    margin-top: 2.4em;
+    text-align: center;
+    margin-left: -6em;
 }
 
 .doctor > div:nth-child(3) > p {
+    color: var(--dark);
+    font-size: 1em;
+}
+
+.doctor > div:nth-child(3) > span {
+    color: var(--dark);
+    font-size: 0.9em;
+    margin-top: -10px;
+    display: block;
+}
+
+.doctor > div:nth-child(4) {
+    margin-top: 1em;
+}
+
+.doctor > div:nth-child(4) > p {
     font-size: 16px;
     line-height: 35px;
     font-weight: 500;
@@ -74,7 +104,7 @@
     box-sizing: border-box;
 }
 
-.doctor > div:nth-child(3) > button {
+.doctor > div:nth-child(4) > button {
     font-size: 14px;
     font-weight: 500;
     color: var(--white);
@@ -88,7 +118,7 @@
     cursor: pointer;
 }
 
-.doctor > div:nth-child(3) > button:hover {
+.doctor > div:nth-child(4) > button:hover {
     opacity: 0.9;
     transition: 200ms;
 }
