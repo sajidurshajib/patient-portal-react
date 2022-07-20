@@ -1,0 +1,51 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    padding: 20px;
+}
+
+.slot {
+    text-align: center;
+}
+
+.slotHead {
+    color: var(--white);
+    background-image: linear-gradient(to right, var(--dark-blue), var(--primary), var(--secondary));
+    padding: 6px 10px;
+    border-radius: 2px 2px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.slotBody {
+    background: var(--white);
+    padding: 6px 0px;
+}
+
+.slotBody > .slotButtons {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    gap: 1px;
+}
+
+.slotButtons > .slotButton > button {
+    cursor: pointer;
+    border: 1px solid var(--secondary);
+    background: none;
+    color: var(--dark-blue);
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin: 5px 3px;
+    border-radius: 3px;
+    letter-spacing: normal;
+    min-width: 100px;
+}
+.slotButtons > .slotButton > button:hover {
+    background: var(--secondary);
+    color: var(--white);
+    box-shadow: 1px 3px 10px var(--grey2);
+    transition: 300ms;
+}
