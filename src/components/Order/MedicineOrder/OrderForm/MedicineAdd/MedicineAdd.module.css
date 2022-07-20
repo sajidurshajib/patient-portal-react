@@ -12,7 +12,7 @@
 
 .medWrapper .formGrid {
     display: grid;
-    grid-template-columns: 1.5fr repeat(5, 1fr);
+    grid-template-columns: 1.5fr repeat(5, 1fr) 0.3fr;
     padding-right: 18px;
 }
 
@@ -106,4 +106,18 @@
 
 .medWrapper .refMargin {
     margin-bottom: 3em;
+}
+
+.medWrapper .cross {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    color: var(--red);
+    margin-left: 10px;
+    margin-top: -1em;
+}
+
+.medWrapper .cross:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
