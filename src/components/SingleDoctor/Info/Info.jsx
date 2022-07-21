@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './Info.module.css'
 
-export default function Info() {
+export default function Info({ doctor }) {
     return (
         <div className={classes.infoWrapper}>
             <div className={classes.box}>
@@ -10,12 +10,13 @@ export default function Info() {
                         <div>
                             <p>Consultation Fee</p>
                             <p>
-                                ৳100<span>(inc. VAT)</span>
+                                ৳{doctor?.doctor?.online_fees}
+                                <span>(inc. VAT)</span>
                             </p>
                         </div>
                         <div>
                             <p>Total Consultation</p>
-                            <p>1</p>
+                            <p>10</p>
                         </div>
                     </div>
                     <div className={classes.info}>

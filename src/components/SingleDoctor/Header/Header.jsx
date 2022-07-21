@@ -4,9 +4,7 @@ import Img from '../../../assets/img/doc/docstock.jpg'
 import classes from './Header.module.css'
 
 export default function Header({ doctor }) {
-    const doctorInfo = doctor[0]
-    const doctorSpecialty = doctor[1]
-    const doctorQualification = doctor[2]
+    console.log('doc', doctor)
 
     return (
         <div
@@ -21,8 +19,10 @@ export default function Header({ doctor }) {
                     <div className={classes.profilePic}>
                         <img className={classes.img} src={Img} alt="" />
                     </div>
-                    <h2>Dr. {doctorInfo?.name}</h2>
-                    <p>MBBS</p>
+                    <h2>Dr. {doctor?.user?.name}</h2>
+                    {doctor?.qualifications?.map((qf, i) => (
+                        <p key={i}>{qf.qualification}</p>
+                    ))}
                     <p>General Physician</p>
                 </div>
             </div>
@@ -30,7 +30,8 @@ export default function Header({ doctor }) {
                 <div>
                     <p>Consultation Fee</p>
                     <p>
-                        ৳100<span>(inc. VAT)</span>
+                        ৳{doctor?.doctor?.online_fees}
+                        <span>(inc. VAT)</span>
                     </p>
                 </div>
                 <button>For Booking Please Call at 01322658481</button>
