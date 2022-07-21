@@ -1,4 +1,4 @@
-import { faBriefcaseMedical, faMapMarkedAlt, faSortAlphaDown } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
@@ -28,7 +28,6 @@ export default function SearchDoctor() {
                 })
                 const data = await response.json()
                 setDoctors(data)
-                console.log(data)
             } catch {
                 setDoctors([])
             }
