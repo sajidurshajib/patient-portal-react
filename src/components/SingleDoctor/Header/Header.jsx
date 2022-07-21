@@ -4,8 +4,6 @@ import Img from '../../../assets/img/doc/docstock.jpg'
 import classes from './Header.module.css'
 
 export default function Header({ doctor }) {
-    console.log('doc', doctor)
-
     return (
         <div
             className={classes.header}
