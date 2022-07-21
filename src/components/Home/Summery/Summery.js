@@ -1,4 +1,4 @@
-import { faHeartbeat, faMoneyBillWaveAlt, faRandom } from '@fortawesome/free-solid-svg-icons'
+import { faHeartbeat, faRandom } from '@fortawesome/free-solid-svg-icons'
 import { faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext, useEffect } from 'react'

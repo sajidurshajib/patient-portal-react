@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useContext, useEffect } from 'react/cjs/react.development'
 import { Auth } from '../../allContext'
+import { toMonthNameShort } from '../../utils/date'
 import { LineChart } from '../Chart'
 import { Number } from './index'
 
@@ -61,7 +62,16 @@ const Pulse = () => {
     }, [apiV1, token, rbs])
 
     let data = {
-        labels: [...dataRbs.map((elm) => elm.created_at.split('T')[0].slice(0, 7))],
+        labels: [
+            ...dataRbs
+                .map(
+                    (elm) =>
+                        `${elm.created_at.slice(8, 10)}-${toMonthNameShort(
+                            elm.created_at.slice(6, 7)
+                        )}${elm.created_at.slice(2, 4)}`
+                )
+                .reverse(),
+        ],
         datasets: [
             {
                 label: 'RBS',

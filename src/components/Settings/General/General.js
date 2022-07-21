@@ -8,14 +8,12 @@ const General = () => {
     const userDetail = stateUser.info
 
     const [msg, setMsg] = useState('')
-
     const [name, setName] = useState(userDetail.name)
     const [email, setEmail] = useState(userDetail.email)
     const [phone, setPhone] = useState(userDetail.phone)
     const [sex, setSex] = useState(userDetail.sex)
 
     const apiV1 = process.env.REACT_APP_API_V1
-
     const token = stateAuth.token
 
     const submit = async (e) => {

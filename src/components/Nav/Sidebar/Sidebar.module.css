@@ -116,6 +116,9 @@
 .textMargin2 {
     padding-left: 3px;
 }
+.textMargin3 {
+    padding-left: 2px;
+}
 
 @media (max-width: 420px) {
     .Sidebar {

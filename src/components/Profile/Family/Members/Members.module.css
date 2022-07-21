@@ -1,6 +1,6 @@
 .Member {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 140px;
     gap: 10px;
 }
@@ -12,9 +12,22 @@
     line-height: 0.5;
 }
 
+.Member > div > div > h3 {
+    margin-top: 1.6em;
+    margin-bottom: 1em;
+}
+
+.Member > div > div > p {
+    margin-bottom: 2em;
+}
+
 .Member > div > div > span {
-    border: 1px solid #fffc7b;
-    background: #fffc7b;
-    padding: 5px;
-    color: var(--dark-blue);
+    border: 1px solid #f2bb5d;
+    background: rgb(237, 173, 54);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 12px;
+    margin-top: 20px;
+    text-transform: capitalize;
 }

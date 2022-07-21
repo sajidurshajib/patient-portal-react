@@ -1,0 +1,36 @@
+.professionalInfo {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+    gap: 10px;
+    border: 1px solid var(--white);
+    font-size: 14px;
+}
+
+.professionalInfo > .Category {
+    background: none;
+    padding: 20px;
+}
+
+.professionalInfo > .Category > div {
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px var(--light);
+    border: 1px solid var(--light);
+}
+
+.professionalInfo > .Category > div > h2 {
+    color: var(--secondary);
+    border-left: 4px solid var(--secondary);
+    padding-left: 10px;
+}
+
+.professionalInfo > .Category > div > ul {
+    color: var(--dark-blue);
+    list-style-type: square;
+}
+
+.professionalInfo > .Category > div > ul li div {
+    color: var(--dark-blue);
+    line-height: 0.5;
+}

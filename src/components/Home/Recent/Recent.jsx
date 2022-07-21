@@ -14,7 +14,7 @@ export default function Recent() {
                 </p>
 
                 <p>Detail Info</p>
-                <p>29-06-2022</p>
+                <p>29-June-2022</p>
                 <button>Download</button>
             </div>
             <div className={classes.flexWrapper}>
@@ -24,7 +24,7 @@ export default function Recent() {
                 </p>
 
                 <p>Detail Info</p>
-                <p>28-06-2022</p>
+                <p>28-June-2022</p>
                 <button>Download</button>
             </div>
         </div>

@@ -1,0 +1,56 @@
+.infoWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.infoWrapper > .box {
+    background: none;
+    padding: 20px;
+}
+
+.infoWrapper > .box > div {
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px var(--light);
+    border: 1px solid var(--light);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.infoWrapper .info > div {
+    border-left: 4px solid var(--secondary);
+    padding-left: 10px;
+}
+
+.infoWrapper .info > div:nth-child(2) {
+    margin-top: 2em;
+}
+
+.infoWrapper .info > div > p:nth-child(1) {
+    font-size: 14px;
+    color: var(--dark);
+}
+
+.infoWrapper .info > div > p:nth-child(2) {
+    font-size: 1.1em;
+    color: var(--dark);
+    font-weight: 500;
+    margin-top: -10px;
+}
+
+.infoWrapper .info > div > p:nth-child(2) > span {
+    font-size: 10px;
+}
+
+.infoWrapper .box > p {
+    border-left: 4px solid var(--secondary);
+    padding-left: 10px;
+    font-size: 14px;
+    color: var(--dark);
+}
+
+.infoWrapper .box > p > span {
+    font-size: 1.1em;
+    font-weight: 500;
+}

@@ -5,4 +5,12 @@
     background: var(--light);
     min-height: 100vh;
     padding-right: 20px;
+    margin-bottom: 10px;
+}
+
+.Indicators .grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
 }

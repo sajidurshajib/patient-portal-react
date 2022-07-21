@@ -1,7 +1,8 @@
 .Family {
     background: var(--white);
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 30px;
+    padding-bottom: 30px;
     margin: 0px 0;
     display: grid;
     grid-template-rows: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
@@ -10,7 +11,7 @@
 
 .Family h3 {
     color: var(--primary);
-    /* margin: 5px 5px 10px 5px; */
+    margin-bottom: -2em;
 }
 
 .Family > .Header {
@@ -23,7 +24,8 @@
     color: var(--dark-blue);
     border: 1px solid var(--primary);
     border-radius: 10px;
-    padding: 7px 10px;
+    padding: 8px 20px;
+    width: 20em;
 }
 
 .Family > .Header > form input:focus {
@@ -37,26 +39,29 @@
     position: relative;
     margin: 20px;
     background: var(--white);
-    width: 70%;
+    width: 80%;
     border-radius: 4px;
-    padding: 2px 4px;
+    margin: 0 auto;
 }
 
 .Family > .list > .optAll > .optSelect {
-    /* box-shadow: 1px 2px 4px var(--light); */
-    padding: 10px 6px;
+    padding: 18px;
     border-radius: 10px;
     font-size: 14px;
     color: var(--secondary);
+    box-shadow: 2px 4px 10px var(--light);
+    border: 1px solid var(--light);
 }
 
 .Family > .list > .optAll > .optSelect > div > button {
-    margin-left: 400px;
     background: var(--light);
     border: none;
     border-radius: 50px;
     font-size: 16px;
     color: var(--secondary);
+    float: right;
+    margin-right: 6px;
+    margin-top: -2px;
 }
 
 .Family > .list > .optAll > .optSelect > div > button:hover {

@@ -1,0 +1,157 @@
+.wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--white);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.wrapper > p {
+    font-size: 1.2em;
+    margin-top: 6px;
+    color: var(--dark);
+}
+
+.wrapper > .gridWrapper {
+    display: grid;
+    grid-template-columns: 2.8fr 1.6fr 0.6fr 2.8fr 1fr;
+    box-shadow: 2px 4px 8px var(--light);
+    border-radius: 10px;
+    border: 1px solid var(--light);
+    padding: 6px 30px;
+    margin-bottom: 20px;
+}
+
+.wrapper > .gridWrapper:hover {
+    box-shadow: 4px 8px 12px var(--light);
+}
+
+.wrapper > .gridWrapper > p {
+    font-size: 1em;
+    color: var(--dark);
+    text-transform: capitalize;
+}
+
+.wrapper > .gridWrapper > button {
+    border-radius: 4px;
+    border: none;
+    padding: 0px 10px;
+    margin: 12px 0;
+    background-color: var(--secondary2);
+    color: var(--white);
+    font-size: 12px;
+}
+
+.wrapper > .gridWrapper > button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 200ms;
+}
+
+.wrapper > .gridWrapper > p > .icon {
+    font-size: 20px;
+    color: var(--secondary2);
+}
+
+.wrapper > .gridWrapper > p:nth-child(3),
+.wrapper > .gridWrapper > p:nth-child(4) {
+    text-align: center;
+}
+
+.wrapper > .gridWrapper > p:nth-child(4) {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: -14px;
+}
+
+.wrapper > .gridWrapper > p > span {
+    margin-left: 1em;
+}
+
+.wrapper > .gridWrapper > p > span:hover {
+    color: var(--secondary);
+}
+
+.wrapper > .btn > button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: var(--secondary2);
+    color: var(--white);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.wrapper > .btn > button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* status */
+.wrapper p.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px;
+}
+
+.wrapper p.status span:after {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    content: '';
+    border-radius: 50%;
+}
+
+.wrapper p.status .active {
+    background: #cff6dd;
+    color: #1fa750;
+}
+.wrapper p.status .active:after {
+    background: #23bd5a;
+}
+
+.wrapper p.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c;
+}
+
+.wrapper p.status .waiting:after {
+    background: #f2be1d;
+}
+
+.wrapper p.status .progress {
+    background: #ddf8fd;
+    color: #0cb2cf;
+}
+
+.wrapper p.status .progress:after {
+    background: #1dcff2;
+}
+
+.wrapper p.status .running {
+    background: #ddf1fd;
+    color: #0c84cf;
+}
+
+.wrapper p.status .running:after {
+    background: #1da0f2;
+}
+
+.wrapper p.status .cancel {
+    background: #d1d1d1;
+    color: #595252;
+}
+.wrapper p.status .cancel:after {
+    background: #535050;
+}
+
+.wrapper p.status .delete {
+    background: #fde8dd;
+    color: #d61111;
+}
+.wrapper p.status .delete:after {
+    background: #b81111;
+}

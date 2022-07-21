@@ -1,0 +1,30 @@
+.ProfileDetail {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+    gap: 10px;
+    font-size: 14px;
+}
+
+.ProfileDetail > .Basic {
+    background: none;
+    padding: 20px;
+}
+
+.ProfileDetail > .Basic > div {
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px var(--light);
+    border: 1px solid var(--light);
+}
+
+.ProfileDetail > .Basic > div > h2 {
+    color: var(--secondary);
+    border-left: 4px solid var(--secondary);
+    padding-left: 10px;
+}
+
+.ProfileDetail > .Basic > div > ul {
+    color: var(--dark);
+    list-style-type: square;
+}
