@@ -41,7 +41,7 @@ export default function OrderList({ services, medicines, setServiceId }) {
                                 {service.order_status}
                             </span>
                         </p>
-                        {service.service_name !== 'telemedicine' ? (
+                        {service.service_name === 'medicine_order' ? (
                             <button
                                 onClick={() => {
                                     setServiceId(service?.id)
