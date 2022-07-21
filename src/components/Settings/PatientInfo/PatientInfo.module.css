@@ -8,7 +8,7 @@
 }
 
 .patientInfo .formHeader {
-    color: var(--secondary2);
+    color: var(--secondary);
     margin-bottom: 10px;
     font-size: 20px;
     font-weight: 500;
@@ -52,7 +52,7 @@
 }
 
 .patientInfo .Button {
-    background-color: var(--secondary2);
+    background-color: var(--secondary);
     padding: 10px 20px;
     color: var(--white);
     font-size: 14px;

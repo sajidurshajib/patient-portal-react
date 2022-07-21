@@ -1,11 +1,11 @@
 .DoctorList {
     width: 98%;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .doctor {
     display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 40%) minmax(0, 20%) minmax(0, 20%);
+    grid-template-columns: minmax(0, 18%) minmax(0, 35%) minmax(0, 27%) minmax(0, 20%);
     margin: 10px auto;
     width: 100%;
     padding: 10px 0 20px 0;
@@ -15,8 +15,8 @@
 }
 
 .doctorPic {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 4px;
     transition: 250ms;
 }
@@ -51,9 +51,9 @@
     font-size: 0.8em;
 }
 .speciality {
-    color: var(--dark-blue);
+    color: var(--dark);
     font-size: 0.9em;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0;
     text-transform: capitalize;
 }

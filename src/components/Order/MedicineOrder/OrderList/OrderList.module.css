@@ -12,9 +12,9 @@
     color: var(--dark);
 }
 
-.wrapper > .flexWrapper {
-    display: flex;
-    justify-content: space-between;
+.wrapper > .gridWrapper {
+    display: grid;
+    grid-template-columns: 2.8fr 1.6fr 0.6fr 2.8fr 1fr;
     box-shadow: 2px 4px 8px var(--light);
     border-radius: 10px;
     border: 1px solid var(--light);
@@ -22,42 +22,57 @@
     margin-bottom: 20px;
 }
 
-.wrapper > .flexWrapper:hover {
+.wrapper > .gridWrapper:hover {
     box-shadow: 4px 8px 12px var(--light);
 }
 
-.wrapper > .flexWrapper > p {
+.wrapper > .gridWrapper > p {
     font-size: 1em;
     color: var(--dark);
     text-transform: capitalize;
 }
 
-.wrapper > .flexWrapper > button {
+.wrapper > .gridWrapper > button {
     border-radius: 4px;
     border: none;
-    padding: 0px 14px;
+    padding: 0px 10px;
     margin: 12px 0;
     background-color: var(--secondary2);
     color: var(--white);
     font-size: 12px;
 }
 
-.wrapper > .flexWrapper > button:hover {
+.wrapper > .gridWrapper > button:hover {
     cursor: pointer;
     opacity: 0.8;
     transition: 200ms;
 }
 
-.wrapper > .flexWrapper > p > .icon {
+.wrapper > .gridWrapper > p > .icon {
     font-size: 20px;
     color: var(--secondary2);
 }
 
-.wrapper > .flexWrapper > p > span {
+.wrapper > .gridWrapper > p:nth-child(3),
+.wrapper > .gridWrapper > p:nth-child(4) {
+    text-align: center;
+}
+
+.wrapper > .gridWrapper > p:nth-child(3) {
+    margin-left: 12px;
+}
+
+.wrapper > .gridWrapper > p:nth-child(4) {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: -14px;
+}
+
+.wrapper > .gridWrapper > p > span {
     margin-left: 1em;
 }
 
-.wrapper > .flexWrapper > p > span:hover {
+.wrapper > .gridWrapper > p > span:hover {
     color: var(--secondary);
 }
 
@@ -120,18 +135,27 @@
     background: #1dcff2;
 }
 
+.wrapper p.status .running {
+    background: #ddf1fd;
+    color: #0c84cf;
+}
+
+.wrapper p.status .running:after {
+    background: #1da0f2;
+}
+
 .wrapper p.status .cancel {
     background: #d1d1d1;
     color: #595252;
 }
-.tableMain p.status .cancel:after {
+.wrapper p.status .cancel:after {
     background: #535050;
 }
 
-.tableMain p.status .delete {
+.wrapper p.status .delete {
     background: #fde8dd;
     color: #d61111;
 }
-.tableMain p.status .delete:after {
+.wrapper p.status .delete:after {
     background: #b81111;
 }

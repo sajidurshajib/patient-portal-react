@@ -1,3 +1,5 @@
+import { faTrashAlt, faTrashArrowUp, faTrashRestore } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState, useContext } from 'react'
 import { Auth } from '../../../../../allContext'
 import classes from './MedicineAdd.module.css'
@@ -58,6 +60,10 @@ export default function MedicineAdd({ lines, setLines, index }) {
         mainData[index].pharmaceuticals = info?.pharmaceuticals
 
         setLines([...mainData])
+    }
+
+    const removeItem = (index) => {
+        setLines([...lines.slice(0, index), ...lines.slice(index + 1, lines.length)])
     }
 
     return (
@@ -132,6 +138,10 @@ export default function MedicineAdd({ lines, setLines, index }) {
                         {isNaN(lines[index].total_mrp) !== true ? lines[index].total_mrp : ''} <p>.</p>
                     </span>
                 </label>
+
+                <button className={classes.cross} onClick={() => removeItem(index)}>
+                    <FontAwesomeIcon icon={faTrashRestore} />
+                </button>
             </div>
         </div>
     )
