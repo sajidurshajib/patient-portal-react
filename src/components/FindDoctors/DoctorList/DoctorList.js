@@ -10,46 +10,42 @@ const DoctorList = ({ doctors }) => {
     return (
         <div className={classes.DoctorList}>
             {doctors[1] &&
-                doctors[1]
-                    .map((doctor, i) => (
-                        <div className={classes.doctor} key={i}>
-                            <div>
-                                <Link to={`/doctor/${doctor?.User?.id}`}>
-                                    <div
-                                        className={classes.doctorPic}
-                                        style={{
-                                            backgroundImage: `url(${img3})`,
-                                            backgroundPosition: 'center',
-                                            backgroundSize: 'cover',
-                                            border: '4px solid var(--light)',
-                                        }}></div>{' '}
-                                </Link>
-                            </div>
-                            <div className={classes.nameContainer}>
-                                <p className={classes.name}>
-                                    <Link to={`/doctor/${doctor?.User?.id}`}>{doctor?.User?.name}</Link>
-                                </p>
-                                <p className={classes.qualification}>{doctor?.DoctorQualification?.qualification}</p>
-                                <p className={classes.speciality}>{doctor?.DoctorSpeciality?.speciality}</p>
-                                <p className={classes.designation}>Assistant Professor</p>
-                                <p className={classes.currentWorkPlace}>
-                                    Dhaka Medical College & Hospital Shahbag, Dhaka
-                                </p>
-                            </div>
-                            <div>
-                                <p>2+ Years of Experience</p>
-                                <span>
-                                    Ratings(1) 5.0
-                                    <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
-                                </span>
-                            </div>
-                            <div>
-                                <p>BDT 200.00</p>
-                                <button>Book Appointment</button>
-                            </div>
+                doctors[1].map((doctor, i) => (
+                    <div className={classes.doctor} key={i}>
+                        <div>
+                            <Link to={`/doctor/${doctor?.User?.id}`}>
+                                <div
+                                    className={classes.doctorPic}
+                                    style={{
+                                        backgroundImage: `url(${img3})`,
+                                        backgroundPosition: 'center',
+                                        backgroundSize: 'cover',
+                                        border: '4px solid var(--light)',
+                                    }}></div>{' '}
+                            </Link>
                         </div>
-                    ))
-                    .reverse()}
+                        <div className={classes.nameContainer}>
+                            <p className={classes.name}>
+                                <Link to={`/doctor/${doctor?.User?.id}`}>Dr. {doctor?.User?.name}</Link>
+                            </p>
+                            <p className={classes.qualification}>{doctor?.DoctorQualification?.qualification}</p>
+                            <p className={classes.speciality}>{doctor?.DoctorSpeciality?.speciality}</p>
+                            <p className={classes.designation}>Assistant Professor</p>
+                            <p className={classes.currentWorkPlace}>Dhaka Medical College & Hospital Shahbag, Dhaka</p>
+                        </div>
+                        <div>
+                            <p>2+ Years of Experience</p>
+                            <span>
+                                Ratings(1) 5.0
+                                <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
+                            </span>
+                        </div>
+                        <div>
+                            <p>BDT 200.00</p>
+                            <button>Book Appointment</button>
+                        </div>
+                    </div>
+                ))}
 
             {/* <div className={classes.doctor}>
                 <div>
@@ -74,7 +70,7 @@ const DoctorList = ({ doctors }) => {
                     <button>Book Appointment</button>
                 </div>
             </div> */}
-            <div className={classes.doctor}>
+            {/* <div className={classes.doctor}>
                 <div>
                     <div
                         className={classes.doctorPic}
@@ -103,7 +99,7 @@ const DoctorList = ({ doctors }) => {
                     <p>BDT 600.00</p>
                     <button>Book Appointment</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

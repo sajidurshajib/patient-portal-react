@@ -11,10 +11,11 @@ export default function SearchDoctor() {
 
     const [doctorName, setDoctorName] = useState('')
     const [doctorSpecialty, setDoctorSpecialty] = useState('')
-    const [doctorLocation, setDoctorLocation] = useState('')
+    const [doctorLocation, setDoctorLocation] = useState('Dhaka')
 
-    const [doctorHide, setDoctorHide] = useState(false)
-    const [doctorInfo, setDoctorInfo] = useState()
+    const [doctorNameHide, setDoctorNameHide] = useState(false)
+    const [doctorSpecialtyHide, setSpecialtyDoctorHide] = useState(false)
+    const [doctorLocationHide, setDoctorLocationHide] = useState(false)
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
@@ -44,12 +45,32 @@ export default function SearchDoctor() {
 
     const doctorLocationHandle = (doctorLocation) => {
         if (doctorLocation.length > 0) {
-            setDoctorHide(true)
+            setDoctorLocationHide(true)
         }
         if (doctorLocation.length < 1) {
-            setDoctorHide(false)
+            setDoctorLocationHide(false)
         }
         setDoctorLocation(doctorLocation)
+    }
+
+    const doctorSpecialtyHandle = (doctorSpecialty) => {
+        if (doctorSpecialty.length > 0) {
+            setSpecialtyDoctorHide(true)
+        }
+        if (doctorSpecialty.length < 1) {
+            setSpecialtyDoctorHide(false)
+        }
+        setDoctorSpecialty(doctorSpecialty)
+    }
+
+    const doctorNameHandle = (doctorName) => {
+        if (doctorName.length > 0) {
+            setDoctorNameHide(true)
+        }
+        if (doctorName.length < 1) {
+            setDoctorNameHide(false)
+        }
+        setDoctorName(doctorName)
     }
 
     return (
@@ -70,24 +91,34 @@ export default function SearchDoctor() {
                     <span>
                         <FontAwesomeIcon icon={faBriefcaseMedical} height={10} width={15} />
                     </span>
-                    <input type="text" placeholder="search speciality" />
+                    <input
+                        type="text"
+                        placeholder="search specialty"
+                        value={doctorSpecialty}
+                        onChange={(e) => doctorSpecialtyHandle(e.target.value)}
+                    />
                 </div>
                 <div className={classes.searchBar}>
                     <span>
                         <FontAwesomeIcon icon={faSortAlphaDown} height={10} width={15} />
                     </span>
-                    <input type="text" placeholder="search name" />
+                    <input
+                        type="text"
+                        placeholder="search name"
+                        value={doctorName}
+                        onChange={(e) => doctorNameHandle(e.target.value)}
+                    />
                 </div>
             </form>
 
-            {doctorHide && (
+            {(doctorNameHide || doctorSpecialtyHide || doctorLocationHide) && (
                 <div className={classes.optAllDoc}>
                     {doctors &&
                         doctors.map((info, i) => (
                             <div className={classes.optSelect} key={i}>
                                 <div>
                                     <Link to={`/doctor/${info?.User?.id}`}>
-                                        <option value={doctorInfo?.User?.id}>
+                                        <option value={info?.User?.id}>
                                             {info?.User?.name} | {info?.DoctorSpeciality?.speciality} |{' '}
                                             {info?.DoctorChamber?.district}
                                         </option>
