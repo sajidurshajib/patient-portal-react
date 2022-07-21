@@ -34,14 +34,16 @@ const DoctorList = ({ doctors }) => {
                             <p className={classes.currentWorkPlace}>Dhaka Medical College & Hospital Shahbag, Dhaka</p>
                         </div>
                         <div>
-                            <p>2+ Years of Experience</p>
+                            <p>
+                                {doctor?.Doctor?.exp_year !== null ? doctor?.Doctor?.exp_year : 0}+ Years of Experience
+                            </p>
                             <span>
                                 Ratings(1) 5.0
                                 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
                             </span>
                         </div>
                         <div>
-                            <p>BDT 200.00</p>
+                            <p>BDT {doctor?.Doctor?.online_fees}</p>
                             <button>Book Appointment</button>
                         </div>
                     </div>
