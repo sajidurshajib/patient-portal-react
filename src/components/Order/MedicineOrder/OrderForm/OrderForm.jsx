@@ -5,7 +5,6 @@ import MedicineAdd from './MedicineAdd/MedicineAdd'
 import classes from './OrderForm.module.css'
 
 export default function OrderForm() {
-    console.log(dateTime)
     const [serviceInfo, setServiceInfo] = useState('')
     const [patientAddress, setPatientAddress] = useState('')
 

@@ -94,7 +94,7 @@ export const Pdf = React.forwardRef((props, ref) => {
                         <div>
                             <div className={classes.notices}>
                                 <div>Payment:</div>
-                                <div className={classes.notice}>Cash On Delivery</div>
+                                <div className={classes.notice}>{details?.payment_method}</div>
                             </div>
                         </div>
                         <table className={classes.amount}>

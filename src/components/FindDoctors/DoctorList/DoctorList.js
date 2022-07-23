@@ -13,7 +13,7 @@ const DoctorList = ({ doctors }) => {
                 doctors[1].map((doctor, i) => (
                     <div className={classes.doctor} key={i}>
                         <div>
-                            <Link to={`/doctor/${doctor?.User?.id}`}>
+                            <Link to={`/doctor/${doctor?.User?.id + 1000}`}>
                                 <div
                                     className={classes.doctorPic}
                                     style={{
@@ -26,7 +26,7 @@ const DoctorList = ({ doctors }) => {
                         </div>
                         <div className={classes.nameContainer}>
                             <p className={classes.name}>
-                                <Link to={`/doctor/${doctor?.User?.id}`}>Dr. {doctor?.User?.name}</Link>
+                                <Link to={`/doctor/${doctor?.User?.id + 1000}`}>Dr. {doctor?.User?.name}</Link>
                             </p>
                             <p className={classes.qualification}>{doctor?.DoctorQualification?.qualification}</p>
                             <p className={classes.speciality}>{doctor?.DoctorSpeciality?.speciality}</p>
@@ -44,7 +44,9 @@ const DoctorList = ({ doctors }) => {
                         </div>
                         <div>
                             <p>BDT {doctor?.Doctor?.online_fees}</p>
-                            <button>Book Appointment</button>
+                            <button>
+                                <Link to={`/doctor/${doctor?.User?.id + 1000}`}> Book Appointment </Link>
+                            </button>
                         </div>
                     </div>
                 ))}
