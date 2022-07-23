@@ -1,4 +1,4 @@
-import { faCalendarPlus, faFire, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarPlus, faFire } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import classes from './Events.module.css'
