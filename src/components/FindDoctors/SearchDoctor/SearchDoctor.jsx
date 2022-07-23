@@ -4,6 +4,7 @@ import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Auth } from '../../../allContext'
+import Img from '../../../assets/img/doc/docstock.jpg'
 import classes from './SearchDoctor.module.css'
 
 export default function SearchDoctor() {
@@ -67,10 +68,18 @@ export default function SearchDoctor() {
                         doctors.map((info, i) => (
                             <div className={classes.optSelect} key={i}>
                                 <div>
-                                    <Link to={`/doctor/${info?.id}`}>
-                                        <option value={info?.id}>
-                                            {info?.name} | {info?.specialities[0]?.speciality}
-                                        </option>
+                                    <Link to={`/doctor/${info?.id + 1000}`}>
+                                        <div value={info?.id} className={classes.searchField}>
+                                            <div>
+                                                <img className={classes.searchImg} src={Img} alt="" />
+                                            </div>
+                                            <div>
+                                                <h3>{info?.name}</h3>
+                                                <p style={{ marginTop: '-14px' }}>
+                                                    {info?.specialities[0]?.speciality}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </Link>
                                 </div>
                             </div>

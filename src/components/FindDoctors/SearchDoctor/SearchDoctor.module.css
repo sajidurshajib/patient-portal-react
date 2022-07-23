@@ -58,3 +58,20 @@
     background-color: var(--light);
     color: var(--white);
 }
+
+.searchField {
+    margin: 0px 0;
+    display: flex;
+}
+
+.searchField .searchImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    border: 2px solid var(--light);
+    object-fit: cover;
+}
+
+.searchField > div:nth-child(2) {
+    margin: -10px 0px 0px 10px;
+}
