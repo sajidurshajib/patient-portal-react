@@ -17,6 +17,7 @@ export default function SingleDoctor() {
     const [doctor, setDoctor] = useState([])
 
     const { id } = useParams()
+    const setId = id - 1000
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
@@ -25,7 +26,7 @@ export default function SingleDoctor() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${apiV1}/doctors/detail/${id}`, {
+                const response = await fetch(`${apiV1}/doctors/detail/${setId}`, {
                     method: 'GET',
                     headers: {
                         Accept: 'application/json',
@@ -40,7 +41,7 @@ export default function SingleDoctor() {
             }
         }
         return fetchData()
-    }, [token, apiV1, id])
+    }, [token, apiV1, setId])
 
     return (
         <div className={classes.wrapper}>
