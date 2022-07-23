@@ -57,11 +57,11 @@ export default function Events() {
                         </div>
                     </div>
                     <button className={classes.eventButton}>
-                        <span className={classes.eventButtonTitle}>Add Event</span>
+                        <span className={classes.eventButtonTitle}>+ Add Event</span>
 
-                        <span className={classes.eventButtonIcon}>
+                        {/* <span className={classes.eventButtonIcon}>
                             <FontAwesomeIcon icon={faPlus} className={classes.i} />
-                        </span>
+                        </span> */}
                     </button>
                 </div>
             </section>
