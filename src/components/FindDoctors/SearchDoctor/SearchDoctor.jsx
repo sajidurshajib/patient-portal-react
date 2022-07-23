@@ -11,7 +11,7 @@ export default function SearchDoctor() {
 
     const [doctorName, setDoctorName] = useState('')
     const [doctorSpecialty, setDoctorSpecialty] = useState('')
-    const [doctorLocation, setDoctorLocation] = useState('Dhaka')
+    const [doctorLocation, setDoctorLocation] = useState('')
 
     const [doctorNameHide, setDoctorNameHide] = useState(false)
     const [doctorSpecialtyHide, setSpecialtyDoctorHide] = useState(false)
