@@ -67,7 +67,7 @@ export default function SearchDoctor() {
                         doctors.map((info, i) => (
                             <div className={classes.optSelect} key={i}>
                                 <div>
-                                    <Link to={`/doctor/${info?.id}`}>
+                                    <Link to={`/doctor/${info?.id + 1000}`}>
                                         <option value={info?.id}>
                                             {info?.name} | {info?.specialities[0]?.speciality}
                                         </option>

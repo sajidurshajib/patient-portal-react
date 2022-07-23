@@ -2,7 +2,9 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
+import Logo from '../../assets/img/logo/Logo192.png'
 import { toMonthNameLong } from '../../utils/date'
 import Chambers from './Chambers/Chambers'
 import Header from './Header/Header'
@@ -45,6 +47,9 @@ export default function SingleDoctor() {
 
     return (
         <div className={classes.wrapper}>
+            <Link to="/home">
+                <img className={classes.logoImg} src={Logo} alt="" />
+            </Link>
             <Header doctor={doctor} />
             <div className={classes.infoWrapper}>
                 <div className={classes.info}>
