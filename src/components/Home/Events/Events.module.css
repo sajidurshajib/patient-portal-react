@@ -69,7 +69,7 @@
 .header .container .menuToggle:hover span:last-child {
     width: 100%;
 }
-.header .container::before {
+/* .header .container::before {
     content: '';
     display: block;
     width: 0;
@@ -88,7 +88,7 @@
     background-color: var(--light-grey);
     position: relative;
     top: 8px;
-}
+} */
 
 .todayBox {
     background: linear-gradient(90deg, var(--secondary) 0%, var(--secondary) 100%);
@@ -246,20 +246,19 @@
 }
 .eventButton .eventButtonTitle {
     color: var(--white);
-    padding: 0 10px 0 14px;
+    padding: 2px 12px 2px 14px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
 }
+
+.eventButton .eventButtonTitle:hover {
+    opacity: 0.8;
+    transition: 200ms;
+}
+
 .eventButton .eventButtonIcon {
     display: inline-block;
     padding: 0 12px 0 12px;
-}
-.eventButton .eventButtonIcon .i {
-    margin-top: 4px;
-    color: var(--white);
-    font-size: 10px;
-    padding: 8px 0;
-    margin-left: -10px;
 }
 
 @media (max-width: 420px) {

@@ -1,21 +1,17 @@
-import { faBriefcaseMedical, faMapMarkedAlt, faSortAlphaDown } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Auth } from '../../../allContext'
+import Img from '../../../assets/img/doc/docstock.jpg'
 import classes from './SearchDoctor.module.css'
 
 export default function SearchDoctor() {
     const [doctors, setDoctors] = useState([])
 
-    const [doctorName, setDoctorName] = useState('')
-    const [doctorSpecialty, setDoctorSpecialty] = useState('')
-    const [doctorLocation, setDoctorLocation] = useState('')
-
-    const [doctorNameHide, setDoctorNameHide] = useState(false)
-    const [doctorSpecialtyHide, setSpecialtyDoctorHide] = useState(false)
-    const [doctorLocationHide, setDoctorLocationHide] = useState(false)
+    const [searchDoctor, setSearchDoctor] = useState('')
+    const [doctorHide, setDoctorHide] = useState(false)
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
@@ -24,16 +20,13 @@ export default function SearchDoctor() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(
-                    `${apiV1}/doctors/search/?district=${doctorLocation}&speciality=${doctorSpecialty}&name=${doctorName}&skip=0&limit=10`,
-                    {
-                        method: 'GET',
-                        headers: {
-                            Accept: 'application/json',
-                            'Content-Type': 'application/json',
-                        },
-                    }
-                )
+                const response = await fetch(`${apiV1}/doctors/search/?search=${searchDoctor}&skip=0&limit=10`, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                })
                 const data = await response.json()
                 setDoctors(data)
             } catch {
@@ -41,36 +34,16 @@ export default function SearchDoctor() {
             }
         }
         return fetchData()
-    }, [token, apiV1, doctorName, doctorSpecialty, doctorLocation])
+    }, [token, apiV1, searchDoctor])
 
-    const doctorLocationHandle = (doctorLocation) => {
-        if (doctorLocation.length > 0) {
-            setDoctorLocationHide(true)
+    const doctorSearchHandle = (searchDoctor) => {
+        if (searchDoctor.length > 0) {
+            setDoctorHide(true)
         }
-        if (doctorLocation.length < 1) {
-            setDoctorLocationHide(false)
+        if (searchDoctor.length < 1) {
+            setDoctorHide(false)
         }
-        setDoctorLocation(doctorLocation)
-    }
-
-    const doctorSpecialtyHandle = (doctorSpecialty) => {
-        if (doctorSpecialty.length > 0) {
-            setSpecialtyDoctorHide(true)
-        }
-        if (doctorSpecialty.length < 1) {
-            setSpecialtyDoctorHide(false)
-        }
-        setDoctorSpecialty(doctorSpecialty)
-    }
-
-    const doctorNameHandle = (doctorName) => {
-        if (doctorName.length > 0) {
-            setDoctorNameHide(true)
-        }
-        if (doctorName.length < 1) {
-            setDoctorNameHide(false)
-        }
-        setDoctorName(doctorName)
+        setSearchDoctor(searchDoctor)
     }
 
     return (
@@ -82,46 +55,31 @@ export default function SearchDoctor() {
                     </span>
                     <input
                         type="text"
-                        placeholder="search location"
-                        value={doctorLocation}
-                        onChange={(e) => doctorLocationHandle(e.target.value)}
-                    />
-                </div>
-                <div className={classes.searchBar}>
-                    <span>
-                        <FontAwesomeIcon icon={faBriefcaseMedical} height={10} width={15} />
-                    </span>
-                    <input
-                        type="text"
-                        placeholder="search specialty"
-                        value={doctorSpecialty}
-                        onChange={(e) => doctorSpecialtyHandle(e.target.value)}
-                    />
-                </div>
-                <div className={classes.searchBar}>
-                    <span>
-                        <FontAwesomeIcon icon={faSortAlphaDown} height={10} width={15} />
-                    </span>
-                    <input
-                        type="text"
-                        placeholder="search name"
-                        value={doctorName}
-                        onChange={(e) => doctorNameHandle(e.target.value)}
+                        placeholder="search doctor by specialty, location or name"
+                        value={searchDoctor}
+                        onChange={(e) => doctorSearchHandle(e.target.value)}
                     />
                 </div>
             </form>
 
-            {(doctorNameHide || doctorSpecialtyHide || doctorLocationHide) && (
+            {doctorHide && (
                 <div className={classes.optAllDoc}>
                     {doctors &&
                         doctors.map((info, i) => (
                             <div className={classes.optSelect} key={i}>
                                 <div>
-                                    <Link to={`/doctor/${info?.User?.id}`}>
-                                        <option value={info?.User?.id}>
-                                            {info?.User?.name} | {info?.DoctorSpeciality?.speciality} |{' '}
-                                            {info?.DoctorChamber?.district}
-                                        </option>
+                                    <Link to={`/doctor/${info?.id + 1000}`}>
+                                        <div value={info?.id} className={classes.searchField}>
+                                            <div>
+                                                <img className={classes.searchImg} src={Img} alt="" />
+                                            </div>
+                                            <div>
+                                                <h3>{info?.name}</h3>
+                                                <p style={{ marginTop: '-14px' }}>
+                                                    {info?.specialities[0]?.speciality}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </Link>
                                 </div>
                             </div>

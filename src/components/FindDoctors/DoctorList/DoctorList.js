@@ -13,7 +13,7 @@ const DoctorList = ({ doctors }) => {
                 doctors[1].map((doctor, i) => (
                     <div className={classes.doctor} key={i}>
                         <div>
-                            <Link to={`/doctor/${doctor?.User?.id}`}>
+                            <Link to={`/doctor/${doctor?.User?.id + 1000}`}>
                                 <div
                                     className={classes.doctorPic}
                                     style={{
@@ -26,7 +26,7 @@ const DoctorList = ({ doctors }) => {
                         </div>
                         <div className={classes.nameContainer}>
                             <p className={classes.name}>
-                                <Link to={`/doctor/${doctor?.User?.id}`}>Dr. {doctor?.User?.name}</Link>
+                                <Link to={`/doctor/${doctor?.User?.id + 1000}`}>Dr. {doctor?.User?.name}</Link>
                             </p>
                             <p className={classes.qualification}>{doctor?.DoctorQualification?.qualification}</p>
                             <p className={classes.speciality}>{doctor?.DoctorSpeciality?.speciality}</p>
@@ -34,15 +34,19 @@ const DoctorList = ({ doctors }) => {
                             <p className={classes.currentWorkPlace}>Dhaka Medical College & Hospital Shahbag, Dhaka</p>
                         </div>
                         <div>
-                            <p>2+ Years of Experience</p>
+                            <p>
+                                {doctor?.Doctor?.exp_year !== null ? doctor?.Doctor?.exp_year : 0}+ Years of Experience
+                            </p>
                             <span>
                                 Ratings(1) 5.0
                                 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
                             </span>
                         </div>
                         <div>
-                            <p>BDT 200.00</p>
-                            <button>Book Appointment</button>
+                            <p>BDT {doctor?.Doctor?.online_fees}</p>
+                            <button>
+                                <Link to={`/doctor/${doctor?.User?.id + 1000}`}> Book Appointment </Link>
+                            </button>
                         </div>
                     </div>
                 ))}

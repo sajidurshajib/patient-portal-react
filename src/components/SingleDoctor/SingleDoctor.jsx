@@ -2,7 +2,10 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
+import Logo from '../../assets/img/logo/Logo192.png'
+import { toMonthNameLong } from '../../utils/date'
 import Chambers from './Chambers/Chambers'
 import Header from './Header/Header'
 import Info from './Info/Info'
@@ -16,6 +19,7 @@ export default function SingleDoctor() {
     const [doctor, setDoctor] = useState([])
 
     const { id } = useParams()
+    const setId = id - 1000
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
@@ -24,7 +28,7 @@ export default function SingleDoctor() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${apiV1}/doctors/detail/${id}`, {
+                const response = await fetch(`${apiV1}/doctors/detail/${setId}`, {
                     method: 'GET',
                     headers: {
                         Accept: 'application/json',
@@ -39,24 +43,27 @@ export default function SingleDoctor() {
             }
         }
         return fetchData()
-    }, [token, apiV1, id])
+    }, [token, apiV1, setId])
 
     return (
         <div className={classes.wrapper}>
+            <Link to="/home">
+                <img className={classes.logoImg} src={Logo} alt="" />
+            </Link>
             <Header doctor={doctor} />
             <div className={classes.infoWrapper}>
                 <div className={classes.info}>
                     <div>
                         <p>BMDC Number</p>
-                        <span>A-92227</span>
+                        <span>A-{doctor?.doctor?.bmdc}</span>
                     </div>
                     <div>
                         <p>Total Experience</p>
-                        <span>2+ Years</span>
+                        <span>{doctor?.doctor?.exp_year !== null ? doctor?.doctor?.exp_year : 0}+ Years</span>
                     </div>
                     <div>
                         <p>Total Consultations</p>
-                        <span>1</span>
+                        <span>10</span>
                     </div>
                     <div>
                         <p>Ratings (1)</p>
@@ -67,8 +74,8 @@ export default function SingleDoctor() {
                     <div>
                         <p>Joined Date</p>
                         <span>
-                            {/* {toMonthNameLong(doctor[0].created_at.slice(5, 7))} {doctor[0].created_at.slice(0, 4)} */}
-                            April 2021
+                            {toMonthNameLong(doctor?.user?.created_at.slice(5, 7))}{' '}
+                            {doctor?.user?.created_at.slice(0, 4)}
                         </span>
                     </div>
                 </div>
@@ -80,12 +87,12 @@ export default function SingleDoctor() {
                         <span
                             className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                             onClick={(e) => setMenu(1)}>
-                            Info
+                            Appointment & Schedule
                         </span>
                         <span
                             className={menu === 2 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                             onClick={(e) => setMenu(2)}>
-                            Appointment & Schedule
+                            Info
                         </span>
 
                         <span
@@ -118,11 +125,11 @@ export default function SingleDoctor() {
                         </span>
                     </div>
                     <div>
-                        {menu === 1 ? <Info /> : null}
-                        {menu === 2 ? <Schedule /> : null}
-                        {menu === 3 ? <ProfileDetail /> : null}
-                        {menu === 4 ? <ProfessionalInfo /> : null}
-                        {menu === 6 ? <Chambers /> : null}
+                        {menu === 1 ? <Schedule doctor={doctor} /> : null}
+                        {menu === 2 ? <Info doctor={doctor} /> : null}
+                        {menu === 3 ? <ProfileDetail doctor={doctor} /> : null}
+                        {menu === 4 ? <ProfessionalInfo doctor={doctor} /> : null}
+                        {menu === 6 ? <Chambers doctor={doctor} /> : null}
                     </div>
                 </div>
             </div>

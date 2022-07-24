@@ -58,6 +58,10 @@
     text-align: center;
 }
 
+.wrapper > .gridWrapper > p:nth-child(3) {
+    margin-left: 12px;
+}
+
 .wrapper > .gridWrapper > p:nth-child(4) {
     font-size: 14px;
     margin-top: 20px;
