@@ -10,13 +10,6 @@ const UserDetail = () => {
     const { stateAuth } = useContext(Auth)
 
     const [userDetail, setUserDetail] = useState({})
-    const [division, setDivision] = useState('')
-    const [district, setDistrict] = useState('')
-    const [post_code, setPostCode] = useState('')
-    const [sub_district, setSubDistrict] = useState('')
-    const [nid, setNid] = useState('')
-    const [dob, setDob] = useState('')
-    const [blood_group, setBloodGroup] = useState('')
 
     const [msg, setMsg] = useState('')
 
@@ -70,31 +63,23 @@ const UserDetail = () => {
 
     const submit = async (e) => {
         e.preventDefault()
-        let udSubmit = await fetch(`${apiV1}/user/details`, {
+        let response = await fetch(`${apiV1}/user/details/`, {
             headers: {
-                Accept: 'appllication/json',
+                Accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
             },
             dataType: 'json',
             method: 'PUT',
             body: JSON.stringify({
-                // ...userDetail,
-                division,
-                district,
-                post_code,
-                sub_district,
-                nid,
-                dob,
-                blood_group,
+                ...userDetail,
             }),
         })
 
-        if (udSubmit.ok) {
-            setMsg('User details updated')
+        if (response.ok) {
+            setMsg('User details Updated')
         } else {
             setMsg('Something went wrong')
-            console.log('user: ', userDetail)
         }
     }
 
@@ -109,20 +94,14 @@ const UserDetail = () => {
                             <input
                                 type="date"
                                 value={userDetail?.dob}
-                                onChange={(e) => {
-                                    setUserDetail({ ...userDetail, dob: e.target.value })
-                                    setDivision(e.target.value)
-                                }}
+                                onChange={(e) => setUserDetail({ ...userDetail, dob: e.target.value })}
                             />
                         </label>
                         <label>
                             Blood Group
                             <select
                                 value={userDetail?.blood_group !== null ? userDetail?.blood_group : ''}
-                                onChange={(e) => {
-                                    setUserDetail({ ...userDetail, blood_group: e.target.value })
-                                    setBloodGroup(e.target.value)
-                                }}>
+                                onChange={(e) => setUserDetail({ ...userDetail, blood_group: e.target.value })}>
                                 <option value="A+">A+</option>
                                 <option value="A-">A-</option>
                                 <option value="B+">B+</option>
@@ -138,10 +117,7 @@ const UserDetail = () => {
                             <input
                                 type="text"
                                 value={userDetail?.nid !== null ? userDetail?.nid : ''}
-                                onChange={(e) => {
-                                    setUserDetail({ ...userDetail, nid: e.target.value })
-                                    setNid(e.target.value)
-                                }}
+                                onChange={(e) => setUserDetail({ ...userDetail, nid: e.target.value })}
                             />
                         </label>
                     </div>
@@ -155,10 +131,7 @@ const UserDetail = () => {
                             <select
                                 className={classes.select}
                                 value={userDetail?.division !== null ? userDetail?.division : ''}
-                                onChange={(e) => {
-                                    setUserDetail({ ...userDetail, division: e.target.value })
-                                    setDivision(e.target.value)
-                                }}>
+                                onChange={(e) => setUserDetail({ ...userDetail, division: e.target.value })}>
                                 {divisionJson.divisions.map((v, i) => {
                                     return (
                                         <option key={i} value={v.name}>
@@ -173,10 +146,7 @@ const UserDetail = () => {
                             <select
                                 className={classes.select}
                                 value={userDetail?.district !== null ? userDetail?.district : ''}
-                                onChange={(e) => {
-                                    setUserDetail({ ...userDetail, district: e.target.value })
-                                    setDistrict(e.target.value)
-                                }}>
+                                onChange={(e) => setUserDetail({ ...userDetail, district: e.target.value })}>
                                 {districtJson.districts.map((v, i) => {
                                     return (
                                         <option key={i} value={v.name}>
@@ -192,10 +162,7 @@ const UserDetail = () => {
                             <select
                                 className={classes.select}
                                 value={userDetail?.sub_district !== null ? userDetail?.sub_district : ''}
-                                onChange={(e) => {
-                                    setUserDetail({ ...userDetail, sub_district: e.target.value })
-                                    setSubDistrict(e.target.value)
-                                }}>
+                                onChange={(e) => setUserDetail({ ...userDetail, sub_district: e.target.value })}>
                                 {upazilaJson.upazilas.map((v, i) => {
                                     return (
                                         <option key={i} value={v.name}>
@@ -210,10 +177,7 @@ const UserDetail = () => {
                             <select
                                 className={classes.select}
                                 value={userDetail?.post_code !== null ? userDetail?.post_code : ''}
-                                onChange={(e) => {
-                                    setUserDetail({ ...userDetail, post_code: e.target.value })
-                                    setPostCode(e.target.value)
-                                }}>
+                                onChange={(e) => setUserDetail({ ...userDetail, post_code: e.target.value })}>
                                 {postCodeJson.postcodes.map((v, i) => {
                                     return (
                                         <option key={i} value={v.postCode}>
