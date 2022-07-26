@@ -13,6 +13,16 @@
     color: var(--red);
 }
 
+.uploadContainer {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 50;
+}
+
 .imgUploader {
     position: absolute;
     background: var(--white);
@@ -22,10 +32,9 @@
     line-height: 1.4;
     padding: 14px 28px;
     border-radius: 10px;
-    max-width: 400px;
+    /* max-width: 400px; */
     min-width: 300px;
     z-index: 50;
-    box-shadow: 1px 3px 10px var(--grey2);
 }
 
 .imgUploader h2 {
@@ -42,7 +51,7 @@
     position: absolute;
     font-weight: 1000;
     top: 10px;
-    left: 320px;
+    left: 280px;
 }
 
 .imgUploader > .Close:hover {
