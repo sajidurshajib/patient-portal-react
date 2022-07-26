@@ -5,7 +5,7 @@ import classes from './VaccinationHistory.module.css'
 const VaccinationHistory = () => {
     return (
         <div className={classes.wrapper}>
-            <p>Vaccine History</p>
+            <p>Vaccination History</p>
             <div className={classes.flexWrapper}>
                 <p>
                     <FontAwesomeIcon icon={faSyringe} className={classes.icon} />
