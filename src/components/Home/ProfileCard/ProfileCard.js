@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
 import { Auth, UserInfo } from '../../../allContext'
-import IMG from '../../../assets/img/patient1.jpeg'
 import proPic from '../../../assets/img/pic-placeholder.jpg'
 import classes from './ProfileCard.module.css'
 
@@ -39,7 +38,7 @@ const ProfileCard = ({ userDetail }) => {
     return (
         <div className={classes.ProfileCard}>
             <div className={classes.PP}>
-                <img src={IMG} className={classes.ProfileImage} alt="" />
+                <img src={pic.toString().length < 16 ? proPic : picUrl} className={classes.ProfileImage} alt="pp" />
             </div>
 
             <p className={classes.name}>{stateUser?.info?.name}</p>
