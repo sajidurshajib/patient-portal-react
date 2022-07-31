@@ -88,7 +88,7 @@ const Pulse = () => {
     return (
         <div>
             <Number
-                title="Pulse"
+                // title="Pulse"
                 unit="rate per minute"
                 place="Input Pulse"
                 st={pulse}

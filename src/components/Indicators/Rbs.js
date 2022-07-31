@@ -86,7 +86,7 @@ const Pulse = () => {
     return (
         <div>
             <Number
-                title="Diabetes"
+                // title="Diabetes"
                 place="Input RBS"
                 unit="mmol/L"
                 st={rbs}

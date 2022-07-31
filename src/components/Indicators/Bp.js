@@ -97,7 +97,7 @@ const Bp = () => {
     return (
         <div>
             <DoubleNumber
-                title="Blood Presure"
+                // title="Blood Presure"
                 place1="Input High BP"
                 place2="Input Low BP"
                 unit="mmHg"

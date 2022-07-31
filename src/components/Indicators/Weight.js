@@ -84,7 +84,7 @@ const Weight = () => {
     return (
         <div>
             <Number
-                title="Weight"
+                // title="Weight"
                 place="Input Weight"
                 unit="kg"
                 st={weight}

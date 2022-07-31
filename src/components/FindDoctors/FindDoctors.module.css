@@ -1,69 +1,7 @@
 .findDoctors {
     display: grid;
     grid-template-columns: 80% 20%;
-}
-
-.filter {
-    position: fixed;
-    margin-top: 40px;
-    right: 0;
-    height: 100vh;
-    width: 16%;
-    background-image: linear-gradient(30deg, #93a7c5, #21527d);
-    border-top-left-radius: 80px;
-}
-
-.searchBar {
-    margin: 40px 20px 0 10px;
-    border-radius: 10px;
-    position: relative;
-    z-index: initial;
-    min-height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.searchBar::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    position: absolute;
-    background-image: linear-gradient(to top, var(--dark-blue), transparent);
-    z-index: 100;
-}
-.searchBar > div {
-    position: relative;
-    z-index: 200;
-    width: 50%;
-}
-.searchBar > div > form > input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 2px solid var(--grey2);
-    color: var(--grey);
-    position: relative;
-}
-.searchBar > div > form > input::placeholder {
-    color: var(--grey2);
-}
-.searchBar > div > form > input:focus {
-    outline: 0;
-}
-
-.searchBar > div > form > input + svg {
-    position: absolute;
-    right: 10px;
-    top: 12px;
-    font-size: 18px;
-    color: var(--grey2);
-    cursor: pointer;
+    padding: 20px 10px 10px 20px;
 }
 
 .loadButton {
@@ -71,7 +9,7 @@
     margin: 0 auto;
     background-color: var(--secondary2);
     color: var(--white);
-    font-size: 12px;
+    font-size: 10px;
     border: none;
     border-radius: 4px;
     padding: 4px 14px;
@@ -84,6 +22,179 @@
     transition: 250ms;
 }
 
+.filter {
+    position: fixed;
+    margin-top: 20px;
+    right: 0;
+    height: 100vh;
+    width: 16%;
+    border-top-left-radius: 80px;
+    background-color: var(--white);
+}
+
+.filter > p {
+    margin-top: 70px;
+    background-image: linear-gradient(#93a7c5, #21527d);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--white);
+    font-size: 14px;
+    text-align: center;
+}
+
+.filterContainer {
+    padding: 0 10px;
+}
+
+.price {
+    padding: 0 10px;
+}
+
+.price > p {
+    color: var(--dark);
+    font-size: 14px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+.price > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.box {
+    margin-top: 40px;
+    padding: 0 10px;
+}
+
+.box > p {
+    color: var(--dark);
+    font-size: 14px;
+    margin-bottom: 0px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.box > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.box select {
+    display: block;
+    width: 96%;
+    border: 1px solid var(--light);
+    background-color: var(--light-low);
+    outline: none;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-size: 12px;
+    color: var(--dark);
+}
+
+.containerPrice {
+    margin-top: 10px;
+    display: block;
+    position: relative;
+    padding-left: 2px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 12px;
+    user-select: none;
+}
+
+.containerPrice input {
+    margin-left: 8px;
+    width: 70%;
+}
+
+.container {
+    margin-top: 10px;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 12px;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    height: 16px;
+    width: 16px;
+    background-color: var(--light);
+    border-radius: 4px;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: var(--light-grey);
+}
+
+.container input:checked ~ .checkmark {
+    background-color: var(--secondary);
+}
+
+.checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 5.6px;
+    top: 4px;
+    width: 4px;
+    height: 4px;
+    border: solid var(--white);
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+}
+
+.containerSort {
+    margin-top: 10px;
+    display: block;
+    position: relative;
+    padding-left: 2px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 12px;
+    user-select: none;
+}
+
+.containerSort span {
+    margin-left: 8px;
+}
+
 @media (max-width: 420px) {
     .findDoctors {
         grid-template-columns: repeat(1, 100%);
@@ -94,29 +205,5 @@
         width: 76%;
         margin: -2em auto;
         margin-left: 18%;
-    }
-    .searchBar {
-        margin: 40px 0px 0 0px;
-        border-radius: 10px;
-        position: relative;
-        z-index: initial;
-        min-height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .searchBar > div {
-        position: relative;
-        z-index: 200;
-        width: 80%;
-    }
-    .searchBar > div > form > input {
-        padding: 6px 10px;
-        font-size: 10px;
-    }
-    .searchBar > div > form > input + svg {
-        right: 12px;
-        top: 10.6px;
-        font-size: 10px;
     }
 }

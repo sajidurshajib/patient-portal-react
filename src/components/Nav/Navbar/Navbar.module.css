@@ -165,7 +165,7 @@
     outline: none;
     color: var(--dark);
     background-color: var(--light-low);
-    width: 400px;
+    width: 520px;
 }
 
 .searchTerm:focus {

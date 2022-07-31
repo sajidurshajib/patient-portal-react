@@ -1,4 +1,6 @@
 import React from 'react'
+import AvailableDoctor from './AvailableDoctor/AvailableDoctor'
+import CurrentPlan from './CurrentPlan/CurrentPlan'
 import Event from './Events/Events'
 import classes from './Home.module.css'
 import OfferInfo from './OfferInfo/OfferInfo'
@@ -13,8 +15,10 @@ export default function Home() {
             <div className={classes.wrapper}>
                 <div>
                     <OfferInfo />
+                    <AvailableDoctor />
                     <br />
                     <Summery />
+                    <CurrentPlan />
                     <Recent />
                 </div>
                 <div className={classes.info}>

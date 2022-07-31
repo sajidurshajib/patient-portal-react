@@ -44,14 +44,77 @@ const FindDoctors = () => {
     return (
         <div className={classes.findDoctors}>
             <div className={classes.listContainer}>
-                <SearchDoctor />
+                {/* <SearchDoctor /> */}
                 <DoctorList doctors={doctors} />
                 <button className={classes.loadButton} onClick={() => limitIncrement()}>
-                    Load More
+                    Load More...
                 </button>
             </div>
             <di className={classes.filter}>
-                <div>Filter Doctor</div>
+                <p>Filter Doctor</p>
+                <div className={classes.filterContainer}>
+                    <div className={classes.price}>
+                        <p>Filter by price</p>
+                        <div>
+                            <label class={classes.containerPrice}>
+                                ৳50
+                                <input type="range" min={50} max={2000} />
+                                ৳2000
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className={classes.box}>
+                        <p>Filter by specialty</p>
+                        <div>
+                            <select>
+                                <option value=""></option>
+                                <option value="">Family Medicine</option>
+                                <option value="">Medicine</option>
+                            </select>
+                            <label class={classes.container}>
+                                <input type="checkbox" />
+                                <span class={classes.checkmark}></span>
+                                Family Medicine
+                            </label>
+                            <label class={classes.container}>
+                                <input type="checkbox" />
+                                <span class={classes.checkmark}></span>
+                                Medicine
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className={classes.box}>
+                        <p>Filter by gender</p>
+                        <div>
+                            <label class={classes.container}>
+                                <input type="checkbox" />
+                                <span class={classes.checkmark}></span>
+                                Female Doctors
+                            </label>
+                            <label class={classes.container}>
+                                <input type="checkbox" />
+                                <span class={classes.checkmark}></span>
+                                Male Doctors
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className={classes.box}>
+                        <p>Sort by</p>
+                        <div>
+                            <label class={classes.containerSort}>
+                                <input type="radio" id="gender" name="gender" value="male" />
+                                <span>Popularity</span>
+                            </label>
+                            <label class={classes.containerSort}>
+                                <input type="radio" id="gender" name="gender" value="male" />
+                                <span>Rating</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </di>
         </div>
     )

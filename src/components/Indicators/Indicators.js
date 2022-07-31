@@ -1,4 +1,3 @@
-import { Sidebar } from '../Nav'
 import classes from './Indicators.module.css'
 import { Bp, Pulse, Rbs, Weight } from './index.js'
 
