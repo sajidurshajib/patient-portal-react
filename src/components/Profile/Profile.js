@@ -79,10 +79,6 @@ const Profile = () => {
 
     return (
         <div className={classes.Profile}>
-            <div>
-                <Sidebar />
-            </div>
-
             <div className={classes.Wrapper}>
                 <div>
                     <ProfileCard userDetail={userDetail} />

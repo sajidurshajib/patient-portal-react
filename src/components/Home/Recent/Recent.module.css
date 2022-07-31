@@ -1,5 +1,5 @@
 .wrapper {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
     background-color: var(--white);
     padding: 20px;
@@ -7,55 +7,75 @@
 }
 
 .wrapper > p {
-    font-size: 1.4em;
+    font-size: 14px;
     margin-top: 6px;
+    margin-bottom: 0;
+    color: var(--dark);
 }
 
-.wrapper > .flexWrapper {
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 2px 4px 8px var(--light);
+.wrapper > .tableWrapper {
+    border-spacing: 0 20px;
+    width: 100%;
+    font-size: 12px;
+    border-collapse: separate;
+}
+
+.wrapper > .tableWrapper > tr {
+    box-shadow: 0 2px 4px var(--light);
     border-radius: 10px;
     border: 1px solid var(--light);
-    padding: 6px 30px;
-    margin-bottom: 20px;
+    padding: 20px;
 }
 
-.wrapper > .flexWrapper:hover {
+.wrapper > .tableWrapper > tr:hover {
     box-shadow: 4px 8px 12px var(--light);
     cursor: pointer;
 }
 
-.wrapper > .flexWrapper > p {
-    font-size: 1em;
+.wrapper > .tableWrapper > tr > td {
+    font-size: 12px;
+    padding: 10px;
     color: var(--dark);
+    border-radius: 10px;
 }
 
-.wrapper > .flexWrapper > button {
-    border-radius: 4px;
-    border: none;
-    padding: 0px 14px;
-    margin: 10px 0;
-    background-color: var(--secondary2);
-    color: var(--white);
-    font-size: 14px;
-}
-
-.wrapper > .flexWrapper > button:hover {
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 200ms;
-}
-
-.wrapper > .flexWrapper > p > .icon {
+.wrapper > .tableWrapper > tr > td > .icon {
     font-size: 20px;
     color: var(--secondary2);
 }
 
-.wrapper > .flexWrapper > p > span {
+.wrapper > .tableWrapper > tr > td > span {
     margin-left: 12px;
 }
 
-.wrapper > .flexWrapper > p > span:hover {
+.wrapper > .tableWrapper > tr > td > span:hover {
     color: var(--secondary);
+}
+
+.wrapper > .tableWrapper > tr > td:nth-child(2) {
+    text-align: left;
+}
+
+.wrapper > .tableWrapper > tr > td:nth-child(3) {
+    text-align: center;
+}
+
+.wrapper > .tableWrapper > tr > td:last-child {
+    text-align: right;
+}
+
+.wrapper > .tableWrapper > tr > td > button {
+    border-radius: 4px;
+    border: none;
+    padding: 4px 10px;
+    margin: 10px 0;
+    background-color: var(--secondary2);
+    color: var(--white);
+    font-size: 10px;
+}
+
+.wrapper > .tableWrapper > tr > td > button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 200ms;
 }

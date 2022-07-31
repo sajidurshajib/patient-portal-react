@@ -6,27 +6,33 @@ import classes from './Recent.module.css'
 export default function Recent() {
     return (
         <div className={classes.wrapper}>
-            <p>Recent Reports</p>
-            <div className={classes.flexWrapper}>
-                <p>
-                    <FontAwesomeIcon icon={faFilePdf} className={classes.icon} />
-                    <span>Medical_report.pdf</span>
-                </p>
+            <p>Recent Prescription</p>
+            <table className={classes.tableWrapper}>
+                <tr>
+                    <td>
+                        <FontAwesomeIcon icon={faFilePdf} className={classes.icon} />
+                        <span>Medical_prescription.pdf</span>
+                    </td>
 
-                <p>Detail Info</p>
-                <p>29-June-2022</p>
-                <button>Download</button>
-            </div>
-            <div className={classes.flexWrapper}>
-                <p>
-                    <FontAwesomeIcon icon={faFilePdf} className={classes.icon} />
-                    <span>Vaccine_report.pdf</span>
-                </p>
+                    <td>Detail Info</td>
+                    <td>29-June-2022</td>
+                    <td>
+                        <button>Download</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <FontAwesomeIcon icon={faFilePdf} className={classes.icon} />
+                        <span>Medical_prescription.pdf</span>
+                    </td>
 
-                <p>Detail Info</p>
-                <p>28-June-2022</p>
-                <button>Download</button>
-            </div>
+                    <td>Detail Info</td>
+                    <td>29-June-2022</td>
+                    <td>
+                        <button>Download</button>
+                    </td>
+                </tr>
+            </table>
         </div>
     )
 }

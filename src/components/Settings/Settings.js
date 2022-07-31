@@ -10,9 +10,6 @@ const Settings = () => {
     const [menu, setMenu] = useState(1)
     return (
         <div className={classes.Settings}>
-            <div>
-                <Sidebar />
-            </div>
             <div className={classes.Wrapper}>
                 <div>
                     <div className={classes.Nav}>

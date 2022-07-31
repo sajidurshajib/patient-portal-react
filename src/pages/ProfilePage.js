@@ -1,10 +1,10 @@
-import { Profile } from '../components/index'
+import { Layout, Profile } from '../components'
 
 const ProfilePage = () => {
     return (
-        <div>
+        <Layout>
             <Profile />
-        </div>
+        </Layout>
     )
 }
 

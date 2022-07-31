@@ -34,15 +34,28 @@ const ProfileCard = ({ userDetail }) => {
         } catch (e) {}
     }, [apiV1, token])
 
-    const picUrl = 'http://127.0.0.1:8000/images/profile/' + pic
-
     return (
-        <div className={classes.ProfileCard}>
-            <div className={classes.PP}>
-                <img src={IMG} className={classes.ProfileImage} alt="" />
+        <div className={classes.profileCard}>
+            <div>
+                {/* <span>Welcome, </span>
+                <span className={classes.name}>{stateUser?.info?.name}</span> */}
             </div>
-
-            <p className={classes.name}>{stateUser?.info?.name}</p>
+            <div>
+                <div>
+                    <span>O+</span>
+                    <p>Blood</p>
+                </div>
+                <div>|</div>
+                <div>
+                    <span>22</span>
+                    <p>BMI</p>
+                </div>
+                <div>|</div>
+                <div>
+                    <span>81 kg</span>
+                    <p>Weight</p>
+                </div>
+            </div>
         </div>
     )
 }

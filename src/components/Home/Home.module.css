@@ -1,13 +1,23 @@
 .home {
-    background: var(--light);
-    display: grid;
-    grid-template-columns: 20% 80%;
-    gap: 20px;
+    width: 100%;
 }
 .wrapper {
     display: grid;
-    grid-template-columns: 3fr 1.2fr;
+    grid-template-columns: 73% 27%;
     gap: 20px;
-    margin: 0 20px 20px 0;
-    padding: 20px 20px 0 0;
+    padding: 60px 10px 30px 20px;
+}
+
+.info {
+    width: 22%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-top: 60px;
+}
+
+.info > div {
+    background-color: var(--white);
+    border-top-left-radius: 80px;
+    height: 100vh;
 }

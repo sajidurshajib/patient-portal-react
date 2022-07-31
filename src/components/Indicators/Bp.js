@@ -76,7 +76,7 @@ const Bp = () => {
         ],
         datasets: [
             {
-                label: 'High',
+                label: 'High BP',
                 data: [...dataBp.map((elm) => elm.slot_int1).reverse()],
                 fill: true,
                 backgroundColor: 'rgba(245, 66, 66,0.1)',
@@ -84,7 +84,7 @@ const Bp = () => {
                 lineTension: 0.4,
             },
             {
-                label: 'Low',
+                label: 'Low BP',
                 data: [...dataBp.map((elm) => elm.slot_int2).reverse()],
                 fill: true,
                 backgroundColor: 'rgba(45, 114, 178,0.2)',
@@ -100,6 +100,7 @@ const Bp = () => {
                 title="Blood Presure"
                 place1="Input High BP"
                 place2="Input Low BP"
+                unit="mmHg"
                 st1={high}
                 st2={low}
                 setSt1={setHigh}

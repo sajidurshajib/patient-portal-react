@@ -1,9 +1,3 @@
-.Settings {
-    background: var(--light);
-    display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 80%);
-    gap: 20px;
-}
 .Wrapper {
     background: var(--light);
 }

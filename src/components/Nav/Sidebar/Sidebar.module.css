@@ -1,5 +1,5 @@
-.Sidebar {
-    background: var(--white);
+.sidebar {
+    background: var(--light);
     height: 100vh;
     position: fixed;
     box-shadow: 0px 2px 4px var(--light);
@@ -44,41 +44,41 @@
     transform: scale(0.9);
 }
 
-.Sidebar ul {
+.sidebar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     margin: 20px 0 0 0;
 }
-.Sidebar ul > li {
+.sidebar ul > li {
     border-left: 6px solid var(--white);
     font-size: 14px;
     font-weight: 500;
 }
-.Sidebar ul > li > a > span {
+.sidebar ul > li > a > span {
     margin-left: 10px;
 }
-.Sidebar ul > li > span > span {
+.sidebar ul > li > span > span {
     margin-left: 10px;
 }
-.Sidebar ul > li:hover {
+.sidebar ul > li:hover {
     border-left: 6px solid var(--light);
 }
-.Sidebar ul > li:hover > a,
-.Sidebar ul > li:hover > span {
+.sidebar ul > li:hover > a,
+.sidebar ul > li:hover > span {
     cursor: pointer;
     color: var(--dark-blue);
-    background-image: linear-gradient(to right, var(--light), var(--white));
+    background-image: linear-gradient(to right, var(--white), var(--light));
 }
-.Sidebar ul > li.active {
+.sidebar ul > li.active {
     border-left: 6px solid var(--primary);
 }
-.Sidebar ul > li.active > a,
-.Sidebar ul > li.active > span {
-    background-image: linear-gradient(to right, var(--light), var(--white));
+.sidebar ul > li.active > a,
+.sidebar ul > li.active > span {
+    background-image: linear-gradient(to right, var(--white), var(--light));
 }
-.Sidebar ul > li > a,
-.Sidebar ul > li > span {
+.sidebar ul > li > a,
+.sidebar ul > li > span {
     text-decoration: none;
     display: block;
     padding: 10px 50px;
@@ -121,7 +121,7 @@
 }
 
 @media (max-width: 420px) {
-    .Sidebar {
+    .sidebar {
         background: var(--white);
         width: 12%;
     }
@@ -145,20 +145,20 @@
     .header > a > h2 {
         display: none;
     }
-    .Sidebar ul {
+    .sidebar ul {
         margin-top: -1em;
     }
-    .Sidebar ul > li {
+    .sidebar ul > li {
         font-size: 1em;
     }
-    .Sidebar ul > li > a,
-    .Sidebar ul > li > span {
+    .sidebar ul > li > a,
+    .sidebar ul > li > span {
         padding: 8px 10px;
     }
-    .Sidebar ul > li > a > span {
+    .sidebar ul > li > a > span {
         display: none;
     }
-    .Sidebar .logout {
+    .sidebar .logout {
         display: none;
     }
     .marginIcon1 {
@@ -172,18 +172,18 @@
         margin-left: 2px;
         font-size: 18px;
     }
-    .Sidebar ul > li:hover {
+    .sidebar ul > li:hover {
         border-left: 2px solid var(--light);
     }
-    .Sidebar ul > li.active {
+    .sidebar ul > li.active {
         border-left: 4px solid var(--primary);
         padding-left: 2px;
     }
 }
 
 @media (max-width: 390px) {
-    .Sidebar ul > li > a,
-    .Sidebar ul > li > span {
+    .sidebar ul > li > a,
+    .sidebar ul > li > span {
         padding: 8px 5px;
     }
 }

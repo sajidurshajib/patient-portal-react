@@ -1,7 +1,8 @@
 import React from 'react'
-import { Sidebar } from '../Nav'
 import Event from './Events/Events'
 import classes from './Home.module.css'
+import OfferInfo from './OfferInfo/OfferInfo'
+import PersonalDoctor from './PersonalDoctor/PersonalDoctor'
 import ProfileCard from './ProfileCard/ProfileCard'
 import Recent from './Recent/Recent'
 import Summery from './Summery/Summery'
@@ -9,17 +10,19 @@ import Summery from './Summery/Summery'
 export default function Home() {
     return (
         <div className={classes.home}>
-            <div className={classes.sidebar}>
-                <Sidebar />
-            </div>
             <div className={classes.wrapper}>
                 <div>
+                    <OfferInfo />
+                    <br />
                     <Summery />
                     <Recent />
                 </div>
-                <div>
-                    <ProfileCard />
-                    <Event />
+                <div className={classes.info}>
+                    <div>
+                        <ProfileCard />
+                        <Event />
+                        <PersonalDoctor />
+                    </div>
                 </div>
             </div>
         </div>

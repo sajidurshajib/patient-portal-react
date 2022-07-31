@@ -1,9 +1,8 @@
-import { faHeartbeat, faRandom } from '@fortawesome/free-solid-svg-icons'
-import { faWaveSquare } from '@fortawesome/free-solid-svg-icons'
+import { faHeartbeat, faRandom, faWalking, faWaveSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useContext, useEffect } from 'react'
 import { Auth } from '../../../allContext'
-import { Pulse, Rbs, Bp } from '../../Indicators'
+import { Pulse, Rbs, Bp, Weight } from '../../Indicators'
 import classes from './Summery.module.css'
 
 const Summery = () => {
@@ -86,33 +85,39 @@ const Summery = () => {
         <div className={classes.Summery}>
             <div className={classes.Wrapper}>
                 <div onClick={() => setSelect(1)} className={select === 1 ? classes.activeBox : classes.box}>
-                    <FontAwesomeIcon icon={faHeartbeat} />
-                    <p>
-                        BP<span>(Blood Pressure)</span>
-                    </p>
                     <p>
                         {lastBp.slot_int1}/{lastBp.slot_int2}
                         <FontAwesomeIcon icon={faHeartbeat} className={classes.bgIcon} />
                     </p>
+                    <p>
+                        <span>Blood Pressure</span>
+                    </p>
                 </div>
                 <div onClick={() => setSelect(2)} className={select === 2 ? classes.activeBox : classes.box}>
-                    <FontAwesomeIcon icon={faRandom} />
-                    <p>
-                        Diabetes <span>(Random blood sugar)</span>
-                    </p>
                     <p>
                         {lastRbs.slot_flt4}
                         <FontAwesomeIcon icon={faRandom} className={classes.bgIcon} />
                     </p>
+                    <p>
+                        <span>Diabetes</span>
+                    </p>
                 </div>
                 <div onClick={() => setSelect(3)} className={select === 3 ? classes.activeBox : classes.box}>
-                    <FontAwesomeIcon icon={faWaveSquare} />
-                    <p>
-                        Pulse <span>(Rate per minute)</span>{' '}
-                    </p>
                     <p>
                         {lastPulse.slot_int1}
                         <FontAwesomeIcon icon={faWaveSquare} className={classes.bgIcon} />
+                    </p>
+                    <p>
+                        <span>Pulse</span>
+                    </p>
+                </div>
+                <div onClick={() => setSelect(4)} className={select === 4 ? classes.activeBox : classes.box}>
+                    <p>
+                        {lastPulse.slot_int1}
+                        <FontAwesomeIcon icon={faWalking} className={classes.bgIcon} />
+                    </p>
+                    <p>
+                        <span>Weight</span>
                     </p>
                 </div>
             </div>
@@ -122,6 +127,7 @@ const Summery = () => {
                 {select === 1 ? <Bp /> : ''}
                 {select === 2 ? <Rbs /> : ''}
                 {select === 3 ? <Pulse /> : ''}
+                {select === 4 ? <Weight /> : ''}
                 <br />
             </div>
         </div>

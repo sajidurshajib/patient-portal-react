@@ -5,9 +5,6 @@ import { Bp, Pulse, Rbs, Weight } from './index.js'
 const Indicators = () => {
     return (
         <div className={classes.Indicators}>
-            <div>
-                <Sidebar />
-            </div>
             <div className={classes.grid}>
                 <Bp />
                 <Rbs />

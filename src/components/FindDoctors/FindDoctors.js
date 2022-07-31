@@ -42,10 +42,7 @@ const FindDoctors = () => {
     }
 
     return (
-        <div className={classes.FindDoctors}>
-            <div>
-                <Sidebar />
-            </div>
+        <div className={classes.findDoctors}>
             <div className={classes.listContainer}>
                 <SearchDoctor />
                 <DoctorList doctors={doctors} />
@@ -53,6 +50,9 @@ const FindDoctors = () => {
                     Load More
                 </button>
             </div>
+            <di className={classes.filter}>
+                <div>Filter Doctor</div>
+            </di>
         </div>
     )
 }

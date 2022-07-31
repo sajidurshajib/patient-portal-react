@@ -1,0 +1,9 @@
+.offerWrapper {
+    width: 100%;
+}
+
+.offerWrapper > img {
+    width: 100%;
+    height: 8em;
+    border-radius: 20px;
+}

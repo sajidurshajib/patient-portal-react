@@ -1,7 +1,16 @@
-.FindDoctors {
+.findDoctors {
     display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 80%);
-    gap: 20px;
+    grid-template-columns: 80% 20%;
+}
+
+.filter {
+    position: fixed;
+    margin-top: 40px;
+    right: 0;
+    height: 100vh;
+    width: 16%;
+    background-image: linear-gradient(30deg, #93a7c5, #21527d);
+    border-top-left-radius: 80px;
 }
 
 .searchBar {
@@ -76,7 +85,7 @@
 }
 
 @media (max-width: 420px) {
-    .FindDoctors {
+    .findDoctors {
         grid-template-columns: repeat(1, 100%);
         margin: 0 auto;
         padding: 0;
