@@ -11,6 +11,20 @@ const LineChart = (props) => {
                 options={{
                     responsive: true,
                     maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: {
+                                borderDash: [1, 20],
+                                color: 'grey',
+                            },
+                        },
+
+                        y: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0)',
+                            },
+                        },
+                    },
                 }}
             />
         </div>
