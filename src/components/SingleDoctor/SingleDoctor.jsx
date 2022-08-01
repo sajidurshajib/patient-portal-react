@@ -68,7 +68,7 @@ export default function SingleDoctor() {
                         <div>
                             <p>Ratings (1)</p>
                             <span>
-                                5.0 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
+                                5.0 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '12px' }} />
                             </span>
                         </div>
                         <div>

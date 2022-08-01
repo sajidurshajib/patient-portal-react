@@ -88,20 +88,21 @@ const Family = () => {
     }
 
     return (
-        <div className={classes.Family}>
-            <h3>Family Members</h3>
-            <div className={classes.Header}>
-                <form>
-                    <input
-                        type="tel"
-                        placeholder="Search member by mobile number"
-                        value={search.phone}
-                        onChange={(e) => handler(e.target.value)}
-                    />
-                </form>
-            </div>
-            <div className={classes.list}>
-                {/* {hide && (
+        <div className={classes.wrapper}>
+            <p>Search Family Members</p>
+            <div className={classes.family}>
+                <div className={classes.Header}>
+                    <form>
+                        <input
+                            type="tel"
+                            placeholder="Search member by mobile number"
+                            value={search.phone}
+                            onChange={(e) => handler(e.target.value)}
+                        />
+                    </form>
+                </div>
+                <div className={classes.list}>
+                    {/* {hide && (
                     <div className={classes.optAll}>
                         {searchResult &&
                             searchResult.map((info, i) => (
@@ -115,30 +116,30 @@ const Family = () => {
                             ))}
                     </div>
                 )} */}
-                {hide && (
-                    <div className={classes.optAll}>
-                        {searchResult &&
-                            searchResult.map((info, i) => (
-                                <div className={classes.optSelect} key={i}>
-                                    <div>
-                                        {info.name} - {info.phone}
-                                        <button
-                                            onClick={() => {
-                                                setRelationWith(info.id)
-                                                popup()
-                                            }}>
-                                            <FontAwesomeIcon icon={faUserPlus} />
-                                        </button>
-                                    </div>
+                    {hide && (
+                        <div className={classes.optAll}>
+                            {searchResult &&
+                                searchResult.map((info, i) => (
+                                    <div className={classes.optSelect} key={i}>
+                                        <div>
+                                            {info.name} - {info.phone}
+                                            <button
+                                                onClick={() => {
+                                                    setRelationWith(info.id)
+                                                    popup()
+                                                }}>
+                                                <FontAwesomeIcon icon={faUserPlus} />
+                                            </button>
+                                        </div>
 
-                                    {reqPopup && (
-                                        <div className={classes.formPopup}>
-                                            <div onClick={reqPopup}></div>
-                                            <div className={classes.reqInfo}>
-                                                <h2>Send Request to {info.name}</h2>
-                                                <div className={classes.Content}>
-                                                    <form onSubmit={familyReq}>
-                                                        {/* <label htmlFor="relationWith">Relation With</label>
+                                        {reqPopup && (
+                                            <div className={classes.formPopup}>
+                                                <div onClick={reqPopup}></div>
+                                                <div className={classes.reqInfo}>
+                                                    <h2>Send Request to {info.name}</h2>
+                                                    <div className={classes.Content}>
+                                                        <form onSubmit={familyReq}>
+                                                            {/* <label htmlFor="relationWith">Relation With</label>
                                                         <input
                                                             id="relationWith"
                                                             type="number"
@@ -146,46 +147,45 @@ const Family = () => {
                                                             onChange={() => setRelationWith(info.id)}
                                                         /> */}
 
-                                                        <label htmlFor="relation_from">Relation From</label>
-                                                        <input
-                                                            id="relation_from"
-                                                            type="text"
-                                                            value={relation_from}
-                                                            onChange={(e) => setRelationFrom(e.target.value)}
-                                                        />
+                                                            <label htmlFor="relation_from">Relation From</label>
+                                                            <input
+                                                                id="relation_from"
+                                                                type="text"
+                                                                value={relation_from}
+                                                                onChange={(e) => setRelationFrom(e.target.value)}
+                                                            />
 
-                                                        <label htmlFor="relation_to">Relation To</label>
-                                                        <input
-                                                            id="relation_to"
-                                                            type="text"
-                                                            value={relation_to}
-                                                            onChange={(e) => setRelationTo(e.target.value)}
-                                                        />
+                                                            <label htmlFor="relation_to">Relation To</label>
+                                                            <input
+                                                                id="relation_to"
+                                                                type="text"
+                                                                value={relation_to}
+                                                                onChange={(e) => setRelationTo(e.target.value)}
+                                                            />
 
-                                                        <label htmlFor="relation_to">Message</label>
-                                                        <input
-                                                            id="message"
-                                                            type="text"
-                                                            value={message}
-                                                            onChange={(e) => setMessage(e.target.value)}
-                                                        />
+                                                            <label htmlFor="relation_to">Message</label>
+                                                            <input
+                                                                id="message"
+                                                                type="text"
+                                                                value={message}
+                                                                onChange={(e) => setMessage(e.target.value)}
+                                                            />
 
-                                                        <button>Send request</button>
-                                                        <button onClick={popup}>Cancel</button>
-                                                    </form>
+                                                            <button>Send request</button>
+                                                            <button onClick={popup}>Cancel</button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                    </div>
-                )}
+                                        )}
+                                    </div>
+                                ))}
+                        </div>
+                    )}
+                </div>
             </div>
             <div className={classes.Content}>
-                <div>
-                    <Members />
-                </div>
+                <Members />
             </div>
         </div>
     )

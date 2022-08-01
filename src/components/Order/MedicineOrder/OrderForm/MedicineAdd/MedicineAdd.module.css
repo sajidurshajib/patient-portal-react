@@ -12,13 +12,13 @@
 
 .medWrapper .formGrid {
     display: grid;
-    grid-template-columns: 1.5fr repeat(5, 1fr) 0.3fr;
+    grid-template-columns: 1.5fr repeat(5, 1fr) 0.2fr;
     padding-right: 18px;
 }
 
 .medWrapper label {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--dark-grey);
     margin-bottom: 2px;
     font-weight: 450;
@@ -36,7 +36,7 @@
 }
 
 .medWrapper .select option {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .medWrapper input[type='text'],
@@ -50,7 +50,7 @@
     border-radius: 6px;
     border: 2px solid var(--white);
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.35);
-    font-size: 14px;
+    font-size: 12px;
     color: var(--dark-grey);
     outline: none;
     cursor: pointer;
@@ -67,7 +67,7 @@
     display: block;
     width: 100%;
     padding: 7.8px;
-    font-size: 14px;
+    font-size: 12px;
     border-radius: 4px;
     background-color: var(--white);
     box-shadow: 1px 2px 4px var(--light-grey);
@@ -95,7 +95,7 @@
     box-shadow: 1px 2px 4px var(--light-grey);
     padding: 10px 6px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
 }
 

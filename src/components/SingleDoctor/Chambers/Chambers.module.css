@@ -19,6 +19,12 @@
     font-weight: 600;
     padding: 0 15px;
 }
+
+.head > p {
+    font-size: 12px;
+    font-weight: 500;
+}
+
 .body {
     font-size: 12px;
     display: grid;

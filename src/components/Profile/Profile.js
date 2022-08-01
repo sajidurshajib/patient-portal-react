@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { Auth } from '../../allContext'
 import { PersonalHabits } from '../Indicators'
-import { Sidebar } from '../Nav'
 import Address from './Address/Address'
 import Family from './Family/Family'
 import Information from './Information/Information'

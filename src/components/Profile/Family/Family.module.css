@@ -1,59 +1,78 @@
-.Family {
-    background: var(--white);
+.wrapper {
+    margin-top: -16px;
+}
+
+.wrapper > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: -10px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.family {
+    margin-top: 20px;
+    background-image: linear-gradient(#93a7c5, #21527d);
     border-radius: 10px;
     padding: 20px 30px;
     padding-bottom: 30px;
     margin: 0px 0;
     display: grid;
     grid-template-rows: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
-    min-height: 400px;
 }
 
-.Family h3 {
-    color: var(--primary);
-    margin-bottom: -2em;
-}
-
-.Family > .Header {
+.family > .Header {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
 }
 
-.Family > .Header > form input {
+.family > .Header > form input {
     color: var(--dark-blue);
     border: 1px solid var(--primary);
-    border-radius: 10px;
-    padding: 8px 20px;
-    width: 20em;
+    border-radius: 4px;
+    padding: 10px 20px;
+    width: 40em;
+    font-size: 12px;
 }
 
-.Family > .Header > form input:focus {
+.family > .Header > form input:focus {
     outline: 0;
 }
 
-.Family > .list {
-    height: 200px;
-}
-.Family > .list > .optAll {
+.family > .list > .optAll {
     position: relative;
     margin: 20px;
     background: var(--white);
     width: 80%;
     border-radius: 4px;
     margin: 0 auto;
+    margin-bottom: -20px;
 }
 
-.Family > .list > .optAll > .optSelect {
-    padding: 18px;
+.family > .list > .optAll > .optSelect {
+    margin-top: 40px;
+    padding: 12px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--secondary);
-    box-shadow: 2px 4px 10px var(--light);
     border: 1px solid var(--light);
 }
 
-.Family > .list > .optAll > .optSelect > div > button {
+.family > .list > .optAll > .optSelect > div > button {
     background: var(--light);
     border: none;
     border-radius: 50px;
@@ -64,12 +83,12 @@
     margin-top: -2px;
 }
 
-.Family > .list > .optAll > .optSelect > div > button:hover {
+.family > .list > .optAll > .optSelect > div > button:hover {
     color: var(--green);
     cursor: pointer;
 }
 
-/* .Family > .list > .optAll > .optSelect:hover {
+/* .family > .list > .optAll > .optSelect:hover {
     background-color: var(--secondary);
     color: var(--white);
 } */
@@ -153,7 +172,7 @@
     box-shadow: 1px 3px 10px var(--grey2);
 }
 
-/* .Family > .Content {
+/* .family > .Content {
     margin-top: 20px;
     display: grid;
     grid-template-columns: minmax(0, 50%) minmax(0, 50%);

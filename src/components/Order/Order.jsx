@@ -7,6 +7,11 @@ export default function Order() {
             <div>
                 <MedicineOrder />
             </div>
+            <div className={classes.search}>
+                <div>
+                    <input type="text" placeholder="search medicine" />
+                </div>
+            </div>
         </div>
     )
 }

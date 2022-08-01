@@ -46,7 +46,7 @@ const ProfileCard = ({ userDetail }) => {
                 </>
             </div>
 
-            <h2>{stateUser?.info.name}</h2>
+            <h6>{stateUser?.info.name}</h6>
             <p>
                 {userDetail.dob} <span>({stateUser?.info.sex})</span>
             </p>

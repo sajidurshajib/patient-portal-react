@@ -18,13 +18,15 @@
     border: 1px solid var(--light);
 }
 
-.ProfileDetail > .Basic > div > h2 {
+.ProfileDetail > .Basic > div > h4 {
     color: var(--secondary);
     border-left: 4px solid var(--secondary);
     padding-left: 10px;
+    font-weight: 500;
 }
 
 .ProfileDetail > .Basic > div > ul {
     color: var(--dark);
     list-style-type: square;
+    font-size: 12px;
 }

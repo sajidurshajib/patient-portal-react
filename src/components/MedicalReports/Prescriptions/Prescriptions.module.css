@@ -1,66 +1,97 @@
 .wrapper {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: var(--white);
-    padding: 20px 40px;
-    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .wrapper > p {
-    font-size: 1.5em;
-    margin-top: 6px;
+    color: var(--grey);
+    font-size: 14px;
+    position: relative;
 }
 
-.wrapper > .flexWrapper {
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 2px 4px 8px var(--light);
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.container {
+    margin-top: -4px;
+    background-color: var(--white);
+    padding: 30px 40px;
     border-radius: 10px;
-    border: 1px solid var(--light);
-    padding: 6px 30px;
-    margin-bottom: 20px;
 }
 
-.wrapper > .flexWrapper:hover {
-    box-shadow: 4px 8px 12px var(--light);
-    cursor: pointer;
+.btnContainer {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.wrapper > .flexWrapper > p {
-    font-size: 1em;
-    color: var(--dark);
-}
-
-.wrapper > .flexWrapper > button {
-    border-radius: 4px;
-    border: none;
-    padding: 0px 14px;
-    margin: 10px 0;
-    background-color: var(--secondary2);
+.btnContainer > button {
+    background: var(--secondary);
     color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 20px;
+    text-transform: uppercase;
     font-size: 12px;
+    letter-spacing: 0.8px;
 }
 
-.wrapper > .flexWrapper > button:hover {
+.btnContainer > button:hover {
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: 200ms;
 }
 
-.wrapper > .flexWrapper > p > .icon {
-    font-size: 20px;
-    color: var(--secondary2);
+.files {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
 }
 
-.wrapper > .flexWrapper > p > span {
-    margin-left: 12px;
+.files > div {
+    text-align: center;
+    box-shadow: 4px 6px 10px var(--light);
+    border: 1px solid var(--light);
+    padding: 20px 10px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.wrapper > .flexWrapper > p > span:hover {
-    color: var(--secondary);
+.files > div:hover {
+    box-shadow: 4px 10px 16px var(--light);
 }
 
-.wrapper > .btn > button {
+.files > div img {
+    width: 4.8em;
+    height: 4.8em;
+    transition: 250ms;
+}
+
+.files > div img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
+.files > div p {
+    font-size: 12px;
+    color: var(--dark);
+    letter-spacing: 0.8px;
+}
+
+.files > div p:nth-child(3) {
+    margin-top: -8px;
+    font-size: 10px;
+}
+
+.btn > button {
     display: block;
     margin: 0 auto;
     border: none;
@@ -71,7 +102,7 @@
     border-radius: 4px;
 }
 
-.wrapper > .btn > button:hover {
+.btn > button:hover {
     cursor: pointer;
     opacity: 0.8;
 }

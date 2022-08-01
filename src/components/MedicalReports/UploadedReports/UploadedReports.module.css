@@ -1,16 +1,42 @@
 .UploadedReports {
+    margin-top: 20px;
+}
+
+.UploadedReports > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 0px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.UploadedReports > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.container {
     background: var(--white);
     padding: 20px 40px 30px 40px;
     margin: 0 0 20px 0;
     border-radius: 10px;
 }
-.UploadedReports > .Header {
+
+.UploadedReports .Header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 10px;
 }
-.UploadedReports > .Header > p {
+.UploadedReports .Header p {
     font-size: 1.4em;
     margin-top: 6px;
 }
@@ -49,14 +75,14 @@
 }
 
 .files > div p {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--dark);
     letter-spacing: 0.8px;
 }
 
 .files > div p:nth-child(3) {
     margin-top: -8px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .files > div p > span {
@@ -73,14 +99,14 @@
 }
 
 .files > div > a > p {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--dark);
     letter-spacing: 0.8px;
 }
 
 .files > div > a > p:nth-child(3) {
     margin-top: -8px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .files .pdf {

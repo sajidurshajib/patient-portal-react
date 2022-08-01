@@ -1,6 +1,7 @@
 import Error from './Error/Error'
 import FindDoctors from './FindDoctors/FindDoctors'
 import Home from './Home/Home'
+import IndicatorView from './IndicatorView/IndicatorView'
 import Landing from './Landing/Landing'
 import Layout from './Layout/Layout'
 import Login from './Login/Login'
@@ -24,4 +25,5 @@ export {
     Order,
     SingleDoctor,
     Layout,
+    IndicatorView,
 }

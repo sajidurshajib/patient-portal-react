@@ -1,10 +1,9 @@
-import { Layout } from '../components'
-import { Indicators } from '../components/Indicators'
+import { IndicatorView, Layout } from '../components'
 
 const IndicatorsPage = () => {
     return (
         <Layout>
-            <Indicators />
+            <IndicatorView />
         </Layout>
     )
 }

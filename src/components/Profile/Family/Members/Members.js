@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { Auth } from '../../../../allContext'
+import Pic from '../../../../assets/img/patient1.jpeg'
 import AcceptReject from '../AcceptReject/AcceptReject'
 import classes from './Members.module.css'
 
@@ -36,22 +37,25 @@ const Members = () => {
     let data = Array.from(familyMember)
 
     return (
-        <div className={classes.Member}>
-            {data.map((member, i) => {
-                return (
-                    <div>
-                        <>
-                            <AcceptReject />
-                        </>
+        <div className={classes.wrapper}>
+            <p>Family Member List</p>
+            <div className={classes.member}>
+                {data.map((member, i) => (
+                    <div className={classes.grid}>
                         <div>
-                            <h3>{member.relation_with_name}</h3>
-                            <p>{member.relation_to}</p>
-
-                            <span>{member.relationship_status}</span>
+                            <div>
+                                <AcceptReject />
+                            </div>
                         </div>
+                        <img src={Pic} alt="" />
+                        <p>{member.relation_with_name}</p>
+                        <p>{member.relation_to}</p>
+                        <p className={classes.status}>
+                            <span className={classes.waiting}>{member.relationship_status}</span>
+                        </p>
                     </div>
-                )
-            })}
+                ))}
+            </div>
         </div>
     )
 }

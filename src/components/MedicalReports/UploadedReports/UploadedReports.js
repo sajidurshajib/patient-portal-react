@@ -70,63 +70,66 @@ const UploadedReports = () => {
 
     return (
         <div className={classes.UploadedReports}>
-            <div className={classes.Header}>
-                <p>Medical Reports</p>
-                <ReportUpload msg={msg} setMsg={setMsg} />
-            </div>
-
-            <div className={classes.files}>
-                {imgReport.map((report, index) => {
-                    return (
-                        <div>
-                            <div
-                                onClick={(e) => {
-                                    popup()
-                                    setNumber(index)
-                                }}>
-                                <img src={reportImgUrl + report.image_string} alt="file" />
-                                <p>
-                                    <span>{report.image_string.split('_')[1].split('-')[0]}</span>_
-                                    {report.image_string.split('_')[1].split('-')[1]}.
-                                    {report.image_string.split('.')[1]}
-                                </p>
-                                <p>{`${report.created_at.slice(8, 10)}-${toMonthNameLong(
-                                    report.created_at.slice(6, 7)
-                                )}-${report.created_at.slice(0, 4)}`}</p>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-
-            {imageViewer && (
-                <div className={classes.previewContainer}>
-                    <button onClick={popup} className={classes.Close}>
-                        x
-                    </button>
-                    <div className={classes.Preview}>
-                        <img src={reportImgUrl + imgReport[number].image_string} alt="viewer" />
-                    </div>
+            <p>Medical Reports</p>
+            <div className={classes.container}>
+                <div className={classes.Header}>
+                    <ReportUpload msg={msg} setMsg={setMsg} />
                 </div>
-            )}
 
-            <div className={classes.files}>
-                {pdfReport.map((report, index) => {
-                    return (
-                        <div className={classes.pdf}>
-                            <a href={reportPdfUrl + report.pdf_string} target="blank">
-                                <img src={PDF} alt="file" />
-                                <p>
-                                    <span>{report.pdf_string.split('_')[1].split('-')[0]}</span>_
-                                    {report.pdf_string.split('_')[1].split('-')[1]}.{report.pdf_string.split('.')[1]}
-                                </p>
-                                <p>{`${report.created_at.slice(8, 10)}-${toMonthNameLong(
-                                    report.created_at.slice(6, 7)
-                                )}-${report.created_at.slice(0, 4)}`}</p>
-                            </a>
+                <div className={classes.files}>
+                    {imgReport.map((report, index) => {
+                        return (
+                            <div>
+                                <div
+                                    onClick={(e) => {
+                                        popup()
+                                        setNumber(index)
+                                    }}>
+                                    <img src={reportImgUrl + report.image_string} alt="file" />
+                                    <p>
+                                        <span>{report.image_string.split('_')[1].split('-')[0]}</span>_
+                                        {report.image_string.split('_')[1].split('-')[1]}.
+                                        {report.image_string.split('.')[1]}
+                                    </p>
+                                    <p>{`${report.created_at.slice(8, 10)}-${toMonthNameLong(
+                                        report.created_at.slice(6, 7)
+                                    )}-${report.created_at.slice(0, 4)}`}</p>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
+
+                {imageViewer && (
+                    <div className={classes.previewContainer}>
+                        <button onClick={popup} className={classes.Close}>
+                            x
+                        </button>
+                        <div className={classes.Preview}>
+                            <img src={reportImgUrl + imgReport[number].image_string} alt="viewer" />
                         </div>
-                    )
-                })}
+                    </div>
+                )}
+
+                <div className={classes.files}>
+                    {pdfReport.map((report, index) => {
+                        return (
+                            <div className={classes.pdf}>
+                                <a href={reportPdfUrl + report.pdf_string} target="blank">
+                                    <img src={PDF} alt="file" />
+                                    <p>
+                                        <span>{report.pdf_string.split('_')[1].split('-')[0]}</span>_
+                                        {report.pdf_string.split('_')[1].split('-')[1]}.
+                                        {report.pdf_string.split('.')[1]}
+                                    </p>
+                                    <p>{`${report.created_at.slice(8, 10)}-${toMonthNameLong(
+                                        report.created_at.slice(6, 7)
+                                    )}-${report.created_at.slice(0, 4)}`}</p>
+                                </a>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )

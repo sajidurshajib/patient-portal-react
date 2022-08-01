@@ -1,17 +1,37 @@
+.wrapper {
+    margin-top: 30px;
+}
+
+.wrapper > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: -10px;
+    position: relative;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
 .Address {
     background: var(--white);
     border-radius: 10px;
     padding: 10px 20px;
     margin: 20px 0;
 }
-.Address > h3 {
-    color: var(--dark-blue);
-}
+
 .Address > p {
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
-    font-weight: 500;
-    color: var(--dark-blue);
+    color: var(--dark);
 }
 
 .Address > p > span {
@@ -24,12 +44,10 @@
 }
 
 .Address > p:nth-child(1) {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 14px;
 }
 .Address > p:nth-child(2) {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 14px;
 }
 
 @media (max-width: 420px) {

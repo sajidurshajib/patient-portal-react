@@ -26,7 +26,7 @@ const Settings = () => {
                         <span
                             className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                             onClick={(e) => setMenu(3)}>
-                            Patient Information
+                            Personal Information
                         </span>
                         <span
                             className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}

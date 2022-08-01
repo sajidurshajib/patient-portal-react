@@ -18,7 +18,7 @@
     box-shadow: 1px 2px 12px var(--light-grey);
     border-radius: 6px;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--dark-grey);
 }
@@ -30,7 +30,7 @@
 }
 
 .container .labelMain > span {
-    font-size: 12px;
+    font-size: 10px;
     color: var(--grey);
 }
 
@@ -62,7 +62,7 @@
     background-color: var(--secondary);
     padding: 10px 20px;
     color: var(--white);
-    font-size: 16px;
+    font-size: 12px;
     text-transform: uppercase;
     overflow: hidden;
     transition: 0.5s;
@@ -103,13 +103,13 @@
     width: 95%;
     margin: 0 auto;
     margin-top: 10px;
-    font-size: 1.1em;
+    font-size: 14px;
     color: var(--secondary);
     font-weight: 500;
 }
 
 .collab {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     padding: 10px 30px;
     background-color: var(--light-low);
@@ -118,14 +118,14 @@
 }
 
 .collab .total {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--green);
 }
 
 .collab label {
     display: block;
-    font: 14px;
+    font-size: 12px;
     color: var(--dark-grey);
     margin-bottom: 14px;
     font-weight: 450;
@@ -138,11 +138,11 @@
 
 .collab .select {
     background-color: var(--white);
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .collab .select option {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .collab input[type='text'],
@@ -161,7 +161,7 @@
     border-radius: 6px;
     border: 2px solid var(--white);
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.35);
-    font-size: 14px;
+    font-size: 12px;
     color: var(--dark-grey);
     outline: none;
     cursor: pointer;
@@ -186,7 +186,7 @@
     display: block;
     width: 100%;
     padding: 8px;
-    font-size: 14px;
+    font-size: 10px;
     border-radius: 4px;
     background-color: var(--white);
     box-shadow: 1px 2px 4px var(--light-grey);
@@ -207,14 +207,16 @@
     border-radius: 4px;
     padding: 2px 4px;
     overflow-y: auto;
+    font-size: 10px;
 }
 
 .optSelect {
     box-shadow: 1px 2px 4px var(--light-grey);
     padding: 10px 6px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 .optSelect:hover {
@@ -235,7 +237,7 @@
     padding: 6px 16px;
     background-color: var(--secondary);
     color: var(--white);
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .buttonAdd:hover {
@@ -255,7 +257,7 @@
     border-radius: 4px;
     color: var(--white);
     padding: 6px 30px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .innerContainer .submitButton:hover {
