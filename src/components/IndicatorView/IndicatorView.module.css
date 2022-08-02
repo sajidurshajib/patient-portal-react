@@ -2,7 +2,6 @@
     position: relative;
     margin-top: 20px;
     padding: 20px;
-    width: 100%;
 }
 
 .wrapper > p {
@@ -31,10 +30,11 @@
     padding: 10px;
     border: none;
     background-image: linear-gradient(#93a7c5, #21527d);
-    border-radius: 10px;
+    border-radius: 4px;
     outline: none;
     color: var(--white);
     font-size: 14px;
+    cursor: pointer;
 }
 
 .wrapper > select > option {
@@ -43,10 +43,8 @@
 
 .wrapper .grid {
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 20px;
-    padding-bottom: 30px;
-    background-color: var(--white);
+    background: var(--white);
     border-radius: 10px;
+    padding: 20px 10px;
+    padding-bottom: 30px;
 }
