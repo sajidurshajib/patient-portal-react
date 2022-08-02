@@ -1,11 +1,6 @@
-.Settings {
-    background: var(--light);
-    display: grid;
-    grid-template-columns: minmax(0, 20%) minmax(0, 80%);
-    gap: 20px;
-}
 .Wrapper {
-    background: var(--light);
+    margin-top: 30px;
+    padding: 10px 0px 20px 20px;
 }
 .Wrapper > div {
     background: var(--white);
@@ -23,11 +18,12 @@
 }
 .Nav > span {
     position: relative;
-    bottom: 8px;
+    bottom: 7.8px;
     padding: 10px 15px;
     border-radius: 5px 5px 0 0;
     border: 2px solid var(--secondary);
-    font-size: 14px;
+    border-bottom: none;
+    font-size: 12px;
     cursor: pointer;
     margin: 0 0 0 10px;
 }

@@ -10,7 +10,7 @@ const AcceptReject = () => {
     }
 
     return (
-        <div>
+        <div className={classes.wrapper}>
             <div className={classes.Dropdown}>
                 <button className={classes.DropdownButton} onClick={popup}>
                     <FontAwesomeIcon icon={faEllipsisH} />
@@ -20,7 +20,7 @@ const AcceptReject = () => {
                 <div className={classes.formPopup}>
                     <div onClick={active}></div>
                     <div className={classes.reqInfo}>
-                        <h2>Accept / Reject</h2>
+                        <p>Accept or Reject Member</p>
                         <div className={classes.Content}>
                             <button className={classes.Button1}>Accept</button>
                             <button className={classes.Button2}>Reject</button>

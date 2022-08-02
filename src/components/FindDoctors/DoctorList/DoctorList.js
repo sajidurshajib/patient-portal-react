@@ -39,7 +39,7 @@ const DoctorList = ({ doctors }) => {
                             </p>
                             <span>
                                 Ratings(1) 5.0
-                                <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
+                                <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '12px' }} />
                             </span>
                         </div>
                         <div>

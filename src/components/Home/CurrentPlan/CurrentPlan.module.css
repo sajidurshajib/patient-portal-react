@@ -1,0 +1,95 @@
+.wrapper {
+    margin-top: 40px;
+}
+
+.wrapper > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.wrapper > .tableWrapper {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.wrapper > .tableWrapper > tr {
+    box-shadow: 0 2px 4px var(--light);
+    border-radius: 10px;
+    border: 1px solid var(--light);
+    padding: 20px;
+}
+
+.wrapper > .tableWrapper > tr:hover {
+    box-shadow: 4px 8px 12px var(--light);
+    cursor: pointer;
+}
+
+.wrapper > .tableWrapper > tr > td {
+    font-size: 12px;
+    padding: 10px;
+    color: var(--dark);
+    border-radius: 10px;
+}
+
+.wrapper > .tableWrapper > tr > td > .icon {
+    font-size: 20px;
+    color: var(--secondary2);
+}
+
+.wrapper > .tableWrapper > tr > td > span {
+    margin-left: 12px;
+}
+
+.wrapper > .tableWrapper > tr > td > span:hover {
+    color: var(--secondary);
+}
+
+.wrapper > .tableWrapper > tr > td:nth-child(2) {
+    text-align: left;
+}
+
+.wrapper > .tableWrapper > tr > td:nth-child(3) {
+    text-align: center;
+}
+
+.wrapper > .tableWrapper > tr > td:nth-child(4) {
+    text-align: center;
+}
+
+.wrapper > .tableWrapper > tr > td:last-child {
+    text-align: right;
+}
+
+.wrapper > .tableWrapper > tr > td > button {
+    border-radius: 4px;
+    border: none;
+    padding: 4px 18px;
+    margin: 10px 0;
+    background-color: var(--secondary2);
+    color: var(--white);
+    font-size: 10px;
+}
+
+.wrapper > .tableWrapper > tr > td > button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 200ms;
+}

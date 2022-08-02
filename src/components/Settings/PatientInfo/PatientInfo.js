@@ -53,7 +53,7 @@ const PatientInfo = () => {
     return (
         <div className={classes.patientInfo}>
             <form onSubmit={submit}>
-                <div className={classes.formHeader}>Patient Info Update</div>
+                <div className={classes.formHeader}>Personal Info Update</div>
                 <div className={classes.formWrap}>
                     <label>
                         Occupation

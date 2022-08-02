@@ -1,8 +1,7 @@
 .Wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    grid-auto-rows: minmax(min-content, max-content);
 }
 
 .Wrapper > div {
@@ -10,6 +9,7 @@
     border-radius: 10px;
     cursor: pointer;
     position: relative;
+    transition: 250ms;
 }
 
 .Wrapper > div:hover {
@@ -17,50 +17,67 @@
     transition: 250ms;
 }
 
-.Wrapper > div > svg {
-    display: block;
-    margin: 40px auto 20px auto;
-    font-size: 2.4em;
-}
-
 /* Active */
 .Wrapper .activeBox {
     background: linear-gradient(90deg, var(--secondary) 0%, var(--secondary2) 100%);
     box-shadow: 0px 4px 8px var(--light-grey);
-}
-
-.Wrapper > .activeBox > svg {
-    padding: 10px;
-    background-color: var(--white);
-    border-radius: 10px;
-    font-size: 2.4em;
+    padding: 0 20px;
 }
 
 .Wrapper > .activeBox > p {
     color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.Wrapper > .activeBox > p > span {
+    color: var(--white);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-top: -14px;
+    padding-bottom: 4px;
 }
 
 .Wrapper .activeBox .bgIcon {
     position: absolute;
     opacity: 0.08;
-    font-size: 2em;
-    bottom: 0;
+    font-size: 4em;
+    bottom: 8px;
     right: 0;
-    margin-left: -10px;
 }
 
 /* Not Active */
 .Wrapper .box {
     background: var(--white);
     box-shadow: 0px 4px 8px var(--light-grey);
+    padding: 0 18px;
 }
 
 .Wrapper > .box > p {
-    color: var(--dark-blue);
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.Wrapper > .box > p > span {
+    color: var(--dark);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-top: -14px;
+    padding-bottom: 4px;
 }
 
 .Wrapper .box .bgIcon {
-    display: none;
+    position: absolute;
+    opacity: 0.07;
+    font-size: 3.8em;
+    bottom: 8px;
+    right: 0;
+    color: var(--grey);
 }
 /*  */
 
@@ -97,7 +114,7 @@
 }
 
 .Graph {
-    margin-top: 30px;
+    margin-top: 20px;
     background: var(--white);
     border-radius: 10px;
 }

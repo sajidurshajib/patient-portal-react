@@ -19,18 +19,20 @@
     border: 1px solid var(--light);
 }
 
-.professionalInfo > .Category > div > h2 {
+.professionalInfo > .Category > div > h4 {
     color: var(--secondary);
     border-left: 4px solid var(--secondary);
     padding-left: 10px;
+    font-weight: 500;
 }
 
 .professionalInfo > .Category > div > ul {
-    color: var(--dark-blue);
+    color: var(--dark);
     list-style-type: square;
+    font-size: 12px;
 }
 
 .professionalInfo > .Category > div > ul li div {
-    color: var(--dark-blue);
-    line-height: 0.5;
+    color: var(--dark);
+    line-height: 0.7;
 }

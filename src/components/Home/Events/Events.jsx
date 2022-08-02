@@ -9,20 +9,6 @@ export default function Events() {
 
     return (
         <div className={classes.calenderWrapper}>
-            <header className={classes.header}>
-                <div className={classes.container}>
-                    <span>Welcome Back!</span>
-                    <h1>Calendar Plan</h1>
-                    <div className={classes.menuToggle}>
-                        <div>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
             <section className={classes.todayBox}>
                 <span className={classes.breadcrumb}>Today</span>
                 <h3 className={classes.dateTitle}>
@@ -35,7 +21,7 @@ export default function Events() {
 
             <section className={classes.upcomingEvents}>
                 <div className={classes.container}>
-                    <h3>Upcoming Events</h3>
+                    <p className={classes.appointment}>Upcoming Appointments</p>
                     <div className={classes.eventWrapper}>
                         <div className={classes.event}>
                             <FontAwesomeIcon icon={faFire} className={classes.i} />
@@ -49,20 +35,13 @@ export default function Events() {
                             <span className={classes.eventTimeLeft}>in 1 hour</span>
                             <p className={classes.eventDescription}>Appointment with doctor!</p>
                         </div>
-                        <div className={classes.event}>
+                        {/* <div className={classes.event}>
                             <FontAwesomeIcon icon={faFire} className={classes.i} />
                             <h4 className={classes.eventTime}>13:00 pm</h4>
                             <span className={classes.eventTimeLeft}>in 2 hours</span>
                             <p className={classes.eventDescription}>Meeting with consultant!</p>
-                        </div>
+                        </div> */}
                     </div>
-                    <button className={classes.eventButton}>
-                        <span className={classes.eventButtonTitle}>+ Add Event</span>
-
-                        {/* <span className={classes.eventButtonIcon}>
-                            <FontAwesomeIcon icon={faPlus} className={classes.i} />
-                        </span> */}
-                    </button>
                 </div>
             </section>
         </div>

@@ -1,10 +1,10 @@
-import { Settings } from '../components'
+import { Layout, Settings } from '../components'
 
 const SettingsPage = () => {
     return (
-        <div>
+        <Layout>
             <Settings />
-        </div>
+        </Layout>
     )
 }
 

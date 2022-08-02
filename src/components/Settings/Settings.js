@@ -10,9 +10,6 @@ const Settings = () => {
     const [menu, setMenu] = useState(1)
     return (
         <div className={classes.Settings}>
-            <div>
-                <Sidebar />
-            </div>
             <div className={classes.Wrapper}>
                 <div>
                     <div className={classes.Nav}>
@@ -29,7 +26,7 @@ const Settings = () => {
                         <span
                             className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                             onClick={(e) => setMenu(3)}>
-                            Patient Information
+                            Personal Information
                         </span>
                         <span
                             className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}

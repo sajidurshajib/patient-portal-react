@@ -6,7 +6,7 @@ const ProfessionalInfo = () => {
             <div className={classes.professionalInfo}>
                 <div className={classes.Category}>
                     <div>
-                        <h2>Work Experience</h2>
+                        <h4>Work Experience</h4>
                         <ul>
                             <li>
                                 <div>

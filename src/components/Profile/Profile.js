@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { Auth } from '../../allContext'
 import { PersonalHabits } from '../Indicators'
-import { Sidebar } from '../Nav'
 import Address from './Address/Address'
 import Family from './Family/Family'
 import Information from './Information/Information'
@@ -79,10 +78,6 @@ const Profile = () => {
 
     return (
         <div className={classes.Profile}>
-            <div>
-                <Sidebar />
-            </div>
-
             <div className={classes.Wrapper}>
                 <div>
                     <ProfileCard userDetail={userDetail} />

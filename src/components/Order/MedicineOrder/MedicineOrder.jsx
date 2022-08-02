@@ -55,8 +55,8 @@ export default function MedicineOrder() {
 
     return (
         <div className={classes.medicine}>
+            <p>Medicine Order</p>
             <div>
-                Medicine Order
                 <div>
                     <div>
                         <OrderForm />
@@ -66,7 +66,6 @@ export default function MedicineOrder() {
                     </div>
                 </div>
             </div>
-            <div>Medicine Price</div>
         </div>
     )
 }

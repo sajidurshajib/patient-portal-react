@@ -1,0 +1,50 @@
+.wrapper {
+    position: relative;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.wrapper > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.wrapper > select {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    background-image: linear-gradient(#93a7c5, #21527d);
+    border-radius: 4px;
+    outline: none;
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.wrapper > select > option {
+    color: var(--dark);
+}
+
+.wrapper .grid {
+    margin-top: 20px;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 10px;
+    padding-bottom: 30px;
+}

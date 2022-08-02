@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
 import Logo from '../../assets/img/logo/Logo192.png'
 import { toMonthNameLong } from '../../utils/date'
+import { Navbar } from '../Nav'
 import Chambers from './Chambers/Chambers'
 import Header from './Header/Header'
 import Info from './Info/Info'
@@ -47,89 +48,89 @@ export default function SingleDoctor() {
 
     return (
         <div className={classes.wrapper}>
-            <Link to="/home">
-                <img className={classes.logoImg} src={Logo} alt="" />
-            </Link>
-            <Header doctor={doctor} />
-            <div className={classes.infoWrapper}>
-                <div className={classes.info}>
-                    <div>
-                        <p>BMDC Number</p>
-                        <span>A-{doctor?.doctor?.bmdc}</span>
-                    </div>
-                    <div>
-                        <p>Total Experience</p>
-                        <span>{doctor?.doctor?.exp_year !== null ? doctor?.doctor?.exp_year : 0}+ Years</span>
-                    </div>
-                    <div>
-                        <p>Total Consultations</p>
-                        <span>10</span>
-                    </div>
-                    <div>
-                        <p>Ratings (1)</p>
-                        <span>
-                            5.0 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
-                        </span>
-                    </div>
-                    <div>
-                        <p>Joined Date</p>
-                        <span>
-                            {toMonthNameLong(doctor?.user?.created_at.slice(5, 7))}{' '}
-                            {doctor?.user?.created_at.slice(0, 4)}
-                        </span>
+            <Navbar />
+            <div className={classes.container}>
+                <Header doctor={doctor} />
+                <div className={classes.infoWrapper}>
+                    <div className={classes.info}>
+                        <div>
+                            <p>BMDC Number</p>
+                            <span>A-{doctor?.doctor?.bmdc}</span>
+                        </div>
+                        <div>
+                            <p>Total Experience</p>
+                            <span>{doctor?.doctor?.exp_year !== null ? doctor?.doctor?.exp_year : 0}+ Years</span>
+                        </div>
+                        <div>
+                            <p>Total Consultations</p>
+                            <span>10</span>
+                        </div>
+                        <div>
+                            <p>Ratings (1)</p>
+                            <span>
+                                5.0 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '12px' }} />
+                            </span>
+                        </div>
+                        <div>
+                            <p>Joined Date</p>
+                            <span>
+                                {toMonthNameLong(doctor?.user?.created_at.slice(5, 7))}{' '}
+                                {doctor?.user?.created_at.slice(0, 4)}
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className={classes.detailsWrapper}>
-                <div>
-                    <div className={classes.nav}>
-                        <span
-                            className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(1)}>
-                            Appointment & Schedule
-                        </span>
-                        <span
-                            className={menu === 2 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(2)}>
-                            Info
-                        </span>
-
-                        <span
-                            className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(3)}>
-                            Qualification
-                        </span>
-
-                        <span
-                            className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(4)}>
-                            Professional Info
-                        </span>
-
-                        <span
-                            className={menu === 5 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(5)}>
-                            Special Achievement
-                        </span>
-
-                        <span
-                            className={menu === 6 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(6)}>
-                            Chambers
-                        </span>
-                        <span
-                            className={menu === 7 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
-                            onClick={(e) => setMenu(7)}>
-                            Reviews
-                        </span>
-                    </div>
+                <div className={classes.detailsWrapper}>
                     <div>
-                        {menu === 1 ? <Schedule doctor={doctor} /> : null}
-                        {menu === 2 ? <Info doctor={doctor} /> : null}
-                        {menu === 3 ? <ProfileDetail doctor={doctor} /> : null}
-                        {menu === 4 ? <ProfessionalInfo doctor={doctor} /> : null}
-                        {menu === 6 ? <Chambers doctor={doctor} /> : null}
+                        <div className={classes.nav}>
+                            <span
+                                className={menu === 1 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(1)}>
+                                Appointment & Schedule
+                            </span>
+                            <span
+                                className={menu === 2 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(2)}>
+                                Info
+                            </span>
+
+                            <span
+                                className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(3)}>
+                                Qualification
+                            </span>
+
+                            <span
+                                className={menu === 4 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(4)}>
+                                Professional Info
+                            </span>
+
+                            <span
+                                className={menu === 5 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(5)}>
+                                Special Achievement
+                            </span>
+
+                            <span
+                                className={menu === 6 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(6)}>
+                                Chambers
+                            </span>
+                            <span
+                                className={menu === 7 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(7)}>
+                                Reviews
+                            </span>
+                        </div>
+                        <div>
+                            {menu === 1 ? <Schedule doctor={doctor} /> : null}
+                            {menu === 2 ? <Info doctor={doctor} /> : null}
+                            {menu === 3 ? <ProfileDetail doctor={doctor} /> : null}
+                            {menu === 4 ? <ProfessionalInfo doctor={doctor} /> : null}
+                            {menu === 6 ? <Chambers doctor={doctor} /> : null}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,110 @@
+.wrapper {
+    padding: 0 10px;
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.wrapper > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.containerFlex {
+    background-color: var(--white);
+    border-radius: 10px;
+    min-height: 200px;
+    box-shadow: 0px 4px 6px var(--light-grey);
+}
+
+.containerFlex:hover {
+    box-shadow: 0px 6px 14px var(--light-grey);
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.containerFlex > div img {
+    display: block;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 140px;
+    border-radius: 10px 10px 2px 2px;
+}
+
+.containerFlex .pic {
+    transform: scaleX(-1);
+}
+
+.containerFlex .ratting {
+    padding: 4px 10px;
+    background-color: var(--grey);
+    position: absolute;
+    color: var(--white);
+    border-radius: 4px;
+    margin-top: -1.2em;
+}
+
+.containerFlex .ratting > p {
+    color: var(--white);
+    font-size: 10px;
+    margin: 0;
+}
+
+.containerFlex > div {
+    text-align: center;
+    color: var(--dark);
+}
+
+.containerFlex > div > span {
+    color: var(--primary);
+    margin-left: 14px;
+    font-size: 14px;
+    margin-top: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+.containerFlex > div > p {
+    color: var(--dark);
+    font-size: 12px;
+    margin: 14px;
+    text-align: center;
+}
+
+.containerFlex > div > p:nth-child(2) {
+    font-size: 10px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
+.containerFlex > div > p:nth-child(3) {
+    margin-bottom: -10px;
+}
+
+.containerFlex > div > p > span {
+    font-size: 14px;
+    color: var(--dark);
+}

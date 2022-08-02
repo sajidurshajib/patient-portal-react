@@ -2,12 +2,11 @@ import classes from './PersonalHabits.module.css'
 
 const PersonalHabits = () => {
     return (
-        <div className={classes.PersonalHabits}>
-            <h3>Personal Habits</h3>
-
-            <div className={classes.wrapper}>
+        <div className={classes.wrapper}>
+            <p>Personal Habits</p>
+            <div className={classes.PersonalHabits}>
                 <div>
-                    <h4>Smoke</h4>
+                    <p>Smoke</p>
                     <label className={classes.switch}>
                         <input type="checkbox" />
                         <span></span>
@@ -15,7 +14,7 @@ const PersonalHabits = () => {
                 </div>
 
                 <div>
-                    <h4>Zarda/Betel Leaf</h4>
+                    <p>Zarda/Betel Leaf</p>
                     <label className={`${classes.switch} ${classes.labelAlign}`}>
                         <input type="checkbox" />
                         <span></span>
@@ -23,7 +22,7 @@ const PersonalHabits = () => {
                 </div>
 
                 <div>
-                    <h4>Alcohol</h4>
+                    <p>Alcohol</p>
                     <label className={classes.switch}>
                         <input type="checkbox" />
                         <span></span>

@@ -1,10 +1,10 @@
-import { MedicalReports } from '../components'
+import { Layout, MedicalReports } from '../components'
 
 const MedicalPage = () => {
     return (
-        <div>
+        <Layout>
             <MedicalReports />
-        </div>
+        </Layout>
     )
 }
 

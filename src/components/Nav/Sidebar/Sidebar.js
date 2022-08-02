@@ -28,7 +28,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className={classes.Sidebar}>
+        <div className={classes.sidebar}>
             <div className={classes.header}>
                 <Link to="/">
                     <img src={img} alt="" />

@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { useContext, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Auth } from '../../allContext'
 import { toMonthNameShort } from '../../utils/date'
 import { LineChart } from '../Chart'
@@ -85,7 +84,7 @@ const Weight = () => {
     return (
         <div>
             <Number
-                title="Weight"
+                // title="Weight"
                 place="Input Weight"
                 unit="kg"
                 st={weight}

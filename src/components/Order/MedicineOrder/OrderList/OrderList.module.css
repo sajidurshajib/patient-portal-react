@@ -1,102 +1,112 @@
 .wrapper {
     margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: var(--white);
-    padding: 20px 40px;
-    border-radius: 10px;
 }
 
 .wrapper > p {
-    font-size: 1.2em;
-    margin-top: 6px;
-    color: var(--dark);
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 0px;
+    position: relative;
 }
 
-.wrapper > .gridWrapper {
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.container {
+    background-color: var(--white);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.gridWrapper {
     display: grid;
-    grid-template-columns: 2.8fr 1.6fr 0.6fr 2.8fr 1fr;
+    grid-template-columns: 2.8fr 1.6fr 0.6fr 2.8fr 0.6fr;
     box-shadow: 2px 4px 8px var(--light);
     border-radius: 10px;
     border: 1px solid var(--light);
     padding: 6px 30px;
     margin-bottom: 20px;
+    background-color: var(--white);
 }
 
-.wrapper > .gridWrapper:hover {
+.gridWrapper:hover {
     box-shadow: 4px 8px 12px var(--light);
 }
 
-.wrapper > .gridWrapper > p {
-    font-size: 1em;
+.gridWrapper > p {
+    font-size: 12px;
     color: var(--dark);
     text-transform: capitalize;
 }
 
-.wrapper > .gridWrapper > button {
+.gridWrapper button {
     border-radius: 4px;
     border: none;
-    padding: 0px 10px;
+    padding: 4px 10px;
     margin: 12px 0;
     background-color: var(--secondary2);
     color: var(--white);
-    font-size: 12px;
+    font-size: 10px;
 }
 
-.wrapper > .gridWrapper > button:hover {
+.gridWrapper button:hover {
     cursor: pointer;
     opacity: 0.8;
     transition: 200ms;
 }
 
-.wrapper > .gridWrapper > p > .icon {
+.gridWrapper > p > .icon {
     font-size: 20px;
     color: var(--secondary2);
 }
 
-.wrapper > .gridWrapper > p:nth-child(3),
-.wrapper > .gridWrapper > p:nth-child(4) {
+.gridWrapper > p:nth-child(1) {
+    margin-top: 8px;
+}
+
+.gridWrapper > p:nth-child(3),
+.gridWrapper > p:nth-child(4) {
     text-align: center;
 }
 
-.wrapper > .gridWrapper > p:nth-child(3) {
+.gridWrapper > p:nth-child(3) {
     margin-left: 12px;
 }
 
-.wrapper > .gridWrapper > p:nth-child(4) {
-    font-size: 14px;
-    margin-top: 20px;
+.gridWrapper > p:nth-child(4) {
+    font-size: 10px;
     margin-left: -14px;
+    margin-top: 16px;
 }
 
-.wrapper > .gridWrapper > p > span {
+.gridWrapper > p:last-child {
+    text-align: right;
+}
+
+.gridWrapper > p > span {
     margin-left: 1em;
 }
 
-.wrapper > .gridWrapper > p > span:hover {
+.gridWrapper > p > span:hover {
     color: var(--secondary);
-}
-
-.wrapper > .btn > button {
-    display: block;
-    margin: 0 auto;
-    border: none;
-    background-color: var(--secondary2);
-    color: var(--white);
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 4px;
-}
-
-.wrapper > .btn > button:hover {
-    cursor: pointer;
-    opacity: 0.8;
 }
 
 /* status */
 .wrapper p.status span {
     position: relative;
     border-radius: 30px;
-    padding: 4px 10px 4px 25px;
+    padding: 6px 14px 6px 25px;
 }
 
 .wrapper p.status span:after {

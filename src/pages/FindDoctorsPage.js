@@ -1,10 +1,10 @@
-import { FindDoctors } from '../components'
+import { FindDoctors, Layout } from '../components'
 
 const FindDoctorsPage = () => {
     return (
-        <div>
+        <Layout>
             <FindDoctors />
-        </div>
+        </Layout>
     )
 }
 

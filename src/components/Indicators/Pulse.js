@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { useContext, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Auth } from '../../allContext'
 import { toMonthNameShort } from '../../utils/date'
 import { LineChart } from '../Chart'
@@ -89,7 +88,7 @@ const Pulse = () => {
     return (
         <div>
             <Number
-                title="Pulse"
+                // title="Pulse"
                 unit="rate per minute"
                 place="Input Pulse"
                 st={pulse}

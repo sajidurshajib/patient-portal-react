@@ -99,7 +99,7 @@ const ReportUpload = ({ msg, setMsg }) => {
             {formPopup && (
                 <div className={classes.uploadContainer}>
                     <div className={classes.uploader}>
-                        <h2>Upload Your Report</h2>
+                        <p>Upload Your Report</p>
                         <button className={classes.Close} onClick={popup}>
                             X
                         </button>
@@ -130,7 +130,7 @@ const ReportUpload = ({ msg, setMsg }) => {
                                     }}
                                     className={classes.Select}>
                                     <FontAwesomeIcon icon={faFileUpload} />
-                                    <span> Select PDF</span>
+                                    <span>Select PDF</span>
                                 </button>
                                 <button
                                     onClick={(e) => {
@@ -139,11 +139,11 @@ const ReportUpload = ({ msg, setMsg }) => {
                                     }}
                                     className={classes.Select}>
                                     <FontAwesomeIcon icon={faImage} />
-                                    <span> Select Image</span>
+                                    <span>Select Image</span>
                                 </button>
                                 <button className={classes.Upload} onClick={option === 2 ? uploadImg : uploadPdf}>
                                     <FontAwesomeIcon icon={faUpload} />
-                                    <span> Upload</span>
+                                    <span>Upload</span>
                                 </button>
                             </div>
                         </div>

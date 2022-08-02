@@ -1,5 +1,5 @@
 .Dropdown {
-    position: absolute;
+    position: relative;
 }
 
 .Dropdown > .DropdownButton {
@@ -7,8 +7,9 @@
     background: none;
     color: var(--primary);
     position: relative;
-    left: 19em;
-    top: 10px;
+    margin-left: 16em;
+    margin-top: -10px;
+    font-size: 12px;
 }
 
 .Dropdown > .DropdownButton:hover {
@@ -44,24 +45,26 @@
 }
 
 .formPopup > .reqInfo {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 150px;
     border-radius: 10px;
     background: var(--white);
     box-shadow: 1px 3px 10px var(--grey2);
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 20px;
 }
 
-.reqInfo > h2 {
-    color: var(--dark-blue);
+.reqInfo > p {
+    color: var(--dark);
     display: inline-block;
     text-align: center;
     margin-top: 10px;
+    font-size: 14px;
 }
 
 .reqInfo .Content {
+    padding: 0 20px;
     flex: 50%;
     display: flex;
     justify-content: center;
@@ -76,15 +79,16 @@
     color: var(--white);
     display: inline-block;
     padding: 10px 25px;
-    border-radius: 2px;
+    border-radius: 4px;
     margin: 20px 30px;
+    font-size: 12px;
 }
 .reqInfo > .Content > button:hover {
     box-shadow: 1px 3px 10px var(--grey2);
 }
 
 .reqInfo > .Content > .Button1 {
-    background: var(--green);
+    background: var(--primary);
 }
 
 .reqInfo > .Content > .Button2 {

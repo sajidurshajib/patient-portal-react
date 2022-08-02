@@ -7,9 +7,6 @@ import VaccinationHistory from './VaccinationHistory/VaccinationHistory'
 const MedicalReports = () => {
     return (
         <div className={classes.MedicalReports}>
-            <div>
-                <Sidebar />
-            </div>
             <div className={classes.prescriptionsContainer}>
                 <Prescriptions />
                 <UploadedReports />

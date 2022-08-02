@@ -1,33 +1,34 @@
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PDF from '../../../assets/img/social/pdf.png'
 import classes from './Prescriptions.module.css'
 
 const Prescriptions = () => {
     return (
         <div className={classes.wrapper}>
             <p>Prescriptions</p>
-            <div className={classes.flexWrapper}>
-                <p>
-                    <FontAwesomeIcon icon={faFileAlt} className={classes.icon} />
-                    <span>Medical_report.pdf</span>
-                </p>
-
-                <p>Detail Info</p>
-                <p>29-June-2022</p>
-                <button>Download</button>
-            </div>
-            <div className={classes.flexWrapper}>
-                <p>
-                    <FontAwesomeIcon icon={faFileAlt} className={classes.icon} />
-                    <span>Vaccine_report.pdf</span>
-                </p>
-
-                <p>Detail Info</p>
-                <p>28-June-2022</p>
-                <button>Download</button>
-            </div>
-            <div className={classes.btn}>
-                <button>Load More</button>
+            <div className={classes.container}>
+                <div className={classes.btnContainer}>
+                    <button>Upload Prescription</button>
+                </div>
+                <div className={classes.files}>
+                    <div>
+                        <div>
+                            <img src={PDF} alt="file" />
+                            <p>
+                                <span>Medical_prescription.pdf</span>
+                            </p>
+                            <p>29-June-2022</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <img src={PDF} alt="file" />
+                            <p>
+                                <span>Medical_prescription.pdf</span>
+                            </p>
+                            <p>29-June-2022</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

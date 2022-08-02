@@ -1,22 +1,29 @@
 .DoctorList {
-    width: 98%;
+    width: 100%;
     margin-bottom: 1em;
+    margin-top: 40px;
 }
 
 .doctor {
     display: grid;
     grid-template-columns: minmax(0, 18%) minmax(0, 35%) minmax(0, 27%) minmax(0, 20%);
-    margin: 10px auto;
+    margin: 6px auto;
     width: 100%;
     padding: 10px 0 20px 0;
     background-color: var(--white);
     padding: 20px 40px;
     border-radius: 10px;
+    box-shadow: 2px 4px 8px var(--light);
+}
+
+.doctor:hover {
+    box-shadow: 4px 8px 10px var(--light);
+    transition: 200ms;
 }
 
 .doctorPic {
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 112px;
     border-radius: 4px;
     transition: 250ms;
 }
@@ -35,8 +42,8 @@
 
 .name {
     color: var(--primary);
-    margin: 10px 0 0 0;
-    font-size: 1.2em;
+    margin: 0;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
 }
@@ -48,54 +55,53 @@
 .qualification {
     color: var(--grey);
     margin: 0;
-    font-size: 0.8em;
+    font-size: 12px;
 }
 .speciality {
     color: var(--dark);
-    font-size: 0.9em;
-    font-weight: 500;
+    font-size: 12px;
     margin: 0;
     text-transform: capitalize;
+    margin-top: 4px;
 }
 .designation {
-    font-size: 14px;
+    font-size: 12px;
     margin: 20px 0 0 0;
 }
 .currentWorkPlace {
-    font-size: 14px;
+    font-size: 12px;
     margin: 2px 0 0 0;
-    color: var(--secondary);
-    font-weight: 500;
+    color: var(--dark);
 }
 
 .doctor > div:nth-child(3) {
-    margin-top: 2.4em;
+    margin-top: 2em;
     text-align: center;
-    margin-left: -6em;
+    margin-left: -8em;
 }
 
 .doctor > div:nth-child(3) > p {
     color: var(--dark);
-    font-size: 1em;
+    font-size: 12px;
 }
 
 .doctor > div:nth-child(3) > span {
     color: var(--dark);
-    font-size: 0.9em;
+    font-size: 12px;
     margin-top: -10px;
     display: block;
 }
 
 .doctor > div:nth-child(4) {
-    margin-top: 1em;
+    margin-top: 0em;
 }
 
 .doctor > div:nth-child(4) > p {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 35px;
     font-weight: 500;
     color: var(--primary);
-    border: 3px solid var(--primary);
+    border: 2px solid var(--primary);
     border-radius: 3px;
     display: block;
     width: 100%;
@@ -105,7 +111,7 @@
 }
 
 .doctor > div:nth-child(4) > button {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--white);
     border: 3px solid var(--secondary);

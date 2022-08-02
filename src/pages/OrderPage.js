@@ -1,9 +1,9 @@
-import { Order } from '../components'
+import { Order, Layout } from '../components'
 
 export default function OrderPage() {
     return (
-        <div>
+        <Layout>
             <Order />
-        </div>
+        </Layout>
     )
 }

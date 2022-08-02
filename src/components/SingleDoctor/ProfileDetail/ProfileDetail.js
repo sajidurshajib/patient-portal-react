@@ -77,7 +77,7 @@ const ProfileDetail = () => {
         <div className={classes.ProfileDetail}>
             <div className={classes.Basic}>
                 <div>
-                    <h2>Qualification</h2>
+                    <h4>Qualification</h4>
                     <ul>
                         <li>MBBS, Dhaka Medical College</li>
                         <li>FRCS, BSMRMU</li>
@@ -87,7 +87,7 @@ const ProfileDetail = () => {
 
             <div className={classes.Basic}>
                 <div>
-                    <h2>Speciality</h2>
+                    <h4>Speciality</h4>
                     <ul>
                         <li>Cardiologist</li>
                         <li>Neural Surgery</li>

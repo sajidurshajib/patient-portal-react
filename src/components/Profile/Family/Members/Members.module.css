@@ -1,33 +1,106 @@
-.Member {
+.wrapper {
+    margin-top: 20px;
+}
+
+.wrapper > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: -10px;
+    position: relative;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
+.member {
+    margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 140px;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
-.Member > div {
+.member .grid {
+    padding: 20px 10px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px var(--light-grey);
+    box-shadow: 0px 4px 6px var(--light);
     line-height: 0.5;
+    background-color: var(--white);
+    font-size: 12px;
 }
 
-.Member > div > div > h3 {
+.member .grid p:nth-child(3) {
     margin-top: 1.6em;
     margin-bottom: 1em;
+    font-size: 14px;
+    color: var(--dark);
 }
 
-.Member > div > div > p {
-    margin-bottom: 2em;
+.member .grid img {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-top: -10px;
+    object-fit: cover;
 }
 
-.Member > div > div > span {
-    border: 1px solid #f2bb5d;
-    background: rgb(237, 173, 54);
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: var(--white);
-    font-size: 12px;
-    margin-top: 20px;
+.member .grid p:nth-child(4) {
+    margin-bottom: 2.6em;
+}
+
+/* status */
+.grid p.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 6px 14px 6px 25px;
     text-transform: capitalize;
+    font-size: 10px;
+}
+
+.grid p.status span:after {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    content: '';
+    border-radius: 50%;
+}
+
+.grid p.status .active {
+    background: #cff6dd;
+    color: #1fa750;
+}
+.grid p.status .active:after {
+    background: #23bd5a;
+}
+
+.grid p.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c;
+}
+
+.grid p.status .waiting:after {
+    background: #f2be1d;
+}
+
+.grid p.status .delete {
+    background: #fde8dd;
+    color: #d61111;
+}
+.grid p.status .delete:after {
+    background: #b81111;
 }
