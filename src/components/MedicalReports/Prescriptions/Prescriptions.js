@@ -7,7 +7,7 @@ const Prescriptions = () => {
             <p>Prescriptions</p>
             <div className={classes.container}>
                 <div className={classes.btnContainer}>
-                    <button>Upload Prescription</button>
+                    <button>Upload</button>
                 </div>
                 <div className={classes.files}>
                     <div>

@@ -93,7 +93,7 @@ const ReportUpload = ({ msg, setMsg }) => {
     return (
         <div>
             <div className={classes.uploadButton}>
-                <button onClick={popup}>Upload Report</button>
+                <button onClick={popup}>Upload</button>
             </div>
 
             {formPopup && (

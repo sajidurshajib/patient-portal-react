@@ -3,7 +3,7 @@
 }
 
 .wrapper > p {
-    color: var(--grey);
+    color: var(--dark);
     font-size: 14px;
     margin-bottom: 0px;
     position: relative;
@@ -14,7 +14,7 @@
     display: block;
     width: 30%;
     height: 1px;
-    background-color: var(--light-grey);
+    background-color: var(--grey2);
     position: absolute;
     top: 60%;
     transform: translatey(-60%);

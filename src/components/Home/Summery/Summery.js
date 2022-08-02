@@ -14,6 +14,7 @@ const Summery = () => {
     const [lastBp, setLastBp] = useState(0)
     const [lastRbs, setLastRbs] = useState(0)
     const [lastPulse, setLastPulse] = useState(0)
+    const [lastWeight, setLastWeight] = useState(0)
 
     useEffect(() => {
         let bpFunc = async () => {
@@ -78,7 +79,28 @@ const Summery = () => {
         try {
             pulseFunc()
         } catch (e) {}
-    }, [apiV1, token, setLastBp, setLastPulse, setLastRbs, select])
+
+        let weightFunc = async () => {
+            let weightFetch = await fetch(`${apiV1}/patient/indicators/last/weight`, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+
+            let pulseJson = await weightFetch.json()
+
+            if (weightFetch.ok) {
+                setLastWeight(pulseJson)
+            }
+        }
+
+        try {
+            weightFunc()
+        } catch (e) {}
+    }, [apiV1, token, select, setLastBp, setLastRbs, setLastPulse, setLastWeight])
 
     // not auto update
     return (
@@ -113,7 +135,7 @@ const Summery = () => {
                 </div>
                 <div onClick={() => setSelect(4)} className={select === 4 ? classes.activeBox : classes.box}>
                     <p>
-                        {lastPulse.slot_int1}
+                        {lastWeight.slot_flt4}
                         <FontAwesomeIcon icon={faWalking} className={classes.bgIcon} />
                     </p>
                     <p>

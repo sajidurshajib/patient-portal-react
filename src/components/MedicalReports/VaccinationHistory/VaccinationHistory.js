@@ -7,7 +7,7 @@ const VaccinationHistory = () => {
             <p>Vaccination History</p>
             <div className={classes.container}>
                 <div className={classes.btnContainer}>
-                    <button>Upload Report</button>
+                    <button>Upload</button>
                 </div>
                 <div className={classes.files}>
                     <div>

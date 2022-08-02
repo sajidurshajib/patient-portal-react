@@ -37,7 +37,7 @@ const Weight = () => {
 
     useEffect(() => {
         let weightFunc = async () => {
-            let rbsFetch = await fetch(`${apiV1}/patient/indicators/weight`, {
+            let weightFetch = await fetch(`${apiV1}/patient/indicators/weight`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -46,9 +46,9 @@ const Weight = () => {
                 method: 'GET',
             })
 
-            let weightJson = await rbsFetch.json()
+            let weightJson = await weightFetch.json()
 
-            if (rbsFetch.ok) {
+            if (weightFetch.ok) {
                 setDataWeight(weightJson)
             }
         }

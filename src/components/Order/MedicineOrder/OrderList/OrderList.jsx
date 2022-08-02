@@ -9,7 +9,7 @@ export default function OrderList({ services, medicines, setServiceId }) {
     const [pdfOpen, setPdfOpen] = useState(false)
     return (
         <div className={classes.wrapper}>
-            <p>Medicine Order List</p>
+            <p>Order List</p>
             <div className={classes.container}>
                 {services[1] &&
                     services[1].map((service, index) =>
