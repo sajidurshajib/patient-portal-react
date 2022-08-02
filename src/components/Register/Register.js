@@ -1,7 +1,6 @@
 import { faRegistered, faHandSparkles, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
-import env from 'react-dotenv'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'

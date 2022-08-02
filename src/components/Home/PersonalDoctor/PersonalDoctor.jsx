@@ -12,7 +12,7 @@ export default function PersonalDoctor() {
                 <div>
                     <img src={Doctor} alt="" />
                     <p>
-                        4.9 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '8px' }} />
+                        5.0 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '8px' }} />
                     </p>
                 </div>
                 <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Offer from '../../../assets/img/offer/heart.png'
+import Offer from '../../../assets/img/offer/offer3.png'
 import classes from './OfferInfo.module.css'
 
 export default function OfferInfo() {
@@ -8,11 +8,10 @@ export default function OfferInfo() {
             <div className={classes.gridBox}>
                 <div>
                     <p>
-                        Today <span>20%</span> discount on lung examination
+                        ফ্যামিলি ডাক্তার প্যাকেজ সারামাস জুড়ে মাত্র <span>৳১৪৯</span>
                     </p>
                     <p>
-                        The package price includes: consultation of a pulmonogist, spirography, cardiogram{' '}
-                        <span>{'>'}</span>{' '}
+                        ফ্যামিলি ডাক্তার প্যাকেজ নিয়ে ডাক্তারের সাথে কথা বলুন যতবার দরকার <span>{'>'}</span>
                     </p>
                 </div>
                 <div>

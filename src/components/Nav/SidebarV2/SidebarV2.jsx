@@ -9,13 +9,11 @@ import {
     faCog,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
-import { useLocation } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import classes from './SidebarV2.module.css'
 
 export default function SidebarV2() {
-    const location = useLocation()
+    let location = useLocation()
 
     return (
         <div className={classes.sidebar}>

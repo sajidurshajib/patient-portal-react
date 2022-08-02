@@ -2,7 +2,7 @@
     width: 100%;
     background-color: var(--white);
     border-radius: 10px;
-    padding: 16px 20px;
+    padding: 10px 40px;
 }
 
 .gridBox {
@@ -12,26 +12,32 @@
 }
 
 .gridBox div > p:nth-child(1) {
-    font-size: 14px;
+    font-size: 18px;
     color: var(--dark);
-    font-weight: 500;
+    font-weight: 600;
+    margin-top: 4px;
+    opacity: 0.9;
 }
 
-.gridBox div > p > span {
+.gridBox div > p:nth-child(1) > span {
     color: var(--green);
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .gridBox div > p:nth-child(2) {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--dark);
-    margin-top: -6px;
+    margin-top: -14px;
+    margin-left: 40px;
 }
 
 .gridBox img {
-    margin-top: 10px;
-    width: 10rem;
-    height: 5rem;
+    margin-top: 2px;
+    width: 6.6rem;
+    height: 5.6rem;
     border-radius: 20px;
     position: absolute;
-    margin-left: 6rem;
+    margin-left: 8rem;
+    border-radius: 10px;
 }

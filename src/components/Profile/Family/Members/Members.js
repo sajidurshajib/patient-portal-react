@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { Auth } from '../../../../allContext'
-import Pic from '../../../../assets/img/patient1.jpeg'
+import Pic from '../../../../assets/img/pic-placeholder.jpg'
 import AcceptReject from '../AcceptReject/AcceptReject'
 import classes from './Members.module.css'
 
