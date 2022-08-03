@@ -1,9 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import { Auth } from '../../allContext'
-import { Sidebar } from '../Nav'
 import DoctorList from './DoctorList/DoctorList'
 import classes from './FindDoctors.module.css'
-import SearchDoctor from './SearchDoctor/SearchDoctor'
 
 const FindDoctors = () => {
     const [doctors, setDoctors] = useState([])
@@ -37,14 +35,9 @@ const FindDoctors = () => {
         return fetchData()
     }, [token, apiV1, limit])
 
-    const c = (e) => {
-        e.preventDefault()
-    }
-
     return (
         <div className={classes.findDoctors}>
             <div className={classes.listContainer}>
-                {/* <SearchDoctor /> */}
                 <DoctorList doctors={doctors} />
                 <button className={classes.loadButton} onClick={() => limitIncrement()}>
                     Load More...
