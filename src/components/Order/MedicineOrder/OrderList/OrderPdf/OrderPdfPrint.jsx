@@ -18,7 +18,7 @@ export const OrderPdfPrint = ({ props, index, setPdfOpen }) => {
                 </div>
 
                 <div className={classes.bodyPdf}>
-                    <button onClick={handlePrint} className={classes.button}>
+                    <button onClick={handlePrint} className={classes.buttonPdf}>
                         Print this out!
                     </button>
                     <Pdf props={props} ref={componentRef} />
