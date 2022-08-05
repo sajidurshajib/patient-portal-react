@@ -26,6 +26,10 @@ export default function SidebarV2() {
                 <Link to="/doctors" className={location.pathname === '/doctors' ? classes.active : ''}>
                     <FontAwesomeIcon icon={faBriefcaseMedical} /> <span>Find Doctors</span>
                 </Link>
+                <Link to="/medicines" className={location.pathname === '/medicines' ? classes.active : ''}>
+                    <FontAwesomeIcon icon={faCapsules} />
+                    <span>Medicine Order</span>
+                </Link>
                 <Link to="/medicals" className={location.pathname === '/medicals' ? classes.active : ''}>
                     <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon3} />
                     <span className={classes.textMargin2}>Medical Records</span>
@@ -34,13 +38,10 @@ export default function SidebarV2() {
                     <FontAwesomeIcon icon={faThermometer} />
                     <span className={classes.textMargin3}>Health Indicators</span>
                 </Link>
-                <Link to="/medicines" className={location.pathname === '/medicines' ? classes.active : ''}>
-                    <FontAwesomeIcon icon={faCapsules} />
-                    <span>Medicine Order</span>
-                </Link>
                 <Link to="/profile" className={location.pathname === '/profile' ? classes.active : ''}>
                     <FontAwesomeIcon icon={faUser} className={classes.marginIcon2} /> <span>My Profile</span>
                 </Link>
+
                 <div className={classes.setting}>
                     <Link to="/settings" className={location.pathname === '/settings' ? classes.active : ''}>
                         <FontAwesomeIcon icon={faCog} className={classes.marginIcon2} /> <span>Settings</span>

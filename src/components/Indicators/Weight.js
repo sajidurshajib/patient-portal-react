@@ -85,6 +85,8 @@ const Weight = () => {
         <div>
             <Number
                 // title="Weight"
+                ref1="Reference Values:"
+                ref2=""
                 place="Input Weight"
                 unit="kg"
                 st={weight}

@@ -1,7 +1,31 @@
+.wrapper {
+    margin-top: -17px;
+}
+
+.wrapper > p {
+    color: var(--dark);
+    font-size: 14px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.wrapper > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--grey2);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
 .ProfileCard {
     background: var(--white);
-    padding: 40px 0;
+    padding: 40px 20px;
     border-radius: 10px;
+    padding-bottom: 10px;
 }
 .ProfileCard > div:nth-child(1) {
     margin: 0 auto;
@@ -15,31 +39,20 @@
     font-size: 20px;
     font-weight: 500;
 }
-.ProfileCard > p {
+.ProfileCard > span {
+    display: block;
     text-align: center;
     font-weight: 500px;
     margin: 5px 0 0 0;
     font-size: 12px;
 }
-.ProfileCard > p > span {
+.ProfileCard > span > span {
     color: var(--dark-grey);
     font-weight: 300;
 }
 
-.ProfileCard > p:nth-child(4) {
-    margin: 20px 0 0 0;
-}
-.ProfileCard > p:nth-child(4),
-.ProfileCard > p:nth-child(5) {
-    color: var(--dark-blue);
-    font-size: 12px;
-}
-.ProfileCard > p:nth-child(4) > span,
-.ProfileCard > p:nth-child(5) > span {
-    margin: 0 0 0 5px;
-}
-
-.ProfileCard > p:nth-child(6) {
+.ProfileCard > span:nth-child(4) {
+    display: block;
     margin: 0 auto;
     font-size: 12px;
     font-weight: 500;
@@ -51,7 +64,7 @@
     padding: 10px;
     border-radius: 10px;
 }
-.ProfileCard > p:nth-child(6) > span {
+.ProfileCard > p:nth-child(4) > span {
     color: var(--green);
     font-weight: 600;
     font-size: 1.2em;
@@ -59,6 +72,28 @@
 
 .ProfileCard .bloodGrp {
     margin-left: 2px;
+}
+
+.ProfileCard > p:nth-child(5) {
+    margin: 20px 0 0 0;
+}
+
+.ProfileCard > p {
+    text-align: left;
+    font-size: 12px;
+    position: relative;
+    color: var(--dark);
+}
+
+.ProfileCard > p > span {
+    position: absolute;
+    left: 120px;
+    color: var(--dark-grey);
+    font-size: 12px;
+    font-weight: 500;
+}
+.ProfileCard > p > span::before {
+    content: ': ';
 }
 
 .ProfileImage {

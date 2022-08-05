@@ -1,19 +1,20 @@
 .Services {
     position: relative;
     z-index: 500;
-    margin-top: -50px;
+    margin-top: -40px;
     margin-left: 10vw;
     margin-right: 10vw;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 33%));
+    grid-template-columns: repeat(4, minmax(0, 25%));
     gap: 20px;
 }
 .Services > div {
     text-align: center;
     border: 1px solid var(--light-grey);
     background: var(--white);
-    padding: 20px 10px;
+    padding: 20px 16px;
     box-shadow: 0 10px 20px var(--light);
+    border-radius: 4px;
 }
 .Services > div > p {
     margin: 0;
@@ -21,7 +22,7 @@
 .Services > div > p:nth-child(1) {
     color: var(--primary);
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 15px;
 }
 .Services > div > p:nth-child(2) {
@@ -29,7 +30,7 @@
     color: var(--dark-grey);
 }
 .Services div > p > svg {
-    font-size: 26px;
+    font-size: 22px;
     margin-right: 5px;
 }
 

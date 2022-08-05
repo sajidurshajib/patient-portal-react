@@ -6,7 +6,7 @@ export default function Faq() {
         <div className={classes.content} id="faq">
             <div className={classes.logo}>Frequently Asked Questions</div>
             <div>
-                <div>
+                {/* <div>
                     <input type="checkbox" id="q1" className={classes.questions} />
                     <span className={classes.plus}>+</span>
                     <label htmlFor="q1" className={classes.question}>
@@ -39,6 +39,37 @@ export default function Faq() {
                         If you need to cancel or reschedule, please call us. We ask that you call at least 24 hours in
                         advance so that we can best help you reschedule.
                     </div>
+                </div> */}
+
+                <div>
+                    <input type="checkbox" id="q4" className={classes.questions} />
+                    <div className={classes.plus}>+</div>
+                    <label htmlFor="q4" className={classes.question}>
+                        My Health Portal, is it app based or through website?
+                    </label>
+                    <div className={classes.answers}>
+                        Initially web based solution but ultimately it will be app based.
+                    </div>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="q5" className={classes.questions} />
+                    <div className={classes.plus}>+</div>
+                    <label htmlFor="q5" className={classes.question}>
+                        My Health Portal, is it for individual health record?
+                    </label>
+                    <div className={classes.answers}>
+                        Yes, My health portal is for individual user health records & can store for family members.
+                    </div>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="q6" className={classes.questions} />
+                    <div className={classes.plus}>+</div>
+                    <label htmlFor="q6" className={classes.question}>
+                        Can I operate & store my family health record instead of them?
+                    </label>
+                    <div className={classes.answers}>Sure, you can.</div>
                 </div>
             </div>
         </div>

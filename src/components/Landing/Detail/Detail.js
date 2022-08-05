@@ -17,11 +17,12 @@ const Detail = () => {
                     }}></div>
             </div>
             <div>
-                <h2>Your Patient Portal</h2>
+                <h2>Your Health Portal</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem repellat aliquam aut facere ullam
-                    quia mollitia iste dicta, velit doloribus? Labore rem id a obcaecati. Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit. Non facere nulla. Lorem ipsum dolor sit amet.
+                    My health portal offers every individual with assigned personal family doctor for 24X 7, largest
+                    pool of 1000+ renown doctors from 30+ different specialties, Personal health record, Medical record
+                    history, Medicine Delivery, pathological lab test detail & booking facility, health plan & package,
+                    Health education content and many more.
                 </p>
                 <h3>Your Services</h3>
                 <ul>
@@ -33,6 +34,9 @@ const Detail = () => {
                     </li>
                     <li>
                         <FontAwesomeIcon icon={faCheckCircle} /> Buy medicine from online.
+                    </li>
+                    <li>
+                        <FontAwesomeIcon icon={faCheckCircle} /> 24x7 family doctor service.
                     </li>
                 </ul>
             </div>

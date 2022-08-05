@@ -98,8 +98,11 @@ const Bp = () => {
         <div>
             <DoubleNumber
                 // title="Blood Presure"
-                place1="Input High BP"
-                place2="Input Low BP"
+                ref1="Reference Values:"
+                ref2="Systolic = 120"
+                ref3="Diastolic = 80"
+                place1="Input Systolic/High-BP"
+                place2="Input Diastolic/Low-BP"
                 unit="mmHg"
                 st1={high}
                 st2={low}

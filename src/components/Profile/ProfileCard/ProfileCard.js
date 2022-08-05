@@ -38,29 +38,52 @@ const ProfileCard = ({ userDetail }) => {
     const picUrl = 'http://127.0.0.1:8000/images/profile/' + pic
 
     return (
-        <div className={classes.ProfileCard}>
-            <div className={classes.PP}>
-                <img src={pic.toString().length < 16 ? proPic : picUrl} className={classes.ProfileImage} alt="" />
-                <>
-                    <ProfilePictureUpload msg={msg} setMsg={setMsg} />
-                </>
+        <div className={classes.wrapper}>
+            <p>Basic Information</p>
+            <div className={classes.ProfileCard}>
+                <div className={classes.PP}>
+                    <img src={pic.toString().length < 16 ? proPic : picUrl} className={classes.ProfileImage} alt="" />
+                    <>
+                        <ProfilePictureUpload msg={msg} setMsg={setMsg} />
+                    </>
+                </div>
+
+                <h6>{stateUser?.info.name}</h6>
+                <span>
+                    {userDetail.dob} <span>({stateUser?.info.sex})</span>
+                </span>
+
+                <span>
+                    Blood group: <span className={classes.bloodGrp}>{userDetail.blood_group}</span>
+                </span>
+                <p>
+                    Phone <span>{stateUser?.info.phone}</span>
+                </p>
+                <p>
+                    Email <span>{stateUser?.info.email}</span>
+                </p>
+                <p>
+                    Date of Birth <span>{stateUser?.info.nid}</span>
+                </p>
+                <p>
+                    NID <span>{stateUser?.info.nid}</span>
+                </p>
+                <p>
+                    Marital Status <span> </span>
+                </p>
+                <p>
+                    Occupation <span> </span>
+                </p>
+                <p>
+                    Bio <span> </span>
+                </p>
+                <p>
+                    Address <span> </span>
+                </p>
+                <p>
+                    Join Date <span> </span>
+                </p>
             </div>
-
-            <h6>{stateUser?.info.name}</h6>
-            <p>
-                {userDetail.dob} <span>({stateUser?.info.sex})</span>
-            </p>
-
-            <p>
-                Email: <span>{stateUser?.info.email}</span>
-            </p>
-            <p>
-                Phone: <span>{stateUser?.info.phone}</span>
-            </p>
-
-            <p>
-                Blood group: <span className={classes.bloodGrp}>{userDetail.blood_group}</span>
-            </p>
         </div>
     )
 }
