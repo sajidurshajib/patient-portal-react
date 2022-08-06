@@ -8,7 +8,6 @@
 
 .imgDiv > div:nth-child(1) {
     border-radius: 4px;
-    box-shadow: 5px 5px 10px var(--light-grey);
 }
 
 .Detail > div:nth-child(2) h2 {

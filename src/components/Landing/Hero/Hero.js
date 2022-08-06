@@ -14,8 +14,8 @@ const Hero = () => {
             }}>
             <div className={classes.left}>
                 <h2>
-                    Your Trusted Digital
-                    <span> Healthcare</span> Partner
+                    My
+                    <span> Health</span> Portal
                 </h2>
                 <div className={classes.text}>
                     <span>

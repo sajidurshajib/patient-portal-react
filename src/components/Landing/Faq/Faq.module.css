@@ -24,14 +24,14 @@
     width: 100%;
     cursor: pointer;
     border: 1px solid var(--light);
-    box-shadow: 2px 4px 6px var(--light);
+    box-shadow: 2px 4px 6px var(--light-low);
     color: var(--secondary);
     font-size: 14px;
     font-weight: 400;
 }
 
 .question:hover {
-    box-shadow: 4px 8px 12px var(--light);
+    box-shadow: 4px 8px 12px var(--light-low);
     transition: 300ms;
 }
 

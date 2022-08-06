@@ -5,6 +5,7 @@ import Footer from './Footer/Footer'
 import Hero from './Hero/Hero'
 import classes from './Landing.module.css'
 import Services from './Services/Services'
+import WhyUs from './WhyUs/WhyUs'
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Hero />
             <Services />
             <Detail />
+            <WhyUs />
             <Faq />
             <Footer />
         </div>

@@ -1,4 +1,12 @@
-import { faHospital, faLaptopMedical, faMedkit, faUserMd } from '@fortawesome/free-solid-svg-icons'
+import {
+    faCapsules,
+    faFileMedicalAlt,
+    faHospital,
+    faLaptopMedical,
+    faMedkit,
+    faStethoscope,
+    faUserMd,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './Services.module.css'
 
@@ -7,38 +15,22 @@ const Services = () => {
         <div className={classes.Services}>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faLaptopMedical} /> Personal Health Record
-                </p>
-                <p>
-                    Keep your personal & family health information with their basic health record up to date with
-                    medical record & history etc in one solution.
+                    <FontAwesomeIcon icon={faFileMedicalAlt} /> Personal Health Record
                 </p>
             </div>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faUserMd} /> Find Doctor & Book Appointment
-                </p>
-                <p>
-                    Easily access to the largest doctor pool with 30+ different specialty & 1000+ doctor profile & book
-                    appointment easily.
+                    <FontAwesomeIcon icon={faUserMd} /> Find Doctor
                 </p>
             </div>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faMedkit} /> Medicine Order
-                </p>
-                <p>
-                    People can order their required medicines or other medical device & equipment’s related available
-                    items from My Health Portal.
+                    <FontAwesomeIcon icon={faCapsules} /> Medicine Order
                 </p>
             </div>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faHospital} /> 24X7 Dedicated Family Doctor
-                </p>
-                <p>
-                    My health portal offers every individual a family doctor to ensure primary health care & emergency
-                    health issue 24X7.
+                    <FontAwesomeIcon icon={faStethoscope} /> Dedicated Family Doctor
                 </p>
             </div>
         </div>
