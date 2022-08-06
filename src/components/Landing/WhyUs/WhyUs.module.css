@@ -1,0 +1,72 @@
+.wrapper {
+    margin: 0;
+    margin-bottom: 6em;
+}
+
+.grid {
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+}
+
+.flexBox {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5.2em;
+}
+
+.flexBox > p {
+    font-size: 22px;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.flexBox > p > span {
+    display: block;
+    margin-left: 40px;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: -10px;
+    color: var(--dark-blue);
+}
+
+.flexBox > div > button {
+    border: none;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.gridBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 6em 8em;
+}
+
+.gridBox div {
+    border-top: 1px solid var(--dark);
+}
+
+.gridBox div > p {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.gridBox div > p > span {
+    padding-right: 20px;
+}
+
+.gridBox div > p > p {
+    font-size: 20px;
+}
+
+.gridBox div > span {
+    font-size: 14px;
+    color: var(--dark);
+    display: block;
+    margin-top: -14px;
+}
