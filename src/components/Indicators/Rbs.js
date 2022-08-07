@@ -87,7 +87,9 @@ const Pulse = () => {
         <div>
             <Number
                 // title="Diabetes"
-                place="Input RBS"
+                ref1="Reference Values:"
+                ref2="Diabetes = 5.0"
+                place="Input RBS/Diabetes"
                 unit="mmol/L"
                 st={rbs}
                 setSt={setRbs}

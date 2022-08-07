@@ -54,10 +54,7 @@
     z-index: 50;
     transition: 200ms;
 }
-.Wrapper:focus,
-.Wrapper:hover {
-    transform: scale(1.03);
-}
+
 .left {
     display: flex;
     align-items: center;

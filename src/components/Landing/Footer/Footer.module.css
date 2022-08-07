@@ -1,21 +1,23 @@
 .footer {
     position: relative;
+    height: 33vh;
 }
 
 .footer > .loveImg {
     position: absolute;
     z-index: 5;
-    height: 12em;
-    margin-top: 4.3em;
-    right: 6em;
+    height: 8em;
+    margin-top: 6em;
+    right: 6.8em;
 }
 
 .footer > .footerImg1 {
     width: 100%;
-    height: 18em;
+    height: 17em;
     position: absolute;
     transform: scaleX(-1);
     background-color: var(--white);
+    opacity: 0.1;
 }
 
 .footer > .footerImg2 {
@@ -27,27 +29,28 @@
 
 .footer > div {
     position: absolute;
-    margin-top: 7.6%;
-    left: 10%;
+    margin-top: 8.2%;
+    left: 7%;
     text-align: center;
 }
 
 .footer > div > p {
-    font-size: 1.5em;
-    font-weight: 400;
-    color: var(--white);
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--primary);
 }
 
 .footer > div > div {
     font-size: 1em;
     text-align: center;
-    margin-top: -1em;
+    margin-top: -14px;
 }
 
 .footer > div > div > img {
-    height: 24px;
+    height: 20px;
     cursor: pointer;
     padding: 0 10px;
+    margin-bottom: -10px;
 }
 
 .footer > div > div > img:hover {
@@ -55,8 +58,8 @@
 }
 
 .footer > div > span {
-    color: var(--white);
-    font-size: 12px;
+    color: var(--primary);
+    font-size: 10px;
     text-align: center;
     display: block;
     margin-top: 10px;

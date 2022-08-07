@@ -1,0 +1,98 @@
+.wrapper {
+    margin-top: 1em;
+    padding: 10px 14em;
+    margin-bottom: 4em;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.title h1 {
+    font-weight: 500;
+
+    padding: 0 40px;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.title h1:after {
+    width: 100px;
+    height: 3px;
+    display: block;
+    content: '';
+    position: relative;
+    margin-top: 2px;
+    left: 50%;
+    margin-left: -50px;
+    background-color: var(--primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4em 12em;
+}
+
+.grid div {
+    transition: 200ms;
+}
+
+.grid div:hover {
+    transform: translateY(-2px);
+    transition: 200ms;
+}
+
+.grid div > p {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.grid div > p > span {
+    padding-right: 20px;
+    font-size: 3em;
+    color: var(--dark);
+}
+
+.grid div:nth-child(1) > p > span {
+    color: var(--primary);
+}
+.grid div:nth-child(2) > p > span {
+    color: var(--orange);
+}
+.grid div:nth-child(3) > p > span {
+    color: var(--secondary2);
+}
+.grid div:nth-child(4) > p > span {
+    color: var(--deep-red);
+}
+
+.grid div > p > p {
+    font-size: 18px;
+    color: var(--dark);
+    font-weight: 500;
+    margin-top: 2em;
+}
+
+.grid div > span {
+    font-size: 14px;
+    color: var(--dark);
+    display: block;
+    margin-top: -20px;
+    text-align: justify;
+}
+
+.grid div > div {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px 40px;
+    font-size: 14px;
+    color: var(--dark);
+}
+
+.grid div > div > p {
+    margin: 0;
+}

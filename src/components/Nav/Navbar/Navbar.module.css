@@ -193,7 +193,7 @@
 .optAllDoc {
     position: fixed;
     background-color: var(--white);
-    width: 40%;
+    width: 34.8em;
     border-radius: 4px;
     padding: 2px 4px;
     overflow-y: auto;

@@ -1,4 +1,12 @@
-import { faHospital, faMedkit, faUserMd } from '@fortawesome/free-solid-svg-icons'
+import {
+    faCapsules,
+    faFileMedicalAlt,
+    faHospital,
+    faLaptopMedical,
+    faMedkit,
+    faStethoscope,
+    faUserMd,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './Services.module.css'
 
@@ -7,29 +15,22 @@ const Services = () => {
         <div className={classes.Services}>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faMedkit} /> Medicine Delivery
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptate? Lorem ipsum dolor
-                    sit amet.
+                    <FontAwesomeIcon icon={faFileMedicalAlt} /> Personal Health Record
                 </p>
             </div>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faUserMd} /> Telemedicine
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptate? Lorem ipsum dolor
-                    sit amet.
+                    <FontAwesomeIcon icon={faUserMd} /> Find Doctor
                 </p>
             </div>
             <div>
                 <p>
-                    <FontAwesomeIcon icon={faHospital} /> 24x7 Service
+                    <FontAwesomeIcon icon={faCapsules} /> Medicine Order
                 </p>
+            </div>
+            <div>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptate? Lorem ipsum dolor
-                    sit amet.
+                    <FontAwesomeIcon icon={faStethoscope} /> Dedicated Family Doctor
                 </p>
             </div>
         </div>

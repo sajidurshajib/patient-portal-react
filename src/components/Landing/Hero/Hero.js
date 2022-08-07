@@ -10,15 +10,17 @@ const Hero = () => {
                 background: `url(${BG})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
+                height: '430px',
             }}>
             <div className={classes.left}>
                 <h2>
-                    Your Trusted Digital <br />
-                    <span>Healthcare</span> Partner
+                    My
+                    <span> Health</span> Portal
                 </h2>
-                <div className={classes.ButtonGroup}>
-                    <span>Button 1</span>
-                    <span>Button 2</span>
+                <div className={classes.text}>
+                    <span>
+                        One stop digital healthcare solution for Personal health record & healthcare service order.
+                    </span>
                 </div>
             </div>
             <div className={classes.right}>

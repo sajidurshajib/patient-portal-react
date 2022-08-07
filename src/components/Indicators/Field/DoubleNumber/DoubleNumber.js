@@ -10,6 +10,11 @@ const DoubleNumber = (props) => {
                 <div>{props.children}</div>
                 <div className={classes.field}>
                     <form>
+                        <div className={classes.divRef}>
+                            <p>{props.ref1}</p>
+                            <li>{props.ref2}</li>
+                            <li>{props.ref3}</li>
+                        </div>
                         <div>
                             <input
                                 type="number"

@@ -7,7 +7,7 @@
 
 .content .logo {
     text-align: center;
-    font-size: 1.6em;
+    font-size: 1.4em;
     color: var(--secondary);
     font-weight: 400;
     text-transform: capitalize;
@@ -24,14 +24,14 @@
     width: 100%;
     cursor: pointer;
     border: 1px solid var(--light);
-    box-shadow: 2px 4px 6px var(--light);
+    box-shadow: 2px 4px 6px var(--light-low);
     color: var(--secondary);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
 .question:hover {
-    box-shadow: 4px 8px 12px var(--light);
+    box-shadow: 4px 8px 12px var(--light-low);
     transition: 300ms;
 }
 
@@ -51,6 +51,8 @@
     transition: 0.3s ease;
     text-align: justify;
     line-height: 1.6;
+    font-size: 14px;
+    opacity: 0.9;
 }
 
 .questions:checked ~ .answers {
@@ -64,10 +66,10 @@
 
 .plus {
     position: absolute;
-    margin-left: 14px;
-    margin-top: 0.8em;
+    margin-left: 22px;
+    margin-top: 23.2px;
     z-index: 5;
-    font-size: 1.6em;
+    font-size: 16px;
     color: var(--primary);
     line-height: 100%;
     user-select: none;

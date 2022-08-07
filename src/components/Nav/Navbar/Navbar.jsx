@@ -12,10 +12,9 @@ import classes from './Navbar.module.css'
 export default function Navbar() {
     const { dispatchAuth } = useContext(Auth)
     const { dispatchUser } = useContext(UserInfo)
+
     const { stateUser } = useContext(UserInfo)
     const userDetail = stateUser.info
-
-    console.log('s', userDetail)
 
     const logout = (e) => {
         e.preventDefault()
