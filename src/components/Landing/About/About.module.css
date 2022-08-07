@@ -1,0 +1,10 @@
+.wrapper {
+    padding: 10px 8em;
+}
+
+.wrapper p {
+    font-size: 14px;
+    color: var(--dark);
+    text-align: center;
+    line-height: 1.5;
+}

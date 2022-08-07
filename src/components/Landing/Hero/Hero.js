@@ -19,8 +19,7 @@ const Hero = () => {
                 </h2>
                 <div className={classes.text}>
                     <span>
-                        My Health Portal is one stop digital health care solution for Personal health record &
-                        healthcare service management.
+                        One stop digital healthcare solution for Personal health record & healthcare service order.
                     </span>
                 </div>
             </div>

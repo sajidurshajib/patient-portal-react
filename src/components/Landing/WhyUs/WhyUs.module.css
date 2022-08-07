@@ -1,19 +1,18 @@
 .wrapper {
-    margin: 0;
-    margin-bottom: 6em;
+    margin: 10em 0;
 }
 
 .grid {
     margin: 0 auto;
     width: 80%;
     display: grid;
-    grid-template-columns: 1.5fr 2fr;
+    grid-template-columns: 1.5fr 2.4fr;
 }
 
 .flexBox {
     display: flex;
     flex-direction: column;
-    padding-left: 5.2em;
+    padding-left: 4.6em;
 }
 
 .flexBox > p {
@@ -31,7 +30,7 @@
     color: var(--dark-blue);
 }
 
-.flexBox > div > button {
+.flexBox > div > a > button {
     border: none;
     border-radius: 4px;
     color: var(--white);
@@ -40,14 +39,26 @@
     font-size: 14px;
 }
 
+.flexBox > div > a > button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    transition: 200ms;
+}
+
 .gridBox {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 6em 8em;
+    grid-gap: 5em 8em;
 }
 
 .gridBox div {
-    border-top: 1px solid var(--dark);
+    border-top: 2px solid var(--dark);
+    transition: 200ms;
+}
+
+.gridBox div:hover {
+    transform: translateY(-2px);
+    transition: 200ms;
 }
 
 .gridBox div > p {
@@ -58,15 +69,38 @@
 
 .gridBox div > p > span {
     padding-right: 20px;
+    font-size: 24px;
+}
+
+.gridBox div:nth-child(1) > p > span {
+    color: var(--orange);
+}
+.gridBox div:nth-child(2) > p > span {
+    color: var(--deep-red);
+}
+.gridBox div:nth-child(3) > p > span {
+    color: var(--primary);
+}
+.gridBox div:nth-child(4) > p > span {
+    color: var(--secondary2);
+}
+.gridBox div:nth-child(5) > p > span {
+    color: var(--red);
+}
+.gridBox div:nth-child(6) > p > span {
+    color: var(--green);
 }
 
 .gridBox div > p > p {
-    font-size: 20px;
+    font-size: 18px;
+    color: var(--dark);
+    font-weight: 500;
 }
 
 .gridBox div > span {
     font-size: 14px;
     color: var(--dark);
     display: block;
-    margin-top: -14px;
+    margin-top: -20px;
+    text-align: justify;
 }
