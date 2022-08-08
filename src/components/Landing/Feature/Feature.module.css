@@ -1,6 +1,6 @@
 .wrapper {
     margin-top: 1em;
-    padding: 10px 14em;
+    padding: 10px 9em;
     margin-bottom: 4em;
 }
 
@@ -11,15 +11,15 @@
 
 .title h1 {
     font-weight: 500;
-
     padding: 0 40px;
     margin-bottom: 40px;
     font-size: 30px;
+    color: var(--dark-blue);
 }
 
-.title h1:after {
+/* .title h1:after {
     width: 100px;
-    height: 3px;
+    height: 1px;
     display: block;
     content: '';
     position: relative;
@@ -27,72 +27,62 @@
     left: 50%;
     margin-left: -50px;
     background-color: var(--primary);
-}
+} */
 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 4em 12em;
+    grid-gap: 4em 2em;
+}
+.grid > div {
+    padding: 0 2em;
+    border-radius: 10px;
+    transition: 250ms;
+    border: none;
 }
 
-.grid div {
-    transition: 200ms;
-}
-
-.grid div:hover {
-    transform: translateY(-2px);
-    transition: 200ms;
+.grid > div:hover {
+    background-color: var(--white);
+    box-shadow: 2px 4px 6px var(--light);
+    cursor: pointer;
+    transition: 250ms;
+    transform: translateY(-4px);
 }
 
 .grid div > p {
     display: flex;
-    align-items: center;
-    margin-top: 0px;
 }
 
-.grid div > p > span {
-    padding-right: 20px;
-    font-size: 3em;
-    color: var(--dark);
+.grid div > p > img {
+    width: 250px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.grid div:nth-child(1) > p > span {
-    color: var(--primary);
-}
-.grid div:nth-child(2) > p > span {
-    color: var(--orange);
-}
-.grid div:nth-child(3) > p > span {
-    color: var(--secondary2);
-}
-.grid div:nth-child(4) > p > span {
-    color: var(--deep-red);
+.grid div > p > div {
+    padding-left: 20px;
 }
 
-.grid div > p > p {
-    font-size: 18px;
+.grid div > p > div > h2 {
+    font-size: 20px;
     color: var(--dark);
     font-weight: 500;
-    margin-top: 2em;
+    margin-top: 0;
+    margin-bottom: 6px;
 }
 
-.grid div > span {
+.grid div > p > div > span {
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.grid div > p > div > div {
+    margin-top: 14px;
+}
+
+.grid div > p > div > div > li {
     font-size: 14px;
     color: var(--dark);
-    display: block;
-    margin-top: -20px;
-    text-align: justify;
-}
-
-.grid div > div {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px 40px;
-    font-size: 14px;
-    color: var(--dark);
-}
-
-.grid div > div > p {
-    margin: 0;
+    padding: 2px 0px;
 }

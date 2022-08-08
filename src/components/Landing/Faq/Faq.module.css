@@ -2,16 +2,16 @@
     width: 70%;
     padding: 0;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 10px;
 }
 
 .content .logo {
     text-align: center;
-    font-size: 1.4em;
-    color: var(--secondary);
-    font-weight: 400;
-    text-transform: capitalize;
-    margin-bottom: 1.2em;
+    font-weight: 500;
+    padding: 0 40px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: var(--dark-blue);
 }
 
 .question {
@@ -24,14 +24,13 @@
     width: 100%;
     cursor: pointer;
     border: 1px solid var(--light);
-    box-shadow: 2px 4px 6px var(--light-low);
-    color: var(--secondary);
+    color: var(--dark-blue);
     font-size: 14px;
     font-weight: 400;
 }
 
 .question:hover {
-    box-shadow: 4px 8px 12px var(--light-low);
+    box-shadow: 2px 4px 6px var(--light-low);
     transition: 300ms;
 }
 
@@ -64,10 +63,15 @@
     z-index: 1;
 }
 
+.content > div > div {
+    position: relative;
+}
+
 .plus {
     position: absolute;
-    margin-left: 22px;
-    margin-top: 23.2px;
+    right: 0;
+    margin-right: 40px;
+    margin-top: 24px;
     z-index: 5;
     font-size: 16px;
     color: var(--primary);

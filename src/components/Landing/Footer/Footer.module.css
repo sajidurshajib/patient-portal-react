@@ -6,9 +6,10 @@
 .footer > .loveImg {
     position: absolute;
     z-index: 5;
-    height: 8em;
-    margin-top: 6em;
+    height: 7em;
+    margin-top: 6.5em;
     right: 6.8em;
+    opacity: 0.9;
 }
 
 .footer > .footerImg1 {

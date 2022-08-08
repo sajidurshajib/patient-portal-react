@@ -8,7 +8,7 @@ export default function Benefit() {
     return (
         <div className={classes.wrapper}>
             <div className={classes.title}>
-                <h1>Benefits</h1>
+                <h1>Benefits of My Health Portal</h1>
             </div>
             <div className={classes.gridBox}>
                 <div>

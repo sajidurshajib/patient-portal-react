@@ -9,7 +9,9 @@
     gap: 20px;
 }
 .Services > div {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--light);
     background-color: var(--white);
     padding: 20px 16px;
@@ -42,6 +44,19 @@
     font-size: 30px;
     margin-right: 12px;
     color: var(--dark-blue);
+}
+
+.Services div:nth-child(1) > p > svg {
+    color: var(--green);
+}
+.Services div:nth-child(2) > p > svg {
+    color: var(--orange);
+}
+.Services div:nth-child(3) > p > svg {
+    color: var(--secondary);
+}
+.Services div:nth-child(4) > p > svg {
+    color: var(--red);
 }
 
 @media (max-width: 420px) {
