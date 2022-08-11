@@ -17,12 +17,12 @@ export default function Feature() {
                         <img src={F1} alt="" />
                         <div>
                             <h2>Personal Health Record</h2>
-                            <span>Easy access to the personal medical history & record of the patient.</span>
+                            <span>Easy access to the personal medical history & record of the patient</span>
                             <div>
-                                <li> Prescription Record</li>
-                                <li> Medicine Record</li>
-                                <li> Medical & Vaccination Report</li>
-                                <li> Record Share with Doctor</li>
+                                <span> - Prescription Record</span>
+                                <span> - Medicine Record</span>
+                                <span> - Medical & Vaccination Report</span>
+                                <span> - Record Share with Doctor</span>
                             </div>
                         </div>
                     </p>
@@ -30,17 +30,17 @@ export default function Feature() {
 
                 <div>
                     <p>
-                        <img src={F2} alt="" />
                         <div>
                             <h2>Health Indicator Tracking</h2>
-                            <span>Track your health status by updating following Health indicator.</span>
+                            <span>Track your health status by updating following Health indicator</span>
                             <div>
-                                <li> Blood Pressure Measuring</li>
-                                <li> Blood Sugar Monitoring</li>
-                                <li> Pulse & Oxygen Saturation</li>
-                                <li> Health Indicator for Assessment</li>
+                                <span>Blood Pressure Measuring - </span>
+                                <span>Blood Sugar Monitoring - </span>
+                                <span>Pulse & Oxygen Saturation - </span>
+                                <span>Health Indicator for Assessment - </span>
                             </div>
                         </div>
+                        <img src={F2} alt="" />
                     </p>
                 </div>
 
@@ -49,12 +49,12 @@ export default function Feature() {
                         <img src={F3} alt="" />
                         <div>
                             <h2>Find Doctor</h2>
-                            <span>Easily access to the largest Doctor pool with 30+ specialty & 100+ doctors.</span>
+                            <span>Easily access to the largest Doctor pool with 30+ specialty & 100+ doctors</span>
                             <div>
-                                <li> Doctor Search</li>
-                                <li> Appointment Booking</li>
-                                <li> Instant E-Prescription</li>
-                                <li> Save Data Lifetime</li>
+                                <span> - Doctor Search</span>
+                                <span> - Appointment Booking</span>
+                                <span> - Instant E-Prescription</span>
+                                <span> - Save Data Lifetime</span>
                             </div>
                         </div>
                     </p>
@@ -62,17 +62,17 @@ export default function Feature() {
 
                 <div>
                     <p>
-                        <img src={F4} alt="" />
                         <div>
                             <h2>Medicine Order</h2>
-                            <span>Search medicine, place your online order for hassle free home delivery.</span>
+                            <span>Search medicine, place your online order for hassle free home delivery</span>
                             <div>
-                                <li> DGDA Approved 22000+ Medicine</li>
-                                <li> Price Comparison Feature</li>
-                                <li> Fast Home Delivery</li>
-                                <li> One Click Order</li>
+                                <span>DGDA Approved 22000+ Medicine - </span>
+                                <span>Price Comparison Feature - </span>
+                                <span>Fast Home Delivery - </span>
+                                <span>One Click Order - </span>
                             </div>
                         </div>
+                        <img src={F4} alt="" />
                     </p>
                 </div>
             </div>

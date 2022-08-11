@@ -14,7 +14,7 @@ export default function Faq() {
                     </label>
                     <div className={classes.answers}>
                         My Health Portal is one stop digital health care solution for Personal health record &
-                        healthcare service management. Yes its free.
+                        healthcare service management. Yes its free of cost for subscription.
                     </div>
                 </div>
 
@@ -47,19 +47,8 @@ export default function Faq() {
                         How will update my health record & How can I record for future?
                     </label>
                     <div className={classes.answers}>
-                        By updating health indicator by yourself & health professional. By uploading picture in PDF or
-                        JPG format, you can record your prescriotipn, report & other file.
-                    </div>
-                </div>
-
-                <div>
-                    <input type="checkbox" id="q9" className={classes.questions} />
-                    <div className={classes.plus}>+</div>
-                    <label htmlFor="q9" className={classes.question}>
-                        How medical record will update?
-                    </label>
-                    <div className={classes.answers}>
-                        By uploading pic in PDF or JPG, by doctors prescription or from report.
+                        By updating health indicator by yourself & health professional. By uploading pic in pdf or jpg
+                        format, you can record your prescription, medical report & other file.
                     </div>
                 </div>
 
