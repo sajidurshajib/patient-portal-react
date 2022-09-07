@@ -106,3 +106,9 @@
     position: absolute;
     bottom: 70px;
 }
+
+@media (max-width: 420px) {
+    .sidebar {
+        display: none;
+    }
+}

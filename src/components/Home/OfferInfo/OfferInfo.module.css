@@ -1,17 +1,12 @@
-.offerWrapper {
+.offer {
     width: 100%;
     background-color: var(--white);
     border-radius: 10px;
     padding: 10px 40px;
+    position: relative;
 }
 
-.gridBox {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
-}
-
-.gridBox div > p:nth-child(1) {
+.offer div > p:nth-child(1) {
     font-size: 18px;
     color: var(--dark);
     font-weight: 600;
@@ -19,25 +14,65 @@
     opacity: 0.9;
 }
 
-.gridBox div > p:nth-child(1) > span {
+.offer div > p:nth-child(1) > span {
     color: var(--green);
     font-size: 22px;
     font-weight: 600;
 }
 
-.gridBox div > p:nth-child(2) {
+.offer div > p:nth-child(2) {
     font-size: 14px;
     color: var(--dark);
     margin-top: -14px;
     margin-left: 40px;
 }
 
-.gridBox img {
-    margin-top: 2px;
+.offer img {
+    position: absolute;
+    right: 4em;
     width: 6.6rem;
     height: 5.6rem;
     border-radius: 20px;
-    position: absolute;
-    margin-left: 8rem;
     border-radius: 10px;
+}
+
+@media (max-width: 420px) {
+    .offer {
+        width: 100%;
+        background-color: var(--white);
+        border-radius: 10px;
+        padding: 4px 20px;
+        position: relative;
+    }
+
+    .offer div > p:nth-child(1) {
+        font-size: 14px;
+        color: var(--dark);
+        font-weight: 600;
+        margin-top: 4px;
+        opacity: 0.9;
+    }
+
+    .offer div > p:nth-child(1) > span {
+        color: var(--green);
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .offer div > p:nth-child(2) {
+        font-size: 12px;
+        color: var(--dark);
+        margin-top: -14px;
+        margin-left: 10px;
+        padding-right: 80px;
+    }
+
+    .offer img {
+        position: absolute;
+        right: 1em;
+        bottom: 8px;
+        width: 3.2rem;
+        height: 3rem;
+        border-radius: 10px;
+    }
 }
