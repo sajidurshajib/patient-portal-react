@@ -1,6 +1,6 @@
 .wrapper {
     margin-top: 1em;
-    padding: 10px 9em;
+    padding: 10px 10em;
     margin-bottom: 4em;
 }
 
@@ -17,22 +17,10 @@
     color: var(--dark-blue);
 }
 
-/* .title h1:after {
-    width: 100px;
-    height: 1px;
-    display: block;
-    content: '';
-    position: relative;
-    margin-top: 2px;
-    left: 50%;
-    margin-left: -50px;
-    background-color: var(--primary);
-} */
-
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 4em 2em;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 4px 2em;
 }
 .grid > div {
     padding: 0 2em;
@@ -49,12 +37,28 @@
     transform: translateY(-4px);
 }
 
+.grid > div:nth-child(even) {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grid > div:nth-child(even) > p > div {
+    text-align: right;
+}
+
+.grid > div > p > div > div > span {
+    display: block;
+    font-size: 14px;
+    color: var(--dark);
+    padding: 4px 0;
+}
+
 .grid div > p {
     display: flex;
 }
 
 .grid div > p > img {
-    width: 250px;
+    width: 280px;
     height: 220px;
     object-fit: cover;
     border-radius: 10px;
@@ -64,11 +68,15 @@
     padding-left: 20px;
 }
 
+.grid div:nth-child(even) > p > div {
+    padding-right: 20px;
+}
+
 .grid div > p > div > h2 {
-    font-size: 20px;
-    color: var(--dark);
+    font-size: 24px;
+    color: var(--primary);
     font-weight: 500;
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 6px;
 }
 

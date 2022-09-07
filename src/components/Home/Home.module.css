@@ -21,3 +21,21 @@
     border-top-left-radius: 80px;
     height: 100vh;
 }
+
+@media (max-width: 420px) {
+    .home {
+        margin-top: 3em;
+        margin-bottom: 6em;
+        padding: 10px;
+    }
+
+    .wrapper {
+        grid-template-columns: 100%;
+        gap: 0px;
+        padding: 0;
+    }
+
+    .info {
+        display: none;
+    }
+}

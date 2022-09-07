@@ -1,17 +1,39 @@
+.wrapper,
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    left: 0;
+    top: 0;
+}
+
+.overlay {
+    background: rgb(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
 .sidebar {
     width: 15%;
     height: 100vh;
     margin: 0;
     position: fixed;
-    margin-top: 40px;
+    display: none;
+    z-index: 100;
+    top: 0;
+    left: 0;
 }
 
 .container {
     color: var(--white);
-    padding-left: 20px;
+    padding-left: 0px;
     height: 100vh;
     background-image: linear-gradient(30deg, #93a7c5, #21527d);
     border-top-right-radius: 80px;
+}
+
+.container > p {
+    margin-left: 20px;
 }
 
 .container a {
@@ -109,6 +131,14 @@
 
 @media (max-width: 420px) {
     .sidebar {
-        display: none;
+        width: 56%;
+        height: 100vh;
+        margin: 0;
+        display: block;
+    }
+
+    .container > p {
+        margin-left: 20px;
+        font-size: 14px;
     }
 }

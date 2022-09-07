@@ -16,18 +16,6 @@
     color: var(--dark-blue);
 }
 
-/* .title h1:after {
-    width: 100px;
-    height: 1px;
-    display: block;
-    content: '';
-    position: relative;
-    margin-top: 2px;
-    left: 50%;
-    margin-left: -50px;
-    background-color: var(--primary);
-} */
-
 .gridBox {
     margin: 0 auto;
     width: 80%;
@@ -76,7 +64,7 @@
 
 .gridBox div > p > p {
     font-size: 20px;
-    color: var(--dark);
+    color: var(--dark-blue);
     font-weight: 500;
 }
 

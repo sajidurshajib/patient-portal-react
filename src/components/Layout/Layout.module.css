@@ -8,3 +8,9 @@
     display: grid;
     grid-template-columns: 15% 85%;
 }
+
+@media (max-width: 420px) {
+    .container {
+        grid-template-columns: 100%;
+    }
+}
