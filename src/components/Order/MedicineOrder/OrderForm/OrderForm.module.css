@@ -332,6 +332,7 @@
     }
 
     .collab {
+        margin-top: -10px;
         padding: 12px;
     }
 
@@ -356,20 +357,15 @@
     }
 
     .formWrapper input[type='text'],
-    .formWrapper input[type='email'],
     .formWrapper input[type='number'],
-    .formWrapper input[type='tel'],
-    .formWrapper input[type='password'],
-    .formWrapper input[type='date'],
-    .formWrapper input[type='datetime-local'],
     .formWrapper textarea,
     .formWrapper select {
         padding: 6px;
         font-size: 12px;
     }
 
-    .formWrapper input[type='date'],
-    .formWrapper input[type='datetime-local'] {
+    .formWrapper input[type='text'],
+    .formWrapper input[type='number'] {
         font-size: 10px;
     }
 
@@ -378,6 +374,15 @@
         padding: 6px 10px;
         font-size: 12px;
         width: 12em;
+    }
+
+    .innerContainer p {
+        margin-bottom: 14px;
+    }
+
+    .innerContainer .submitButton {
+        margin-top: 1em;
+        margin-bottom: 6px;
     }
 
     .fetchLabel {

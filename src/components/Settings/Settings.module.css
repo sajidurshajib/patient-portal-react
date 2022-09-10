@@ -37,17 +37,12 @@
 }
 
 @media (max-width: 420px) {
-    .Settings {
-        background: var(--light);
-        display: grid;
-        grid-template-columns: repeat(1, 100%);
-        gap: 20px;
-    }
     .Wrapper {
-        background: var(--light);
-        margin-left: 3em;
-        margin-right: -10px;
-        margin-top: -1em;
+        padding: 0;
+        margin: 0;
+        padding-left: 20px;
+        margin-top: 60px;
+        margin-bottom: 120px;
     }
     .Nav {
         padding: 0px 10px 0 0px;
@@ -56,7 +51,8 @@
         grid-gap: 10px;
     }
     .Nav > span {
-        padding: 6px 10px;
+        text-align: center;
+        padding: 10px 10px;
         font-size: 12px;
         margin: 0 0 0px 0px;
     }

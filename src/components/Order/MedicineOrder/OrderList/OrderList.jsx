@@ -19,12 +19,12 @@ export default function OrderList({ services, medicines, setServiceId }) {
                                     <FontAwesomeIcon icon={faFileAlt} className={classes.icon} />
                                     <span>{service.service_name.replace(/_/g, ' ')}</span>
                                 </p>
+                                <p>{service.order_value}TK</p>
                                 <p>
                                     {`${service.order_placement.slice(8, 10)}-${toMonthNameShort(
                                         service.order_placement.slice(6, 7)
                                     )}-${service.order_placement.slice(0, 4)}`}
                                 </p>
-                                <p>{service.order_value}TK</p>
                                 <p className={classes.status}>
                                     <span
                                         className={

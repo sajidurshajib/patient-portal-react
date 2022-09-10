@@ -35,7 +35,7 @@ const ProfileCard = ({ userDetail }) => {
         } catch (e) {}
     }, [apiV1, token, msg])
 
-    const picUrl = 'http://127.0.0.1:8000/images/profile/' + pic
+    const picUrl = `${apiV1}/images/profile/${pic}`
 
     return (
         <div className={classes.wrapper}>
@@ -43,9 +43,9 @@ const ProfileCard = ({ userDetail }) => {
             <div className={classes.ProfileCard}>
                 <div className={classes.PP}>
                     <img src={pic.toString().length < 16 ? proPic : picUrl} className={classes.ProfileImage} alt="" />
-                    <>
+                    <div>
                         <ProfilePictureUpload msg={msg} setMsg={setMsg} />
-                    </>
+                    </div>
                 </div>
 
                 <h6>{stateUser?.info.name}</h6>
@@ -56,33 +56,35 @@ const ProfileCard = ({ userDetail }) => {
                 <span>
                     Blood group: <span className={classes.bloodGrp}>{userDetail.blood_group}</span>
                 </span>
-                <p>
-                    Phone <span>{stateUser?.info.phone}</span>
-                </p>
-                <p>
-                    Email <span>{stateUser?.info.email}</span>
-                </p>
-                <p>
-                    Date of Birth <span>{stateUser?.info.nid}</span>
-                </p>
-                <p>
-                    NID <span>{stateUser?.info.nid}</span>
-                </p>
-                <p>
-                    Marital Status <span> </span>
-                </p>
-                <p>
-                    Occupation <span> </span>
-                </p>
-                <p>
-                    Bio <span> </span>
-                </p>
-                <p>
-                    Address <span> </span>
-                </p>
-                <p>
-                    Join Date <span> </span>
-                </p>
+                <div>
+                    <p>
+                        Phone <span>{stateUser?.info.phone}</span>
+                    </p>
+                    <p>
+                        Email <span>{stateUser?.info.email}</span>
+                    </p>
+                    <p>
+                        Date of Birth <span>{stateUser?.info.nid}</span>
+                    </p>
+                    <p>
+                        NID <span>{stateUser?.info.nid}</span>
+                    </p>
+                    <p>
+                        Marital Status <span> </span>
+                    </p>
+                    <p>
+                        Occupation <span> </span>
+                    </p>
+                    <p>
+                        Bio <span> </span>
+                    </p>
+                    <p>
+                        Address <span> </span>
+                    </p>
+                    <p>
+                        Join Date <span> </span>
+                    </p>
+                </div>
             </div>
         </div>
     )

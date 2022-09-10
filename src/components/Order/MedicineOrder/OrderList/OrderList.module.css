@@ -31,7 +31,7 @@
 
 .gridWrapper {
     display: grid;
-    grid-template-columns: 2.8fr 1.6fr 0.6fr 2.8fr 0.6fr;
+    grid-template-columns: 2.6fr 0.8fr 1.6fr 2.8fr 0.6fr;
     box-shadow: 2px 4px 8px var(--light);
     border-radius: 10px;
     border: 1px solid var(--light);
@@ -81,7 +81,7 @@
 }
 
 .gridWrapper > p:nth-child(3) {
-    margin-left: 12px;
+    margin-left: 20px;
 }
 
 .gridWrapper > p:nth-child(4) {
@@ -168,4 +168,41 @@
 }
 .wrapper p.status .delete:after {
     background: #b81111;
+}
+
+@media (max-width: 420px) {
+    .wrapper {
+        margin-top: 20px;
+        margin-bottom: 80px;
+    }
+
+    .container {
+        background-color: transparent;
+        margin-top: -12px;
+        margin-bottom: 20px;
+        padding: 20px 0px;
+        border-radius: 10px;
+    }
+
+    .gridWrapper {
+        grid-template-columns: 1fr;
+        margin-bottom: 20px;
+        background-color: var(--white);
+        text-align: center;
+    }
+
+    .gridWrapper > p:nth-child(1) {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .gridWrapper > p:nth-child(3) {
+        margin-left: 0px;
+        margin-top: -10px;
+    }
+
+    .gridWrapper button {
+        margin-top: 20px;
+    }
 }

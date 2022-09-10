@@ -31,28 +31,32 @@
     background: var(--light);
 }
 
-.formPopup {
-    position: absolute;
-    /* top: 50%;
-    left: 50%; */
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
-    /* background: var(--white); */
-    border-radius: 10px;
-    /* max-width: 600px;
-    min-width: 300px; */
-    z-index: 50;
+.formPopup,
+.overlay {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .formPopup > .reqInfo {
+    position: absolute;
+    left: 40%;
+    top: 34%;
     width: 350px;
     height: 150px;
     border-radius: 10px;
     background: var(--white);
-    box-shadow: 1px 3px 10px var(--grey2);
     display: flex;
     flex-direction: column;
     padding: 20px;
+    z-index: 10;
 }
 
 .reqInfo > p {
@@ -78,7 +82,7 @@
     border: none;
     color: var(--white);
     display: inline-block;
-    padding: 10px 25px;
+    padding: 8px 24px;
     border-radius: 4px;
     margin: 20px 30px;
     font-size: 12px;
@@ -93,4 +97,53 @@
 
 .reqInfo > .Content > .Button2 {
     background: var(--red);
+}
+
+@media (max-width: 420px) {
+    .formPopup,
+    .overlay {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100vh;
+        z-index: 10;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .formPopup > .reqInfo {
+        position: absolute;
+        left: 6%;
+        top: 30%;
+        width: 88%;
+        height: 150px;
+        border-radius: 10px;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 10;
+    }
+
+    .reqInfo > p {
+        color: var(--dark);
+        display: inline-block;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .reqInfo > .Content > button {
+        cursor: pointer;
+        border: none;
+        color: var(--white);
+        display: inline-block;
+        padding: 6px 20px;
+        border-radius: 4px;
+        margin: 20px 30px;
+        font-size: 12px;
+    }
 }

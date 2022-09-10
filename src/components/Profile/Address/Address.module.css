@@ -51,10 +51,11 @@
 }
 
 @media (max-width: 420px) {
-    .Address > h3 {
-        color: var(--dark-blue);
-        font-size: 1em;
+    .wrapper > p {
+        font-size: 12px;
+        margin-bottom: -10px;
     }
+
     .Address > p {
         font-size: 12px;
         position: relative;
@@ -62,7 +63,7 @@
         color: var(--dark-blue);
     }
     .Address > p:nth-child(1) {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
     }
     .Address > p:nth-child(2) {

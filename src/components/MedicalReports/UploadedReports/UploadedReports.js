@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { Auth } from '../../../allContext'
 import PDF from '../../../assets/img/social/pdf.png'
 import { toMonthNameLong } from '../../../utils/date'
-import ReportUpload from '../ReportUpload/ReportUpload'
+import ReportUpload from './ReportUpload/ReportUpload'
 import classes from './UploadedReports.module.css'
 
 const UploadedReports = () => {
@@ -65,8 +65,8 @@ const UploadedReports = () => {
     let imgReport = Array.from(reportImg)
     let pdfReport = Array.from(reportPdf)
 
-    const reportImgUrl = 'http://127.0.0.1:8000/images/patient_reports/'
-    const reportPdfUrl = 'http://127.0.0.1:8000/pdf/patient_reports/'
+    const reportImgUrl = `${apiV1}/images/patient_reports/`
+    const reportPdfUrl = `${apiV1}/pdf/patient_reports/`
 
     return (
         <div className={classes.UploadedReports}>
@@ -102,11 +102,12 @@ const UploadedReports = () => {
 
                 {imageViewer && (
                     <div className={classes.previewContainer}>
-                        <button onClick={popup} className={classes.Close}>
-                            x
-                        </button>
+                        <div className={classes.overlay} onClick={() => setImageViewer(false)}></div>
                         <div className={classes.Preview}>
                             <img src={reportImgUrl + imgReport[number].image_string} alt="viewer" />
+                            <button onClick={popup} className={classes.closeBtn}>
+                                x
+                            </button>
                         </div>
                     </div>
                 )}

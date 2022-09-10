@@ -29,24 +29,22 @@
     padding: 20px 30px;
     padding-bottom: 30px;
     margin: 0px 0;
-    display: grid;
-    grid-template-rows: minmax(0, 20%) minmax(0, 30%) minmax(0, 50%);
 }
 
 .family > .Header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
 }
 
-.family > .Header > form input {
+.family > .Header > form > input {
     color: var(--dark-blue);
     border: 1px solid var(--primary);
     border-radius: 4px;
     padding: 10px 20px;
-    width: 40em;
+    width: 50em;
     font-size: 12px;
+    z-index: 100;
 }
 
 .family > .Header > form input:focus {
@@ -87,11 +85,6 @@
     color: var(--green);
     cursor: pointer;
 }
-
-/* .family > .list > .optAll > .optSelect:hover {
-    background-color: var(--secondary);
-    color: var(--white);
-} */
 
 .formPopup {
     margin-top: 100px;
@@ -186,8 +179,20 @@
     background-color: var(--red);
 }
 
-/* .family > .Content {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
-} */
+@media (max-width: 420px) {
+    .wrapper > p {
+        font-size: 12px;
+        margin-bottom: -10px;
+        margin-bottom: 10px;
+    }
+
+    .family > .Header > form > input {
+        color: var(--dark-blue);
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+        padding: 10px 20px;
+        width: 100%;
+        font-size: 12px;
+        z-index: 100;
+    }
+}

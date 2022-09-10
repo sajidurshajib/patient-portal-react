@@ -75,7 +75,7 @@ export default function Navbar() {
                     <input
                         type="text"
                         className={classes.searchTerm}
-                        placeholder="search doctor by specialty, location or name"
+                        placeholder="Search doctor by specialty, location or name"
                         value={searchDoctor}
                         onChange={(e) => doctorSearchHandle(e.target.value)}
                     />

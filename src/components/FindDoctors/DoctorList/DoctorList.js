@@ -50,60 +50,6 @@ const DoctorList = ({ doctors }) => {
                         </div>
                     </div>
                 ))}
-
-            {/* <div className={classes.doctor}>
-                <div>
-                    <div
-                        className={classes.doctorPic}
-                        style={{
-                            backgroundImage: `url(${img2})`,
-                            backgroundPosition: 'center',
-                            backgroundSize: 'cover',
-                            border: '4px solid var(--light)',
-                        }}></div>
-                </div>
-                <div className={classes.nameContainer}>
-                    <p className={classes.name}>Dr. Farhana Afroze</p>
-                    <p className={classes.qualification}>MBBS, PGT, MRTSP</p>
-                    <p className={classes.speciality}>Gynaecology & Obstetrics</p>
-                    <p className={classes.designation}>Professor</p>
-                    <p className={classes.currentWorkPlace}>Dhaka Medical College & Hospital Shahbag, Dhaka</p>
-                </div>
-                <div>
-                    <p>BDT 600.00</p>
-                    <button>Book Appointment</button>
-                </div>
-            </div> */}
-            {/* <div className={classes.doctor}>
-                <div>
-                    <div
-                        className={classes.doctorPic}
-                        style={{
-                            backgroundImage: `url(${img1})`,
-                            backgroundPosition: 'center',
-                            backgroundSize: 'cover',
-                            border: '4px solid var(--light)',
-                        }}></div>
-                </div>
-                <div className={classes.nameContainer}>
-                    <p className={classes.name}>Dr. Md. Majharul Huq Tanim</p>
-                    <p className={classes.qualification}>MBBS, DEM (BIRDEM), MACP (USA)</p>
-                    <p className={classes.speciality}>Diabetes & Endocrinology</p>
-                    <p className={classes.designation}>Professor</p>
-                    <p className={classes.currentWorkPlace}>Islami Bank Central Hospital, kakrail Kakrail, Dhaka</p>
-                </div>
-                <div>
-                    <p>5+ Years of Experience</p>
-                    <span>
-                        Ratings(100) 5.0
-                        <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '14px' }} />
-                    </span>
-                </div>
-                <div>
-                    <p>BDT 600.00</p>
-                    <button>Book Appointment</button>
-                </div>
-            </div> */}
         </div>
     )
 }
