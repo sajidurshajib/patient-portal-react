@@ -1,7 +1,7 @@
 import { faFileUpload, faUpload, faImage } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext, useRef } from 'react'
-import { Auth } from '../../../allContext'
+import { Auth } from '../../../../allContext'
 import classes from './ReportUpload.module.css'
 
 const ReportUpload = ({ msg, setMsg }) => {
@@ -98,10 +98,11 @@ const ReportUpload = ({ msg, setMsg }) => {
 
             {formPopup && (
                 <div className={classes.uploadContainer}>
+                    <div className={classes.overlay} onClick={() => setFormPopup(false)}></div>
                     <div className={classes.uploader}>
-                        <p>Upload Your Report</p>
+                        <p className={classes.upText}>Upload Your Report</p>
                         <button className={classes.Close} onClick={popup}>
-                            X
+                            x
                         </button>
                         <div className={classes.Input}>
                             <div className={classes.selectedImg}>
@@ -120,7 +121,7 @@ const ReportUpload = ({ msg, setMsg }) => {
                                         onChange={onSelectFile}
                                         style={{ display: 'none' }}
                                         ref={inputRef}
-                                        required1
+                                        required
                                     />
                                 </div>
                                 <button
@@ -141,12 +142,12 @@ const ReportUpload = ({ msg, setMsg }) => {
                                     <FontAwesomeIcon icon={faImage} />
                                     <span>Select Image</span>
                                 </button>
-                                <button className={classes.Upload} onClick={option === 2 ? uploadImg : uploadPdf}>
-                                    <FontAwesomeIcon icon={faUpload} />
-                                    <span>Upload</span>
-                                </button>
                             </div>
                         </div>
+                        <button className={classes.Upload} onClick={option === 2 ? uploadImg : uploadPdf}>
+                            <FontAwesomeIcon icon={faUpload} />
+                            <span>Upload</span>
+                        </button>
                     </div>
                 </div>
             )}

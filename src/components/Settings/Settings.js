@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Sidebar } from '../Nav'
 import ChangePassword from './ChangePassword/ChangePassword'
 import General from './General/General'
 import PatientInfo from './PatientInfo/PatientInfo'

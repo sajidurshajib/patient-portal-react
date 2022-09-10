@@ -144,7 +144,7 @@ export default function OrderForm() {
                                             />
                                         </label>
                                     </div>
-                                    <button className={classes.submitButton}>Order</button>
+                                    <button className={classes.submitButton}>Submit Order</button>
                                 </div>
                             </ul>
                         </li>

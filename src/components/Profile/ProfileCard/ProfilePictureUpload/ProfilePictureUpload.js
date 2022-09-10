@@ -77,40 +77,43 @@ const ProfilePictureUpload = ({ msg, setMsg }) => {
             </div>
 
             {uploadForm && (
-                <div className={classes.imgUploader}>
-                    <h2>Upload Profile Picture</h2>
-                    <button className={classes.Close} onClick={popup}>
-                        X
-                    </button>
-                    <div className={classes.uploadForm}>
-                        <div className={classes.SelectedImg}>
-                            {selectedImg && (
-                                <div>
-                                    <div className={classes.PreviewContainer}>
-                                        <img src={preview} className={classes.ImgPreview} alt="" />
+                <div className={classes.container}>
+                    <div className={classes.overlay} onClick={() => setUploadForm(false)}></div>
+                    <div className={classes.imgUploader}>
+                        <h2>Upload Profile Picture</h2>
+                        <button className={classes.Close} onClick={popup}>
+                            x
+                        </button>
+                        <div className={classes.uploadForm}>
+                            <div className={classes.SelectedImg}>
+                                {selectedImg && (
+                                    <div>
+                                        <div className={classes.PreviewContainer}>
+                                            <img src={preview} className={classes.ImgPreview} alt="" />
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                        </div>
-                        <div className={classes.controlBtn}>
-                            <div>
-                                <input
-                                    type="file"
-                                    onChange={onSelectImg}
-                                    style={{ display: 'none' }}
-                                    ref={inputRef}
-                                    accept="image/pdf"
-                                />
+                                )}
                             </div>
-                            <button onClick={triggerFileSelectPopup} className={classes.Select}>
-                                <FontAwesomeIcon icon={faFileUpload} />
-                                <span>Select</span>
-                            </button>
-                            <button className={classes.Upload} onClick={upload}>
-                                <FontAwesomeIcon icon={faUpload} />
-                                <span> Upload</span>
-                            </button>
+                            <div className={classes.controlBtn}>
+                                <div>
+                                    <input
+                                        type="file"
+                                        onChange={onSelectImg}
+                                        style={{ display: 'none' }}
+                                        ref={inputRef}
+                                        accept="image/pdf"
+                                    />
+                                </div>
+                                <button onClick={triggerFileSelectPopup} className={classes.Select}>
+                                    <FontAwesomeIcon icon={faFileUpload} />
+                                    <span>Select</span>
+                                </button>
+                            </div>
                         </div>
+                        <button className={classes.Upload} onClick={upload}>
+                            <FontAwesomeIcon icon={faUpload} />
+                            <span>Upload</span>
+                        </button>
                     </div>
                 </div>
             )}

@@ -239,7 +239,7 @@
 
 @media (max-width: 420px) {
     .navbar {
-        padding: 14px 20px 10px 30px;
+        padding: 14px 14px 10px 18px;
     }
 
     .logo a > img {
@@ -257,9 +257,14 @@
     }
 
     .searchTerm {
-        padding: 8px 10px 8px 14px;
-        width: 110px;
+        padding: 8px 0px 8px 14px;
+        width: 150px;
         font-size: 10px;
+    }
+
+    .searchTerm::placeholder {
+        color: var(--green);
+        opacity: 0.9;
     }
 
     .searchButton {
@@ -271,6 +276,7 @@
         border: none;
         opacity: 0.6;
         background-color: var(--light);
+        padding-top: 2px;
     }
 
     .icon > span > img {

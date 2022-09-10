@@ -102,20 +102,6 @@ const Family = () => {
                     </form>
                 </div>
                 <div className={classes.list}>
-                    {/* {hide && (
-                    <div className={classes.optAll}>
-                        {searchResult &&
-                            searchResult.map((info, i) => (
-                                <div className={classes.optSelect} key={i}>
-                                    <div onClick={() => setHandle(info)}>
-                                        <option value={info.id}>
-                                            {info.phone} - {info.name}-{info.id}
-                                        </option>
-                                    </div>
-                                </div>
-                            ))}
-                    </div>
-                )} */}
                     {hide && (
                         <div className={classes.optAll}>
                             {searchResult &&

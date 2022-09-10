@@ -18,7 +18,7 @@ const AcceptReject = () => {
             </div>
             {active && (
                 <div className={classes.formPopup}>
-                    <div onClick={active}></div>
+                    <div className={classes.overlay} onClick={() => setActive(false)}></div>
                     <div className={classes.reqInfo}>
                         <p>Accept or Reject Member</p>
                         <div className={classes.Content}>
