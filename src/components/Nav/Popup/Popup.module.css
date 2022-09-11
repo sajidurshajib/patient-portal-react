@@ -1,0 +1,68 @@
+.float {
+    position: fixed;
+    bottom: 10px;
+    left: 40px;
+    text-align: center;
+    z-index: 10;
+}
+
+.float .trigger {
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background: var(--primary);
+    color: var(--white);
+    height: 40px;
+    width: 40px;
+    vertical-align: middle;
+    animation: 1.5s linear 0s infinite normal pulse;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.float .trigger:hover {
+    transform: scale(1.08);
+}
+
+/* .float.open .trigger .fa::before {
+    content: '\f00d';
+}
+
+.float .trigger .fa::after {
+    transition: ease-in-out 1s;
+}
+
+.fab.open .trigger i {
+    transition: all 0.4s ease;
+    transform: translateY(5px) rotate(360deg);
+} */
+
+.float svg {
+    font-size: 16px;
+    line-height: 10px;
+}
+
+.trigger > img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 1px 0px 3px #1a71ab30, 0px 0px 0px 0px #24a5ef50;
+    }
+    30% {
+        box-shadow: 0px 1px 0px 3px #1a98ab30, 0px 0px 0px 5px #246bef50;
+    }
+    70% {
+        box-shadow: 0px 1px 0px 3px #1a8eab30, 0px 0px 0px 10px #246bef10;
+    }
+    100% {
+        box-shadow: 1px 1px 2px 1px #1a54ab30, 0px 0px 0px 15px transparent;
+    }
+}
