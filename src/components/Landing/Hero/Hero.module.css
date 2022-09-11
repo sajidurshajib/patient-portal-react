@@ -71,13 +71,24 @@
         background: var(--white);
         opacity: 0.7;
     }
-    .left > h2 {
-        font-size: 1em;
-        margin-top: -10px;
+    .left {
+        margin-left: -30px;
+        margin-top: -20px;
     }
+
+    .left > h2 {
+        font-size: 18px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .text > span {
+        font-size: 14px;
+    }
+
     .right > img {
         height: 60%;
-        top: 8.8em;
+        top: 10em;
         right: 1em;
     }
     .ButtonGroup span {

@@ -263,7 +263,7 @@
     }
 
     .searchTerm::placeholder {
-        color: var(--green);
+        color: var(--primary);
         opacity: 0.9;
     }
 

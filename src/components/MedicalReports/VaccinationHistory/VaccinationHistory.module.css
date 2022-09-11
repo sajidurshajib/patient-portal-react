@@ -14,7 +14,7 @@
     display: block;
     width: 30%;
     height: 1px;
-    background-color: var(--grey2);
+    background-color: var(--light-grey);
     position: absolute;
     top: 60%;
     transform: translatey(-60%);

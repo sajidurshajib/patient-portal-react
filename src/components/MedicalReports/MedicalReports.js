@@ -9,11 +9,11 @@ const MedicalReports = () => {
     return (
         <div className={classes.MedicalReports}>
             <div className={classes.prescriptionsContainer}>
-                <Prescriptions />
+                {/* <Prescriptions /> */}
                 <UploadedReports />
-                <VaccinationHistory />
-                <Medication />
-                <Surgery />
+                {/* <VaccinationHistory /> */}
+                {/* <Medication /> */}
+                {/* <Surgery /> */}
             </div>
         </div>
     )

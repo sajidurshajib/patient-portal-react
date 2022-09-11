@@ -5,6 +5,7 @@ import {
     faBriefcaseMedical,
     faThermometer,
     faCapsules,
+    faHeartbeat,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
@@ -27,6 +28,10 @@ export default function MobileSide({ setSideOpen }) {
                     <Link to="/medicines">
                         <FontAwesomeIcon icon={faCapsules} />
                         <span>Medicine Order</span>
+                    </Link>
+                    <Link to="/health-plans">
+                        <FontAwesomeIcon icon={faHeartbeat} />
+                        <span>Health Plan Order</span>
                     </Link>
                     <Link to="/medicals">
                         <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon3} />

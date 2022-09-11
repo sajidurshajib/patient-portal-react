@@ -67,11 +67,17 @@
 }
 
 @media (max-width: 420px) {
+    .footer {
+        position: relative;
+        height: 11em;
+        margin-bottom: -20px;
+    }
+
     .footer > .loveImg {
         position: absolute;
         z-index: 5;
-        height: 5em;
-        margin-top: 4.1em;
+        height: 4.8em;
+        margin-top: 4.2em;
         right: 0px;
     }
 
@@ -80,13 +86,8 @@
         height: 11em;
         position: absolute;
         transform: scaleX(-1);
-    }
-
-    .footer > .footerImg2 {
-        width: 100%;
-        height: 11em;
-        position: absolute;
-        opacity: 0.1;
+        opacity: 0.9;
+        object-fit: cover;
     }
 
     .footer > div {
@@ -94,19 +95,20 @@
         margin-top: 20%;
         left: 1%;
         text-align: center;
+        bottom: 6px;
     }
 
     .footer > div > p {
         font-size: 0.9em;
         font-weight: 400;
         color: var(--white);
-        margin-bottom: -10px;
+        margin-bottom: 0px;
     }
 
     .footer > div > div {
         font-size: 0.8em;
         text-align: center;
-        margin-top: 1em;
+        margin-top: 0em;
     }
 
     .footer > div > div > img {
@@ -116,47 +118,16 @@
         margin: -6px 0;
     }
 
+    .footer > div > p {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
     .footer > div > span {
         color: var(--white);
-        font-size: 10px;
+        font-size: 8px;
         text-align: center;
         display: block;
         margin-top: 10px;
-    }
-}
-
-@media (max-width: 390px) {
-    .footer > div {
-        position: absolute;
-        margin-top: 22%;
-        left: 1%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 360px) {
-    .footer > div {
-        position: absolute;
-        margin-top: 24%;
-        left: 1%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 340px) {
-    .footer > div {
-        position: absolute;
-        margin-top: 26%;
-        left: 1%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 320px) {
-    .footer > div {
-        position: absolute;
-        margin-top: 28%;
-        left: 1%;
-        text-align: center;
     }
 }
