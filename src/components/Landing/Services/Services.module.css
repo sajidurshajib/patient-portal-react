@@ -67,8 +67,15 @@
     .Services > div {
         box-shadow: 0 6px 12px var(--light);
         border-radius: 4px;
+        padding: 10px 16px;
     }
     .Services > div > p:nth-child(1) {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .Services div > p > svg {
+        font-size: 24px;
+        margin-right: 12px;
+        color: var(--dark-blue);
     }
 }
