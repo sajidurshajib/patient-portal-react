@@ -7,6 +7,7 @@ import {
     faCapsules,
     faBriefcaseMedical,
     faCog,
+    faHeartbeat,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, useLocation } from 'react-router-dom'
@@ -29,6 +30,10 @@ export default function SidebarV2() {
                 <Link to="/medicines" className={location.pathname === '/medicines' ? classes.active : ''}>
                     <FontAwesomeIcon icon={faCapsules} />
                     <span>Medicine Order</span>
+                </Link>
+                <Link to="/health-plans" className={location.pathname === '/health-plans' ? classes.active : ''}>
+                    <FontAwesomeIcon icon={faHeartbeat} />
+                    <span>Health Plan Order</span>
                 </Link>
                 <Link to="/medicals" className={location.pathname === '/medicals' ? classes.active : ''}>
                     <FontAwesomeIcon icon={faNotesMedical} className={classes.marginIcon3} />
