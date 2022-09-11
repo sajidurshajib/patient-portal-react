@@ -1,11 +1,16 @@
-.containerPdf {
+.containerPdf,
+.overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
+    z-index: 100;
     left: 0;
     top: 0;
+}
+
+.overlay {
     background: rgb(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .formPdf {
@@ -22,6 +27,7 @@
     margin: 0 auto;
     height: 90%;
     overflow-y: auto;
+    z-index: 10;
 }
 
 .formPdf .close {
@@ -78,4 +84,15 @@
 
 .buttonClose:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 420px) {
+    .formPdf {
+        width: 18em;
+        height: 80%;
+    }
+
+    .overlay {
+        background: rgb(0, 0, 0, 0.2);
+    }
 }

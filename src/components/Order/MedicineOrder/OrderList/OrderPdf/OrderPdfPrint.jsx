@@ -12,6 +12,7 @@ export const OrderPdfPrint = ({ props, index, setPdfOpen }) => {
 
     return (
         <div key={() => index} className={classes.containerPdf}>
+            <div className={classes.overlay} onClick={() => setPdfOpen(false)}></div>
             <div className={classes.formPdf}>
                 <div className={classes.close} onClick={() => setPdfOpen(false)}>
                     &times;
