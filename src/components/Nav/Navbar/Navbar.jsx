@@ -25,6 +25,7 @@ export default function Navbar() {
     const [doctors, setDoctors] = useState([])
     const [searchDoctor, setSearchDoctor] = useState('')
     const [doctorHide, setDoctorHide] = useState(false)
+    const [pic, setPic] = useState({})
 
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
@@ -58,6 +59,29 @@ export default function Navbar() {
         }
         setSearchDoctor(searchDoctor)
     }
+
+    useEffect(() => {
+        let imgInfoFunc = async () => {
+            let imgInfoFetch = await fetch(`${apiV1}/profile-pic`, {
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                method: 'GET',
+            })
+            let infoJson = await imgInfoFetch.json()
+
+            if (imgInfoFetch.ok) {
+                setPic(infoJson.image_string)
+            }
+        }
+        try {
+            imgInfoFunc()
+        } catch (e) {}
+    }, [apiV1, token])
+
+    const picUrl = `${apiV1}/images/profile/${pic}`
 
     return (
         <div className={classes.navbar}>
@@ -118,7 +142,7 @@ export default function Navbar() {
                     </div>
                 </p>
                 <span>
-                    <img src={Pic} alt="" />
+                    <img src={pic.toString().length < 16 ? Pic : picUrl} alt="" />
                     <div className={classes.user}>
                         <Link to="/profile">
                             <span>{userDetail?.name}</span>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MobileSide from '../MobileSide/MobileSide'
+import Popup from '../Popup/Popup'
 import classes from './MobileNav.module.css'
 
 export default function MobileNav() {
@@ -46,6 +47,7 @@ export default function MobileNav() {
                 </ul>
             </div>
             {sideOpen && <MobileSide setSideOpen={setSideOpen} />}
+            <Popup />
         </div>
     )
 }
