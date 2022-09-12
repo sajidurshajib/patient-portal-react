@@ -120,25 +120,61 @@
 
 @media (max-width: 420px) {
     .Wrapper {
-        grid-template-columns: repeat(4, 200px);
+        grid-template-columns: repeat(4, 180px);
         overflow-x: auto;
+        margin-top: -20px;
+        grid-gap: 16px;
     }
 
     .Wrapper .activeBox .bgIcon {
         position: absolute;
         opacity: 0.08;
-        font-size: 2.8em;
+        font-size: 2.4em;
         bottom: 16px;
-        right: 2px;
+        right: 4px;
     }
 
     .Wrapper .box .bgIcon {
         position: absolute;
         opacity: 0.07;
-        font-size: 2.8em;
+        font-size: 2.4em;
         bottom: 16px;
-        right: 2px;
+        right: 4px;
         color: var(--grey);
+    }
+
+    .Wrapper > .activeBox > p {
+        color: var(--white);
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+
+    .Wrapper > .activeBox > p > span {
+        color: var(--white);
+        text-align: left;
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.9;
+        margin-top: -14px;
+        padding-bottom: 4px;
+    }
+
+    .Wrapper > .box > p {
+        color: var(--dark);
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+
+    .Wrapper > .box > p > span {
+        color: var(--dark);
+        text-align: left;
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.9;
+        margin-top: -14px;
+        padding-bottom: 4px;
     }
 
     .Graph {
