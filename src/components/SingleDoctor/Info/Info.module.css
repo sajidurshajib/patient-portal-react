@@ -54,3 +54,34 @@
     font-size: 1em;
     font-weight: 500;
 }
+
+@media (max-width: 420px) {
+    .infoWrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+
+    .infoWrapper > .box {
+        background: none;
+        padding: 10px;
+        margin-top: -20px;
+    }
+
+    .infoWrapper > .box > div {
+        padding: 10px 20px 20px 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px var(--light);
+        border: 1px solid var(--light);
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+    }
+
+    .infoWrapper .info > div > p:nth-child(2) {
+        font-size: 12px;
+        color: var(--dark);
+        font-weight: 500;
+        margin-top: -10px;
+    }
+}
