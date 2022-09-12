@@ -20,31 +20,14 @@ export default function AvailableDoctor() {
                                 (100)
                             </p>
                         </div>
-                        <div>
+                        <div className={classes.info}>
                             <span>Dr. Rashadul Hasan</span>
-                            <p>MBBS</p>
-                            <p>General Physician</p>
+                            <div>
+                                <p>MBBS</p>
+                                <p>General Physician</p>
+                            </div>
                             <p>
-                                <span> ৳100 </span> / per consultation
-                            </p>
-                        </div>
-                    </div>
-                    <div className={classes.containerFlex}>
-                        <div>
-                            <img src={Doc} alt="" className={classes.pic} />
-                        </div>
-                        <div className={classes.ratting}>
-                            <p>
-                                4.9 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '10px' }} />{' '}
-                                (100)
-                            </p>
-                        </div>
-                        <div>
-                            <span>Dr. Rashadul Hasan</span>
-                            <p>MBBS</p>
-                            <p>General Physician</p>
-                            <p>
-                                <span> ৳100 </span> / per consultation
+                                <span> ৳100 </span>/per consultation
                             </p>
                         </div>
                     </div>
@@ -58,18 +41,21 @@ export default function AvailableDoctor() {
                                 (100)
                             </p>
                         </div>
-                        <div>
+                        <div className={classes.info}>
                             <span>Dr. Rashadul Hasan</span>
-                            <p>MBBS</p>
-                            <p>General Physician</p>
+                            <div>
+                                <p>MBBS</p>
+                                <p>General Physician</p>
+                            </div>
                             <p>
-                                <span> ৳100 </span> / per consultation
+                                <span> ৳100 </span>/per consultation
                             </p>
                         </div>
                     </div>
+
                     <div className={classes.containerFlex}>
                         <div>
-                            <img src={Doc} alt="" className={classes.pic} />
+                            <img src={Doc} alt="" />
                         </div>
                         <div className={classes.ratting}>
                             <p>
@@ -77,12 +63,35 @@ export default function AvailableDoctor() {
                                 (100)
                             </p>
                         </div>
-                        <div>
+                        <div className={classes.info}>
                             <span>Dr. Rashadul Hasan</span>
-                            <p>MBBS</p>
-                            <p>General Physician</p>
+                            <div>
+                                <p>MBBS</p>
+                                <p>General Physician</p>
+                            </div>
                             <p>
-                                <span> ৳100 </span> / per consultation
+                                <span> ৳100 </span>/per consultation
+                            </p>
+                        </div>
+                    </div>
+                    <div className={classes.containerFlex}>
+                        <div>
+                            <img src={Doc} alt="" />
+                        </div>
+                        <div className={classes.ratting}>
+                            <p>
+                                4.9 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '10px' }} />{' '}
+                                (100)
+                            </p>
+                        </div>
+                        <div className={classes.info}>
+                            <span>Dr. Rashadul Hasan</span>
+                            <div>
+                                <p>MBBS</p>
+                                <p>General Physician</p>
+                            </div>
+                            <p>
+                                <span> ৳100 </span>/per consultation
                             </p>
                         </div>
                     </div>
