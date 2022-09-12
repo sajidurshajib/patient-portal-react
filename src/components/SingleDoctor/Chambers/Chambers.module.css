@@ -42,3 +42,9 @@
     margin: 0px 5px;
     border-radius: 2px;
 }
+
+@media (max-width: 420px) {
+    .ChamberPage {
+        display: none;
+    }
+}

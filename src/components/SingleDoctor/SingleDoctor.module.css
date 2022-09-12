@@ -81,3 +81,76 @@
     background: var(--white);
     color: var(--dark-blue);
 }
+
+.mobileIcon {
+    display: none;
+}
+
+@media (max-width: 420px) {
+    .wrapper {
+        margin-bottom: 4em;
+    }
+
+    .container {
+        padding: 0em 1em;
+        padding-top: 2.6em;
+    }
+    .wrapper .infoWrapper {
+        padding: 0px 20px 10px 30px;
+        border-radius: 10px;
+    }
+
+    .wrapper .info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px 30px;
+        padding: 1em 0em;
+        position: relative;
+    }
+
+    .info > div > p {
+        padding-left: 2px;
+        font-size: 10px;
+    }
+
+    .info > div > span {
+        font-size: 12px;
+    }
+
+    .detailsWrapper {
+        background-color: transparent;
+        margin: -10px;
+    }
+    .detailsWrapper > div > div:last-child {
+        padding: 30px 10px;
+        background-color: var(--white);
+        margin-top: 10px;
+        border-radius: 10px;
+        margin: 0px -10px;
+    }
+
+    .nav {
+        display: grid;
+        grid-template-columns: repeat(8, 200px);
+        grid-gap: 1px;
+        overflow-x: auto;
+        padding: 0;
+        margin: -10px -20px 10px -20px;
+    }
+
+    .nav span {
+        bottom: 0px;
+        padding: 10px 10px 10px 18px;
+        font-size: 12px;
+    }
+
+    .mobileIcon {
+        display: block;
+        position: absolute;
+        right: -4px;
+        bottom: 6px;
+        font-size: 34px;
+        color: var(--light-grey);
+        opacity: 0.7;
+    }
+}

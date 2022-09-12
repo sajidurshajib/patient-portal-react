@@ -16,7 +16,7 @@ export default function Info({ doctor }) {
                         </div>
                         <div>
                             <p>Total Consultation</p>
-                            <p>10</p>
+                            <p>-</p>
                         </div>
                     </div>
                     <div className={classes.info}>

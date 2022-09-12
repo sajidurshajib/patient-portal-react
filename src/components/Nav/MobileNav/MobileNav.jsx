@@ -2,6 +2,7 @@ import { faBars, faHome, faServer } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Logo from '../../../assets/img/logo/Logo192.png'
 import MobileSide from '../MobileSide/MobileSide'
 import Popup from '../Popup/Popup'
 import classes from './MobileNav.module.css'
@@ -20,7 +21,7 @@ export default function MobileNav() {
                     <li className={classes.list}>
                         <Link to="/home">
                             <span className={classes.icon}>
-                                <FontAwesomeIcon icon={faServer} />
+                                <FontAwesomeIcon icon={faServer} style={{ visibility: 'hidden' }} />
                             </span>
                             <span className={classes.text}>Service</span>
                         </Link>
@@ -30,7 +31,8 @@ export default function MobileNav() {
                         onClick={() => setState(2)}>
                         <Link to="/home">
                             <span className={classes.icon}>
-                                <FontAwesomeIcon icon={faHome} />
+                                <FontAwesomeIcon icon={faHome} style={{ display: 'none' }} />
+                                <img src={Logo} alt="" />
                             </span>
                             <span className={classes.text}>Home</span>
                         </Link>

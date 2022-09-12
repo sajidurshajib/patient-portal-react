@@ -3,7 +3,9 @@ import Cover from '../../../assets/img/doc/bg.jpg'
 import Img from '../../../assets/img/doc/docstock.jpg'
 import classes from './Header.module.css'
 
-export default function Header({ doctor }) {
+export default function Header({ apiV1, doctor, picture }) {
+    const profile = `${apiV1}/images/profile/${picture}`
+
     return (
         <div
             className={classes.header}
@@ -15,18 +17,20 @@ export default function Header({ doctor }) {
             <div>
                 <div className={classes.headLeftWrapper}>
                     <div className={classes.profilePic}>
-                        <img className={classes.img} src={Img} alt="" />
+                        <img className={classes.img} src={profile} alt="" />
                     </div>
                     <h3>Dr. {doctor?.user?.name}</h3>
                     {doctor?.qualifications?.map((qf, i) => (
                         <p key={i}>{qf.qualification}</p>
                     ))}
-                    <p>General Physician</p>
+                    {doctor?.specialities?.map((sp, i) => (
+                        <p key={i}>{sp.speciality}</p>
+                    ))}
                 </div>
             </div>
             <div className={classes.flex}>
                 <div>
-                    <p>Consultation Fee</p>
+                    <p className={classes.consult}>Consultation Fee</p>
                     <p>
                         ৳{doctor?.doctor?.online_fees}
                         <span>(inc. VAT)</span>
