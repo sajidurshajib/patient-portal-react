@@ -8,16 +8,21 @@ import {
     faHeartbeat,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { UserInfo } from '../../../allContext'
 import classes from './MobileSide.module.css'
 
 export default function MobileSide({ setSideOpen }) {
+    const { stateUser } = useContext(UserInfo)
+    const userDetail = stateUser.info
+
     return (
         <div className={classes.wrapper}>
             <div className={classes.overlay} onClick={() => setSideOpen(false)}></div>
             <div className={classes.sidebar}>
                 <div className={classes.container}>
-                    <p>My Health Portal</p>
+                    <p>{userDetail.name}</p>
                     <Link to="/home">
                         <FontAwesomeIcon icon={faHome} className={classes.marginIcon1} />
                         <span className={classes.textMargin1}>Home</span>
@@ -44,6 +49,9 @@ export default function MobileSide({ setSideOpen }) {
                     <Link to="/profile">
                         <FontAwesomeIcon icon={faUser} className={classes.marginIcon2} /> <span>My Profile</span>
                     </Link>
+                    <button>
+                        For Any Queries Call at <span>01322658481</span>
+                    </button>
                 </div>
             </div>
         </div>
