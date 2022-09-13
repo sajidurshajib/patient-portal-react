@@ -118,7 +118,7 @@ export default function Navbar() {
                                                         <img className={classes.searchImg} src={Img} alt="" />
                                                     </div>
                                                     <div>
-                                                        <h4>Dr. {info?.name}</h4>
+                                                        <h4>{info?.name}</h4>
                                                         <p style={{ marginTop: '-14px' }}>
                                                             {info?.specialities[0]?.speciality}
                                                         </p>

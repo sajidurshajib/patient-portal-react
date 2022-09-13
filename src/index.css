@@ -20,6 +20,7 @@
     --yellow: #fdfd96;
     --orange: #ff9d5c;
     --light-low: #f8f8f8;
+    --light-skyblue: #ecf6ff;
 }
 * {
     font-family: Poppins;
@@ -49,5 +50,11 @@ body {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        background-color: var(--light-skyblue);
     }
 }

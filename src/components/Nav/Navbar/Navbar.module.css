@@ -262,14 +262,14 @@
         border: none;
         border-radius: 0;
         border-bottom: 1px solid var(--primary);
-        background-color: var(--white);
+        background-color: var(--light-skyblue);
         padding: 12px 8px 8px 24px;
         border-radius: 4px;
         box-shadow: 0px 6px 14px var(--light);
     }
 
     .searchTerm::placeholder {
-        color: var(--primary);
+        color: var(--grey);
         opacity: 0.9;
         font-size: 12px;
         font-weight: 500;

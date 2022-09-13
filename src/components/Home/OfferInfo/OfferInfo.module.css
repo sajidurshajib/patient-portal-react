@@ -6,10 +6,6 @@
     position: relative;
 }
 
-.offer div > p {
-    font-family: 'Noto Sans Bengali', sans-serif;
-}
-
 .offer div > p:nth-child(1) {
     font-size: 18px;
     color: var(--dark);
@@ -22,7 +18,6 @@
     color: var(--green);
     font-size: 22px;
     font-weight: 600;
-    font-family: 'Noto Sans Bengali', sans-serif;
 }
 
 .offer div > p:nth-child(2) {

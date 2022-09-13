@@ -108,38 +108,38 @@ const Summery = () => {
             <div className={classes.Wrapper}>
                 <div onClick={() => setSelect(1)} className={select === 1 ? classes.activeBox : classes.box}>
                     <p>
-                        {lastBp.slot_int1}/{lastBp.slot_int2}
-                        <FontAwesomeIcon icon={faHeartbeat} className={classes.bgIcon} />
+                        <span>Blood Pressure</span>
                     </p>
                     <p>
-                        <span>Blood Pressure</span>
+                        {lastBp.slot_int1}/{lastBp.slot_int2}
+                        <FontAwesomeIcon icon={faHeartbeat} className={classes.bgIcon} />
                     </p>
                 </div>
                 <div onClick={() => setSelect(2)} className={select === 2 ? classes.activeBox : classes.box}>
                     <p>
-                        {lastRbs.slot_flt4}
-                        <FontAwesomeIcon icon={faRandom} className={classes.bgIcon} />
+                        <span>Diabetes</span>
                     </p>
                     <p>
-                        <span>Diabetes</span>
+                        {lastRbs.slot_flt4}
+                        <FontAwesomeIcon icon={faRandom} className={classes.bgIcon} />
                     </p>
                 </div>
                 <div onClick={() => setSelect(3)} className={select === 3 ? classes.activeBox : classes.box}>
                     <p>
-                        {lastPulse.slot_int1}
-                        <FontAwesomeIcon icon={faWaveSquare} className={classes.bgIcon} />
+                        <span>Pulse</span>
                     </p>
                     <p>
-                        <span>Pulse</span>
+                        {lastPulse.slot_int1}
+                        <FontAwesomeIcon icon={faWaveSquare} className={classes.bgIcon} />
                     </p>
                 </div>
                 <div onClick={() => setSelect(4)} className={select === 4 ? classes.activeBox : classes.box}>
                     <p>
-                        {lastWeight.slot_flt4}
-                        <FontAwesomeIcon icon={faWalking} className={classes.bgIcon} />
+                        <span>Weight</span>
                     </p>
                     <p>
-                        <span>Weight</span>
+                        {lastWeight.slot_flt4}
+                        <FontAwesomeIcon icon={faWalking} className={classes.bgIcon} />
                     </p>
                 </div>
             </div>
