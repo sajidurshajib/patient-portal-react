@@ -49,9 +49,11 @@ export default function MobileSide({ setSideOpen }) {
                     <Link to="/profile">
                         <FontAwesomeIcon icon={faUser} className={classes.marginIcon2} /> <span>My Profile</span>
                     </Link>
-                    <button>
-                        For Any Queries Call at <span>01322658481</span>
-                    </button>
+                    <div className={classes.call}>
+                        <a href="tel:01322658481">
+                            For Any Queries Call <b>01322658481</b>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
