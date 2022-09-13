@@ -29,11 +29,14 @@
     padding-left: 0px;
     height: 100vh;
     background-image: linear-gradient(30deg, #93a7c5, #21527d);
+    /* background-color: var(--white); */
     border-top-right-radius: 80px;
+    position: relative;
 }
 
 .container > p {
     margin-left: 20px;
+    color: var(--white);
 }
 
 .container a {
@@ -55,8 +58,51 @@
     margin-right: 5px;
 }
 
+.container a svg {
+    font-size: 18px;
+    color: var(--white);
+}
+
+/* .container a:nth-child(2) > svg {
+    color: var(--primary);
+}
+.container a:nth-child(3) > svg {
+    color: var(--secondary2);
+}
+.container a:nth-child(4) > svg {
+    color: var(--green);
+}
+.container a:nth-child(5) > svg {
+    color: var(--red);
+}
+.container a:nth-child(6) > svg {
+    color: var(--light-secondary);
+}
+.container a:nth-child(7) > svg {
+    color: var(--orange);
+}
+.container a:nth-child(8) > svg {
+    color: var(--secondary);
+} */
+
 .container a > span {
     padding-left: 12px;
+    font-size: 12px;
+}
+
+.container > .call {
+    position: absolute;
+    bottom: 8px;
+}
+
+.call > a {
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
 }
 
 /* active */
@@ -117,7 +163,7 @@
     padding-left: 1px;
 }
 .textMargin2 {
-    padding-left: 3px;
+    padding-left: 10px;
 }
 .textMargin3 {
     padding-left: 2px;
@@ -131,7 +177,7 @@
 
 @media (max-width: 420px) {
     .sidebar {
-        width: 56%;
+        width: 62%;
         height: 100vh;
         margin: 0;
         display: block;
@@ -140,5 +186,9 @@
     .container > p {
         margin-left: 20px;
         font-size: 14px;
+    }
+
+    .textMargin2 {
+        margin-left: 4px;
     }
 }
