@@ -52,3 +52,9 @@ body {
         width: 1170px;
     }
 }
+
+@media (max-width: 420px) {
+    body {
+        background-color: var(--light-skyblue);
+    }
+}
