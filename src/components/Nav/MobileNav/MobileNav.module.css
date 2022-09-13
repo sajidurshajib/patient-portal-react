@@ -9,7 +9,7 @@
     align-items: center;
     border-radius: 2px;
     z-index: 100;
-    box-shadow: 0px 0px 0px var(--light), 0px -4px 20px var(--light);
+    box-shadow: 0px 0px 0px var(--light-skyblue), 0px -4px 20px var(--light-skyblue);
 }
 
 .navigation {
@@ -54,7 +54,7 @@
 }
 
 .navigation ul li.active a .icon {
-    transform: translateY(-24px);
+    transform: translateY(-25px);
     color: var(--primary);
 }
 
