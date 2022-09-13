@@ -82,14 +82,24 @@
         margin-bottom: 20px;
     }
 
+    .text {
+        padding-right: 10px;
+    }
+
     .text > span {
         font-size: 14px;
     }
 
+    .right {
+        display: flex;
+        justify-content: center;
+    }
+
     .right > img {
-        height: 60%;
-        top: 10em;
-        right: 1em;
+        right: 0vw;
+        height: 66%;
+        position: relative;
+        margin-top: -10em;
     }
     .ButtonGroup span {
         padding: 4px 10px;
