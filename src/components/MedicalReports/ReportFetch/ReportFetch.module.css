@@ -30,6 +30,10 @@
     border-radius: 10px;
 }
 
+.container > div:last-child {
+    margin-top: 4em;
+}
+
 .UploadedReports .Header {
     display: flex;
     justify-content: flex-end;
@@ -109,10 +113,6 @@
     font-size: 10px;
 }
 
-.files .pdf {
-    margin-top: 4em;
-}
-
 .previewContainer,
 .overlay {
     position: fixed;
@@ -168,7 +168,7 @@
     .UploadedReports {
         background: transparent;
         padding: 10px 0px 10px 0px;
-        margin: 10px 0 20px 0;
+        margin: 10px 0 -20px 0;
         border-radius: 10px;
     }
 
@@ -189,12 +189,13 @@
     }
 
     .container {
-        padding: 20px 30px;
+        padding: 20px 30px 30px 30px;
     }
 
     .files {
         grid-template-columns: repeat(1, minmax(0, 2fr));
         margin: 0;
+        grid-gap: 10px;
     }
 
     .files > div > svg {

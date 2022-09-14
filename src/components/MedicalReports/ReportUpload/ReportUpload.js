@@ -1,10 +1,10 @@
 import { faFileUpload, faUpload, faImage } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext, useRef } from 'react'
-import { Auth } from '../../../../allContext'
+import { Auth } from '../../../allContext'
 import classes from './ReportUpload.module.css'
 
-const ReportUpload = ({ msg, setMsg }) => {
+const ReportUpload = ({ msg, setMsg, address }) => {
     const { stateAuth } = useContext(Auth)
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -44,13 +44,12 @@ const ReportUpload = ({ msg, setMsg }) => {
         setSelectedFile(e.target.files[0])
     }
 
-    // API Fetch
     const uploadImg = async (e) => {
         e.preventDefault()
         const imgData = new FormData()
         imgData.append('file', selectedFile)
 
-        let picUpload = await fetch(`${apiV1}/patient/reports/img`, {
+        let picUpload = await fetch(`${apiV1}/patient/reports/img/${address}`, {
             headers: {
                 Accept: 'appllication/json',
                 type: 'image/jpeg',
@@ -60,10 +59,11 @@ const ReportUpload = ({ msg, setMsg }) => {
             body: imgData,
         })
 
-        const pp = await picUpload.json()
+        const errorMsgImg = await picUpload.json()
+        console.log(errorMsgImg)
 
         if (picUpload.ok) {
-            setMsg([...msg, 'Report Uploaded'])
+            setMsg([...msg, 'Uploaded Successful'])
             setFormPopup(false)
         }
     }
@@ -73,7 +73,7 @@ const ReportUpload = ({ msg, setMsg }) => {
         const pdfData = new FormData()
         pdfData.append('file', selectedFile)
 
-        let pdfUpload = await fetch(`${apiV1}/patient/reports/pdf`, {
+        let pdfUpload = await fetch(`${apiV1}/patient/reports/pdf/${address}`, {
             headers: {
                 Accept: 'appllication/json',
                 type: 'file/pdf',
@@ -83,13 +83,14 @@ const ReportUpload = ({ msg, setMsg }) => {
             body: pdfData,
         })
 
-        const pdf = await pdfUpload.json()
+        const errorMsgPdf = await pdfUpload.json()
 
         if (pdfUpload.ok) {
-            setMsg([...msg, 'Report Uploaded'])
+            setMsg([...msg, 'Uploaded Successful'])
             setFormPopup(false)
         }
     }
+
     return (
         <div>
             <div className={classes.uploadButton}>
@@ -154,4 +155,5 @@ const ReportUpload = ({ msg, setMsg }) => {
         </div>
     )
 }
+
 export default ReportUpload

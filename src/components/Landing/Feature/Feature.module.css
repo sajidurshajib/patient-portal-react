@@ -130,8 +130,8 @@
     .grid div > p > img {
         display: block;
         margin: 0 auto;
-        width: 280px;
-        height: 220px;
+        width: 80vw;
+        height: 160px;
         object-fit: cover;
         border-radius: 10px;
     }

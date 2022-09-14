@@ -2,27 +2,28 @@ import { useState, useContext, useEffect } from 'react'
 import { Auth } from '../../../allContext'
 import PDF from '../../../assets/img/social/pdf.png'
 import { toMonthNameLong } from '../../../utils/date'
-import ReportUpload from './ReportUpload/ReportUpload'
-import classes from './UploadedReports.module.css'
+import ReportUpload from '../ReportUpload/ReportUpload'
+import classes from './ReportFetch.module.css'
 
-const UploadedReports = () => {
+const ReportFetch = ({ title, address }) => {
     const { stateAuth } = useContext(Auth)
     const [msg, setMsg] = useState([])
 
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
 
-    const [reportImg, setReportImg] = useState({})
-    const [reportPdf, setReportPdf] = useState({})
+    const [img, setImg] = useState([])
+    const [pdf, setPdf] = useState([])
     const [imageViewer, setImageViewer] = useState(false)
     const [number, setNumber] = useState()
+
     const popup = () => {
         setImageViewer(!imageViewer)
     }
 
     useEffect(() => {
         let reportImgFunc = async () => {
-            let reportImgFetch = await fetch(`${apiV1}/patient/reports/img`, {
+            let reportImgFetch = await fetch(`${apiV1}/patient/reports/img/${address}?skip=0&limit=6`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -33,17 +34,19 @@ const UploadedReports = () => {
             let infoJson = await reportImgFetch.json()
 
             if (reportImgFetch.ok) {
-                setReportImg(infoJson)
+                setImg(infoJson)
             }
         }
         try {
             reportImgFunc()
-        } catch (e) {}
-    }, [apiV1, token, msg])
+        } catch (e) {
+            setImg([])
+        }
+    }, [apiV1, token, msg, address])
 
     useEffect(() => {
         let reportPdfFunc = async () => {
-            let reportPdfFetch = await fetch(`${apiV1}/patient/reports/pdf`, {
+            let reportPdfFetch = await fetch(`${apiV1}/patient/reports/pdf/${address}?skip=0&limit=6`, {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
@@ -54,36 +57,38 @@ const UploadedReports = () => {
             let infoJson = await reportPdfFetch.json()
 
             if (reportPdfFetch.ok) {
-                setReportPdf(infoJson)
+                setPdf(infoJson)
             }
         }
         try {
             reportPdfFunc()
-        } catch (e) {}
-    }, [apiV1, token, msg])
+        } catch (e) {
+            setPdf([])
+        }
+    }, [apiV1, token, msg, address])
 
-    let imgReport = Array.from(reportImg)
-    let pdfReport = Array.from(reportPdf)
+    // let imgReport = Array.from(reportImg)
+    // let pdfReport = Array.from(reportPdf)
 
-    const reportImgUrl = `${apiV1}/images/patient_reports/`
-    const reportPdfUrl = `${apiV1}/pdf/patient_reports/`
+    const reportImgUrl = `${apiV1}/images/${address}/`
+    const reportPdfUrl = `${apiV1}/pdf/${address}/`
 
     return (
         <div className={classes.UploadedReports}>
-            <p>Medical Reports</p>
+            <p>{title}</p>
             <div className={classes.container}>
                 <div className={classes.Header}>
-                    <ReportUpload msg={msg} setMsg={setMsg} />
+                    <ReportUpload msg={msg} setMsg={setMsg} address={address} />
                 </div>
 
                 <div className={classes.files}>
-                    {imgReport.map((report, index) => {
+                    {img[1]?.map((report, index) => {
                         return (
-                            <div>
+                            <div key={index}>
                                 <div
-                                    onClick={(e) => {
-                                        popup()
+                                    onClick={() => {
                                         setNumber(index)
+                                        popup()
                                     }}>
                                     <img src={reportImgUrl + report.image_string} alt="file" />
                                     <p>
@@ -104,7 +109,7 @@ const UploadedReports = () => {
                     <div className={classes.previewContainer}>
                         <div className={classes.overlay} onClick={() => setImageViewer(false)}></div>
                         <div className={classes.Preview}>
-                            <img src={reportImgUrl + imgReport[number].image_string} alt="viewer" />
+                            <img src={reportImgUrl + img[1][number]?.image_string} alt="viewer" />
                             <button onClick={popup} className={classes.closeBtn}>
                                 x
                             </button>
@@ -113,9 +118,9 @@ const UploadedReports = () => {
                 )}
 
                 <div className={classes.files}>
-                    {pdfReport.map((report, index) => {
+                    {pdf[1]?.map((report, index) => {
                         return (
-                            <div className={classes.pdf}>
+                            <div className={classes.pdf} key={index}>
                                 <a href={reportPdfUrl + report.pdf_string} target="blank">
                                     <img src={PDF} alt="file" />
                                     <p>
@@ -136,4 +141,4 @@ const UploadedReports = () => {
     )
 }
 
-export default UploadedReports
+export default ReportFetch
