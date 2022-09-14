@@ -1,19 +1,19 @@
 import classes from './MedicalReports.module.css'
 import Medication from './Medication/Medication'
-import Prescriptions from './Prescriptions/Prescriptions'
+import Prescription from './Prescription/Prescription'
+import Report from './Report/Report'
 import Surgery from './Surgery/Surgery'
-import UploadedReports from './UploadedReports/UploadedReports'
-import VaccinationHistory from './VaccinationHistory/VaccinationHistory'
+import Vaccination from './Vaccination/Vaccination'
 
 const MedicalReports = () => {
     return (
-        <div className={classes.MedicalReports}>
-            <div className={classes.prescriptionsContainer}>
-                {/* <Prescriptions /> */}
-                <UploadedReports />
-                {/* <VaccinationHistory /> */}
-                {/* <Medication /> */}
-                {/* <Surgery /> */}
+        <div className={classes.reports}>
+            <div className={classes.container}>
+                <Prescription />
+                <Report />
+                <Medication />
+                <Surgery />
+                <Vaccination />
             </div>
         </div>
     )
