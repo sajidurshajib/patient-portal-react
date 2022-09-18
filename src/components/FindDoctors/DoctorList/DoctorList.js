@@ -26,12 +26,12 @@ const DoctorList = ({ doctors }) => {
                         </div>
                         <div className={classes.nameContainer}>
                             <p className={classes.name}>
-                                <Link to={`/doctor/${doctor?.User?.id + 1000}`}>Dr. {doctor?.User?.name}</Link>
+                                <Link to={`/doctor/${doctor?.User?.id + 1000}`}>{doctor?.User?.name}</Link>
                             </p>
                             <p className={classes.qualification}>{doctor?.DoctorQualification?.qualification}</p>
                             <p className={classes.speciality}>{doctor?.DoctorSpeciality?.speciality}</p>
-                            <p className={classes.designation}>Assistant Professor</p>
-                            <p className={classes.currentWorkPlace}>Dhaka Medical College & Hospital Shahbag, Dhaka</p>
+                            {/* <p className={classes.designation}>Assistant Professor</p>
+                            <p className={classes.currentWorkPlace}>Dhaka Medical College & Hospital Shahbag, Dhaka</p> */}
                         </div>
                         <div>
                             <p>
