@@ -112,6 +112,11 @@
     color: var(--dark);
 }
 
+.containerFlex .ratting > p > svg {
+    font-size: 10px;
+    color: var(--orange);
+}
+
 @media (max-width: 420px) {
     .wrapper {
         padding: 0px;
@@ -126,14 +131,14 @@
 
     .container {
         position: relative;
-        grid-template-columns: repeat(4, 230px);
-        grid-gap: 20px;
+        grid-template-columns: repeat(4, 200px);
+        grid-gap: 14px;
         margin-top: 10px;
         overflow-x: auto;
     }
 
     .containerFlex {
-        min-height: 116px;
+        min-height: 100px;
     }
 
     .containerFlex > div img {
@@ -141,8 +146,8 @@
         object-fit: cover;
         position: relative;
         overflow: hidden;
-        width: 80px;
-        height: 80px;
+        width: 64px;
+        height: 64px;
         border-radius: 10px 2px 2px 2px;
     }
 
@@ -159,7 +164,7 @@
     .containerFlex > .info > p:last-child {
         position: absolute;
         top: -10px;
-        left: 32%;
+        left: 30%;
     }
 
     .containerFlex > .info > p:last-child > span {
@@ -169,7 +174,7 @@
     .containerFlex > div > div {
         position: absolute;
         top: 14px;
-        left: 40%;
+        left: 39%;
         text-align: left;
         font-size: 8px;
     }
@@ -177,7 +182,7 @@
     .containerFlex > div > div > p:nth-child(1) {
         font-size: 10px;
         margin-top: 14px;
-        margin-bottom: -4px;
+        margin-bottom: -6px;
     }
 
     .containerFlex > div > div > p:nth-child(2) {
@@ -186,9 +191,19 @@
         font-weight: 500;
     }
 
+    .containerFlex .ratting {
+        padding: 2px 6px;
+        margin-top: -12px;
+    }
+
     .containerFlex .ratting > p {
         color: var(--white);
         font-size: 8px;
         margin: 0;
+    }
+
+    .containerFlex .ratting > p > svg {
+        font-size: 8px;
+        color: var(--orange);
     }
 }

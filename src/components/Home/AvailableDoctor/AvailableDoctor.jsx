@@ -16,8 +16,7 @@ export default function AvailableDoctor() {
                         </div>
                         <div className={classes.ratting}>
                             <p>
-                                4.9 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '10px' }} />{' '}
-                                (100)
+                                4.9 <FontAwesomeIcon icon={faStar} />
                             </p>
                         </div>
                         <div className={classes.info}>
@@ -27,7 +26,7 @@ export default function AvailableDoctor() {
                                 <p>General Physician</p>
                             </div>
                             <p>
-                                <span> ৳100 </span>/per consultation
+                                <span> ৳100 </span>/consultation
                             </p>
                         </div>
                     </div>
@@ -37,8 +36,7 @@ export default function AvailableDoctor() {
                         </div>
                         <div className={classes.ratting}>
                             <p>
-                                4.9 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '10px' }} />{' '}
-                                (100)
+                                4.9 <FontAwesomeIcon icon={faStar} />
                             </p>
                         </div>
                         <div className={classes.info}>
@@ -48,7 +46,7 @@ export default function AvailableDoctor() {
                                 <p>General Physician</p>
                             </div>
                             <p>
-                                <span> ৳100 </span>/per consultation
+                                <span> ৳100 </span>/consultation
                             </p>
                         </div>
                     </div>
@@ -59,8 +57,7 @@ export default function AvailableDoctor() {
                         </div>
                         <div className={classes.ratting}>
                             <p>
-                                4.9 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '10px' }} />{' '}
-                                (100)
+                                4.9 <FontAwesomeIcon icon={faStar} />
                             </p>
                         </div>
                         <div className={classes.info}>
@@ -70,7 +67,7 @@ export default function AvailableDoctor() {
                                 <p>General Physician</p>
                             </div>
                             <p>
-                                <span> ৳100 </span>/per consultation
+                                <span> ৳100 </span>/consultation
                             </p>
                         </div>
                     </div>
@@ -80,8 +77,7 @@ export default function AvailableDoctor() {
                         </div>
                         <div className={classes.ratting}>
                             <p>
-                                4.9 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '10px' }} />{' '}
-                                (100)
+                                4.9 <FontAwesomeIcon icon={faStar} />
                             </p>
                         </div>
                         <div className={classes.info}>
@@ -91,7 +87,7 @@ export default function AvailableDoctor() {
                                 <p>General Physician</p>
                             </div>
                             <p>
-                                <span> ৳100 </span>/per consultation
+                                <span> ৳100 </span>/consultation
                             </p>
                         </div>
                     </div>
