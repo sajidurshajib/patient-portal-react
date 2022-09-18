@@ -18,7 +18,7 @@ export default function AvailableDoctor() {
                         </div>
                         <div className={classes.ratting}>
                             <p>
-                                4.9 <FontAwesomeIcon icon={faStar} />
+                                5.0 <FontAwesomeIcon icon={faStar} />
                             </p>
                         </div>
                         <div className={classes.info}>
@@ -59,7 +59,7 @@ export default function AvailableDoctor() {
                         </div>
                         <div className={classes.ratting}>
                             <p>
-                                4.9 <FontAwesomeIcon icon={faStar} />
+                                4.8 <FontAwesomeIcon icon={faStar} />
                             </p>
                         </div>
                         <div className={classes.info}>
@@ -79,7 +79,7 @@ export default function AvailableDoctor() {
                         </div>
                         <div className={classes.ratting}>
                             <p>
-                                4.9 <FontAwesomeIcon icon={faStar} />
+                                5.0 <FontAwesomeIcon icon={faStar} />
                             </p>
                         </div>
                         <div className={classes.info}>
