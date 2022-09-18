@@ -14,6 +14,7 @@ export default function Popup() {
                     <FontAwesomeIcon icon={faStethoscope} />
                     {/* <img src={Doc} alt="" /> */}
                 </div>
+                <p>আমার ডাক্তার</p>
             </Link>
         </div>
     )
