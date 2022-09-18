@@ -60,7 +60,6 @@ const ReportUpload = ({ msg, setMsg, address }) => {
         })
 
         const errorMsgImg = await picUpload.json()
-        console.log(errorMsgImg)
 
         if (picUpload.ok) {
             setMsg([...msg, 'Uploaded Successful'])
@@ -70,6 +69,7 @@ const ReportUpload = ({ msg, setMsg, address }) => {
 
     const uploadPdf = async (e) => {
         e.preventDefault()
+
         const pdfData = new FormData()
         pdfData.append('file', selectedFile)
 
