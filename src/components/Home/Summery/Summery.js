@@ -105,6 +105,7 @@ const Summery = () => {
     // not auto update
     return (
         <div className={classes.Summery}>
+            <p>Select Indicators</p>
             <div className={classes.Wrapper}>
                 <div onClick={() => setSelect(1)} className={select === 1 ? classes.activeBox : classes.box}>
                     <p>
