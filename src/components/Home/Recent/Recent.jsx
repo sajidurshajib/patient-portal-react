@@ -22,18 +22,6 @@ export default function Recent() {
                                 <button>Download</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <FontAwesomeIcon icon={faFilePdf} className={classes.icon} />
-                                <span>Medical_prescription.pdf</span>
-                            </td>
-
-                            <td>Detail Info</td>
-                            <td>29-June-2022</td>
-                            <td>
-                                <button>Download</button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

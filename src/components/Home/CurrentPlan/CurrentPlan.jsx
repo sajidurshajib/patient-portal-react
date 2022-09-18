@@ -22,18 +22,6 @@ export default function CurrentPlan() {
                                 <button>Details</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <FontAwesomeIcon icon={faHospitalUser} className={classes.icon} />
-                                <span>Family Health Plan (FHP)</span>
-                            </td>
-                            <td>4 Persons</td>
-                            <td>3 Months</td>
-                            <td>29-Jun-2022 to 29-Sep-2022</td>
-                            <td>
-                                <button>Details</button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
