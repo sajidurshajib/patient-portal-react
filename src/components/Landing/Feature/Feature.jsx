@@ -27,6 +27,7 @@ export default function Feature() {
                         </div>
                     </p>
                 </div>
+                {/* first div done */}
 
                 <div>
                     <p>
@@ -43,7 +44,7 @@ export default function Feature() {
                         <img src={F2} alt="" />
                     </p>
                 </div>
-
+                {/* Second  div done */}
                 <div>
                     <p>
                         <img src={F3} alt="" />
@@ -59,7 +60,7 @@ export default function Feature() {
                         </div>
                     </p>
                 </div>
-
+                {/* Third div done */}
                 <div>
                     <p>
                         <div>
@@ -75,6 +76,7 @@ export default function Feature() {
                         <img src={F4} alt="" />
                     </p>
                 </div>
+                {/* Forth div done */}
             </div>
         </div>
     )
