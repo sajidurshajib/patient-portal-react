@@ -1,281 +1,182 @@
-.container {
-}
 .wrapper {
-    align-items: center;
-    width: 100%;
-    border: 2px solid var(--light);
-    border-radius: 10px;
-    /* padding: 5px; */
-    background-color: var(--white);
-    margin-top: 3%;
-    /* margin-left: 2%; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #f8f8f8;
+    height: 100vh;
 }
 
 .wrapper > div:nth-child(1) {
-    /* background-color: var(--primary); */
-    margin-bottom: 0;
+    /* padding: 100px 120px;
+    background-color: white; */
 
-    width: 100%;
-    background-image: linear-gradient(to right, var(--dark-blue), var(--dark-blue), var(--secondary), var(--secondary));
-    padding: 4px;
+    /* background-image: linear-gradient(); */
+    background-color: #5d8aa8;
 }
-.wrapper > div:nth-child(1) > p {
-    font-size: 21px;
+
+.wrapper > div:nth-child(1) > h2 {
+    margin-top: 12%;
     text-transform: capitalize;
-    font-weight: 900;
-    color: var(--white);
-}
-
-/* this is for background  */
-.formSection {
-    width: 100%;
-    background-color: var(--white);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
-}
-
-.formSection > div:nth-child(1) {
-    /* background-color: var(--grey); */
-    margin-top: -26px;
-    margin-bottom: -26px;
-    margin-left: -26px;
-    border-left: var(--white);
-}
-
-.formSection > div:nth-child(1) > p {
-    /* background-color: var(--grey); */
-    margin-top: 15%;
-    margin-left: 20%;
-    font-size: 24px;
-    color: var(--white);
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.form > div:nth-child(1) {
-    margin: 0 auto;
+    color: white;
+    font-size: 28px;
+    margin-bottom: -50px;
     text-align: center;
 }
 
-.label1 {
-    /* background: var(--); */
-    background-color: var(--low-skyblue);
-    border: none;
-    outline: var(--white);
-    /* padding: 8px 16px; */
-    /* color: var(--primary); */
-    color: var(--dark-grey);
-}
-
-.form > div:nth-child(1) > div > div:nth-child(1) > label {
-    /* color: var(--white); */
-    font-size: 21px;
-    font-weight: 500;
-}
-
-.form > div:nth-child(1) > div > div:nth-child(2) > select {
-    padding: 10px 270px;
-    border-radius: 6px;
-    outline: var(--dark-blue);
-}
-
-.form > div:nth-child(2) {
-    margin-top: 30px;
-    padding: 0 55px;
-}
-
-.form > div:nth-child(3) {
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr); */
-}
-
-/* for the middle div  */
-
-.form > div:nth-child(2) > div:nth-child(1) {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
-    display: flex;
-    justify-content: space-between;
-}
-
-.form > div:nth-child(2) > div:nth-child(2) {
-    margin-top: 0px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.form > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input {
-    padding: 8px 0px 8px 70px;
-}
-
-.form > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input {
-    width: 72%;
-}
-
-.form > div:nth-child(2) > div:nth-child(3) {
-    margin-top: 10px;
-}
-
-.form > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
-    display: flex;
-}
-.form > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) {
-    margin-top: 14px;
-    margin-right: 10px;
-}
-
-.form > div:nth-child(2) > div:nth-child(4) {
-    margin-top: 10px;
-    padding-left: 20%;
-    display: flex;
-}
-
-.form > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) {
-    margin-right: 10px;
-    margin-top: 10%;
-}
-
-.form > div:nth-child(3) {
-    display: flex;
-    justify-content: center;
-}
-
-.wrapper > div {
-    text-align: center;
-}
-
-.wrapper > div > p {
-    text-align: center;
-    font-size: 18px;
-    color: var(--primary);
+.wrapper > div:nth-child(1) > img {
+    /* margin-top: 3%; */
+    height: 85%;
+    width: 75%;
+    margin-left: 10%;
 }
 
 .wrapper > div:nth-child(2) {
+    background-color: #f8f8f8;
+    padding-left: 11%;
+    padding-top: 3%;
+}
+
+.wrapper > div:nth-child(2) > div {
+    margin-top: 52px;
     text-align: left;
-
-    padding: 25px;
-}
-
-.last {
-    margin-top: 30px;
-}
-
-.left > div {
-    margin: 10px 0;
-}
-
-/* .right > div > div:nth-child(2) > select {
-    border: none;
-    outline: white;
-    border-radius: 10px;
-} */
-
-select {
-    color: var(--black);
-    margin-left: 50px;
-    border: none;
-    outline: var(--white);
-    border-radius: 10px;
-    padding: 8px 35px;
-    margin-top: 8px;
-    background-color: var(--low-skyblue);
-}
-
-/* for label  */
-label {
-    margin-left: 8px;
-    /* color: var(--white); */
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--dark-blue);
-}
-
-/* for input feild  */
-input {
-    margin-top: 4px;
-    padding: 8px 44px;
-    border-radius: 6px;
-    border: none;
-    outline: var(--white);
-}
-
-.left > div:nth-child(3) > div:nth-child(2) > input {
-    width: 66%;
-}
-
-/* .right > div:nth-child(1) > div:nth-child(2) > select {
-    width: 25%;
-    padding: 5px 0;
-    border-radius: 10px;
-    background-color: white;
-    border: 1px solid var(--primary);
-    border: none;
-    margin-top: 5px;
-} */
-/* for the text area  */
-
-textarea {
-    margin-top: 10px;
-    padding: 40px 30px;
-    border-radius: 5px;
-    border: none;
-    outline: gainsboro;
-    background-color: var(--low-skyblue);
-}
-
-/* for the button  */
-
-.button {
-    padding: 8px 50px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--primary);
-    color: var(--white);
-    font-size: 16px;
+    color: #1a2b56;
+    font-size: 17px;
     font-weight: 500;
 }
 
-/* making the outline none and text white  */
-
-/* making the non editable text feiled */
-
-.txtFeild {
-    /* margin-top: 8px; */
-    /* background-color: whitesmoke; */
-    /* padding: 8px 45px; */
-    /* color: black; */
+.wrapper > div:nth-child(2) > div:nth-child(1) {
 }
 
-/* // non editable text feild */
-.input {
-    background-color: var(--low-skyblue);
-    padding: 2.5px;
-    width: 140%;
-    border-radius: 6px;
-    box-shadow: 2px 3px 2px var(--grey);
-}
-
-.middle {
-    background-color: var(--low-skyblue);
-    padding: 2.51px;
-    width: 190%;
-    border-radius: 6px;
-    box-shadow: 2px 3px 2px var(--grey);
-}
-/* for the middle1 */
-
-/* for the Health Package Image  */
-/* .healthImage {
-    height: 80px;
-    width: 100px;
-} */
-
-/* Newly added css  */
-
-.heading > h2 {
+.wrapper > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+    margin-bottom: 30px;
     margin-left: 30%;
-    margin-top: 3%;
-    color: var(--primary);
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > label {
+    font-size: 24px;
     text-transform: capitalize;
+    color: #192a55;
+    font-weight: 600;
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+    margin-top: 15px;
+}
+
+.label1 {
+    padding: 10px;
+    width: 87%;
+    border: none;
+    outline: white;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 5px 5px 5px #778ba5;
+}
+
+.label1 > option {
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 41px;
+    /* padding-right: 50px; */
+    margin-left: 1%;
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) {
+    padding: 10px;
+    border-bottom: 3px solid #1a2b56;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px ghostwhite;
+    width: 42%;
+    background-color: ghostwhite;
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(3) {
+    display: flex;
+    gap: 25px;
+    margin-left: 1%;
+    position: relative;
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > img {
+    height: 25px;
+    width: 30px;
+
+    position: absolute;
+    right: 57%;
+    top: 12%;
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > select {
+    padding: 9px 142px;
+    border-radius: 4px;
+    border: none;
+    outline: white;
+    background-color: white;
+    box-shadow: 4px 4px 4px #778ba5;
+}
+
+.wrapper > div:nth-child(2) > div:nth-child(4) {
+    display: flex;
+    gap: 155px;
+    margin-left: 1%;
+    position: relative;
+
+    margin-bottom: -20px;
+}
+.wrapper > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) {
+    margin-top: 4%;
+}
+
+textArea {
+    padding: 30px 56px;
+    border-radius: 4px;
+    border: none;
+    outline: white;
+    box-shadow: 4px 4px 4px #778ba5;
+}
+.wrapper > div:nth-child(2) > div:nth-child(4) > div:nth-child(2) > img {
+    height: 45px;
+    width: 45px;
+
+    position: absolute;
+    right: 56%;
+    top: 18%;
+}
+.wrapper > div:nth-child(2) > div:nth-child(5) {
+    margin-left: 30%;
+}
+.wrapper > div:nth-child(2) > div:nth-child(5) > button {
+    padding: 8px 110px;
+    border: none;
+    outline: white;
+    background-color: #457dc3;
+    color: white;
+    border-radius: 10px;
+}
+
+.image {
+    height: 18px;
+    width: 18px;
+    margin-left: 8px;
+}
+
+.image1 {
+    height: 19px;
+    width: 19px;
+    margin-left: 5px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 1px;
+    /* border: 2px solid red; */
+}
+
+/* for the time icon */
+.input > div:nth-child(2) {
+    /* border: 1px solid red; */
+    padding-top: 1px;
 }
