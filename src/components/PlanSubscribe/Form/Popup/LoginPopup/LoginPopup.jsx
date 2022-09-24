@@ -8,10 +8,16 @@ import { statusCheck } from '../../../../../utils/statusCheck'
 // import BG from '.././../assets/img/background-doc-table.jpg'
 import classes from './LoginPopup.module.css'
 
-export default function LoginPopup() {
+export default function LoginPopup({ setLoginOpen, setRegisterOpen, setShow }) {
+    const OpenClose = () => {
+        setLoginOpen(false)
+        setRegisterOpen(true)
+    }
+
     return (
         <div>
             <div className={classes.Login}>
+                <div className={classes.overlay} onClick={() => setShow(false)}></div>
                 {/* {
                     <>
                         {alert.length !== 0 ? (
@@ -23,25 +29,19 @@ export default function LoginPopup() {
                 } */}
 
                 <div className={classes.Wrapper}>
-                    <div className={classes.left}>
-                        <div>
-                            <h2>
-                                <FontAwesomeIcon icon={faHandSparkles} /> Welcome to HEALTHx
-                            </h2>
-                            <p>
-                                With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx is
-                                aspired to be the largest digital health platform in Bangladesh providing the digital
-                                platform based Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record)
-                                services for the Patients.
-                            </p>
-                        </div>
-                    </div>
                     <div className={classes.right}>
+                        {/* <div className={classes.first}>
+                            <button> X </button>
+                        </div> */}
                         <div>
-                            <h2>
-                                <FontAwesomeIcon icon={faSignInAlt} />
-                                Login
-                            </h2>
+                            <div className={classes.first}>
+                                <h2>
+                                    <FontAwesomeIcon icon={faSignInAlt} />
+                                    Login
+                                </h2>
+                                <button onClick={() => setShow(false)}> X </button>
+                            </div>
+
                             <form>
                                 <div>
                                     <input type="text" required />
@@ -62,9 +62,9 @@ export default function LoginPopup() {
 
                             <p className={classes.linkText}>
                                 Don't have an account?{' '}
-                                <Link to="/register">
+                                <button className={classes.lastBtn} onClick={() => OpenClose()}>
                                     Register <FontAwesomeIcon icon={faArrowRight} />
-                                </Link>
+                                </button>
                             </p>
                         </div>
                     </div>

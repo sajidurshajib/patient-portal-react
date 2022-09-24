@@ -13,26 +13,26 @@ import { Link } from 'react-router-dom'
 // import { statusCheck } from '../../utils/statusCheck'
 import classes from './RegisterPopup.module.css'
 
-export default function RegisterPopup() {
+export default function RegisterPopup({ setLoginOpen, setRegisterOpen, setShow }) {
+    const OpenClose = () => {
+        setLoginOpen(true)
+        setRegisterOpen(false)
+    }
+
     return (
         <div className={classes.Register}>
-            {/* {
-                <>
-                    {alert.length !== 0 ? (
-                        <p className={classes.statusMsg}>
-                            {alert[alert.length - 1]} <span onClick={() => setAlert([])}>x</span>
-                        </p>
-                    ) : null}
-                </>
-            } */}
-
+            <div className={classes.overlay} onClick={() => setShow(false)}></div>
             <div className={classes.Wrapper}>
                 <div className={classes.left}>
                     <div>
-                        <h2>
-                            <FontAwesomeIcon icon={faRegistered} />
-                            Register
-                        </h2>
+                        <div className={classes.first}>
+                            <h2>
+                                <FontAwesomeIcon icon={faRegistered} />
+                                Register
+                            </h2>
+                            <button onClick={() => setShow(false)}> X </button>
+                        </div>
+
                         <form>
                             <div>
                                 <input type="text" required />
@@ -154,28 +154,9 @@ export default function RegisterPopup() {
 
                         <p className={classes.linkText}>
                             Already have an account?{' '}
-                            <Link to="/login">
+                            <button className={classes.lastBtn} onClick={() => OpenClose()}>
                                 Login <FontAwesomeIcon icon={faArrowRight} />
-                            </Link>
-                        </p>
-                    </div>
-                </div>
-                <div className={classes.right}>
-                    <div>
-                        <h2>
-                            <FontAwesomeIcon icon={faHandSparkles} /> Welcome to HEALTHx
-                        </h2>
-                        <p>
-                            With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx is aspired
-                            to be the largest digital health platform in Bangladesh providing the digital platform based
-                            Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record) services for the
-                            Patients. With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx
-                            is aspired to be the largest digital health platform in Bangladesh providing the digital
-                            platform based Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record)
-                            services for the Patients. With a mission to ‘Drive the digitalization of healthcare of
-                            Bangladesh, HEALTHx is aspired to be the largest digital health platform in Bangladesh
-                            providing the digital platform based Telehealth. Home healthcare & Cloud based EHR
-                            (Electronic Health Record) services for the Patients.
+                            </button>
                         </p>
                     </div>
                 </div>

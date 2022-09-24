@@ -1,4 +1,5 @@
-.Register {
+.Register,
+.overlay {
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -7,15 +8,10 @@
     justify-content: center;
     background-repeat: no-repeat;
     top: 0;
+    z-index: 100;
 }
-.Register::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(231, 226, 250, 0.8);
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 .statusMsg {
@@ -43,31 +39,59 @@
     margin: 0 0 0 4px;
 }
 .Wrapper {
-    /* display: grid;
-    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
-    gap: 40px; */
     background: var(--white);
     padding: 0;
-    box-shadow: 0 20px 30px var(--grey);
     border-radius: 5px;
-    width: 900px;
+    width: 620px;
     margin: 0 auto;
     z-index: 50;
     transition: 200ms;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 58px;
+    padding: 10px 0 40px;
 }
 
 .left {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px 0 60px 50px;
+    margin: 10px 10px;
 }
+
 .left > div {
     width: 100%;
 }
+
+.first {
+    display: flex;
+    justify-content: space-between;
+}
+
+.first > h2 {
+    margin-left: 38%;
+}
+
+.first > button {
+    border: none;
+    cursor: pointer;
+    padding: -5px;
+    color: red;
+    background-color: white;
+    margin-top: 2px;
+    margin-bottom: 25px;
+    padding: 4px;
+    transition: 200ms;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.first > button:hover {
+    transform: translateY(-3px);
+    transition: 200ms;
+}
+
 .left > div > h2 {
     text-align: center;
     color: var(--primary);
@@ -225,12 +249,14 @@
 }
 .linkText {
     color: var(--dark-blue);
-    font-size: 12px;
+    font-size: 14px;
     margin: 20px 0 0 0;
 }
 .linkText a {
     text-decoration: none;
     color: var(--primary);
+    font-size: 18px;
+    margin-left: 79px;
 }
 
 .right {
@@ -247,6 +273,19 @@
 .right p {
     font-size: 18px;
     line-height: 24px;
+}
+
+/* for the last button  */
+
+.lastBtn {
+    border: none;
+    color: var(--dark-blue);
+    margin-left: 18px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 @media (max-width: 420px) {

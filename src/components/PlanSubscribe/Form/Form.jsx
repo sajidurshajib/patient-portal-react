@@ -23,19 +23,10 @@ import Popup from './Popup/Popup'
 // import SignUp from './SignUp/SignUp'
 
 export default function Form({ plans, singlePlan, setPlanId }) {
-    // const [planGet, setPlanGet] = useState({})
-    //this from  projet folder
     const [show, setShow] = useState(false)
-    const [visible, setVisible] = useState(false)
 
-    const show1 = () => {
-        setShow(!show)
-        setVisible(false)
-    }
-
-    const show2 = () => {
-        setVisible(!visible)
-        setShow(false)
+    const ShowPopup = () => {
+        setShow(true)
     }
 
     return (
@@ -163,21 +154,15 @@ export default function Form({ plans, singlePlan, setPlanId }) {
                         {/* for sign up and sign in button */}
 
                         <div>
-                            <button onClick={() => show1()}>Sign in</button>
-                            <span> Don't have an account ?</span>
-                            <button onClick={() => show2()}>Sign Up</button>
+                            <button onClick={() => ShowPopup()}>Sign in</button>
+                            {/* <span> Don't have an account ?</span>
+                            <button onClick={() => show2()}>Sign Up</button> */}
                         </div>
                     </div>
                 </div>
                 {/* outSide the wrapper div  */}
             </div>
-            {show && <div className={classes.signIn}>{<Popup />}</div>}
-            {/* {visible && (
-                <div className={classes.register}>
-                    <div className={classes.cross}>Xssss</div>
-                    <Popup />
-                </div>
-            )} */}
+            {show && <div className={classes.signIn}>{<Popup setShow={setShow} />}</div>}
         </>
     )
 }
