@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Auth } from '../../allContext'
+import Login from '../Login/Login'
 import Form from './Form/Form'
+import classes from './PlanSubscribe.module.css'
 
 export default function PlanSubscribe() {
     const [plans, setPlans] = useState([])
     const [singlePlan, setSinglePlan] = useState({})
     const [planId, setPlanId] = useState(0)
+
+    const [popup, setPopup] = useState(false)
 
     const { stateAuth } = useContext(Auth)
     const token = stateAuth.token
@@ -59,8 +63,19 @@ export default function PlanSubscribe() {
     }, [token, apiV1, planId])
 
     return (
-        <div>
+        <div className={classes.wrapper}>
             <Form plans={plans} singlePlan={singlePlan} setPlanId={setPlanId} />
+
+            {/* <div>
+                <button className={classes.btn1} onClick={() => setPopup(true)}>
+                    Login
+                </button>
+                <button className={classes.btn2} onClick={() => setPopup(false)}>
+                    Register
+                </button>
+            </div> */}
+
+            {/* {popup && <div>Shariar Mahmud duke</div>} */}
         </div>
     )
 }
