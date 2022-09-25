@@ -1,27 +1,9 @@
-import React from 'react'
-import PDF from '../../../assets/img/social/pdf.png'
-import classes from './Surgery.module.css'
+import ReportFetch from '../ReportFetch/ReportFetch'
 
 export default function Surgery() {
     return (
-        <div className={classes.wrapper}>
-            <p>Surgery Records</p>
-            <div className={classes.container}>
-                <div className={classes.btnContainer}>
-                    <button>Upload</button>
-                </div>
-                <div className={classes.files}>
-                    <div>
-                        <div>
-                            <img src={PDF} alt="file" />
-                            <p>
-                                <span>Surgery.pdf</span>
-                            </p>
-                            <p>30-July-2022</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <ReportFetch title={'Surgery Reports'} address={'patient_surgery'} />
         </div>
     )
 }

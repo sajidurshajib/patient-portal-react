@@ -4,7 +4,7 @@ import { useState, useEffect, useContext, useRef } from 'react'
 import { Auth } from '../../../allContext'
 import classes from './ReportUpload.module.css'
 
-const ReportUpload = ({ msg, setMsg }) => {
+const ReportUpload = ({ msg, setMsg, address }) => {
     const { stateAuth } = useContext(Auth)
 
     const apiV1 = process.env.REACT_APP_API_V1
@@ -44,13 +44,12 @@ const ReportUpload = ({ msg, setMsg }) => {
         setSelectedFile(e.target.files[0])
     }
 
-    // API Fetch
     const uploadImg = async (e) => {
         e.preventDefault()
         const imgData = new FormData()
         imgData.append('file', selectedFile)
 
-        let picUpload = await fetch(`${apiV1}/patient/reports/img`, {
+        let picUpload = await fetch(`${apiV1}/patient/reports/img/${address}`, {
             headers: {
                 Accept: 'appllication/json',
                 type: 'image/jpeg',
@@ -60,20 +59,21 @@ const ReportUpload = ({ msg, setMsg }) => {
             body: imgData,
         })
 
-        const pp = await picUpload.json()
+        const errorMsgImg = await picUpload.json()
 
         if (picUpload.ok) {
-            setMsg([...msg, 'Report Uploaded'])
+            setMsg([...msg, 'Uploaded Successful'])
             setFormPopup(false)
         }
     }
 
     const uploadPdf = async (e) => {
         e.preventDefault()
+
         const pdfData = new FormData()
         pdfData.append('file', selectedFile)
 
-        let pdfUpload = await fetch(`${apiV1}/patient/reports/pdf`, {
+        let pdfUpload = await fetch(`${apiV1}/patient/reports/pdf/${address}`, {
             headers: {
                 Accept: 'appllication/json',
                 type: 'file/pdf',
@@ -83,13 +83,14 @@ const ReportUpload = ({ msg, setMsg }) => {
             body: pdfData,
         })
 
-        const pdf = await pdfUpload.json()
+        const errorMsgPdf = await pdfUpload.json()
 
         if (pdfUpload.ok) {
-            setMsg([...msg, 'Report Uploaded'])
+            setMsg([...msg, 'Uploaded Successful'])
             setFormPopup(false)
         }
     }
+
     return (
         <div>
             <div className={classes.uploadButton}>
@@ -98,10 +99,11 @@ const ReportUpload = ({ msg, setMsg }) => {
 
             {formPopup && (
                 <div className={classes.uploadContainer}>
+                    <div className={classes.overlay} onClick={() => setFormPopup(false)}></div>
                     <div className={classes.uploader}>
-                        <p>Upload Your Report</p>
+                        <p className={classes.upText}>Upload Your Report</p>
                         <button className={classes.Close} onClick={popup}>
-                            X
+                            x
                         </button>
                         <div className={classes.Input}>
                             <div className={classes.selectedImg}>
@@ -120,7 +122,7 @@ const ReportUpload = ({ msg, setMsg }) => {
                                         onChange={onSelectFile}
                                         style={{ display: 'none' }}
                                         ref={inputRef}
-                                        required1
+                                        required
                                     />
                                 </div>
                                 <button
@@ -141,16 +143,17 @@ const ReportUpload = ({ msg, setMsg }) => {
                                     <FontAwesomeIcon icon={faImage} />
                                     <span>Select Image</span>
                                 </button>
-                                <button className={classes.Upload} onClick={option === 2 ? uploadImg : uploadPdf}>
-                                    <FontAwesomeIcon icon={faUpload} />
-                                    <span>Upload</span>
-                                </button>
                             </div>
                         </div>
+                        <button className={classes.Upload} onClick={option === 2 ? uploadImg : uploadPdf}>
+                            <FontAwesomeIcon icon={faUpload} />
+                            <span>Upload</span>
+                        </button>
                     </div>
                 </div>
             )}
         </div>
     )
 }
+
 export default ReportUpload

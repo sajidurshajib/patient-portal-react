@@ -91,3 +91,21 @@
     font-size: 14px;
     margin-top: 16px;
 }
+
+@media (max-width: 420px) {
+    .userDetail {
+        margin-bottom: -10px;
+    }
+
+    .userDetail .formWrap .formGrid1 {
+        padding: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0px;
+    }
+
+    .userDetail .formWrap .formGrid {
+        padding: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0px;
+    }
+}

@@ -36,6 +36,7 @@
     border-radius: 10px;
     min-height: 200px;
     box-shadow: 0px 4px 6px var(--light-grey);
+    position: relative;
 }
 
 .containerFlex:hover {
@@ -54,9 +55,9 @@
     border-radius: 10px 10px 2px 2px;
 }
 
-.containerFlex .pic {
+/* .containerFlex .pic {
     transform: scaleX(-1);
-}
+} */
 
 .containerFlex .ratting {
     padding: 4px 10px;
@@ -94,17 +95,115 @@
     text-align: center;
 }
 
-.containerFlex > div > p:nth-child(2) {
+.containerFlex > div > div > p:nth-child(1) {
     font-size: 10px;
     margin-top: 4px;
     margin-bottom: 16px;
+    font-size: 12px;
 }
 
-.containerFlex > div > p:nth-child(3) {
+.containerFlex > div > div > p:nth-child(2) {
     margin-bottom: -10px;
+    font-size: 12px;
 }
 
 .containerFlex > div > p > span {
     font-size: 14px;
     color: var(--dark);
+}
+
+.containerFlex .ratting > p > svg {
+    font-size: 10px;
+    color: var(--orange);
+}
+
+@media (max-width: 420px) {
+    .wrapper {
+        padding: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper > p {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+
+    .container {
+        position: relative;
+        grid-template-columns: repeat(4, 200px);
+        grid-gap: 14px;
+        margin-top: 10px;
+        overflow-x: auto;
+    }
+
+    .containerFlex {
+        min-height: 100px;
+    }
+
+    .containerFlex > div img {
+        display: block;
+        object-fit: cover;
+        position: relative;
+        overflow: hidden;
+        width: 64px;
+        height: 64px;
+        border-radius: 10px 2px 2px 2px;
+    }
+
+    .containerFlex > div > span {
+        font-size: 12px;
+        margin-top: 8px;
+        font-weight: 500;
+    }
+
+    .containerFlex > div > p {
+        font-size: 10px;
+    }
+
+    .containerFlex > .info > p:last-child {
+        position: absolute;
+        top: -10px;
+        left: 30%;
+    }
+
+    .containerFlex > .info > p:last-child > span {
+        font-weight: 500;
+    }
+
+    .containerFlex > div > div {
+        position: absolute;
+        top: 14px;
+        left: 39%;
+        text-align: left;
+        font-size: 8px;
+    }
+
+    .containerFlex > div > div > p:nth-child(1) {
+        font-size: 10px;
+        margin-top: 14px;
+        margin-bottom: -6px;
+    }
+
+    .containerFlex > div > div > p:nth-child(2) {
+        margin-bottom: -10px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .containerFlex .ratting {
+        padding: 2px 6px;
+        margin-top: -12px;
+    }
+
+    .containerFlex .ratting > p {
+        color: var(--white);
+        font-size: 8px;
+        margin: 0;
+    }
+
+    .containerFlex .ratting > p > svg {
+        font-size: 8px;
+        color: var(--orange);
+    }
 }

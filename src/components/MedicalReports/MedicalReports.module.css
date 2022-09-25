@@ -1,14 +1,15 @@
-.MedicalReports {
+.reports {
     margin-top: 20px;
     padding: 20px;
 }
 
 @media (max-width: 420px) {
-    .MedicalReports {
+    .reports {
         grid-template-columns: minmax(0, 12%) minmax(0, 88%);
         padding: 0 12px 0 0;
+        margin-bottom: 8em;
     }
-    .MedicalReports .prescriptionsContainer {
-        margin-left: -10px;
+    .container {
+        margin-left: 10px;
     }
 }

@@ -27,11 +27,19 @@
     border-radius: 10px;
     padding-bottom: 10px;
 }
-.ProfileCard > div:nth-child(1) {
+.ProfileCard > .PP {
     margin: 0 auto;
     width: 200px;
     height: 200px;
+    position: relative;
 }
+
+.ProfileCard > .PP > div {
+    position: absolute;
+    right: 14px;
+    bottom: 50px;
+}
+
 .ProfileCard h6 {
     text-align: center;
     margin: -30px 0 0 0;
@@ -78,21 +86,25 @@
     margin: 20px 0 0 0;
 }
 
-.ProfileCard > p {
+.ProfileCard > div {
+    margin-top: 30px;
+}
+
+.ProfileCard > div > p {
     text-align: left;
     font-size: 12px;
     position: relative;
     color: var(--dark);
 }
 
-.ProfileCard > p > span {
+.ProfileCard > div > p > span {
     position: absolute;
     left: 120px;
     color: var(--dark-grey);
     font-size: 12px;
     font-weight: 500;
 }
-.ProfileCard > p > span::before {
+.ProfileCard > div > p > span::before {
     content: ': ';
 }
 
@@ -106,37 +118,40 @@
 }
 
 @media (max-width: 420px) {
-    .ProfileCard {
-        background: var(--white);
-        padding: 40px 0;
-        border-radius: 10px;
+    .wrapper {
+        margin-top: 0px;
     }
+
+    .wrapper > p {
+        font-size: 12px;
+    }
+
+    .ProfileCard {
+        padding: 20px 20px;
+    }
+
     .ProfileCard > div:nth-child(1) {
         margin: 0 auto;
         width: 120px;
         height: 120px;
     }
-    .ProfileCard > h2 {
-        font-size: 20px;
+
+    .ProfileCard > .PP > div {
+        position: absolute;
+        right: -10px;
+        bottom: -2px;
     }
+
+    .ProfileCard > h6 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
     .ProfileCard > p {
         font-size: 12px;
-        text-transform: capitalize;
         margin-top: 0px;
     }
-    .ProfileCard > p:nth-child(4),
-    .ProfileCard > p:nth-child(5) {
-        color: var(--dark-blue);
-        font-size: 12px;
-        text-transform: none;
-    }
-    .ProfileCard > p:nth-child(6) {
-        font-size: 12px;
-        color: var(--dark-blue);
-    }
-    .ProfileCard > p:nth-child(6) > span {
-        font-size: 14px;
-    }
+
     .ProfileImage {
         height: 120px;
         width: 120px;

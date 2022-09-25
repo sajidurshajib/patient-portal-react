@@ -1,7 +1,7 @@
 .DoubleNumber {
     background: var(--white);
     border-radius: 10px;
-    padding: 0px 40px;
+    padding: 0px 10px;
     position: relative;
 }
 
@@ -74,21 +74,45 @@
 
 @media (max-width: 420px) {
     .DoubleNumber {
-        padding: 20px 14px;
+        padding: 10px 14px;
         margin: -20px 0;
     }
     .field input {
         padding: 6px 12px;
-        min-width: 2em;
-        max-width: 4em;
+        min-width: 8em;
+        max-width: 10em;
         font-size: 12px;
     }
     .field input + span {
         font-size: 12px;
     }
 
+    .field input::placeholder {
+        opacity: 0.8;
+        font-size: 10px;
+    }
+
     .field form > button {
         padding: 6px 12px;
         font-size: 12px;
+    }
+
+    .field form > div {
+        padding: 0 24px;
+    }
+
+    .field .divRef {
+        font-size: 10px;
+        margin-bottom: -2px;
+        margin-left: -10px;
+    }
+
+    .field .divRef > p {
+        margin-left: -20px;
+        padding-right: 10px;
+    }
+
+    .field .divRef > li {
+        padding: 0 4px;
     }
 }

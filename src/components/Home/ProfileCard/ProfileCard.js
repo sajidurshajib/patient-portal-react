@@ -1,7 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
 import { Auth, UserInfo } from '../../../allContext'
-import IMG from '../../../assets/img/patient1.jpeg'
-import proPic from '../../../assets/img/pic-placeholder.jpg'
 import classes from './ProfileCard.module.css'
 
 const ProfileCard = ({ userDetail }) => {
@@ -42,17 +40,17 @@ const ProfileCard = ({ userDetail }) => {
             </div>
             <div>
                 <div>
-                    <span>O+</span>
+                    {/* <span>O+</span> */}
                     <p>Blood</p>
                 </div>
                 <div>|</div>
                 <div>
-                    <span>22</span>
+                    {/* <span>22</span> */}
                     <p>BMI</p>
                 </div>
                 <div>|</div>
                 <div>
-                    <span>81 kg</span>
+                    {/* <span>81 kg</span> */}
                     <p>Weight</p>
                 </div>
             </div>

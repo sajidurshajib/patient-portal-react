@@ -4,8 +4,8 @@
     border: none;
     color: var(--secondary);
     position: relative;
-    bottom: 30px;
-    left: 160px;
+    /* bottom: 30px;
+    left: 160px; */
 }
 
 .changePP > .button:hover {
@@ -13,24 +13,39 @@
     color: var(--red);
 }
 
+.container,
+.overlay {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .imgUploader {
-    position: absolute;
+    position: relative;
+    top: 14%;
+    left: 34%;
+    width: 34%;
+    height: 480px;
+    padding: 20px;
     background: var(--white);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
-    padding: 14px 28px;
+    color: var(--dark-blue);
+    text-align: center;
     border-radius: 10px;
-    max-width: 400px;
-    min-width: 300px;
-    z-index: 50;
-    box-shadow: 1px 3px 10px var(--grey2);
+    z-index: 12;
 }
 
 .imgUploader h2 {
-    color: var(--dark-blue);
+    color: var(--dark);
     text-align: center;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .imgUploader > .Close {
@@ -41,8 +56,8 @@
     color: var(--red);
     position: absolute;
     font-weight: 1000;
-    top: 10px;
-    left: 320px;
+    right: 16px;
+    top: 14px;
 }
 
 .imgUploader > .Close:hover {
@@ -57,7 +72,7 @@
 }
 
 .uploadForm > .SelectedImg {
-    height: 210px;
+    height: 230px;
 }
 
 .uploadForm > .SelectedImg div .PreviewContainer {
@@ -123,4 +138,78 @@
 
 .controlBtn > .Upload span {
     margin-left: 5px;
+}
+
+.Upload {
+    border: none;
+    background: var(--green);
+    color: var(--white);
+    padding: 6px 20px;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.Upload:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 300ms;
+}
+
+.Upload > span {
+    padding-left: 4px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 420px) {
+    .container,
+    .overlay {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 200vh;
+        z-index: 10;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .imgUploader {
+        position: relative;
+        top: 4%;
+        left: 6%;
+        width: 88%;
+        height: 440px;
+        padding: 20px;
+        background: var(--white);
+        color: var(--dark-blue);
+        text-align: center;
+        border-radius: 10px;
+        z-index: 12;
+    }
+
+    .imgUploader h2 {
+        color: var(--dark);
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .imgUploader > .Close {
+        cursor: pointer;
+        background: none;
+        border: 1px solid var(--red);
+        border-radius: 40px;
+        color: var(--red);
+        position: absolute;
+        font-weight: 1000;
+        right: 16px;
+        top: 14px;
+    }
+
+    .Upload {
+        margin-top: 20px;
+        font-size: 12px;
+    }
 }

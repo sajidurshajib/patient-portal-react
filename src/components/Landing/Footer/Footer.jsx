@@ -11,7 +11,6 @@ export default function Footer() {
         <div className={classes.footer}>
             <img src={Love} className={classes.loveImg} alt="" />
             <img src={footerImg} className={classes.footerImg1} alt="" />
-            {/* <img src={footerImg} className={classes.footerImg2} alt="" /> */}
             <div>
                 <p>My Health Portal</p>
                 <div>

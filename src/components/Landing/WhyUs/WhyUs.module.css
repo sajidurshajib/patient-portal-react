@@ -104,3 +104,57 @@
     margin-top: -20px;
     text-align: justify;
 }
+
+@media (max-width: 420px) {
+    .wrapper {
+        margin: 0;
+        margin-top: -40px;
+        padding: 0 20px;
+    }
+
+    .grid {
+        margin: 0;
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .flexBox {
+        flex-direction: column;
+        padding-left: 1em;
+    }
+
+    .flexBox > p {
+        font-size: 16px;
+        color: var(--dark);
+        font-weight: 500;
+    }
+
+    .flexBox > p > span {
+        font-size: 20px;
+    }
+
+    .flexBox > div > a > button {
+        font-size: 12px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .gridBox {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 3em;
+        margin-top: 30px;
+    }
+
+    .gridBox div > p > span {
+        padding-right: 20px;
+        font-size: 20px;
+    }
+
+    .gridBox div > p > p {
+        font-size: 16px;
+    }
+
+    .gridBox div > span {
+        font-size: 12px;
+    }
+}

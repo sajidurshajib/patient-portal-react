@@ -1,12 +1,13 @@
 import React from 'react'
-import { Navbar, SidebarV2 } from '../Nav'
+import { MobileNav, Navbar, SidebarV2 } from '../Nav'
 import classes from './Layout.module.css'
 
-export default function Layout({ children }) {
+export default function Layout({ children, side }) {
     return (
         <div className={classes.layout}>
             <div>
                 <Navbar />
+                <MobileNav />
             </div>
             <div className={classes.container}>
                 <div>

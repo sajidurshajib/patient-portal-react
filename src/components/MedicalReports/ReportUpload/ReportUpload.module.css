@@ -15,42 +15,56 @@
     transition: 200ms;
 }
 
-.uploadContainer {
-    position: absolute;
+.uploadContainer,
+.overlay {
+    position: fixed;
     top: 0%;
     left: 0%;
-    background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 200vh;
+    z-index: 10;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .uploadContainer > .uploader {
     position: relative;
-    top: 10%;
-    left: 40%;
-    width: 25%;
-    height: 420px;
+    top: 8%;
+    left: 36%;
+    width: 30%;
+    height: 500px;
     padding: 20px;
     background: var(--white);
     color: var(--dark-blue);
     text-align: center;
     border-radius: 10px;
+    z-index: 12;
 }
+
+.uploadContainer > .uploader > .upText {
+    font-size: 18px;
+}
+
 .uploader > .Close {
     cursor: pointer;
-    background: none;
-    border: 1px solid var(--red);
     border-radius: 50%;
+    border: none;
     color: var(--red);
-    position: absolute;
-    font-weight: 1000;
-    top: 45px;
-    left: 350px;
+    float: right;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: -60px;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+    padding: 0 10px;
 }
 
 .uploader > .Close:hover {
-    background: var(--red);
-    color: var(--white);
+    opacity: 0.8;
+    transition: 200ms;
+    border: 1px solid var(--red);
 }
 
 .uploader > .Input {
@@ -80,8 +94,8 @@
 .Input > .Control {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    border-top: 1px solid var(--dark-blue);
+    padding: 20px 10px;
+    border-top: 1px solid var(--grey);
 }
 
 .Input > .Control > .Select {
@@ -101,18 +115,108 @@
     transition: 300ms;
 }
 
-.Input > .Control > .Upload {
-    border: 1px solid var(--green);
-    background: var(--light);
-    color: var(--green);
-    padding: 5px;
-    border-radius: 2px;
+.Input > .Control > .Select > svg {
+    padding-right: 4px;
+    font-size: 16px;
 }
 
-.Input > .Control > .Upload:hover {
-    cursor: pointer;
-    border: 1px solid var(--green);
+.Upload {
+    border: none;
     background: var(--green);
     color: var(--white);
+    padding: 6px 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.Upload:hover {
+    cursor: pointer;
+    opacity: 0.8;
     transition: 300ms;
+}
+
+.Upload > span {
+    padding-left: 4px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 420px) {
+    .uploadButton button {
+        font-size: 10px;
+    }
+
+    .uploadContainer {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 200vh;
+    }
+
+    .uploadContainer > .uploader {
+        position: relative;
+        top: 40px;
+        left: 6%;
+        width: 88%;
+        height: 460px;
+        padding: 10px 20px;
+        background: var(--white);
+        color: var(--dark-blue);
+        text-align: center;
+        border-radius: 10px;
+    }
+    .uploadContainer > .uploader > .upText {
+        font-size: 14px;
+    }
+
+    .uploader > .Close {
+        cursor: pointer;
+        border-radius: 50%;
+        border: none;
+        color: var(--red);
+        float: right;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: -36px;
+        background-color: transparent;
+        border: none;
+        padding: 0 10px;
+    }
+
+    .selectedImg > div > .PreviewContainer > .ImgPreview {
+        object-fit: cover;
+        height: 270px;
+        width: 94%;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .Input > .Control {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        border-top: 1px solid var(--dark-blue);
+    }
+    .Input > .Control > button {
+        font-size: 10px;
+    }
+
+    .Input > .Control > button > svg {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .Upload {
+        border: none;
+        background: var(--green);
+        color: var(--white);
+        padding: 6px 20px;
+        border-radius: 4px;
+        margin-top: 20px;
+        font-size: 12px;
+    }
 }

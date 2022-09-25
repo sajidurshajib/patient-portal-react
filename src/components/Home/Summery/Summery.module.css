@@ -1,3 +1,26 @@
+.Summery {
+    margin-top: -24px;
+}
+
+.Summery > p {
+    color: var(--grey);
+    font-size: 14px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.Summery > p::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 60%;
+    transform: translatey(-60%);
+    right: 0;
+}
+
 .Wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -79,38 +102,18 @@
     right: 0;
     color: var(--grey);
 }
-/*  */
 
-.Wrapper > div > p > span {
-    font-weight: 300;
-    font-size: 14px;
-    display: block;
+.Wrapper > div > p:nth-child(1) > span {
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
 .Wrapper > div > p:nth-child(2) {
-    text-align: center;
-    font-size: 1.4em;
-    margin: 10px 0;
+    font-size: 1em;
+    margin: 0px 0;
     font-weight: 500;
-}
-
-.Wrapper > div > p:nth-child(3) {
-    margin: 5px 0 40px 0;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: 500;
-}
-
-.Wrapper > div:nth-child(1) > svg {
-    color: var(--red);
-}
-
-.Wrapper > div:nth-child(2) > svg {
-    color: var(--green);
-}
-
-.Wrapper > div:nth-child(3) > svg {
-    color: var(--red);
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 .Graph {
@@ -120,70 +123,95 @@
 }
 
 @media (max-width: 420px) {
-    .Wrapper {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .Wrapper > div {
-        background: var(--white);
-        border-radius: 10px;
-        cursor: pointer;
-        box-shadow: 1px 1px 5px var(--grey2);
-        transition: 250ms;
-        position: relative;
-    }
-    .Wrapper > div:hover {
-        box-shadow: 5px 5px 10px var(--grey2);
-    }
-    .Wrapper > div > span:nth-child(4) {
-        padding: 10px;
-        position: absolute;
-        left: 50%;
-        bottom: -10px;
-        margin-left: -10px;
-        background: var(--white);
-        transform: rotate(45deg);
-        box-shadow: 3px 3px 5px var(--grey2);
+    .Summery {
+        margin-top: -32px;
     }
 
-    .Wrapper > div > svg {
-        display: block;
-        margin: 20px auto 20px auto;
+    .Summery > p {
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
+
+    .Wrapper {
+        grid-template-columns: 154px repeat(3, 116px);
+        overflow-x: auto;
+        margin-top: -20px;
+        grid-gap: 10px;
+    }
+
+    .Wrapper > div {
+        max-height: 55px;
+    }
+
+    .Wrapper .activeBox .bgIcon {
+        position: absolute;
+        opacity: 0.08;
         font-size: 2em;
+        bottom: 14px;
+        right: 4px;
     }
-    .Wrapper > div > p {
-        color: var(--dark-blue);
-        font-size: 16px;
+
+    .Wrapper .box .bgIcon {
+        position: absolute;
+        opacity: 0.07;
+        font-size: 2em;
+        bottom: 14px;
+        right: 4px;
+        color: var(--grey);
     }
-    .Wrapper > div > p > span {
-        font-weight: 200;
-        font-size: 14px;
-        display: block;
+    .Wrapper .activeBox {
+        padding: 0 16px;
     }
+
+    .Wrapper > .activeBox > p {
+        color: var(--white);
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        margin-top: 8px;
+    }
+
+    .Wrapper > .activeBox > p > span {
+        color: var(--white);
+        text-align: left;
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.9;
+        margin-top: -16px;
+        padding-bottom: 4px;
+    }
+
+    .Wrapper > .box {
+        padding: 0 16px;
+    }
+
+    .Wrapper > .box > p {
+        color: var(--dark);
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        margin-top: 8px;
+    }
+
+    .Wrapper > .box > p > span {
+        color: var(--dark);
+        text-align: left;
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.9;
+        margin-top: -14px;
+        padding-bottom: 4px;
+    }
+
+    .Wrapper > div > p:nth-child(1) > span {
+        font-size: 1.1em;
+    }
+
     .Wrapper > div > p:nth-child(2) {
-        text-align: center;
-        font-size: 18px;
-        margin: 10px 0;
-        font-weight: 600;
-        margin-top: -12px;
-    }
-    .Wrapper > div > p:nth-child(3) {
-        margin: 5px 0 20px 0;
-        text-align: center;
-        font-size: 16px;
-    }
-    .Wrapper > div:nth-child(1) > svg {
-        color: var(--red);
-    }
-    .Wrapper > div:nth-child(2) > svg {
-        color: var(--green);
-    }
-    .Wrapper > div:nth-child(3) > svg {
-        color: var(--red);
+        font-size: 12px;
     }
 
     .Graph {
-        margin: 30px 0 0 0;
-        background: var(--white);
-        border-radius: 10px;
+        margin-top: 10px;
     }
 }

@@ -1,12 +1,10 @@
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faStethoscope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
-import Logo from '../../assets/img/logo/Logo192.png'
 import { toMonthNameLong } from '../../utils/date'
-import { Navbar } from '../Nav'
+import { MobileNav, Navbar } from '../Nav'
 import Chambers from './Chambers/Chambers'
 import Header from './Header/Header'
 import Info from './Info/Info'
@@ -18,6 +16,7 @@ import classes from './SingleDoctor.module.css'
 export default function SingleDoctor() {
     const [menu, setMenu] = useState(1)
     const [doctor, setDoctor] = useState([])
+    const [picture, setPicture] = useState({})
 
     const { id } = useParams()
     const setId = id - 1000
@@ -28,29 +27,50 @@ export default function SingleDoctor() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch(`${apiV1}/doctors/detail/${setId}`, {
-                    method: 'GET',
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${token}`,
-                    },
-                })
-                const data = await response.json()
+            const response = await fetch(`${apiV1}/doctors/detail/${setId}`, {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            const data = await response.json()
+            if (response.ok) {
                 setDoctor(data)
-            } catch {
-                setDoctor([])
             }
         }
-        return fetchData()
+
+        const fetchPicture = async () => {
+            const response = await fetch(`${apiV1}/profile-pic/${setId}`, {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            const data = await response.json()
+            if (response.ok) {
+                setPicture(data.image_string)
+            }
+        }
+
+        try {
+            fetchData()
+            fetchPicture()
+        } catch {
+            setDoctor([])
+            fetchPicture({})
+        }
     }, [token, apiV1, setId])
 
     return (
         <div className={classes.wrapper}>
             <Navbar />
+            <MobileNav />
             <div className={classes.container}>
-                <Header doctor={doctor} />
+                <Header apiV1={apiV1} doctor={doctor} picture={picture} />
                 <div className={classes.infoWrapper}>
                     <div className={classes.info}>
                         <div>
@@ -77,6 +97,7 @@ export default function SingleDoctor() {
                                 {toMonthNameLong(doctor?.user?.created_at.slice(5, 7))}{' '}
                                 {doctor?.user?.created_at.slice(0, 4)}
                             </span>
+                            <FontAwesomeIcon icon={faStethoscope} className={classes.mobileIcon} />
                         </div>
                     </div>
                 </div>
@@ -96,6 +117,12 @@ export default function SingleDoctor() {
                             </span>
 
                             <span
+                                className={menu === 8 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
+                                onClick={(e) => setMenu(8)}>
+                                About
+                            </span>
+
+                            <span
                                 className={menu === 3 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(3)}>
                                 Qualification
@@ -110,7 +137,7 @@ export default function SingleDoctor() {
                             <span
                                 className={menu === 5 ? `${classes.activeNav}` : `${classes.deactiveNav}`}
                                 onClick={(e) => setMenu(5)}>
-                                Special Achievement
+                                Gallery
                             </span>
 
                             <span
@@ -127,8 +154,8 @@ export default function SingleDoctor() {
                         <div>
                             {menu === 1 ? <Schedule doctor={doctor} /> : null}
                             {menu === 2 ? <Info doctor={doctor} /> : null}
-                            {menu === 3 ? <ProfileDetail doctor={doctor} /> : null}
-                            {menu === 4 ? <ProfessionalInfo doctor={doctor} /> : null}
+                            {/* {menu === 3 ? <ProfileDetail doctor={doctor} /> : null} */}
+                            {/* {menu === 4 ? <ProfessionalInfo doctor={doctor} /> : null} */}
                             {menu === 6 ? <Chambers doctor={doctor} /> : null}
                         </div>
                     </div>

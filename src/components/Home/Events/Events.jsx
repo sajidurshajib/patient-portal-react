@@ -22,7 +22,7 @@ export default function Events() {
             <section className={classes.upcomingEvents}>
                 <div className={classes.container}>
                     <p className={classes.appointment}>Upcoming Appointments</p>
-                    <div className={classes.eventWrapper}>
+                    {/* <div className={classes.eventWrapper}>
                         <div className={classes.event}>
                             <FontAwesomeIcon icon={faFire} className={classes.i} />
                             <h4 className={classes.eventTime}>11:00 am</h4>
@@ -35,13 +35,13 @@ export default function Events() {
                             <span className={classes.eventTimeLeft}>in 1 hour</span>
                             <p className={classes.eventDescription}>Appointment with doctor!</p>
                         </div>
-                        {/* <div className={classes.event}>
+                        <div className={classes.event}>
                             <FontAwesomeIcon icon={faFire} className={classes.i} />
                             <h4 className={classes.eventTime}>13:00 pm</h4>
                             <span className={classes.eventTimeLeft}>in 2 hours</span>
                             <p className={classes.eventDescription}>Meeting with consultant!</p>
-                        </div> */}
-                    </div>
+                        </div>
+                    </div> */}
                 </div>
             </section>
         </div>

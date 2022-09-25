@@ -84,3 +84,19 @@
     font-size: 14px;
     margin-top: 16px;
 }
+
+@media (max-width: 420px) {
+    .General {
+        margin-bottom: -10px;
+    }
+
+    .General .formWrap {
+        padding: 20px;
+    }
+
+    .formGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0px;
+    }
+}

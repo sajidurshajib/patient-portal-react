@@ -8,3 +8,13 @@
     text-align: center;
     line-height: 1.5;
 }
+
+@media (max-width: 420px) {
+    .wrapper {
+        padding: 10px 20px;
+    }
+
+    .wrapper p {
+        font-size: 12px;
+    }
+}

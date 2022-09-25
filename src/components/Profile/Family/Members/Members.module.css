@@ -104,3 +104,20 @@
 .grid p.status .delete:after {
     background: #b81111;
 }
+
+@media (max-width: 420px) {
+    .wrapper > p {
+        color: var(--dark);
+        font-size: 12px;
+        margin-bottom: -10px;
+        position: relative;
+    }
+
+    .member {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        overflow-x: auto;
+    }
+}

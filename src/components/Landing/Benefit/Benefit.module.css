@@ -75,3 +75,47 @@
     margin-top: -20px;
     text-align: justify;
 }
+
+@media (max-width: 420px) {
+    .title h1 {
+        padding: 0 6px;
+        margin-bottom: 30px;
+        font-size: 18px;
+        color: var(--dark);
+        margin-top: -30px;
+    }
+
+    .gridBox {
+        margin: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1em;
+        padding: 0px 20px;
+    }
+
+    .gridBox div {
+        border: 1px solid var(--light);
+        transition: 200ms;
+        padding: 1em 1.2em 2em;
+        border-radius: 10px;
+    }
+
+    .gridBox div > p > span {
+        padding-right: 14px;
+        font-size: 20px;
+        display: block;
+    }
+
+    .gridBox div > p > p {
+        font-size: 14px;
+        color: var(--dark-blue);
+        font-weight: 500;
+    }
+
+    .gridBox div > span {
+        font-size: 12px;
+        margin-top: -20px;
+        text-align: justify;
+    }
+}

@@ -22,6 +22,7 @@
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 4px 2em;
 }
+
 .grid > div {
     padding: 0 2em;
     border-radius: 10px;
@@ -89,8 +90,78 @@
     margin-top: 14px;
 }
 
-.grid div > p > div > div > li {
+.grid div > p > div > div > span {
     font-size: 14px;
     color: var(--dark);
     padding: 2px 0px;
+}
+
+@media (max-width: 420px) {
+    .wrapper {
+        margin-top: 1em;
+        padding: 10px 20px;
+        margin-bottom: 4em;
+    }
+
+    .title h1 {
+        font-weight: 500;
+        padding: 0 6px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: var(--dark);
+        margin-top: -10px;
+    }
+
+    .grid > div {
+        padding: 0px;
+    }
+
+    .grid div > p {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .grid div:nth-child(even) > p {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .grid div > p > img {
+        display: block;
+        margin: 0 auto;
+        width: 80vw;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .grid div > p > div,
+    .grid div:nth-child(even) > p > div {
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .grid div:nth-child(even) > p > div {
+        padding-right: 0px;
+    }
+
+    .grid div > p > div > h2 {
+        font-size: 18px;
+    }
+
+    .grid div > p > div > span {
+        color: var(--dark);
+        font-size: 12px;
+    }
+
+    .grid div > p > div > div {
+        margin-top: 12px;
+    }
+
+    .grid div > p > div > div > span {
+        font-size: 12px;
+        color: var(--dark);
+        padding: 2px 0px;
+    }
 }

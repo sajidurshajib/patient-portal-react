@@ -121,3 +121,44 @@
     cursor: pointer;
     opacity: 0.8;
 }
+
+@media (max-width: 420px) {
+    .medWrapper {
+        padding-bottom: 10px;
+    }
+    .medWrapper > div > label > span {
+        display: block;
+    }
+
+    .medWrapper .formGrid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-gap: 0;
+        padding-right: 0px;
+        position: relative;
+        border-bottom: 1px solid var(--grey2);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .medWrapper label {
+        margin-top: 0px;
+    }
+
+    .medWrapper .cross {
+        position: absolute;
+        bottom: 0;
+        margin-left: 44%;
+    }
+
+    .medWrapper .optAll {
+        position: absolute;
+        margin-top: 4.2em;
+        background-color: var(--light-low);
+        width: 100%;
+        border-radius: 4px;
+        padding: 4px 6px;
+        overflow: auto;
+        background-color: var(--white);
+        z-index: 10;
+    }
+}

@@ -5,11 +5,12 @@
 @media (max-width: 420px) {
     .chartWrapper {
         height: 10em;
-        max-width: 20em;
+        max-width: 100%;
+        margin-top: -10px;
     }
 }
 
-@media (max-width: 390px) {
+/* @media (max-width: 390px) {
     .chartWrapper {
         height: 10em;
         max-width: 18em;
@@ -42,7 +43,7 @@
         height: 10em;
         max-width: 14.6em;
     }
-}
+} */
 
 @media (max-width: 300px) {
     .chartWrapper {

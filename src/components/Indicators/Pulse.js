@@ -65,12 +65,7 @@ const Pulse = () => {
     let data = {
         labels: [
             ...dataPulse
-                .map(
-                    (elm) =>
-                        `${elm.created_at.slice(8, 10)}-${toMonthNameShort(
-                            elm.created_at.slice(6, 7)
-                        )}${elm.created_at.slice(2, 4)}`
-                )
+                .map((elm) => `${elm.created_at.slice(8, 10)}-${toMonthNameShort(elm.created_at.slice(6, 7))}`)
                 .reverse(),
         ],
         datasets: [

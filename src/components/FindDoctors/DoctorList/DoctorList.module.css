@@ -9,7 +9,6 @@
     grid-template-columns: minmax(0, 18%) minmax(0, 35%) minmax(0, 27%) minmax(0, 20%);
     margin: 6px auto;
     width: 100%;
-    padding: 10px 0 20px 0;
     background-color: var(--white);
     padding: 20px 40px;
     border-radius: 10px;
@@ -46,6 +45,7 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+    margin-top: 4px;
 }
 
 .name:hover {
@@ -135,46 +135,64 @@
 
 @media (max-width: 420px) {
     .doctor {
-        display: grid;
-        grid-template-columns: repeat(1, 100%);
+        grid-template-columns: repeat(1, minmax(0, 100%));
         margin: 20px auto;
         width: 100%;
         border-bottom: 1px solid var(--light);
-        padding: 10px 0 20px 0;
+        text-align: center;
     }
+
     .doctorPic {
         width: 110px;
         height: 110px;
         margin: 0 auto;
     }
+
     .nameContainer {
-        text-align: center;
+        margin-left: 0px;
     }
+
     .name {
         color: var(--primary);
         margin: 12px 0 0 0;
         font-size: 18px;
         font-weight: 500;
     }
+
     .qualification {
-        color: var(--grey);
+        color: var(--dark);
         margin: 0;
-        font-size: 14px;
+        font-size: 12px;
+        opacity: 0.9;
     }
+
     .speciality {
-        color: var(--dark-blue);
-        font-size: 16px;
+        color: var(--dark);
+        font-size: 12px;
         font-weight: 600;
         margin-top: 10px;
+        opacity: 0.8;
     }
+
     .designation {
         font-size: 14px;
-        margin: 10px 0 0 0;
+        margin: 30px 0 0 0;
+        color: var(--dark);
     }
+
     .currentWorkPlace {
         font-size: 12px;
         margin: 4px 0 10px 0;
         color: var(--secondary);
         font-weight: 500;
+    }
+
+    .doctor > div:nth-child(3) {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .doctor > div:nth-child(3) > p {
+        margin-top: -10px;
     }
 }

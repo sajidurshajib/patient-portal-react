@@ -18,6 +18,7 @@ import {
     SingleDoctorPage,
     PlanSubscribePage,
     ErrorPage,
+    HealthPlanPage,
 } from './pages/index'
 import { authState, authReducer } from './reducer/authReducer'
 import { userState, userReducer } from './reducer/userReducer'
@@ -46,6 +47,7 @@ const App = () => {
                                 <ProtectedRoute path="/doctors" component={FindDoctorsPage} redirect="/" />
                                 <ProtectedRoute path="/doctor/:id" component={SingleDoctorPage} redirect="/" />
                                 <ProtectedRoute path="/settings" component={SettingsPage} redirect="/" />
+                                <ProtectedRoute path="/health-plans" component={HealthPlanPage} redirect="/" />
                                 <Route path="/register" component={RegisterPage} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/test" component={TestPage} />
