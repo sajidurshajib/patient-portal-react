@@ -61,7 +61,7 @@ export default function Form({ plans, singlePlan, setPlanId }) {
                                 <select
                                     className={classes.label1}
                                     onChange={(e) => setPlanId(parseInt(e.target.value))}>
-                                    <option value="">Select Plan</option>
+                                    <option value="0">Select Plan</option>
                                     {plans &&
                                         plans.map((plan) => (
                                             <option value={plan.id}>
@@ -81,10 +81,10 @@ export default function Form({ plans, singlePlan, setPlanId }) {
                                 </div>
 
                                 <div className={classes.input}>
-                                    <label className={classes.txtFeild}> {singlePlan.days}</label>
                                     <div>
                                         <img className={classes.image1} src={Time} alt="" />{' '}
                                     </div>
+                                    <label className={classes.txtFeild}> {singlePlan.days}</label>
                                 </div>
                             </div>
 
@@ -96,8 +96,8 @@ export default function Form({ plans, singlePlan, setPlanId }) {
                                 </div>
 
                                 <div className={classes.input1}>
-                                    <label className={classes.txtFeild}> {singlePlan.fee}</label>
                                     <img className={classes.image} src={Taka} alt="" />{' '}
+                                    <label className={classes.txtFeild}> {singlePlan.fee}</label>
                                 </div>
                             </div>
 
@@ -107,9 +107,8 @@ export default function Form({ plans, singlePlan, setPlanId }) {
                                 </div>
 
                                 <div className={classes.input2}>
-                                    <label className={classes.txtFeild}> {singlePlan.total_patients}</label>
-
                                     <img className={classes.image} src={Member} alt="" />
+                                    <label className={classes.txtFeild}> {singlePlan.total_patients}</label>
                                 </div>
                             </div>
                         </div>
@@ -140,14 +139,14 @@ export default function Form({ plans, singlePlan, setPlanId }) {
                             <div>
                                 <textarea name="question" id="question"></textarea>
 
-                                <img src={Comment} alt="" />
+                                {/* <img src={Comment} alt="" /> */}
                             </div>
                         </div>
 
                         {/* fifth div  */}
                         <div className={classes.last}>
                             <button className={classes.button} type="submit">
-                                Submit
+                                Place Order
                             </button>
                         </div>
 
