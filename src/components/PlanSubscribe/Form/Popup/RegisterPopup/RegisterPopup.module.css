@@ -79,7 +79,7 @@
     border: none;
     cursor: pointer;
     padding: -5px;
-    color: red;
+    color: var(--red);
     background-color: transparent;
     /* margin-top: -28px; */
     /* margin-bottom: 25px; */
@@ -230,6 +230,7 @@
 .sexWrapper > div > select {
     padding: 10px;
 }
+
 .sexWrapper > div > input:focus,
 .sexWrapper > div > select:focus {
     outline: 0;

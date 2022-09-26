@@ -28,7 +28,7 @@
     box-shadow: 0 5px 10px var(--light);
 }
 .statusMsg > span {
-    background: red;
+    background: var(--red);
     border-radius: 50px;
     display: inline-block;
     width: 14px;
@@ -71,7 +71,7 @@
     border: none;
     cursor: pointer;
     padding: -5px;
-    color: red;
+    color: var(--red);
     background-color: white;
     margin-top: 2px;
     margin-bottom: 25px;
