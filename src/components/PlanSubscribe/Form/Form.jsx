@@ -25,6 +25,10 @@ import Popup from './Popup/Popup'
 export default function Form({ plans, singlePlan, setPlanId }) {
     const [show, setShow] = useState(false)
 
+    // use state for the form element
+    const [payment, setPayment] = useState('')
+    const [remarks, setRemarks] = useState('')
+
     const ShowPopup = () => {
         setShow(true)
     }
@@ -33,129 +37,118 @@ export default function Form({ plans, singlePlan, setPlanId }) {
         <>
             <div className={classes.container}>
                 <div className={classes.wrapper}>
-                    <div
-                        style={
-                            {
-                                // background: `url(${BG})`,
-                                // backgroundPosition: "center",
-                                // backgroundSize: "cover",
-                                // height: "80vh",
-                                // backgroundRepeat: "no-repeat",
-                                // height: "100vh",
-                            }
-                        }>
+                    <div>
                         <h2> Get Your best health plan , here</h2>
                         {/* img */}
                         <img src={BG} />
                     </div>
 
-                    <div>
-                        {/* first div */}
-                        <div>
-                            <div>
-                                <label>Select Your Plan</label>
-                            </div>
-
-                            <div>
-                                {/* Mapping and On change  */}
-                                <select
-                                    className={classes.label1}
-                                    onChange={(e) => setPlanId(parseInt(e.target.value))}>
-                                    <option value="0">Select Plan</option>
-                                    {plans &&
-                                        plans.map((plan) => (
-                                            <option value={plan.id}>
-                                                {plan.name} Basic - {plan.days / 30}M
-                                            </option>
-                                        ))}
-                                </select>
-                            </div>
-                        </div>
-                        {/* Second  div */}
-
-                        <div>
-                            {/* ====== Plan Duration ========= */}
+                    <div className={classes.formWrapper}>
+                        {/* form started  */}
+                        <form className={classes.form} action="">
+                            {/* first  div */}
                             <div>
                                 <div>
-                                    <label htmlFor="planDescription">Plan Duration </label>
+                                    <label>Select Your Plan</label>
                                 </div>
 
-                                <div className={classes.input}>
+                                <div>
+                                    {/* Mapping and On change  */}
+                                    <select
+                                        className={classes.label1}
+                                        onChange={(e) => setPlanId(parseInt(e.target.value))}>
+                                        <option value="0">Select Plan</option>
+                                        {plans &&
+                                            plans.map((plan) => (
+                                                <option value={plan.id}>
+                                                    {plan.name} Basic - {plan.days / 30}M
+                                                </option>
+                                            ))}
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* Second  div */}
+
+                            <div>
+                                {/* {Plan duration } */}
+                                <div>
                                     <div>
-                                        <img className={classes.image1} src={Time} alt="" />{' '}
+                                        <label htmlFor="planDescription">Plan Duration </label>
                                     </div>
-                                    <label className={classes.txtFeild}> {singlePlan.days}</label>
+
+                                    <div className={classes.input}>
+                                        <div>
+                                            <img className={classes.image1} src={Time} alt="" />{' '}
+                                        </div>
+                                        <label className={classes.txtFeild}> {singlePlan.days}</label>
+                                    </div>
+                                </div>
+                                {/* {Plan Price } */}
+                                <div>
+                                    <div>
+                                        <label htmlFor="planPrice">Plan Price </label>
+                                    </div>
+
+                                    <div className={classes.input1}>
+                                        <img className={classes.image} src={Taka} alt="" />{' '}
+                                        <label className={classes.txtFeild}> {singlePlan.fee}</label>
+                                    </div>
+                                </div>
+                                {/* {Total Patient */}
+                                <div>
+                                    <div>
+                                        <label htmlFor="totalPatient">Total Patient</label>
+                                    </div>
+
+                                    <div className={classes.input2}>
+                                        <img className={classes.image} src={Member} alt="" />
+                                        <label className={classes.txtFeild}> {singlePlan.total_patients}</label>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Plan Price  */}
+                            {/* third div  */}
 
                             <div>
                                 <div>
-                                    <label htmlFor="planPrice">Plan Price </label>
+                                    <label htmlFor="payment"> Select Payment Method</label>
                                 </div>
-
-                                <div className={classes.input1}>
-                                    <img className={classes.image} src={Taka} alt="" />{' '}
-                                    <label className={classes.txtFeild}> {singlePlan.fee}</label>
-                                </div>
+                                <div>
+                                    <select name="payment" id="payment">
+                                        <option value="bkash"> Bkash</option>
+                                        <option value="rocket">Rocket</option>
+                                        <option value="nagad">Nagad</option>
+                                    </select>
+                                    <img src={Mobile} alt="" />
+                                </div>{' '}
                             </div>
+
+                            {/* forth div  */}
 
                             <div>
                                 <div>
-                                    <label htmlFor="totalPatient">Total Patient</label>
+                                    <label htmlFor="question"> Remarks</label>
                                 </div>
 
-                                <div className={classes.input2}>
-                                    <img className={classes.image} src={Member} alt="" />
-                                    <label className={classes.txtFeild}> {singlePlan.total_patients}</label>
+                                <div>
+                                    <textarea name="question" id="question"></textarea>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* third div  */}
-
-                        <div>
-                            <div>
-                                <label htmlFor="payment"> Select Payment Method</label>
+                            {/* fifth div  */}
+                            <div className={classes.last}>
+                                <button className={classes.button} type="submit">
+                                    Place Order
+                                </button>
                             </div>
-                            <div>
-                                <select name="payment" id="payment">
-                                    <option value="bkash"> bkash</option>
-                                    <option value="rocket">rocket</option>
-                                    <option value="nagad">nagad</option>
-                                </select>
-                                <img src={Mobile} alt="" />
-                            </div>{' '}
-                        </div>
-
-                        {/* forth div  */}
-
-                        <div>
-                            <div>
-                                <label htmlFor="question"> Remarks</label>
-                            </div>
-
-                            <div>
-                                <textarea name="question" id="question"></textarea>
-
-                                {/* <img src={Comment} alt="" /> */}
-                            </div>
-                        </div>
-
-                        {/* fifth div  */}
-                        <div className={classes.last}>
-                            <button className={classes.button} type="submit">
-                                Place Order
-                            </button>
-                        </div>
+                            {/* form ends  */}
+                        </form>
 
                         {/* for sign up and sign in button */}
 
-                        <div>
+                        <div className={classes.sixDiv}>
                             <button onClick={() => ShowPopup()}>Sign in</button>
-                            {/* <span> Don't have an account ?</span>
-                            <button onClick={() => show2()}>Sign Up</button> */}
                         </div>
                     </div>
                 </div>
