@@ -65,6 +65,7 @@
 
 .first > h2 {
     margin-left: 35%;
+    color: var(--primary);
 }
 .first > button {
     border: none;
@@ -76,7 +77,7 @@
     margin-bottom: 25px;
     padding: 4px;
     transition: 200ms;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     position: absolute;
     margin-top: -65px;
@@ -168,12 +169,12 @@
 
 .lastBtn {
     border: none;
-    color: var(--dark-blue);
-    margin-left: 18px;
-    padding: 6px 16px;
+    color: var(--primary);
+    margin-left: 14px;
+    padding: 6px 14px;
     border-radius: 4px;
     background-color: transparent;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 600;
 }
 .linkText {
