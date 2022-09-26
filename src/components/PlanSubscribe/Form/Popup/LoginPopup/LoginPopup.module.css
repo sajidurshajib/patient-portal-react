@@ -61,6 +61,7 @@
 .first {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .first > h2 {
@@ -77,11 +78,11 @@
     margin-bottom: 25px;
     padding: 4px;
     transition: 200ms;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     position: absolute;
     margin-top: -65px;
-    right: 25px;
+    right: -94px;
 }
 
 .first > button:hover {
@@ -177,11 +178,19 @@
     font-size: 17px;
     font-weight: 600;
 }
+
+.lastBtn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 200ms;
+}
+
 .linkText {
     color: var(--dark-blue);
     font-size: 16px;
     margin: 20px 0 0 0;
 }
+
 .linkText a {
     text-decoration: none;
     color: var(--primary);

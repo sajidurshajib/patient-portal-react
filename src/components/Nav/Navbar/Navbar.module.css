@@ -119,6 +119,18 @@
     color: var(--dark);
 }
 
+.icon > button {
+    border: none;
+    background-color: var(--primary);
+    padding: 8px 20px;
+    color: var(--white);
+    font-size: 14px;
+    margin-top: -10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .icon span:hover > .user {
     display: block;
     transform: translateY(0px);

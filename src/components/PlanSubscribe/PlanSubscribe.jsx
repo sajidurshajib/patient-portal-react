@@ -28,7 +28,6 @@ export default function PlanSubscribe() {
 
             if (response.ok) {
                 setPlans(data)
-                console.log(data)
             }
         }
         try {
@@ -51,8 +50,6 @@ export default function PlanSubscribe() {
 
             if (response.ok) {
                 setSinglePlan(data)
-                // important line
-                console.log('single', data)
             }
         }
         try {
@@ -65,17 +62,6 @@ export default function PlanSubscribe() {
     return (
         <div className={classes.wrapper}>
             <Form plans={plans} singlePlan={singlePlan} setPlanId={setPlanId} />
-
-            {/* <div>
-                <button className={classes.btn1} onClick={() => setPopup(true)}>
-                    Login
-                </button>
-                <button className={classes.btn2} onClick={() => setPopup(false)}>
-                    Register
-                </button>
-            </div> */}
-
-            {/* {popup && <div>Shariar Mahmud duke</div>} */}
         </div>
     )
 }

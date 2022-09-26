@@ -30,7 +30,7 @@ export default function RegisterPopup({ setLoginOpen, setRegisterOpen, setShow }
                                 <FontAwesomeIcon icon={faRegistered} />
                                 Register
                             </h2>
-                            <button onClick={() => setShow(false)}> X </button>
+                            <button onClick={() => setShow(false)}> x </button>
                         </div>
 
                         <form>

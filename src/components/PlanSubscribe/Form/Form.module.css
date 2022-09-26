@@ -11,21 +11,13 @@
 
 .wrapper > div:nth-child(1) {
     /* background-color: var(--secondary3); */
-    background-image: linear-gradient(
-        to right,
-        var(--dark-blue),
-        var(--dark-blue),
-        var(--dark-blue),
-        var(--dark-blue),
-        var(--dark-blue),
-        var(--dark-blue)
-    );
+    /* background-image: linear-gradient(to right, var(--primary), var(--secondary)); */
 }
 
 .wrapper > div:nth-child(1) > h2 {
     margin-top: 12%;
     text-transform: capitalize;
-    color: var(--white);
+    color: var(--primary);
     font-size: 28px;
     margin-bottom: -50px;
     text-align: center;
@@ -71,13 +63,13 @@
 }
 
 .label1 {
-    padding: 14px;
-    width: 87%;
+    padding: 16px 14px;
+    width: 86%;
     border: none;
     outline: var(--white);
     border-radius: 4px;
     background-color: var(--white);
-    box-shadow: 5px 5px 5px var(--lower-blue);
+    box-shadow: 2px 4px 8px var(--light-grey);
 }
 
 .label1 > option {
@@ -103,7 +95,7 @@
 
 .form > div:nth-child(3) {
     display: flex;
-    gap: 25px;
+    gap: 26px;
     margin-left: 1%;
     position: relative;
     margin-top: 40px;
@@ -129,7 +121,7 @@
     border: none;
     outline: var(--white);
     background-color: var(--white);
-    box-shadow: 5px 5px 5px var(--lower-blue);
+    box-shadow: 2px 4px 8px var(--light-grey);
 }
 
 .form > div:nth-child(4) {
@@ -146,12 +138,12 @@
     margin-top: 4%;
 }
 
-textArea {
-    padding: 30px 61px;
+.textarea {
+    padding: 30px 60px;
     border-radius: 4px;
     border: none;
     outline: var(--white);
-    box-shadow: 5px 5px 5px var(--lower-blue);
+    box-shadow: 2px 4px 8px var(--light-grey);
 }
 
 .form > div:nth-child(4) > div:nth-child(2) > img {
@@ -175,6 +167,12 @@ textArea {
     background-color: var(--secondary);
     color: var(--white);
     border-radius: 10px;
+}
+
+.form > div:nth-child(5) > button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 200ms;
 }
 
 .image {

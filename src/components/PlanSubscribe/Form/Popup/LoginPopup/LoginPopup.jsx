@@ -14,6 +14,52 @@ export default function LoginPopup({ setLoginOpen, setRegisterOpen, setShow }) {
         setRegisterOpen(true)
     }
 
+    const { stateAuth, dispatchAuth } = useContext(Auth)
+
+    const history = useHistory()
+
+    const [identifier, setIdentifier] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [alert, setAlert] = useState([])
+
+    const apiV1 = process.env.REACT_APP_API_V1
+
+    const submit = async (e) => {
+        e.preventDefault()
+
+        let loginFetch = await fetch(`${apiV1}/login`, {
+            headers: {
+                Accept: 'appllication/json',
+                'Content-Type': 'application/json',
+            },
+            dataType: 'json',
+            method: 'POST',
+            body: JSON.stringify({
+                identifier,
+                password,
+            }),
+        })
+
+        let loginJson = await loginFetch.json()
+
+        if (!loginFetch.ok) {
+            let err = statusCheck(loginFetch, [
+                { sts: 400, msg: 'User email/phone number or Password not correct.' },
+                { sts: 404, msg: 'User email/phone number or Password not correct.' },
+                { sts: 422, msg: 'Unprocessable Entity | Please check your email/phone number' },
+            ])
+            setAlert([...alert, err.msg])
+            dispatchAuth({ type: 'remove' })
+        } else {
+            dispatchAuth({ type: 'token', payload: loginJson.access_token })
+            setShow(false)
+            if (stateAuth.auth === true) {
+                history.push('/plan-subscribe')
+            }
+        }
+    }
+
     return (
         <div>
             <div className={classes.Login}>
@@ -39,25 +85,25 @@ export default function LoginPopup({ setLoginOpen, setRegisterOpen, setShow }) {
                                     <FontAwesomeIcon icon={faSignInAlt} />
                                     Login
                                 </h2>
-                                <button onClick={() => setShow(false)}> X </button>
+                                <button onClick={() => setShow(false)}> x </button>
                             </div>
 
-                            <form>
+                            <form onSubmit={(e) => submit(e)}>
                                 <div>
-                                    <input type="text" required />
+                                    <input type="text" onChange={(e) => setIdentifier(e.target.value)} required />
                                     <label>
                                         <span>Email or Phone number</span>
                                     </label>
                                 </div>
 
                                 <div>
-                                    <input type="password" required />
+                                    <input type="password" onChange={(e) => setPassword(e.target.value)} required />
                                     <label>
                                         <span>Password</span>
                                     </label>
                                 </div>
 
-                                <button>Login</button>
+                                <button type="submit">Login</button>
                             </form>
 
                             <p className={classes.linkText}>

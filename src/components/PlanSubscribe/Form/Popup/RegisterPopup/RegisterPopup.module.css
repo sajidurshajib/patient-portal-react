@@ -49,8 +49,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 58px;
-    padding: 10px 0 40px;
+    margin-top: -16px;
+    padding: 10px 0 30px;
 }
 
 .left {
@@ -86,10 +86,10 @@
     margin-top: -3px;
     padding: 4px;
     transition: 200ms;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     position: absolute;
-    right: -5px;
+    right: -24px;
 }
 
 .first > button:hover {
@@ -292,6 +292,12 @@
     background-color: transparent;
     font-size: 17px;
     font-weight: 600;
+}
+
+.lastBtn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 200ms;
 }
 
 @media (max-width: 420px) {

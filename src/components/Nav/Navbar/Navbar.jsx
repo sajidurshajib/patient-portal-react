@@ -30,6 +30,7 @@ export default function Navbar() {
     const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
     const token = stateAuth.token
+    const auth = stateAuth.auth
 
     useEffect(() => {
         const fetchData = async () => {
@@ -133,27 +134,39 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <div className={classes.icon}>
-                <p>
-                    <FontAwesomeIcon icon={faBell} />
-                    <div className={classes.notification}>
-                        <p>Notication 1</p>
-                        <p>Notication 2</p>
-                    </div>
-                </p>
-                <span>
-                    <img src={pic.toString().length < 16 ? Pic : picUrl} alt="" />
-                    <div className={classes.user}>
-                        <Link to="/profile">
-                            <span>{userDetail?.name}</span>
-                        </Link>
-                        <Link to="/settings">
-                            <p>Settings</p>
-                        </Link>
-                        <p onClick={(e) => logout(e)}>Logout</p>
-                    </div>
-                </span>
-            </div>
+            {auth === false ? (
+                <div className={classes.icon}>
+                    <p>
+                        <FontAwesomeIcon icon={faBell} />
+                        <div className={classes.notification}>
+                            <p>Notication 1</p>
+                            <p>Notication 2</p>
+                        </div>
+                    </p>
+                </div>
+            ) : (
+                <div className={classes.icon}>
+                    <p>
+                        <FontAwesomeIcon icon={faBell} />
+                        <div className={classes.notification}>
+                            <p>Notication 1</p>
+                            <p>Notication 2</p>
+                        </div>
+                    </p>
+                    <span>
+                        <img src={pic.toString().length < 16 ? Pic : picUrl} alt="" />
+                        <div className={classes.user}>
+                            <Link to="/profile">
+                                <span>{userDetail?.name}</span>
+                            </Link>
+                            <Link to="/settings">
+                                <p>Settings</p>
+                            </Link>
+                            <p onClick={(e) => logout(e)}>Logout</p>
+                        </div>
+                    </span>
+                </div>
+            )}
         </div>
     )
 }
