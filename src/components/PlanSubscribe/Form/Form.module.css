@@ -5,18 +5,27 @@
 .wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: #f8f8f8;
+    background-color: var(--light-low);
     height: 100vh;
 }
 
 .wrapper > div:nth-child(1) {
-    background-color: #5d8aa8;
+    /* background-color: var(--secondary3); */
+    background-image: linear-gradient(
+        to right,
+        var(--dark-blue),
+        var(--dark-blue),
+        var(--dark-blue),
+        var(--dark-blue),
+        var(--dark-blue),
+        var(--dark-blue)
+    );
 }
 
 .wrapper > div:nth-child(1) > h2 {
     margin-top: 12%;
     text-transform: capitalize;
-    color: white;
+    color: var(--white);
     font-size: 28px;
     margin-bottom: -50px;
     text-align: center;
@@ -29,7 +38,7 @@
 }
 
 .wrapper > div:nth-child(2) {
-    background-color: #f8f8f8;
+    background-color: var(--light-low);
     padding-left: 11%;
     padding-top: 10%;
 }
@@ -37,7 +46,7 @@
 .form > div {
     margin-top: 65px;
     text-align: left;
-    color: #1a2b56;
+    /* color: #1a2b56; */
     font-size: 17px;
     font-weight: 500;
 }
@@ -53,7 +62,7 @@
 .form > div:nth-child(1) > div:nth-child(1) > label {
     font-size: 24px;
     text-transform: capitalize;
-    color: #192a55;
+    color: var(--primary);
     font-weight: 600;
 }
 
@@ -85,11 +94,11 @@
 
 .form > div:nth-child(2) > div > div:nth-child(2) {
     padding: 8px;
-    border-bottom: 3px solid #1a2b56;
+    border-bottom: 3px solid var(--primary);
     border-radius: 4px;
-    box-shadow: 2px 2px 2px ghostwhite;
+    box-shadow: 2px 2px 2px var(--light-low);
     width: 42%;
-    background-color: ghostwhite;
+    background-color: var(--light-low);
 }
 
 .form > div:nth-child(3) {
@@ -163,7 +172,7 @@ textArea {
     padding: 8px 90px;
     border: none;
     outline: var(--white);
-    background-color: #457dc3;
+    background-color: var(--secondary);
     color: var(--white);
     border-radius: 10px;
 }
@@ -204,7 +213,7 @@ textArea {
     padding: 8px 45px;
     border: none;
     border-radius: 10px;
-    background-color: #457dc3;
+    background-color: var(--secondary);
     color: var(--white);
     cursor: pointer;
 }
@@ -225,7 +234,7 @@ textArea {
 
 .register > .cross {
     position: absolute;
-    color: red;
+    color: var(--red);
     top: 20px;
     z-index: 1000;
 }
