@@ -1,5 +1,6 @@
 import ErrorPage from './ErrorPage'
 import FindDoctorsPage from './FindDoctorsPage'
+import HealthPlanPage from './HealthPlanPage'
 import HomePage from './HomePage'
 import IndicatorsPage from './IndicatorsPage'
 import LandingPage from './LandingPage'
@@ -26,4 +27,5 @@ export {
     OrderPage,
     SingleDoctorPage,
     PlanSubscribePage,
+    HealthPlanPage,
 }
