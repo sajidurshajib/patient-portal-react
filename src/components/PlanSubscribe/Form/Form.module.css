@@ -1,20 +1,15 @@
 .container {
     position: relative;
 }
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: #f8f8f8;
     height: 100vh;
-    /* display: none; */
-    /* position: relative; */
 }
 
 .wrapper > div:nth-child(1) {
-    /* padding: 100px 120px;
-    background-color: white; */
-
-    /* background-image: linear-gradient(); */
     background-color: #5d8aa8;
 }
 
@@ -28,7 +23,6 @@
 }
 
 .wrapper > div:nth-child(1) > img {
-    /* margin-top: 3%; */
     height: 85%;
     width: 75%;
     margin-left: 10%;
@@ -37,58 +31,59 @@
 .wrapper > div:nth-child(2) {
     background-color: #f8f8f8;
     padding-left: 11%;
-    padding-top: 3%;
+    padding-top: 10%;
 }
 
-.wrapper > div:nth-child(2) > div {
-    margin-top: 52px;
+.form > div {
+    margin-top: 65px;
     text-align: left;
     color: #1a2b56;
     font-size: 17px;
     font-weight: 500;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(1) {
+.form > div:nth-child(1) {
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
-    margin-bottom: 30px;
+.form > div:nth-child(1) > div:nth-child(1) {
+    margin-bottom: 18px;
     margin-left: 30%;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > label {
+.form > div:nth-child(1) > div:nth-child(1) > label {
     font-size: 24px;
     text-transform: capitalize;
     color: #192a55;
     font-weight: 600;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+.form > div:nth-child(1) > div:nth-child(2) {
     margin-top: 15px;
 }
 
 .label1 {
-    padding: 16px;
+    padding: 14px;
     width: 87%;
     border: none;
-    outline: white;
+    outline: var(--white);
     border-radius: 4px;
-    background-color: white;
-    box-shadow: 4px 8px 10px var(--light-grey);
+    background-color: var(--white);
+    box-shadow: 5px 5px 5px var(--lower-blue);
 }
 
 .label1 > option {
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(2) {
+.form > div:nth-child(2) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 38px;
+    gap: 41px;
     /* padding-right: 50px; */
     margin-left: 1%;
+    margin-top: 28px;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) {
+.form > div:nth-child(2) > div > div:nth-child(2) {
     padding: 8px;
     border-bottom: 3px solid #1a2b56;
     border-radius: 4px;
@@ -97,20 +92,21 @@
     background-color: ghostwhite;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(3) {
+.form > div:nth-child(3) {
     display: flex;
     gap: 25px;
     margin-left: 1%;
     position: relative;
+    margin-top: 40px;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+.form > div:nth-child(3) > div:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > img {
+.form > div:nth-child(3) > div:nth-child(2) > img {
     height: 25px;
     width: 30px;
     position: absolute;
@@ -118,59 +114,58 @@
     top: 12%;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > select {
-    padding: 9px 142px;
+.form > div:nth-child(3) > div:nth-child(2) > select {
+    padding: 9px 148px;
     border-radius: 4px;
     border: none;
-    outline: white;
-    background-color: white;
-    box-shadow: 4px 8px 10px var(--light-grey);
+    outline: var(--white);
+    background-color: var(--white);
+    box-shadow: 5px 5px 5px var(--lower-blue);
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(4) {
+.form > div:nth-child(4) {
     display: flex;
     gap: 155px;
     margin-left: 1%;
     position: relative;
 
     margin-bottom: -20px;
+    margin-top: 40px;
 }
-.wrapper > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) {
+
+.form > div:nth-child(4) > div:nth-child(1) {
     margin-top: 4%;
 }
 
 textArea {
-    padding: 30px 56px;
+    padding: 30px 61px;
     border-radius: 4px;
     border: none;
-    outline: white;
-    box-shadow: 4px 8px 10px var(--light-grey);
+    outline: var(--white);
+    box-shadow: 5px 5px 5px var(--lower-blue);
 }
-.wrapper > div:nth-child(2) > div:nth-child(4) > div:nth-child(2) > img {
+
+.form > div:nth-child(4) > div:nth-child(2) > img {
     height: 45px;
     width: 45px;
+
     position: absolute;
     right: 56%;
     top: 18%;
 }
-.wrapper > div:nth-child(2) > div:nth-child(5) {
+
+.form > div:nth-child(5) {
     margin-left: 28%;
+    margin-top: 44px;
 }
-.wrapper > div:nth-child(2) > div:nth-child(5) > button {
-    padding: 8px 100px;
+
+.form > div:nth-child(5) > button {
+    padding: 8px 90px;
     border: none;
-    outline: white;
+    outline: var(--white);
     background-color: #457dc3;
-    color: white;
+    color: var(--white);
     border-radius: 10px;
-    transition: 200ms;
-    font-size: 16px;
-    font-weight: 500;
-}
-.wrapper > div:nth-child(2) > div:nth-child(5) > button:hover {
-    transform: translateY(-1px);
-    transition: 200ms;
-    cursor: pointer;
 }
 
 .image {
@@ -189,35 +184,32 @@ textArea {
     display: flex;
     flex-direction: row;
     grid-gap: 1px;
-    /* border: 2px solid red; */
 }
 
 /* for the time icon */
 .input > div:nth-child(2) {
-    /* border: 1px solid red; */
     padding-top: 1px;
 }
 
 /* for the sign Up button  */
 
-.wrapper > div:nth-child(2) > div:nth-child(6) {
-    margin-top: 15px;
+.sixDiv {
+    margin-top: 50px;
     display: flex;
     gap: 55px;
     margin-bottom: 10px;
-    /* border: 1px solid blue; */
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(6) > button {
+.sixDiv > button {
     padding: 8px 45px;
     border: none;
     border-radius: 10px;
     background-color: #457dc3;
-    color: white;
+    color: var(--white);
     cursor: pointer;
 }
 
-.wrapper > div:nth-child(2) > div:nth-child(6) > span {
+.sixDiv > span {
     text-transform: capitalize;
 }
 
@@ -236,4 +228,10 @@ textArea {
     color: red;
     top: 20px;
     z-index: 1000;
+}
+
+/* Newly Added  */
+
+.form > div {
+    margin-top: 20px;
 }
