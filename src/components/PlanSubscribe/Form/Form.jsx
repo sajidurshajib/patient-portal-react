@@ -28,6 +28,8 @@ export default function Form({ plans, singlePlan, setPlanId }) {
     const { stateUser } = useContext(UserInfo)
     const userDetail = stateUser.info
 
+    console.log('i', userDetail.id)
+
     const refreshPage = () => {
         window.location.reload()
     }
@@ -105,7 +107,7 @@ export default function Form({ plans, singlePlan, setPlanId }) {
         <>
             <div className={classes.container}>
                 <div className={classes.wrapper}>
-                    <div>
+                    <div className={classes.first}>
                         <h2> Get Your best health plan , here</h2>
                         <img src={BG} alt="" />
                     </div>
@@ -113,7 +115,7 @@ export default function Form({ plans, singlePlan, setPlanId }) {
                     <div className={classes.formWrapper}>
                         <form className={classes.form} onSubmit={(e) => handleSubmit(e)}>
                             <div>
-                                <div>
+                                <div className={classes.veryFirst}>
                                     <label>Select Your Plan</label>
                                 </div>
 

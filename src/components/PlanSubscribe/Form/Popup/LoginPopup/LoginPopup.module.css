@@ -203,11 +203,38 @@
     .Wrapper {
         grid-template-columns: 90%;
         gap: 0px;
+        width: 86%;
+        margin: 0 auto;
     }
     .right {
-        margin: 40px 0 60px 34px;
+        margin: 40px 0 60px 0px;
+    }
+    .right > div {
+        width: 16em;
     }
     .right > div > h2 {
         margin: 0 0 30px 0;
+    }
+
+    .right > div > form > div > input {
+        display: block;
+        width: 100%;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: none;
+        outline: 0;
+        padding: 7px 0;
+        margin: 0;
+        box-sizing: border-box;
+        color: var(--dark-blue);
+        border-bottom: 3px solid var(--grey2);
+        position: relative;
+    }
+
+    .first {
+        display: flex;
+        /* justify-content: center/; */
+        position: relative;
     }
 }
