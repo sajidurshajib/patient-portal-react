@@ -22,6 +22,7 @@ import {
 } from './pages/index'
 import { authState, authReducer } from './reducer/authReducer'
 import { userState, userReducer } from './reducer/userReducer'
+import PlanRoute from './routes/PlanRoute'
 import ProtectedRoute from './routes/ProtectedRoute'
 
 const App = () => {
@@ -38,7 +39,11 @@ const App = () => {
                             <Switch>
                                 <Route path="/" exact={true} component={LandingPage} />
                                 <Route path="/check" component={Test} />
-                                <Route path="/plan-subscribe" component={PlanSubscribePage} />
+                                <PlanRoute
+                                    path="/plan-subscribe"
+                                    component={PlanSubscribePage}
+                                    redirect="/plan-subscribe"
+                                />
                                 <ProtectedRoute path="/home" component={HomePage} redirect="/" />
                                 <ProtectedRoute path="/profile" component={ProfilePage} redirect="/" />
                                 <ProtectedRoute path="/medicals" component={MedicalPage} redirect="/" />
