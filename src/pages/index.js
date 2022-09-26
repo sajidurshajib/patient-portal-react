@@ -7,6 +7,7 @@ import LandingPage from './LandingPage'
 import LoginPage from './LoginPage'
 import MedicalPage from './MedicalPage'
 import OrderPage from './OrderPage'
+import PlanSubscribePage from './PlanSubscribePage'
 import ProfilePage from './ProfilePage'
 import RegisterPage from './RegisterPage'
 import SettingsPage from './SettingsPage'
@@ -25,5 +26,6 @@ export {
     SettingsPage,
     OrderPage,
     SingleDoctorPage,
+    PlanSubscribePage,
     HealthPlanPage,
 }

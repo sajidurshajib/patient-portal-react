@@ -8,6 +8,7 @@ import Layout from './Layout/Layout'
 import Login from './Login/Login'
 import MedicalReports from './MedicalReports/MedicalReports'
 import Order from './Order/Order'
+import PlanSubscribe from './PlanSubscribe/PlanSubscribe'
 import Profile from './Profile/Profile'
 import Register from './Register/Register'
 import Settings from './Settings/Settings'
@@ -27,5 +28,6 @@ export {
     SingleDoctor,
     Layout,
     IndicatorView,
+    PlanSubscribe,
     HealthPlan,
 }

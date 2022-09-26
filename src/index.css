@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root {
     --primary: #457dc3;
     --secondary: #4885cf;
@@ -20,7 +19,8 @@
     --yellow: #fdfd96;
     --orange: #ff9d5c;
     --light-low: #f8f8f8;
-    --light-skyblue: #ecf6ff;
+    --low-skyblue: #e6e6fa;
+    --lower-blue: #b0c4de;
 }
 * {
     font-family: Poppins;
@@ -50,11 +50,5 @@ body {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
-    }
-}
-
-@media (max-width: 420px) {
-    body {
-        background-color: var(--light-skyblue);
     }
 }

@@ -16,6 +16,7 @@ import {
     SettingsPage,
     OrderPage,
     SingleDoctorPage,
+    PlanSubscribePage,
     ErrorPage,
     HealthPlanPage,
 } from './pages/index'
@@ -37,6 +38,7 @@ const App = () => {
                             <Switch>
                                 <Route path="/" exact={true} component={LandingPage} />
                                 <Route path="/check" component={Test} />
+                                <Route path="/plan-subscribe" component={PlanSubscribePage} />
                                 <ProtectedRoute path="/home" component={HomePage} redirect="/" />
                                 <ProtectedRoute path="/profile" component={ProfilePage} redirect="/" />
                                 <ProtectedRoute path="/medicals" component={MedicalPage} redirect="/" />
