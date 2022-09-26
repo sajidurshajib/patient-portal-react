@@ -67,10 +67,12 @@
 .first {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .first > h2 {
     margin-left: 38%;
+    color: var(--primary);
 }
 
 .first > button {
@@ -78,13 +80,16 @@
     cursor: pointer;
     padding: -5px;
     color: red;
-    background-color: white;
-    margin-top: 2px;
-    margin-bottom: 25px;
+    background-color: transparent;
+    /* margin-top: -28px; */
+    /* margin-bottom: 25px; */
+    margin-top: -3px;
     padding: 4px;
     transition: 200ms;
-    font-size: 22px;
+    font-size: 17px;
     font-weight: 600;
+    position: absolute;
+    right: -5px;
 }
 
 .first > button:hover {
@@ -279,12 +284,12 @@
 
 .lastBtn {
     border: none;
-    color: var(--dark-blue);
+    color: var(--primary);
     margin-left: 18px;
     padding: 6px 16px;
     border-radius: 4px;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
 }
 
