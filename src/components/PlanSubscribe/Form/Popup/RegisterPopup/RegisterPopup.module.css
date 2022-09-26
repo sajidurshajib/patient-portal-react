@@ -1,0 +1,359 @@
+.Register,
+.overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    top: 0;
+    z-index: 100;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+.statusMsg {
+    position: absolute;
+    top: 50px;
+    color: var(--white);
+    background: var(--red);
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 200;
+    box-shadow: 0 5px 10px var(--grey);
+}
+.statusMsg > span {
+    background: red;
+    border-radius: 50px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 0 0 4px;
+}
+.Wrapper {
+    background: var(--white);
+    padding: 0;
+    border-radius: 5px;
+    width: 620px;
+    margin: 0 auto;
+    z-index: 50;
+    transition: 200ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -16px;
+    padding: 10px 0 30px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px;
+}
+
+.left > div {
+    width: 100%;
+}
+
+.first {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.first > h2 {
+    margin-left: 38%;
+    color: var(--primary);
+}
+
+.first > button {
+    border: none;
+    cursor: pointer;
+    padding: -5px;
+    color: var(--red);
+    background-color: transparent;
+    /* margin-top: -28px; */
+    /* margin-bottom: 25px; */
+    margin-top: -3px;
+    padding: 4px;
+    transition: 200ms;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    right: -24px;
+}
+
+.first > button:hover {
+    transform: translateY(-3px);
+    transition: 200ms;
+}
+
+.left > div > h2 {
+    text-align: center;
+    color: var(--primary);
+    margin: 0 0 20px 0;
+}
+.left > div > h2 > svg {
+    margin: 0 5px 0 0;
+}
+.left > div > form > div,
+.left > div > form > div > div {
+    position: relative;
+    width: 100%;
+}
+.left > div > form > div > input,
+.left > div > form > div > div > input {
+    display: block;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: 0;
+    padding: 7px 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--dark-blue);
+    border-bottom: 3px solid var(--grey2);
+    position: relative;
+}
+.left > div > form > div > input + label::before,
+.left > div > form > div > div > input + label::before {
+    content: '';
+    position: absolute;
+    bottom: 23px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary);
+    transition: 200ms;
+}
+.left > div > form > div > input:focus + label::before,
+.left > div > form > div > div > input:focus + label::before {
+    width: 100%;
+}
+.left > div > form > div > input + label span,
+.left > div > form > div > div > input + label span {
+    font-size: 14px;
+    color: var(--grey);
+    position: relative;
+    top: -30px;
+    pointer-events: none;
+    transition: 200ms;
+}
+.left > div > form > div > input:focus + label span,
+.left > div > form > div > input:valid + label span,
+.left > div > form > div > div > input:focus + label span,
+.left > div > form > div > div > input:valid + label span {
+    top: -52px;
+    font-size: 12px;
+}
+.left > div > form > button {
+    color: var(--white);
+    background: var(--primary);
+    display: block;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: 0;
+    border-radius: 2px;
+    padding: 7px 20px;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+}
+
+.emailPhone {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 50%));
+    gap: 20px;
+}
+.emailPhone > input {
+    box-sizing: border-box;
+    width: 100%;
+}
+.Address {
+    padding: 0 0 20px 0;
+}
+.Address h3 {
+    font-weight: 400;
+    color: var(--grey);
+    margin: 5px 0;
+}
+.Address > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 50%));
+    gap: 20px;
+}
+.Address > div > select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--light);
+    color: var(--dark-blue);
+    border: none;
+    padding: 10px;
+}
+.Address > div > select:focus {
+    outline: 0;
+}
+
+.sexWrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+    gap: 20px;
+}
+.sexWrapper > div > input,
+.sexWrapper > div > select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--light);
+    border: none;
+    color: var(--dark-blue);
+    padding: 0 5px 0 5px;
+    min-height: 30px;
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    cursor: pointer;
+}
+.sexWrapper > div > select {
+    padding: 10px;
+}
+
+.sexWrapper > div > input:focus,
+.sexWrapper > div > select:focus {
+    outline: 0;
+}
+.sexWrapper > div > select + span {
+    width: 0;
+    height: 0;
+    position: relative;
+    top: -15%;
+    left: 90%;
+    border-top: 5px solid var(--grey);
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    z-index: 100;
+    pointer-events: none;
+}
+.sexWrapper > div > label {
+    color: var(--grey);
+    font-size: 14px;
+    margin: 0 0 0 5px;
+}
+.linkText {
+    color: var(--dark-blue);
+    font-size: 14px;
+    margin: 20px 0 0 0;
+}
+.linkText a {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 18px;
+    margin-left: 79px;
+}
+
+.right {
+    font-size: 14px;
+    color: var(--white);
+    background: rgb(69, 125, 195, 0.8);
+    border-radius: 0 5px 5px 0;
+    padding: 20px 40px;
+    display: none;
+}
+.right > div > h2 > svg {
+    font-size: 32px;
+}
+.right p {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/* for the last button  */
+
+.lastBtn {
+    border: none;
+    color: var(--primary);
+    margin-left: 18px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.lastBtn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 200ms;
+}
+
+@media (max-width: 420px) {
+    .right {
+        display: none;
+    }
+    .Wrapper {
+        grid-template-columns: 90%;
+        width: 95%;
+        gap: 0px;
+        padding-right: 14px;
+    }
+    .left {
+        margin: 30px 0 60px 32px;
+    }
+    .left > div > h2 {
+        margin: 10px 0 10px 0;
+    }
+    .Address h3 {
+        margin-top: -2px;
+    }
+    .Address > div > select {
+        padding: 10px;
+        background-color: var(--white);
+        border: 2px solid var(--light);
+        border-radius: 2px;
+    }
+    .sexWrapper > div > select {
+        padding: 10px;
+        background-color: var(--white);
+        border: 2px solid var(--light);
+        border-radius: 2px;
+    }
+    .sexWrapper > div > select + span {
+        top: -18%;
+        left: 88%;
+    }
+    .sexWrapper > div > input[type='date'] {
+        font-size: 12px;
+        padding: 8px 2px;
+        background-color: var(--white);
+    }
+
+    .left > div > form > button {
+        color: var(--white);
+        background: var(--primary);
+        display: block;
+        width: 90%;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: none;
+        outline: 0;
+        border-radius: 2px;
+        padding: 7px 20px;
+        cursor: pointer;
+        margin: 10px 0 0 0;
+    }
+}
