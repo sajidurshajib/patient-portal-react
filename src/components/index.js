@@ -9,6 +9,7 @@ import Login from './Login/Login'
 import MedicalReports from './MedicalReports/MedicalReports'
 import Order from './Order/Order'
 import PlanSubscribe from './PlanSubscribe/PlanSubscribe'
+import Prescription from './Prescription/Prescription'
 import Profile from './Profile/Profile'
 import Register from './Register/Register'
 import Settings from './Settings/Settings'
@@ -30,4 +31,5 @@ export {
     IndicatorView,
     PlanSubscribe,
     HealthPlan,
+    Prescription,
 }

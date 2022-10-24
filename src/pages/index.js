@@ -8,6 +8,7 @@ import LoginPage from './LoginPage'
 import MedicalPage from './MedicalPage'
 import OrderPage from './OrderPage'
 import PlanSubscribePage from './PlanSubscribePage'
+import PrescriptionPage from './PrescriptionPage'
 import ProfilePage from './ProfilePage'
 import RegisterPage from './RegisterPage'
 import SettingsPage from './SettingsPage'
@@ -28,4 +29,5 @@ export {
     SingleDoctorPage,
     PlanSubscribePage,
     HealthPlanPage,
+    PrescriptionPage,
 }
