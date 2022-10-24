@@ -61,7 +61,7 @@ export default function SingleDoctor() {
             fetchPicture()
         } catch {
             setDoctor([])
-            fetchPicture({})
+            setPicture({})
         }
     }, [token, apiV1, setId])
 
