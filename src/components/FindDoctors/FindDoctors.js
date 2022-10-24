@@ -23,11 +23,11 @@ const FindDoctors = () => {
                     headers: {
                         Accept: 'application/json',
                         'Content-Type': 'application/json',
-                        Authorization: `Bearer ${token}`,
                     },
                 })
                 const data = await response.json()
                 setDoctors(data)
+                console.log(data)
             } catch {
                 setDoctors([])
             }
@@ -38,7 +38,7 @@ const FindDoctors = () => {
     return (
         <div className={classes.findDoctors}>
             <div className={classes.listContainer}>
-                <DoctorList doctors={doctors} />
+                <DoctorList doctors={doctors} apiV1={apiV1} />
                 <button className={classes.loadButton} onClick={() => limitIncrement()}>
                     Load More...
                 </button>

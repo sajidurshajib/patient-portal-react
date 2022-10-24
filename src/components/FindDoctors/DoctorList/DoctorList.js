@@ -1,12 +1,10 @@
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
-import img3 from '../../../assets/img/doc/docstock.jpg'
-import img1 from '../../../assets/img/doctor1.png'
-import img2 from '../../../assets/img/doctor2.jpg'
+import Doc from '../../../assets/img/doc/doc-df.jpg'
 import classes from './DoctorList.module.css'
 
-const DoctorList = ({ doctors }) => {
+const DoctorList = ({ doctors, apiV1 }) => {
     return (
         <div className={classes.DoctorList}>
             {doctors[1] &&
@@ -17,7 +15,10 @@ const DoctorList = ({ doctors }) => {
                                 <div
                                     className={classes.doctorPic}
                                     style={{
-                                        backgroundImage: `url(${img3})`,
+                                        backgroundImage:
+                                            doctor?.Doctor?.images.length !== 0
+                                                ? `url(${apiV1}/images/profile/${doctor?.Doctor?.images[0]?.image_string})`
+                                                : `url(${Doc})`,
                                         backgroundPosition: 'center',
                                         backgroundSize: 'cover',
                                         border: '4px solid var(--light)',

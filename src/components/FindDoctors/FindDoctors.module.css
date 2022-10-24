@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 80% 20%;
     padding: 20px 10px 10px 20px;
+    margin-bottom: 3em;
 }
 
 .loadButton {
