@@ -25,9 +25,9 @@ const General = () => {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
             },
-            dataType: 'json',
-            method: 'PUT',
+            method: 'PATCH',
             body: JSON.stringify({
+                ...userDetail,
                 name,
                 email,
                 phone,

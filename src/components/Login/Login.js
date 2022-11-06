@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Auth } from '../../allContext'
+import Logo from '../../assets/img/logo/Logo192.png'
 import { statusCheck } from '../../utils/statusCheck'
 import BG from '.././../assets/img/background-doc-table.jpg'
 import classes from './Login.module.css'
@@ -77,6 +78,9 @@ const Login = () => {
             }
 
             <div className={classes.Wrapper}>
+                <Link to="" className={classes.logo}>
+                    <img src={Logo} alt="" />
+                </Link>
                 <div className={classes.left}>
                     <div>
                         <h2>

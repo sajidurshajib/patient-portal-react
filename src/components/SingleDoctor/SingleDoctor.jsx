@@ -81,7 +81,7 @@ export default function SingleDoctor() {
                             <p>Total Experience</p>
                             <span>{doctor?.doctor?.exp_year !== null ? doctor?.doctor?.exp_year : 0}+ Years</span>
                         </div>
-                        <div>
+                        {/* <div>
                             <p>Total Consultations</p>
                             <span>10</span>
                         </div>
@@ -90,7 +90,7 @@ export default function SingleDoctor() {
                             <span>
                                 5.0 <FontAwesomeIcon icon={faStar} style={{ color: 'orange', fontSize: '12px' }} />
                             </span>
-                        </div>
+                        </div> */}
                         <div>
                             <p>Joined Date</p>
                             <span>
