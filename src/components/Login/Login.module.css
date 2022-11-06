@@ -41,6 +41,26 @@
     cursor: pointer;
     margin: 0 0 0 4px;
 }
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 34px;
+}
+
+.logo > img {
+    height: 48px;
+    width: 48px;
+    transition: 300ms;
+}
+
+.logo > img:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(1.1);
+    transition: 300ms;
+}
+
 .Wrapper {
     display: grid;
     grid-template-columns: minmax(0, 50%) minmax(0, 50%);
@@ -154,12 +174,26 @@
 .linkText a {
     text-decoration: none;
     color: var(--primary);
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 8px;
 }
 
 @media (max-width: 420px) {
     .left {
         display: none;
     }
+
+    .logo {
+        top: 20px;
+        left: 24px;
+    }
+
+    .logo > img {
+        height: 40px;
+        width: 40px;
+    }
+
     .Wrapper {
         grid-template-columns: 90%;
         gap: 0px;
