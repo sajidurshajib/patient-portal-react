@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Auth } from '../../allContext'
+import Logo from '../../assets/img/logo/Logo192.png'
 import districtJson from '../../config/locations/bd-districts.json'
 import divisionJson from '../../config/locations/bd-divisions.json'
 import postcodeJson from '../../config/locations/bd-postcodes.json'
@@ -101,6 +102,9 @@ const Register = () => {
             }
 
             <div className={classes.Wrapper}>
+                <Link to="" className={classes.logo}>
+                    <img src={Logo} alt="" />
+                </Link>
                 <div className={classes.left}>
                     <div>
                         <h2>
