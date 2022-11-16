@@ -37,13 +37,13 @@ export default function ForgotPassword() {
 
         let otp = await fetchOtp.json()
 
-        console.log(otp)
-        console.log('f', fetchOtp)
-
         if (fetchOtp.ok) {
             setHide(true)
         } else {
-            setMsg('Invalid phone number!')
+            setMsg(otp.context)
+            setTimeout(() => {
+                setMsg('')
+            }, 3000)
         }
     }
 
@@ -183,9 +183,9 @@ export default function ForgotPassword() {
                                     </div>
                                     <button type="submit">Confirm OTP</button>
                                 </form>
-                                <span>{msg}</span>
                             </>
                         )}
+                        <span>{msg}</span>
                     </div>
                 </div>
             </div>
