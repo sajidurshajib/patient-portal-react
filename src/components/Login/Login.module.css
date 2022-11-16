@@ -88,6 +88,7 @@
 .left p {
     font-size: 14px;
     line-height: 24px;
+    text-align: justify;
 }
 .right {
     display: flex;
@@ -177,6 +178,38 @@
     font-size: 18px;
     font-weight: 500;
     padding-left: 8px;
+}
+
+.right > div > a {
+    color: var(--secondary);
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.right > div > a:hover {
+    opacity: 0.8;
+    transition: 200ms;
+}
+
+.show {
+    position: relative;
+}
+
+.show > svg {
+    position: absolute;
+    z-index: 10;
+    right: 8px;
+    top: 12px;
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.show > svg:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 200ms;
 }
 
 @media (max-width: 420px) {

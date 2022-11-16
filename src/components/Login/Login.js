@@ -1,4 +1,4 @@
-import { faArrowRight, faHandSparkles, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faEye, faEyeSlash, faHandSparkles, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
@@ -12,14 +12,17 @@ import classes from './Login.module.css'
 const Login = () => {
     const { stateAuth, dispatchAuth } = useContext(Auth)
 
-    const history = useHistory()
-
     const [identifier, setIdentifier] = useState('')
     const [password, setPassword] = useState('')
 
+    const apiV1 = process.env.REACT_APP_API_V1
+    const history = useHistory()
     const [alert, setAlert] = useState([])
 
-    const apiV1 = process.env.REACT_APP_API_V1
+    const [passShown, setPassShown] = useState(false)
+    const shownPassword = () => {
+        setPassShown((prev) => !prev)
+    }
 
     const submit = async (e) => {
         e.preventDefault()
@@ -29,7 +32,6 @@ const Login = () => {
                 Accept: 'appllication/json',
                 'Content-Type': 'application/json',
             },
-            dataType: 'json',
             method: 'POST',
             body: JSON.stringify({
                 identifier,
@@ -108,8 +110,30 @@ const Login = () => {
                                 </label>
                             </div>
 
-                            <div>
-                                <input type="password" onChange={(e) => setPassword(e.target.value)} required />
+                            <div className={classes.show}>
+                                {passShown === true ? (
+                                    <FontAwesomeIcon
+                                        icon={faEyeSlash}
+                                        onClick={() => {
+                                            shownPassword()
+                                        }}
+                                        title="Hide Password"
+                                    />
+                                ) : (
+                                    <FontAwesomeIcon
+                                        icon={faEye}
+                                        onClick={() => {
+                                            shownPassword()
+                                        }}
+                                        title="Show Password"
+                                    />
+                                )}
+                                <input
+                                    type={passShown ? 'text' : 'password'}
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
                                 <label>
                                     <span>Password</span>
                                 </label>
@@ -117,6 +141,8 @@ const Login = () => {
 
                             <button>Login</button>
                         </form>
+
+                        <Link to="/forgot-password">Forgot Password?</Link>
 
                         <p className={classes.linkText}>
                             Don't have an account?{' '}

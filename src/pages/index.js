@@ -1,5 +1,7 @@
+import ChangePasswordPage from './ChangePasswordPage'
 import ErrorPage from './ErrorPage'
 import FindDoctorsPage from './FindDoctorsPage'
+import ForgotPasswordPage from './ForgotPasswordPage'
 import HealthPlanPage from './HealthPlanPage'
 import HomePage from './HomePage'
 import IndicatorsPage from './IndicatorsPage'
@@ -30,4 +32,6 @@ export {
     PlanSubscribePage,
     HealthPlanPage,
     PrescriptionPage,
+    ForgotPasswordPage,
+    ChangePasswordPage,
 }
