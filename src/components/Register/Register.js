@@ -242,14 +242,13 @@ const Register = () => {
                             With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx is aspired
                             to be the largest digital health platform in Bangladesh providing the digital platform based
                             Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record) services for the
-                            Patients. With a mission to ‘Drive the digitalization of healthcare of Bangladesh, HEALTHx
-                            is aspired to be the largest digital health platform in Bangladesh providing the digital
-                            platform based Telehealth. Home healthcare & Cloud based EHR (Electronic Health Record)
-                            services for the Patients. With a mission to ‘Drive the digitalization of healthcare of
-                            Bangladesh, HEALTHx is aspired to be the largest digital health platform in Bangladesh
-                            providing the digital platform based Telehealth. Home healthcare & Cloud based EHR
-                            (Electronic Health Record) services for the Patients.
+                            Patients.
                         </p>
+
+                        <div>
+                            <span>For Any Support Please Call at</span>
+                            <a href="tel:+8801322658481">+88 01322658481</a>
+                        </div>
                     </div>
                 </div>
             </div>

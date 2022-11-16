@@ -258,13 +258,47 @@
     background: rgb(69, 125, 195, 0.8);
     border-radius: 0 5px 5px 0;
     padding: 20px 40px;
+    text-align: center;
 }
+
+.right > div > h2 {
+    margin-top: 8em;
+}
+
 .right > div > h2 > svg {
     font-size: 32px;
 }
 .right p {
     font-size: 14px;
     line-height: 24px;
+    text-align: justify;
+}
+
+.right > div > div {
+    margin-top: 4em;
+    text-align: center;
+}
+
+.right span {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+.right a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--primary);
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.right a:hover {
+    opacity: 0.9;
+    transition: 200ms;
 }
 
 @media (max-width: 420px) {
