@@ -20,6 +20,8 @@ import {
     ErrorPage,
     HealthPlanPage,
     PrescriptionPage,
+    ForgotPasswordPage,
+    ChangePasswordPage,
 } from './pages/index'
 import { authState, authReducer } from './reducer/authReducer'
 import { userState, userReducer } from './reducer/userReducer'
@@ -58,6 +60,8 @@ const App = () => {
                                 <Route path="/register" component={RegisterPage} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/test" component={TestPage} />
+                                <Route path="/forgot-password" component={ForgotPasswordPage} />
+                                <Route path="/reset-password" component={ChangePasswordPage} />
                                 <Route path="*" exact={true} component={ErrorPage} />
                             </Switch>
                         </Router>

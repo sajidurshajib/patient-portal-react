@@ -8,6 +8,8 @@ import Layout from './Layout/Layout'
 import Login from './Login/Login'
 import MedicalReports from './MedicalReports/MedicalReports'
 import Order from './Order/Order'
+import { ForgotPassword } from './PasswordReset'
+import { ChangePassword } from './PasswordReset'
 import PlanSubscribe from './PlanSubscribe/PlanSubscribe'
 import Prescription from './Prescription/Prescription'
 import Profile from './Profile/Profile'
@@ -32,4 +34,6 @@ export {
     PlanSubscribe,
     HealthPlan,
     Prescription,
+    ForgotPassword,
+    ChangePassword,
 }
