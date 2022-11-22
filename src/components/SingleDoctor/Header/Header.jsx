@@ -19,7 +19,7 @@ export default function Header({ apiV1, doctor, picture }) {
                     <div className={classes.profilePic}>
                         <img className={classes.img} src={profile} alt="" />
                     </div>
-                    <h3>{doctor?.user?.name}</h3>
+                    <h3>{`${doctor?.doctor?.dr_title || ''} ${doctor?.user?.name}`}</h3>
                     {doctor?.qualifications?.map((qf, i) => (
                         <p key={i}>{qf.qualification}</p>
                     ))}

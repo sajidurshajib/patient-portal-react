@@ -62,6 +62,7 @@
 .img {
     position: absolute;
     object-fit: cover;
+    object-position: 48% 16%;
     height: 140px;
     width: 140px;
     border-radius: 10px;

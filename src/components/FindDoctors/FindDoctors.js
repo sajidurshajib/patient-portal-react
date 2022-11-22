@@ -27,7 +27,6 @@ const FindDoctors = () => {
                 })
                 const data = await response.json()
                 setDoctors(data)
-                console.log(data)
             } catch {
                 setDoctors([])
             }
