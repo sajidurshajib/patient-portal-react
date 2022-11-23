@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Countdown from 'react-countdown'
 import { Link, useHistory } from 'react-router-dom'
 import { Auth } from '../../../allContext'
@@ -11,12 +11,7 @@ export default function ForgotPassword() {
     const [msg, setMsg] = useState('')
     const [phone, setPhone] = useState('')
     const [otp, setOtp] = useState({
-        otp1: '',
-        otp2: '',
-        otp3: '',
-        otp4: '',
-        otp5: '',
-        otp6: '',
+        otp_1: '',
     })
 
     const { dispatchAuth } = useContext(Auth)
@@ -54,16 +49,13 @@ export default function ForgotPassword() {
     const handleOTP = async (e) => {
         e.preventDefault()
 
-        let fetchOtp = await fetch(
-            `${apiV1}/forget-password/token/${phone}/${`${otp.otp1}${otp.otp2}${otp.otp3}${otp.otp4}${otp.otp5}${otp.otp6}`}`,
-            {
-                method: 'GET',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-            }
-        )
+        let fetchOtp = await fetch(`${apiV1}/forget-password/token/${phone}/${`${otp.otp_1}`}`, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+        })
 
         let log = await fetchOtp.json()
 
@@ -123,19 +115,18 @@ export default function ForgotPassword() {
                                         </span>
                                     )}
                                 </p>
-                                <p>OTP</p>
+                                <p>One Time Password (OTP)</p>
                                 <form onSubmit={(e) => handleOTP(e)}>
                                     <div>
                                         <input
-                                            type="tel"
                                             id=""
-                                            name="otp1"
+                                            name="otp_1"
                                             onChange={handleOnchange}
-                                            maxLength={1}
-                                            minLength={1}
+                                            maxLength={6}
+                                            placeholder="Enter OTP"
                                             required
                                         />
-                                        <input
+                                        {/* <input
                                             type="tel"
                                             id=""
                                             name="otp2"
@@ -179,7 +170,7 @@ export default function ForgotPassword() {
                                             maxLength={1}
                                             minLength={1}
                                             required
-                                        />
+                                        /> */}
                                     </div>
                                     <button type="submit">Confirm OTP</button>
                                 </form>
