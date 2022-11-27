@@ -1,10 +1,11 @@
 import React from 'react'
 import Cover from '../../../assets/img/doc/bg.jpg'
-import Img from '../../../assets/img/doc/docstock.jpg'
+import Doc from '../../../assets/img/doc/doc-df.jpg'
 import classes from './Header.module.css'
 
 export default function Header({ apiV1, doctor, picture }) {
     const profile = `${apiV1}/images/profile/${picture}`
+    console.log('p', picture)
 
     return (
         <div
@@ -17,7 +18,7 @@ export default function Header({ apiV1, doctor, picture }) {
             <div>
                 <div className={classes.headLeftWrapper}>
                     <div className={classes.profilePic}>
-                        <img className={classes.img} src={profile} alt="" />
+                        <img className={classes.img} src={picture.toString().length < 16 ? Doc : profile} alt="" />
                     </div>
                     <h3>{`${doctor?.doctor?.dr_title || ''} ${doctor?.user?.name || ''}`}</h3>
                     {doctor?.qualifications?.map((qf, i) => (
