@@ -18,7 +18,6 @@ const PatientInfo = () => {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`,
                 },
-                dataType: 'json',
                 method: 'GET',
             })
             if (patientFetch.ok) {
@@ -38,8 +37,7 @@ const PatientInfo = () => {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
             },
-            dataType: 'json',
-            method: 'PUT',
+            method: 'PATCH',
             body: JSON.stringify({
                 ...patientData,
             }),
@@ -47,12 +45,14 @@ const PatientInfo = () => {
 
         if (submitFetch.ok) {
             setMsg('Patient infofmation succesfully updated')
+        } else {
+            setMsg('Something went wrong!')
         }
     }
 
     return (
         <div className={classes.patientInfo}>
-            <form onSubmit={submit}>
+            <form onSubmit={(e) => submit(e)}>
                 <div className={classes.formHeader}>Personal Info Update</div>
                 <div className={classes.formWrap}>
                     <label>
