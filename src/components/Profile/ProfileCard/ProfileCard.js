@@ -4,7 +4,7 @@ import proPic from '../../../assets/img/pic-placeholder.jpg'
 import classes from './ProfileCard.module.css'
 import ProfilePictureUpload from './ProfilePictureUpload/ProfilePictureUpload'
 
-const ProfileCard = ({ userDetail }) => {
+const ProfileCard = ({ userDetail, patientDetail }) => {
     const { stateUser } = useContext(UserInfo)
     const { stateAuth } = useContext(Auth)
 
@@ -54,7 +54,7 @@ const ProfileCard = ({ userDetail }) => {
                 </span>
 
                 <span>
-                    Blood group: <span className={classes.bloodGrp}>{userDetail.blood_group}</span>
+                    Blood group: <span className={classes.bloodGrp}>{userDetail?.blood_group}</span>
                 </span>
                 <div>
                     <p>
@@ -64,25 +64,25 @@ const ProfileCard = ({ userDetail }) => {
                         Email <span>{stateUser?.info.email}</span>
                     </p>
                     <p>
-                        Date of Birth <span>{stateUser?.info.nid}</span>
+                        Date of Birth <span>{userDetail?.dob}</span>
                     </p>
                     <p>
-                        NID <span>{stateUser?.info.nid}</span>
+                        NID <span>{userDetail?.nid}</span>
                     </p>
                     <p>
-                        Marital Status <span> </span>
+                        Marital Status <span>{patientDetail?.marital_status}</span>
                     </p>
                     <p>
-                        Occupation <span> </span>
+                        Occupation <span>{patientDetail?.occupation}</span>
                     </p>
                     <p>
-                        Bio <span> </span>
+                        Bio <span>{patientDetail?.bio}</span>
                     </p>
                     <p>
                         Address <span> </span>
                     </p>
                     <p>
-                        Join Date <span> </span>
+                        Join Date <span>{stateUser?.info.created_at.slice(0, 10)}</span>
                     </p>
                 </div>
             </div>

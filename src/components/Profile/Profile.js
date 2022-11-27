@@ -80,7 +80,7 @@ const Profile = () => {
         <div className={classes.Profile}>
             <div className={classes.Wrapper}>
                 <div>
-                    <ProfileCard userDetail={userDetail} />
+                    <ProfileCard userDetail={userDetail} patientDetail={patientDetail} />
                     <Information userDetail={userDetail} patientDetail={patientDetail} lastWeight={lastWeight} />
                     <Address userDetail={userDetail} />
                 </div>
