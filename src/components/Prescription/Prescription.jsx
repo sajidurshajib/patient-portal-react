@@ -23,7 +23,6 @@ export default function Prescription() {
             const data = await response.json()
             if (response.ok) {
                 setPrescriptions(data)
-                console.log(data)
             }
         }
         try {

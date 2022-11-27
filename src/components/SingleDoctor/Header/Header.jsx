@@ -5,7 +5,6 @@ import classes from './Header.module.css'
 
 export default function Header({ apiV1, doctor, picture }) {
     const profile = `${apiV1}/images/profile/${picture}`
-    console.log('p', picture)
 
     return (
         <div

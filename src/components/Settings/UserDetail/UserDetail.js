@@ -4,14 +4,11 @@ import districtJson from '../../../config/locations/bd-districts.json'
 import divisionJson from '../../../config/locations/bd-divisions.json'
 import postCodeJson from '../../../config/locations/bd-postcodes.json'
 import upazilaJson from '../../../config/locations/bd-upazilas.json'
-import { nameFromDivisionId, nameFromDistrictId, nameFromUpazilaId } from '../../../utils/location'
 import classes from './UserDetail.module.css'
 
 const UserDetail = () => {
     const [userDetail, setUserDetail] = useState()
     const [msg, setMsg] = useState('')
-
-    console.log('u', userDetail)
 
     const apiV1 = process.env.REACT_APP_API_V1
     const { stateAuth } = useContext(Auth)
