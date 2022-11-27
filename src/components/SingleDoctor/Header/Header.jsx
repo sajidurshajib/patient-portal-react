@@ -32,7 +32,12 @@ export default function Header({ apiV1, doctor, picture }) {
                 <div>
                     <p className={classes.consult}>Consultation Fee</p>
                     <p>
-                        ৳{doctor?.doctor?.online_fees}
+                        ৳
+                        {doctor?.doctor?.online_fees !== null
+                            ? doctor?.doctor?.online_fees > 499
+                                ? doctor?.doctor?.online_fees + 100 || ''
+                                : doctor?.doctor?.online_fees + doctor?.doctor?.online_fees * (20 / 100) || ''
+                            : ''}
                         <span>(inc. VAT)</span>
                     </p>
                 </div>

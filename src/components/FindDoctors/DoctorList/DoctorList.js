@@ -46,7 +46,14 @@ const DoctorList = ({ doctors, apiV1 }) => {
                             </span>
                         </div>
                         <div>
-                            <p>BDT {doctor?.Doctor?.online_fees}</p>
+                            <p>
+                                BDT{' '}
+                                {doctor?.Doctor?.online_fees !== null
+                                    ? doctor?.Doctor?.online_fees > 499
+                                        ? doctor?.Doctor?.online_fees + 100
+                                        : doctor?.Doctor?.online_fees + doctor?.Doctor?.online_fees * (20 / 100)
+                                    : ''}
+                            </p>
                             <button>
                                 <Link to={`/doctor/${doctor?.User?.id + 1000}`}> Book Appointment </Link>
                             </button>

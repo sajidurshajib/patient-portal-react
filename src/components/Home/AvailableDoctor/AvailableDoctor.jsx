@@ -2,39 +2,34 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Auth } from '../../../allContext'
 import Doc from '../../../assets/img/doc/doc-df.jpg'
 import classes from './AvailableDoctor.module.css'
 
 export default function AvailableDoctor() {
     const [doctors, setDoctors] = useState([])
 
-    const { stateAuth } = useContext(Auth)
     const apiV1 = process.env.REACT_APP_API_V1
-
-    const token = stateAuth.token
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${apiV1}/admin/doctors/active?skip=0&limit=4`, {
-                method: 'GET',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-            })
-            const data = await response.json()
-            if (response.ok) {
+            try {
+                const response = await fetch(`${apiV1}/admin/doctors/active?skip=0&limit=4`, {
+                    method: 'GET',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                })
+                const data = await response.json()
                 setDoctors(data)
+            } catch {
+                setDoctors([])
             }
         }
-        try {
-            fetchData()
-        } catch {
-            setDoctors([])
-        }
-    }, [apiV1, token])
+        return fetchData()
+    }, [apiV1])
+
+    console.log('d', doctors)
 
     return (
         <div>
@@ -49,8 +44,8 @@ export default function AvailableDoctor() {
                                         <img
                                             src={
                                                 doctor?.Doctor?.images.length !== 0
-                                                    ? `${apiV1}/images/profile/${doctor?.Doctor?.images[0]?.image_string})`
-                                                    : `${Doc}`
+                                                    ? `${apiV1}/images/profile/${doctor?.Doctor?.images[0]?.image_string}`
+                                                    : Doc
                                             }
                                             alt=""
                                         />
@@ -70,7 +65,16 @@ export default function AvailableDoctor() {
                                         <p>{doctor?.DoctorSpeciality?.speciality}</p>
                                     </div>
                                     <p>
-                                        <span> ৳{doctor?.Doctor?.online_fees || ''} </span>/consultation
+                                        <span>
+                                            ৳
+                                            {doctor?.Doctor?.online_fees !== null
+                                                ? doctor?.Doctor?.online_fees > 499
+                                                    ? doctor?.Doctor?.online_fees + 100
+                                                    : doctor?.Doctor?.online_fees +
+                                                      doctor?.Doctor?.online_fees * (20 / 100)
+                                                : ''}
+                                        </span>
+                                        /consultation
                                     </p>
                                 </div>
                             </div>
