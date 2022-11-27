@@ -18,8 +18,8 @@ export default function Home() {
                     <AvailableDoctor />
                     <br />
                     <Summery />
-                    <CurrentPlan />
-                    <Recent />
+                    {/* <CurrentPlan /> */}
+                    {/* <Recent /> */}
                 </div>
                 <div className={classes.info}>
                     <div>
