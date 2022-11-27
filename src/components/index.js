@@ -14,6 +14,7 @@ import PlanSubscribe from './PlanSubscribe/PlanSubscribe'
 import Prescription from './Prescription/Prescription'
 import Profile from './Profile/Profile'
 import Register from './Register/Register'
+import Slider from './Resource/Slider/Slider'
 import Settings from './Settings/Settings'
 import SingleDoctor from './SingleDoctor/SingleDoctor'
 
@@ -36,4 +37,5 @@ export {
     Prescription,
     ForgotPassword,
     ChangePassword,
+    Slider,
 }

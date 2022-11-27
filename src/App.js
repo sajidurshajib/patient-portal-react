@@ -1,6 +1,7 @@
 import { useReducer } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Auth, UserInfo } from './allContext'
+import { Slider } from './components'
 import Test from './components/Test/Test'
 import { LayoutProvider } from './context/layouContext'
 import TestPage from './pages/TestPage'
@@ -41,7 +42,7 @@ const App = () => {
                         <Router>
                             <Switch>
                                 <Route path="/" exact={true} component={LandingPage} />
-                                <Route path="/check" component={Test} />
+                                <Route path="/slide" component={Slider} />
                                 <PlanRoute
                                     path="/plan-subscribe"
                                     component={PlanSubscribePage}
